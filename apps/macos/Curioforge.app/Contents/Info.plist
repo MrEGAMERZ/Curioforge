@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleExecutable</key>
+    <string>Curioforge</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.curioforge.Curioforge</string>
+    <key>CFBundleName</key>
+    <string>Curioforge</string>
+    <key>CFBundleDisplayName</key>
+    <string>Curioforge</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>14.0</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSCameraUsageDescription</key>
+    <string>Curioforge uses your camera to scan scrap materials on your desk and verify your finished physical STEM inventions.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Curioforge uses your microphone to listen to your voice and ideas so you don't need to type.</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Curioforge uses speech recognition to turn your spoken questions into STEM blueprints.</string>
+</dict>
+</plist>

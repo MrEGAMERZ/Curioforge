@@ -10,6 +10,10 @@
     "dev:client": "npm run dev --prefix client",
     "macos": "electron .",
     "macos:dev": "concurrently -n \"backend,frontend,electron\" -c \"yellow,cyan,magenta\" \"npm run dev --prefix server\" \"npm run dev --prefix client\" \"sleep 2 && electron .\"",
+    "swift:build": "cd apps/macos && swift build && mkdir -p Curioforge.app/Contents/MacOS && cp .build/debug/Curioforge Curioforge.app/Contents/MacOS/Curioforge",
+    "swift:run": "cd apps/macos && swift run",
+    "swift:open": "open apps/macos/Curioforge.app",
+    "xcode:open": "open apps/macos/Package.swift",
     "install:all": "npm install && npm install --prefix client && npm install --prefix server",
     "build": "npm run build --prefix client"
   },

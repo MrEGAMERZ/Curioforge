@@ -12,6 +12,11 @@ node_modules/
 # Build outputs
 dist/
 build/
+.build/
+**/.build/
+*.xcodeproj/
+*.xcworkspace/
+apps/macos/Curioforge.app/Contents/MacOS/Curioforge
 
 # Backups & Temp
 *.bak
