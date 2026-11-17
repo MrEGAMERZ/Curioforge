@@ -2,46 +2,133 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =====================================================
+   CurioForge — Apple HIG Light Theme (Stitch Design)
+   ===================================================== */
+
 :root {
-  color-scheme: dark;
+  color-scheme: light;
+  --curio-bg: #FFFFFF;
+  --curio-bg-alt: #F5F5F7;
+  --curio-bg-card: #FFFFFF;
+  --curio-border: #D2D2D7;
+  --curio-text: #1D1D1F;
+  --curio-text-secondary: #6E6E73;
+  --curio-text-muted: #98989D;
+  --curio-blue: #007AFF;
+  --curio-green: #34C759;
+  --curio-orange: #FF9F0A;
+  --curio-red: #FF3B30;
+
+  /* macOS titlebar height */
+  --titlebar-height: 52px;
+
+  /* Spring animations */
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #080C16;
-  color: #EAEEF9;
-  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--curio-bg);
+  color: var(--curio-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;
+  overflow: hidden;
 }
 
-/* Custom scrollbars */
+/* ---- macOS-style custom scrollbars ---- */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0D1322;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #232D4A;
-  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #34416A;
+  background: rgba(0, 0, 0, 0.22);
 }
 
-/* Pulse animation for voice wave */
+/* ---- Titlebar drag region (Electron) ---- */
+.titlebar-drag {
+  -webkit-app-region: drag;
+}
+.titlebar-no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* ---- Voice mic animations ---- */
 @keyframes voice-pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.15);
-    opacity: 1;
-  }
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 122, 255, 0.4); }
+  50% { transform: scale(1.06); box-shadow: 0 0 0 10px rgba(0, 122, 255, 0); }
+}
+.animate-voice-pulse {
+  animation: voice-pulse 1.6s ease-in-out infinite;
 }
 
-.animate-voice-pulse {
-  animation: voice-pulse 1.8s ease-in-out infinite;
+@keyframes wave-bar {
+  0%, 100% { height: 4px; }
+  50% { height: 20px; }
+}
+.wave-bar {
+  width: 3px;
+  border-radius: 2px;
+  background: var(--curio-blue);
+  animation: wave-bar 1s ease-in-out infinite;
+}
+.wave-bar:nth-child(2) { animation-delay: 0.1s; }
+.wave-bar:nth-child(3) { animation-delay: 0.2s; }
+.wave-bar:nth-child(4) { animation-delay: 0.3s; }
+.wave-bar:nth-child(5) { animation-delay: 0.2s; }
+
+/* ---- Message bubble fade-in ---- */
+@keyframes msg-in {
+  from { opacity: 0; transform: translateY(6px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.msg-animate {
+  animation: msg-in 0.25s var(--ease-out) both;
+}
+
+/* ---- Keyword highlight chip ---- */
+.keyword-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.875em;
+}
+.keyword-chip.acid { background: #FFF0E0; color: #C45000; border: 1px solid #FFCF99; }
+.keyword-chip.base { background: #E0F0FF; color: #0051A3; border: 1px solid #99CCFF; }
+.keyword-chip.gas  { background: #E8FFE8; color: #1A6E1A; border: 1px solid #99E099; }
+
+/* ---- Experiment card hover ---- */
+.experiment-card {
+  transition: transform 0.18s var(--spring), box-shadow 0.18s ease;
+}
+.experiment-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ---- Fun fact card gradient ---- */
+.fun-fact-card {
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFF4D0 100%);
+  border: 1px solid #FFE494;
+}
+
+/* ---- Input focus ring ---- */
+.curio-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
 }

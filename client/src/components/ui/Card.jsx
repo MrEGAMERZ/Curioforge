@@ -9,8 +9,8 @@ export function Card({
 }) {
   return (
     <div
-      className={`bg-surface rounded-xl border border-line-subtle shadow-card ${
-        interactive ? 'hover:border-line-strong hover:-translate-y-0.5 transition-all duration-150 cursor-pointer' : ''
+      className={`bg-white rounded-2xl border border-curio-border shadow-card ${
+        interactive ? 'hover:border-curio-blue hover:-translate-y-0.5 transition-all duration-150 cursor-pointer' : ''
       } ${padding} ${className}`}
       {...props}
     >

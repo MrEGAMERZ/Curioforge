@@ -1,87 +1,82 @@
 import React, { useState, useEffect } from 'react';
 import { InteractiveTutorView } from './features/tutor/InteractiveTutorView';
+import { HomeView } from './features/home/HomeView';
 import { ProfileModal } from './components/profile/ProfileModal';
-import { Badge } from './components/ui/Misc';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { apiClient } from './lib/apiClient';
 import {
   Sparkles,
-  History,
-  Settings,
-  Plus,
+  Volume2,
   Trash2,
-  CheckCircle2,
-  AlertCircle,
   Lightbulb,
-  BookOpen,
-  MessageSquare,
-  Mic,
-  ChevronRight,
+  Home,
+  MessageCircle,
+  Settings,
+  User,
 } from 'lucide-react';
+
+const INITIAL_SESSIONS = [
+  {
+    id: 'demo-volcano',
+    title: 'Baking Soda & Vinegar Eruption',
+    date: new Date(Date.now() - 3600000).toISOString(),
+    query: 'How do baking soda and vinegar react to make a volcano?',
+    gradeBand: 'primary',
+    avatar: '🌋',
+    whatWeLearned: 'Acid (vinegar) and base (baking soda) react to produce carbon dioxide gas that creates fizzy foam!',
+    response: {
+      speechGreeting: 'Aree waah! That is one of my favorite science experiments in the world!',
+      explanation: 'When baking soda (a base) meets vinegar (an acid), they react instantly to form water and tons of carbon dioxide gas bubbles! Those bubbles rush upwards just like real magma!',
+      stemConcepts: [
+        { name: 'Chemical Reaction', simpleWhy: 'Acid and base exchange atoms to create new molecules' },
+        { name: 'Gas Expansion', simpleWhy: 'CO₂ bubbles expand rapidly to push foam out of the container' },
+      ],
+      interactiveSimulationType: 'volcano_reaction',
+      simulationParameters: {
+        title: 'Fizzy Vinegar & Baking Soda Volcano Lab',
+        promptQuestion: 'What happens if you increase the amount of vinegar?',
+      },
+      householdActivity: {
+        title: 'Kitchen Magma Lab',
+        materials: ['Baking soda (2 spoons)', 'Vinegar or lemon juice', 'A cup or bottle', 'Tray for spills'],
+        steps: [
+          'Place your cup right in the center of the tray.',
+          'Drop in 2 big spoons of baking soda.',
+          'Pour in vinegar slowly and watch the bubbling lava rise!',
+        ],
+        safetyTip: 'Vinegar has a sharp smell — keep your face back and have an adult nearby!',
+      },
+    },
+  },
+];
 
 export default function App() {
   const [healthStatus, setHealthStatus] = useState(null);
+  const [activeTab, setActiveTab] = useState('home'); // 'home' | 'chat'
+  const [isSoundOn, setIsSoundOn] = useState(true);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
-  // Profile State (Personalization / Account)
   const [profile, setProfile] = useLocalStorage('curioforge:v1:profile', {
-    nickname: 'Aarav',
+    nickname: 'Leo',
     avatar: '🚀',
     gradeBand: 'primary',
+    gradeNumber: 3,
     language: 'en-US',
-    speechRate: 1.0,
+    speechRate: 0.85,
     speechPitch: 1.1,
     autoSpeak: true,
     favoriteTheme: 'chemistry',
     stars: 3,
   });
 
-  // Session History State ("What We Learned")
-  const [sessions, setSessions] = useLocalStorage('curioforge:v1:sessions', [
-    {
-      id: 'demo-volcano',
-      title: 'Baking Soda & Vinegar Eruption',
-      date: new Date(Date.now() - 3600000).toISOString(),
-      query: 'How do baking soda and vinegar react to make a volcano?',
-      gradeBand: 'primary',
-      avatar: '🌋',
-      whatWeLearned: 'Acid (vinegar) and base (baking soda) react to produce carbon dioxide gas bubbles that expand and foam!',
-      response: {
-        speechGreeting: 'Aree waah! That is one of my favorite science experiments in the world!',
-        explanation: 'When baking soda (a base) meets vinegar (an acid), they react instantly to form water and tons of carbon dioxide gas bubbles! Those bubbles rush upwards just like real magma!',
-        stemConcepts: [
-          { name: 'Chemical Reaction', simpleWhy: 'Acid and base exchange atoms to create new molecules' },
-          { name: 'Gas Expansion', simpleWhy: 'CO2 bubbles expand rapidly to push foam out of the container' },
-        ],
-        interactiveSimulationType: 'volcano_reaction',
-        simulationParameters: {
-          title: 'Fizzy Vinegar & Baking Soda Volcano Lab',
-          promptQuestion: 'What happens if you increase the amount of vinegar?',
-        },
-        householdActivity: {
-          title: 'Kitchen Magma Lab',
-          materials: ['Baking soda (2 spoons)', 'Vinegar or lemon juice', 'A cup or bottle', 'Tray for spills'],
-          steps: [
-            'Place your cup right in the center of the tray.',
-            'Drop in 2 big spoons of baking soda.',
-            'Pour in vinegar slowly and watch the bubbling lava rise!',
-          ],
-          safetyTip: 'Vinegar has a sharp smell and can sting eyes — keep your distance and have an adult watch!',
-        },
-      },
-    },
-  ]);
-
+  const [sessions, setSessions] = useLocalStorage('curioforge:v1:sessions', INITIAL_SESSIONS);
   const [currentSession, setCurrentSession] = useState(null);
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   useEffect(() => {
     apiClient
       .checkHealth()
       .then((data) => setHealthStatus(data))
-      .catch((err) => {
-        console.warn('Health check failed:', err);
-        setHealthStatus({ status: 'offline', geminiConfigured: false });
-      });
+      .catch(() => setHealthStatus({ status: 'offline', geminiConfigured: false }));
   }, []);
 
   const handleSaveSession = (savedSession) => {
@@ -92,240 +87,255 @@ export default function App() {
         copy[existingIdx] = savedSession;
         return copy;
       }
-      return [savedSession, ...prev].slice(0, 30); // Keep last 30 explorations
+      return [savedSession, ...prev].slice(0, 30);
     });
     setCurrentSession(savedSession);
   };
 
-  const handleStartNewSession = () => {
+  const handleStartFromHome = (query) => {
     setCurrentSession(null);
+    setActiveTab('chat');
+    // Pass query to tutor view via URL-like state
+    if (query) {
+      window._pendingQuery = query;
+    }
   };
 
   const handleDeleteSession = (e, id) => {
     e.stopPropagation();
     setSessions((prev) => prev.filter((s) => s.id !== id));
-    if (currentSession?.id === id) {
-      setCurrentSession(null);
-    }
+    if (currentSession?.id === id) setCurrentSession(null);
   };
 
-  const handleClearAllHistory = () => {
-    setSessions([]);
-    setCurrentSession(null);
-  };
-
-  // Format date helper
-  const formatDate = (isoString) => {
+  const formatDate = (iso) => {
     try {
-      const d = new Date(isoString);
-      return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    } catch (_) {
-      return 'Recently';
-    }
+      const d = new Date(iso);
+      const now = new Date();
+      const diff = now - d;
+      if (diff < 60000) return 'Just now';
+      if (diff < 3600000) return `${Math.floor(diff / 60000)}m ago`;
+      if (diff < 86400000) return `${Math.floor(diff / 3600000)}h ago`;
+      return d.toLocaleDateString([], { month: 'short', day: 'numeric' });
+    } catch (_) { return 'Recently'; }
   };
 
-  const gradeLabels = {
-    kindergarten: 'Ages 4–5',
-    primary: 'Grade 1–5',
-    '6-8': 'Grade 6–8',
-    '9-12': 'Grade 9–12',
+  const gradeLabel = (band, num) => {
+    if (num) return `Grade ${num}`;
+    const map = { kindergarten: 'KG', primary: 'Primary', '6-8': 'Middle', '9-12': 'High School' };
+    return map[band] || 'Primary';
   };
+
+  const geminiOk = healthStatus?.geminiConfigured;
 
   return (
-    <div className="min-h-screen bg-bg-deep text-ink-primary flex flex-col font-sans select-none">
-      {/* Native macOS Style Top Titlebar Header */}
-      <header className="h-14 bg-surface/90 border-b border-line-subtle sticky top-0 z-40 backdrop-blur-md px-4 flex items-center justify-between">
-        {/* Left: macOS Window Traffic Lights + Logo */}
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 pr-2">
-            <span className="w-3 h-3 rounded-full bg-danger/80 inline-block border border-danger/40"></span>
-            <span className="w-3 h-3 rounded-full bg-warning/80 inline-block border border-warning/40"></span>
-            <span className="w-3 h-3 rounded-full bg-success/80 inline-block border border-success/40"></span>
-          </div>
+    <div className="h-screen flex flex-col bg-curio-bg text-curio-text font-sans select-none overflow-hidden">
 
-          <div
-            className="flex items-center gap-2 cursor-pointer"
-            onClick={handleStartNewSession}
-            title="Return to Voice Dashboard"
-          >
-            <span className="font-extrabold font-display tracking-tight text-base text-ink-primary">
-              CURIO<span className="text-transparent bg-clip-text bg-gradient-brand">FORGE</span>
-            </span>
-            <Badge tone="purple" className="hidden sm:inline-flex">
-              STEM Voice Companion
-            </Badge>
-          </div>
+      {/* ══════════════════════════════════════════════════
+          TITLEBAR — macOS-style white bar
+      ══════════════════════════════════════════════════ */}
+      <header
+        className="titlebar-drag flex items-center px-4 border-b border-curio-border bg-white/90 backdrop-blur-md"
+        style={{ height: 'var(--titlebar-height)', WebkitAppRegion: 'drag' }}
+      >
+        {/* Traffic lights placeholder (Electron adds real ones) */}
+        <div className="titlebar-no-drag flex items-center gap-1.5 mr-6" style={{ WebkitAppRegion: 'no-drag' }}>
+          <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
+          <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
+          <div className="w-3 h-3 rounded-full bg-[#28C840]" />
         </div>
 
-        {/* Right: Student Profile Pill & Settings Action */}
-        <div className="flex items-center gap-2.5">
-          {/* AI Connection Status */}
-          <div className="flex items-center gap-1.5 text-[11px] px-2.5 py-1 bg-surface-raised rounded-full border border-line-subtle">
-            {healthStatus?.geminiConfigured ? (
-              <span className="text-success font-medium flex items-center gap-1">
-                <CheckCircle2 className="w-3.5 h-3.5" />
-                <span className="hidden md:inline">Gemini 2.0 Live</span>
-              </span>
-            ) : (
-              <span className="text-accent-400 font-medium flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span className="hidden md:inline">Interactive STEM Mode</span>
-              </span>
-            )}
+        {/* Wordmark */}
+        <div className="flex items-center gap-2 mr-auto">
+          <div className="w-6 h-6 rounded-lg bg-curio-blue flex items-center justify-center">
+            <Sparkles className="w-3.5 h-3.5 text-white" />
           </div>
+          <span className="text-sm font-semibold text-curio-text tracking-tight">Curioforge</span>
+        </div>
 
-          {/* Account / Personalization Button */}
+        {/* Centre tab switcher */}
+        <div
+          className="titlebar-no-drag absolute left-1/2 -translate-x-1/2 flex items-center bg-curio-bg-alt rounded-full p-0.5 gap-0.5"
+          style={{ WebkitAppRegion: 'no-drag' }}
+        >
           <button
-            onClick={() => setIsSettingsOpen(true)}
-            className="flex items-center gap-2 px-3 py-1.5 bg-surface-raised hover:bg-surface border border-line-subtle hover:border-primary-500/50 rounded-xl text-xs text-ink-primary transition-all shadow-sm group"
-            title="Open Account & Personalization Settings"
+            onClick={() => setActiveTab('home')}
+            className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+              activeTab === 'home'
+                ? 'bg-white text-curio-text shadow-sm shadow-black/10'
+                : 'text-curio-text-secondary hover:text-curio-text'
+            }`}
           >
-            <span className="text-base">{profile.avatar || '🚀'}</span>
-            <div className="text-left hidden sm:block">
-              <span className="font-bold text-ink-primary block leading-none">
-                {profile.nickname || 'Explorer'}
-              </span>
-              <span className="text-[10px] text-ink-muted leading-tight">
-                {gradeLabels[profile.gradeBand] || 'Primary'}
+            <Home className="w-3.5 h-3.5" />
+            Home
+          </button>
+          <button
+            onClick={() => setActiveTab('chat')}
+            className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+              activeTab === 'chat'
+                ? 'bg-white text-curio-text shadow-sm shadow-black/10'
+                : 'text-curio-text-secondary hover:text-curio-text'
+            }`}
+          >
+            <MessageCircle className="w-3.5 h-3.5" />
+            Chat &amp; Voice
+          </button>
+        </div>
+
+        {/* Right side — Sound + Profile */}
+        <div
+          className="titlebar-no-drag flex items-center gap-3 ml-auto"
+          style={{ WebkitAppRegion: 'no-drag' }}
+        >
+          {/* Gemini status dot */}
+          {healthStatus && (
+            <div className="flex items-center gap-1.5">
+              <div className={`w-1.5 h-1.5 rounded-full ${geminiOk ? 'bg-curio-green' : 'bg-curio-orange'}`} />
+              <span className="text-xs text-curio-text-muted hidden sm:block">
+                {geminiOk ? 'AI Ready' : 'Offline'}
               </span>
             </div>
-            <Settings className="w-4 h-4 text-ink-muted group-hover:text-primary-400 transition-colors ml-0.5" />
+          )}
+
+          <button
+            onClick={() => setIsSoundOn(!isSoundOn)}
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full hover:bg-curio-bg-alt transition-colors text-curio-text-secondary hover:text-curio-text"
+          >
+            <Volume2 className="w-3.5 h-3.5" />
+            <span className="text-xs font-medium hidden sm:block">{isSoundOn ? 'Sound on' : 'Muted'}</span>
+          </button>
+
+          {/* Profile avatar pill */}
+          <button
+            onClick={() => setIsSettingsOpen(true)}
+            className="flex items-center gap-1.5 hover:bg-curio-bg-alt rounded-full px-2 py-1 transition-colors"
+          >
+            <div className="w-6 h-6 rounded-full bg-curio-blue-light flex items-center justify-center text-xs font-bold text-curio-blue">
+              {profile.nickname?.[0]?.toUpperCase() || 'L'}
+            </div>
+            <span className="text-sm font-medium text-curio-text hidden sm:block">{profile.nickname}</span>
+            <div className="w-7 h-7 rounded-full bg-curio-bg-alt border border-curio-border flex items-center justify-center">
+              <User className="w-4 h-4 text-curio-text-secondary" />
+            </div>
           </button>
         </div>
       </header>
 
-      {/* Main 2-Column Dashboard Layout */}
-      <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
-        {/* Left Sidebar: "What We Learned" / Session History */}
-        <aside className="w-full md:w-80 lg:w-96 bg-surface-raised/40 border-r border-line-subtle flex flex-col flex-shrink-0 h-[360px] md:h-auto overflow-hidden">
-          {/* Sidebar Header */}
-          <div className="p-4 border-b border-line-subtle flex items-center justify-between bg-surface/50">
-            <div className="flex items-center gap-2">
-              <BookOpen className="w-4 h-4 text-primary-400" />
-              <h2 className="font-bold text-sm text-ink-primary font-display">
-                What We Learned
-              </h2>
-              {sessions.length > 0 && (
-                <span className="px-1.5 py-0.5 rounded-full bg-primary-600/30 text-primary-300 text-[10px] font-bold">
-                  {sessions.length}
-                </span>
+      {/* ══════════════════════════════════════════════════
+          MAIN CONTENT AREA
+      ══════════════════════════════════════════════════ */}
+      <div className="flex flex-1 overflow-hidden">
+
+        {/* ── SIDEBAR: session history (only on chat tab) ── */}
+        {activeTab === 'chat' && (
+          <aside className="w-64 flex-shrink-0 border-r border-curio-border bg-curio-bg flex flex-col">
+            <div className="p-3 border-b border-curio-border">
+              <p className="text-xs font-semibold text-curio-text-muted uppercase tracking-wider px-1 mb-2">
+                Recent Sessions
+              </p>
+              <button
+                onClick={() => setCurrentSession(null)}
+                className="w-full flex items-center gap-2 px-3 py-2 rounded-xl bg-curio-blue text-white text-sm font-medium hover:bg-curio-blue-hover transition-colors"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                New conversation
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-2 space-y-1">
+              {sessions.length === 0 ? (
+                <div className="p-6 text-center text-curio-text-muted">
+                  <p className="text-2xl mb-2">🌱</p>
+                  <p className="text-xs">No sessions yet. Ask your first question!</p>
+                </div>
+              ) : (
+                sessions.map((sess) => {
+                  const isSelected = currentSession?.id === sess.id;
+                  return (
+                    <div
+                      key={sess.id}
+                      onClick={() => setCurrentSession(sess)}
+                      className={`p-3 rounded-xl cursor-pointer transition-all group relative ${
+                        isSelected
+                          ? 'bg-curio-blue-light border border-curio-blue/30'
+                          : 'hover:bg-curio-bg-alt border border-transparent'
+                      }`}
+                    >
+                      <div className="flex items-start gap-2 pr-5">
+                        <span className="text-base flex-shrink-0 mt-0.5">{sess.avatar || '🔬'}</span>
+                        <div className="flex-1 min-w-0">
+                          <p className={`text-xs font-semibold line-clamp-2 leading-snug ${isSelected ? 'text-curio-blue' : 'text-curio-text'}`}>
+                            {sess.title || sess.query}
+                          </p>
+                          {sess.whatWeLearned && (
+                            <div className="mt-1.5 flex items-start gap-1">
+                              <Lightbulb className="w-3 h-3 text-curio-orange flex-shrink-0 mt-0.5" />
+                              <p className="text-[10px] text-curio-text-muted line-clamp-2 leading-relaxed">
+                                {sess.whatWeLearned}
+                              </p>
+                            </div>
+                          )}
+                          <p className="text-[10px] text-curio-text-muted mt-1">{formatDate(sess.date)}</p>
+                        </div>
+                      </div>
+                      <button
+                        onClick={(e) => handleDeleteSession(e, sess.id)}
+                        className="absolute top-2.5 right-2 opacity-0 group-hover:opacity-100 p-0.5 rounded-md hover:bg-red-100 text-curio-text-muted hover:text-curio-red transition-all"
+                      >
+                        <Trash2 className="w-3 h-3" />
+                      </button>
+                    </div>
+                  );
+                })
               )}
             </div>
 
-            {/* Start New Curiosity Button */}
-            <button
-              onClick={handleStartNewSession}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all shadow-sm ${
-                currentSession === null
-                  ? 'bg-gradient-to-r from-primary-600 to-accent-500 text-white shadow-glow'
-                  : 'bg-surface-raised hover:bg-surface border border-line-subtle text-ink-secondary hover:text-ink-primary'
-              }`}
-              title="Start a new voice conversation"
-            >
-              <Plus className="w-3.5 h-3.5" />
-              <span>New Adventure</span>
-            </button>
-          </div>
-
-          {/* Past Sessions List */}
-          <div className="flex-1 overflow-y-auto p-3 space-y-2.5">
-            {sessions.length === 0 ? (
-              <div className="h-full flex flex-col items-center justify-center text-center p-6 space-y-3 text-ink-muted">
-                <div className="w-12 h-12 rounded-2xl bg-surface-raised flex items-center justify-center text-xl">
-                  🌱
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-ink-primary">No explorations yet!</p>
-                  <p className="text-[11px] text-ink-muted mt-0.5">
-                    Tap the microphone and ask your first science question.
-                  </p>
-                </div>
+            {sessions.length > 0 && (
+              <div className="p-2 border-t border-curio-border">
+                <button
+                  onClick={() => { setSessions([]); setCurrentSession(null); }}
+                  className="w-full text-[11px] text-curio-text-muted hover:text-curio-red transition-colors py-1"
+                >
+                  Clear all history
+                </button>
               </div>
-            ) : (
-              sessions.map((sess) => {
-                const isSelected = currentSession?.id === sess.id;
-                return (
-                  <div
-                    key={sess.id}
-                    onClick={() => setCurrentSession(sess)}
-                    className={`p-3.5 rounded-2xl border text-left cursor-pointer transition-all relative group ${
-                      isSelected
-                        ? 'bg-primary-600/20 border-primary-500 shadow-glow'
-                        : 'bg-surface border-line-subtle hover:bg-surface-raised hover:border-line-strong'
-                    }`}
-                  >
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="space-y-1 flex-1 pr-6">
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-sm">{sess.avatar || '🔬'}</span>
-                          <h4 className="text-xs font-bold text-ink-primary line-clamp-1 leading-snug">
-                            {sess.title || sess.query}
-                          </h4>
-                        </div>
-
-                        {/* What we learned summary badge */}
-                        {sess.whatWeLearned && (
-                          <div className="p-2 rounded-lg bg-surface-raised/70 border border-line-subtle/80 flex items-start gap-1.5 mt-1">
-                            <Lightbulb className="w-3.5 h-3.5 text-warning flex-shrink-0 mt-0.5" />
-                            <p className="text-[11px] text-ink-secondary line-clamp-2 leading-relaxed">
-                              {sess.whatWeLearned}
-                            </p>
-                          </div>
-                        )}
-
-                        <div className="flex items-center gap-2 pt-1 text-[10px] text-ink-muted">
-                          <span>{formatDate(sess.date)}</span>
-                          <span>•</span>
-                          <span className="capitalize">{gradeLabels[sess.gradeBand] || 'Primary'}</span>
-                        </div>
-                      </div>
-
-                      {/* Delete button */}
-                      <button
-                        onClick={(e) => handleDeleteSession(e, sess.id)}
-                        className="opacity-0 group-hover:opacity-100 p-1 text-ink-muted hover:text-danger rounded-md hover:bg-surface transition-all absolute top-3 right-3"
-                        title="Delete exploration"
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  </div>
-                );
-              })
             )}
-          </div>
+          </aside>
+        )}
 
-          {/* History Footer */}
-          {sessions.length > 0 && (
-            <div className="p-2.5 border-t border-line-subtle bg-surface/30 text-center">
-              <button
-                onClick={handleClearAllHistory}
-                className="text-[11px] text-ink-muted hover:text-danger transition-colors underline"
-              >
-                Clear all history
-              </button>
-            </div>
+        {/* ── MAIN STAGE ── */}
+        <main className="flex-1 overflow-hidden">
+          {activeTab === 'home' ? (
+            <HomeView
+              profile={profile}
+              sessions={sessions}
+              onStartChat={handleStartFromHome}
+              onResumeSession={(sess) => { setCurrentSession(sess); setActiveTab('chat'); }}
+            />
+          ) : (
+            <InteractiveTutorView
+              currentSession={currentSession}
+              onSaveSession={handleSaveSession}
+              profile={profile}
+              onStartNew={() => setCurrentSession(null)}
+              isSoundOn={isSoundOn}
+            />
           )}
-        </aside>
-
-        {/* Right Main Stage: Live Voice Platform & Real-Time Tutor */}
-        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
-          <InteractiveTutorView
-            currentSession={currentSession}
-            onSaveSession={handleSaveSession}
-            profile={profile}
-            onStartNew={handleStartNewSession}
-          />
         </main>
       </div>
 
-      {/* Account & Personalization Settings Modal */}
+      {/* Footer bar */}
+      <footer className="h-7 border-t border-curio-border bg-curio-bg flex items-center justify-between px-4">
+        <span className="text-[10px] text-curio-text-muted">Curioforge • Designed for curious minds</span>
+        <span className="text-[10px] text-curio-text-muted">Quiet Studio Mode</span>
+      </footer>
+
+      {/* Settings / Profile Modal */}
       <ProfileModal
         isOpen={isSettingsOpen}
         onClose={() => setIsSettingsOpen(false)}
         profile={profile}
         onSaveProfile={(newProf) => setProfile(newProf)}
-        onClearHistory={handleClearAllHistory}
+        onClearHistory={() => { setSessions([]); setCurrentSession(null); }}
       />
     </div>
   );

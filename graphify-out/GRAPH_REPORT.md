@@ -1,17 +1,17 @@
 # Graph Report - STEM2  (2026-11-17)
 
 ## Corpus Check
-- 87 files · ~47,398 words
+- 88 files · ~50,964 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 6 file(s) not represented in the graph (top: (none) 3, .plist 1, .css 1)
 
 ## Summary
-- 667 nodes · 1105 edges · 44 communities (34 shown, 10 thin omitted)
-- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 81 edges (avg confidence: 0.86)
+- 702 nodes · 1140 edges · 41 communities (29 shown, 12 thin omitted)
+- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 82 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8289825f`
+- Built from commit: `b3149927`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -39,24 +39,21 @@
 - CloudSyncService
 - SpeechRecognizerService
 - AppState
-- main.cjs
-- CertificateModalView
-- CoPilotSidebarView
-- LivingCanvasView
-- View
-- GlassCard
+- CURIOFORGE: RESEARCH, SYSTEM DESIGN & ARCHITECTURE MASTER PLAN
 - SwiftUI
-- .speakCurrentStep
+- View
+- LivingCanvasView
+- .sendStudentMessage
+- GlassCard
+- SimulationState
+- CameraScannerView
 - SettingsView
 - Package.swift
 - .speak
 - 6. Core User Journeys
 - APIClient
-- package.json
-- build
-- mac
-- devDependencies
-- SimulationState
+- SiriOrbView
+- 1. Time Budget and Priorities
 
 ## God Nodes (most connected - your core abstractions)
 1. `AppState` - 54 edges
@@ -85,7 +82,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (44 total, 10 thin omitted)
+## Communities (41 total, 12 thin omitted)
 
 ### Community 0 - "client/package.json"
 Cohesion: 0.07
@@ -93,7 +90,7 @@ Nodes (28): dependencies, lucide-react, react, react-dom, react-router-dom, thre
 
 ### Community 1 - "CURIOFORGE — Design System"
 Cohesion: 0.08
-Nodes (24): 10. Inputs and Forms, 11. Shell Chrome and Navigation, 12. Activity Home Cards, 13. Voice and Camera Interaction, 14. ActivityPlan Presentation (ActivityProgram interpreter), 15. Living Canvas Interface, 16. Parent/Teacher Gate, 17. Responsive and Platform Rules (+16 more)
+Nodes (23): 10. Inputs and Forms, 11. Shell Chrome and Navigation, 12. Activity Home Cards, 14. ActivityPlan Presentation (ActivityProgram interpreter), 15. Living Canvas Interface, 16. Parent/Teacher Gate, 17. Responsive and Platform Rules, 18. Accessibility and Contrast Requirements (+15 more)
 
 ### Community 2 - "CURIOFORGE"
 Cohesion: 0.06
@@ -120,16 +117,16 @@ Cohesion: 0.12
 Nodes (15): Approach A: Web Speech API + Gemini Vision (Two calls), Approach B: Gemini 2.0 Flash Multimodal — Recommended, Approaches Considered, Architecture Delta from Existing Docs, Core User Flow (MVP), Design: CurioForge — Voice & Image AI Companion for Primary Students, Next Steps (Build Order), Open Questions (+7 more)
 
 ### Community 8 - "CURIOFORGE — Implementation Roadmap (demo-slice-first plan)"
-Cohesion: 0.14
-Nodes (13): 1. Time Budget and Priorities, Checkpoints, CURIOFORGE — Implementation Roadmap (demo-slice-first plan), Cut line (if behind schedule), Phase 0 — Docs, Contracts and Core Foundation (≈2.0 h) · Mandatory, Phase 1 — SwiftUI macOS Demo Slice (≈5.0 h) · Mandatory / LIVE, Phase 2 — Android + PWA Shells (≈2.0 h) · Planned / Scaffold at demo, Phase 3 — Full Interaction Set (≈2.5 h) · Planned (+5 more)
+Cohesion: 0.17
+Nodes (11): CURIOFORGE — Implementation Roadmap (demo-slice-first plan), Phase 0 — Docs, Contracts and Core Foundation (≈2.0 h) · Mandatory, Phase 1 — SwiftUI macOS Demo Slice (≈5.0 h) · Mandatory / LIVE, Phase 2 — Android + PWA Shells (≈2.0 h) · Planned / Scaffold at demo, Phase 3 — Full Interaction Set (≈2.5 h) · Planned, Phase 4 — Multilingual Prompts + TTS (≈1.0 h) · Planned, Phase 5 — Full Parent/Teacher Dashboard (≈1.0 h) · Planned, Phase 6 — Textbook Intelligence and PDF Support (≈2.0 h) · Postponed / Extended (+3 more)
 
 ### Community 9 - "scripts"
-Cohesion: 0.15
-Nodes (13): scripts, build, dev, dev:client, dev:server, install:all, macos, macos:dev (+5 more)
+Cohesion: 0.04
+Nodes (45): { app, BrowserWindow, systemPreferences, session }, createWindow(), http, path, waitForServer(), check(), retry(), build (+37 more)
 
 ### Community 10 - "CURIOFORGE — Rules for AI Coding Agents"
 Cohesion: 0.15
-Nodes (12): 0. Document Precedence, 10. Definition of Done (per phase), 11. Required Report Format after Each Work Session, 1. Agent Workflow Rules, 2. Coding Rules, 3. Architecture Rules, 4. Dependency Rules, 6. Security Rules (+4 more)
+Nodes (12): 0. Document Precedence, 10. Definition of Done (per phase), 11. Required Report Format after Each Work Session, 1. Agent Workflow Rules, 2. Coding Rules, 3. Architecture Rules, 4. Dependency Rules, 5. AI Behaviour Rules (what the *product's* AI must do) (+4 more)
 
 ### Community 11 - "2. Feature Breakdown: The 5 Core Pillars"
 Cohesion: 0.18
@@ -168,36 +165,28 @@ Cohesion: 0.09
 Nodes (4): SpeechRecognizerService, SpeechSynthesizerService, AVFoundation, Speech
 
 ### Community 24 - "AppState"
-Cohesion: 0.17
-Nodes (3): AppState, CameraScannerView, .body
+Cohesion: 0.21
+Nodes (4): AppState, steps, StepByStepPlayerView, .body
 
-### Community 25 - "main.cjs"
-Cohesion: 0.20
-Nodes (8): { app, BrowserWindow, systemPreferences, session }, createWindow(), http, path, waitForServer(), check(), retry(), electron
+### Community 25 - "CURIOFORGE: RESEARCH, SYSTEM DESIGN & ARCHITECTURE MASTER PLAN"
+Cohesion: 0.06
+Nodes (34): 1.1 The Failure of Current "Kids' AI", 1.2 The Competitive Landscape & The "Uncontested Wedge", 1.3 The "Closed Physical Build Loop", 1. THE PROBLEM & MARKET OPPORTUNITY, 2.1 The Architectural Master Thesis: "Shared Core + Declarative Bytecode + Thin Shells", 2.2 Why This Means Infinite Scalability ("Run Anywhere"), 2. SYSTEM ARCHITECTURE & SYSTEM DESIGN, 3.1 The Schema & Block Types (+26 more)
 
-### Community 26 - "CertificateModalView"
-Cohesion: 0.14
-Nodes (6): CurioforgeApp, .body, CertificateModalView, .body, MainView, .body
+### Community 26 - "SwiftUI"
+Cohesion: 0.12
+Nodes (8): CurioforgeApp, .body, CertificateModalView, .body, MainView, .body, CinemaStageView, SwiftUI
 
-### Community 27 - "CoPilotSidebarView"
+### Community 27 - "View"
+Cohesion: 0.21
+Nodes (6): CoPilotSidebarView, .body, CuriosityFeedView, .body, SafetyBadgeView, .body
+
+### Community 32 - "CameraScannerView"
 Cohesion: 0.15
-Nodes (6): CoPilotSidebarView, .body, SafetyBadgeView, .body, SiriOrbView, .body
-
-### Community 29 - "View"
-Cohesion: 0.22
-Nodes (4): CuriosityFeedView, .body, SocraticChatView, .body
-
-### Community 31 - "SwiftUI"
-Cohesion: 0.20
-Nodes (5): ChapterScrubberView, CinemaStageView, .body, StepByStepPlayerView, SwiftUI
-
-### Community 32 - ".speakCurrentStep"
-Cohesion: 0.43
-Nodes (3): steps, .body, .body
+Nodes (5): CameraScannerView, .body, ChapterScrubberView, .body, .body
 
 ### Community 36 - ".speak"
 Cohesion: 0.25
-Nodes (6): Phase 4 — Multilingual Prompts + TTS (≈1.0 h) · Planned, 12. Accessibility Requirements, 14. Acceptance Criteria for MVP Features, 4. Proposed Solution, 7. Functional Requirements, 5. AI Behaviour Rules (what the *product's* AI must do)
+Nodes (6): 13. Voice and Camera Interaction, 12. Accessibility Requirements, 14. Acceptance Criteria for MVP Features, 4. Proposed Solution, 7. Functional Requirements, 9. Things to Avoid
 
 ### Community 37 - "6. Core User Journeys"
 Cohesion: 0.33
@@ -207,41 +196,29 @@ Nodes (6): 6. Core User Journeys, J1 — "Make something that fizzes" (primary d
 Cohesion: 0.21
 Nodes (6): APIClient, 4.1 macOS shell (live demo), 4.2 Android shell (`[PHASE 2]` scaffold), 4.3 PWA shell (`[PHASE 2]` scaffold), 4.4 Parent/teacher view, 4. Platform Shell Architecture
 
-### Community 39 - "package.json"
-Cohesion: 0.25
-Nodes (7): description, main, name, private, version, concurrently, electron-builder
-
-### Community 40 - "build"
-Cohesion: 0.29
-Nodes (7): build, appId, asar, directories, files, productName, output
-
-### Community 41 - "mac"
-Cohesion: 0.33
-Nodes (6): mac, NSCameraUsageDescription, NSMicrophoneUsageDescription, category, extendInfo, target
-
-### Community 42 - "devDependencies"
-Cohesion: 0.50
-Nodes (4): devDependencies, concurrently, electron, electron-builder
+### Community 50 - "1. Time Budget and Priorities"
+Cohesion: 0.67
+Nodes (3): 1. Time Budget and Priorities, Checkpoints, Cut line (if behind schedule)
 
 ## Knowledge Gaps
-- **274 isolated node(s):** `PackageDescription`, `CoreGraphics`, `.normalizedRect`, `Combine`, `scanner` (+269 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 330 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **298 isolated node(s):** `PackageDescription`, `CoreGraphics`, `.normalizedRect`, `Combine`, `scanner` (+293 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 355 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `5. Backend Architecture` connect `app.js` to `.speak`, `CURIOFORGE — Architecture`?**
-  _High betweenness centrality (0.278) - this node is a cross-community bridge._
-- **Why does `CURIOFORGE — Design System` connect `CURIOFORGE — Design System` to `InteractiveTutorView.jsx`?**
-  _High betweenness centrality (0.218) - this node is a cross-community bridge._
-- **Why does `AppState` connect `AppState` to `.speakCurrentStep`, `SettingsView`, `SimulationState`, `SocraticMessage`, `CloudSyncService`, `SpeechRecognizerService`, `CertificateModalView`, `CoPilotSidebarView`, `LivingCanvasView`, `View`, `SwiftUI`?**
-  _High betweenness centrality (0.185) - this node is a cross-community bridge._
+  _High betweenness centrality (0.272) - this node is a cross-community bridge._
+- **Why does `CURIOFORGE — Design System` connect `CURIOFORGE — Design System` to `.speak`, `InteractiveTutorView.jsx`?**
+  _High betweenness centrality (0.211) - this node is a cross-community bridge._
+- **Why does `AppState` connect `AppState` to `CameraScannerView`, `SettingsView`, `SocraticMessage`, `SiriOrbView`, `CloudSyncService`, `SpeechRecognizerService`, `SwiftUI`, `View`, `LivingCanvasView`, `.sendStudentMessage`, `SimulationState`?**
+  _High betweenness centrality (0.178) - this node is a cross-community bridge._
 - **Are the 4 inferred relationships involving `AppState` (e.g. with `MainView` and `.body`) actually correct?**
   _`AppState` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 6 inferred relationships involving `SocraticMessage` (e.g. with `.nextStep()` and `.runSimulation()`) actually correct?**
   _`SocraticMessage` has 6 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `PackageDescription`, `CoreGraphics`, `.normalizedRect` to the rest of the system?**
-  _274 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _298 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `client/package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._

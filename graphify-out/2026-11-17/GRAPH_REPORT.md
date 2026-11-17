@@ -1,17 +1,17 @@
 # Graph Report - STEM2  (2026-11-17)
 
 ## Corpus Check
-- 86 files · ~45,612 words
+- 87 files · ~47,398 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 6 file(s) not represented in the graph (top: (none) 3, .plist 1, .css 1)
 
 ## Summary
-- 658 nodes · 1074 edges · 46 communities (36 shown, 10 thin omitted)
-- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 81 edges (avg confidence: 0.86)
+- 666 nodes · 1102 edges · 51 communities (40 shown, 11 thin omitted)
+- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 81 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `349433d7`
+- Built from commit: `b3149927`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,28 +36,33 @@
 - workflows/graphify.md
 - Design: CurioForge — Voice-First Activity Companion (Unified Plan)
 - server/package.json
-- CloudSyncService
 - SpeechRecognizerService
+- SpeechSynthesizerService
 - AppState
-- routes/tutor.js
-- CertificateModalView
-- CoPilotSidebarView
-- LivingCanvasView
-- View
-- GlassCard
+- main.cjs
 - SwiftUI
-- .speakCurrentStep
+- View
+- LivingCanvasView
+- .sendStudentMessage
+- GlassCard
+- CinemaStageView
+- CameraScannerView
 - SettingsView
 - Package.swift
 - .speak
 - 6. Core User Journeys
 - APIClient
+- package.json
+- build
+- mac
+- devDependencies
+- routes/tutor.js
 - routes/results.js
 - routes/weather.js
 - routes/blueprint.js
 - routes/curiosity.js
 - shared.js
-- SimulationState
+- SiriOrbView
 - 1. Time Budget and Priorities
 
 ## God Nodes (most connected - your core abstractions)
@@ -66,11 +71,11 @@
 3. `SocraticMessage` - 19 edges
 4. `CURIOFORGE — Product Requirements Document (PRD)` - 18 edges
 5. `SupportedLanguage` - 17 edges
-6. `ActivityPlan` - 16 edges
-7. `CURIOFORGE — Architecture` - 16 edges
-8. `react` - 15 edges
-9. `Design: CurioForge — Voice-First Activity Companion (Unified Plan)` - 15 edges
-10. `CURIOFORGE` - 15 edges
+6. `react` - 16 edges
+7. `ActivityPlan` - 16 edges
+8. `CURIOFORGE — Architecture` - 16 edges
+9. `Card()` - 15 edges
+10. `Design: CurioForge — Voice-First Activity Companion (Unified Plan)` - 15 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `19. Reusable Component Guidelines` --references--> `Chip()`  [INFERRED]
@@ -87,11 +92,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (46 total, 10 thin omitted)
+## Communities (51 total, 11 thin omitted)
 
 ### Community 0 - "client/package.json"
 Cohesion: 0.07
-Nodes (26): dependencies, lucide-react, react, react-dom, react-router-dom, devDependencies, autoprefixer, postcss (+18 more)
+Nodes (28): dependencies, lucide-react, react, react-dom, react-router-dom, three, devDependencies, autoprefixer (+20 more)
 
 ### Community 1 - "CURIOFORGE — Design System"
 Cohesion: 0.09
@@ -126,8 +131,8 @@ Cohesion: 0.17
 Nodes (11): CURIOFORGE — Implementation Roadmap (demo-slice-first plan), Phase 0 — Docs, Contracts and Core Foundation (≈2.0 h) · Mandatory, Phase 1 — SwiftUI macOS Demo Slice (≈5.0 h) · Mandatory / LIVE, Phase 2 — Android + PWA Shells (≈2.0 h) · Planned / Scaffold at demo, Phase 3 — Full Interaction Set (≈2.5 h) · Planned, Phase 4 — Multilingual Prompts + TTS (≈1.0 h) · Planned, Phase 5 — Full Parent/Teacher Dashboard (≈1.0 h) · Planned, Phase 6 — Textbook Intelligence and PDF Support (≈2.0 h) · Postponed / Extended (+3 more)
 
 ### Community 9 - "scripts"
-Cohesion: 0.04
-Nodes (42): { app, BrowserWindow, systemPreferences, session }, createWindow(), http, path, waitForServer(), check(), retry(), build (+34 more)
+Cohesion: 0.15
+Nodes (13): scripts, build, dev, dev:client, dev:server, install:all, macos, macos:dev (+5 more)
 
 ### Community 10 - "CURIOFORGE — Rules for AI Coding Agents"
 Cohesion: 0.15
@@ -139,11 +144,11 @@ Nodes (10): 1. Vision & Core Value Proposition, 2. Feature Breakdown: The 5 Core
 
 ### Community 12 - "InteractiveTutorView.jsx"
 Cohesion: 0.13
-Nodes (29): App(), InteractiveCanvas(), AVATARS, GRADE_OPTIONS, LANGUAGES, ProfileModal(), SessionDrawer(), Button() (+21 more)
+Nodes (31): App(), InteractiveCanvas(), ThreeDLabCanvas(), AVATARS, GRADE_OPTIONS, LANGUAGES, ProfileModal(), SessionDrawer() (+23 more)
 
 ### Community 13 - "SocraticMessage"
-Cohesion: 0.07
-Nodes (35): ActivityPlan, ActivityStep, PredictionOption, PredictionQuestion, ScienceConcept, ScrapItem, .normalizedRect, StageMode (+27 more)
+Cohesion: 0.08
+Nodes (33): ActivityPlan, ActivityStep, PredictionOption, PredictionQuestion, ScienceConcept, ScrapItem, .normalizedRect, StageMode (+25 more)
 
 ### Community 14 - "CURIOFORGE"
 Cohesion: 0.50
@@ -161,41 +166,37 @@ Nodes (18): 10. Setup Scope (planned, not yet built), 11. Build Phases, 12. Succ
 Cohesion: 0.11
 Nodes (17): cors, nodemon, dependencies, cors, dotenv, express, express-rate-limit, zod (+9 more)
 
-### Community 22 - "CloudSyncService"
-Cohesion: 0.24
-Nodes (3): CloudSyncService, StudentProfile, .verificationView
+### Community 22 - "SpeechRecognizerService"
+Cohesion: 0.11
+Nodes (4): CloudSyncService, StudentProfile, SpeechRecognizerService, .verificationView
 
-### Community 23 - "SpeechRecognizerService"
-Cohesion: 0.09
-Nodes (4): SpeechRecognizerService, SpeechSynthesizerService, AVFoundation, Speech
+### Community 23 - "SpeechSynthesizerService"
+Cohesion: 0.11
+Nodes (5): SimulationState, SpeechSynthesizerService, AVFoundation, Foundation, Speech
 
 ### Community 24 - "AppState"
-Cohesion: 0.17
-Nodes (3): AppState, CameraScannerView, .body
-
-### Community 25 - "routes/tutor.js"
-Cohesion: 0.31
-Nodes (6): buildTutorSystemPrompt(), router, tutorRequestSchema, tutorResponseSchema, generateGeminiJson(), cleanAndParseJson()
-
-### Community 26 - "CertificateModalView"
-Cohesion: 0.14
-Nodes (6): CurioforgeApp, .body, CertificateModalView, .body, MainView, .body
-
-### Community 27 - "CoPilotSidebarView"
-Cohesion: 0.15
-Nodes (6): CoPilotSidebarView, .body, SafetyBadgeView, .body, SiriOrbView, .body
-
-### Community 29 - "View"
-Cohesion: 0.22
-Nodes (4): CuriosityFeedView, .body, SocraticChatView, .body
-
-### Community 31 - "SwiftUI"
 Cohesion: 0.20
-Nodes (5): ChapterScrubberView, CinemaStageView, .body, StepByStepPlayerView, SwiftUI
+Nodes (4): AppState, steps, StepByStepPlayerView, .body
 
-### Community 32 - ".speakCurrentStep"
-Cohesion: 0.43
-Nodes (3): steps, .body, .body
+### Community 25 - "main.cjs"
+Cohesion: 0.20
+Nodes (8): { app, BrowserWindow, systemPreferences, session }, createWindow(), http, path, waitForServer(), check(), retry(), electron
+
+### Community 26 - "SwiftUI"
+Cohesion: 0.12
+Nodes (8): CurioforgeApp, .body, CertificateModalView, .body, MainView, .body, Combine, SwiftUI
+
+### Community 27 - "View"
+Cohesion: 0.21
+Nodes (6): CoPilotSidebarView, .body, CuriosityFeedView, .body, SafetyBadgeView, .body
+
+### Community 31 - "CinemaStageView"
+Cohesion: 0.29
+Nodes (3): ChapterScrubberView, CinemaStageView, .body
+
+### Community 32 - "CameraScannerView"
+Cohesion: 0.20
+Nodes (3): CameraScannerView, .body, .body
 
 ### Community 36 - ".speak"
 Cohesion: 0.22
@@ -209,49 +210,69 @@ Nodes (6): 6. Core User Journeys, J1 — "Make something that fizzes" (primary d
 Cohesion: 0.21
 Nodes (6): APIClient, 4.1 macOS shell (live demo), 4.2 Android shell (`[PHASE 2]` scaffold), 4.3 PWA shell (`[PHASE 2]` scaffold), 4.4 Parent/teacher view, 4. Platform Shell Architecture
 
-### Community 39 - "routes/results.js"
-Cohesion: 0.36
-Nodes (5): 5. Backend Architecture, validate(), router, resultsRequestSchema, resultsResponseSchema
+### Community 39 - "package.json"
+Cohesion: 0.25
+Nodes (7): description, main, name, private, version, concurrently, electron-builder
 
-### Community 40 - "routes/weather.js"
+### Community 40 - "build"
+Cohesion: 0.29
+Nodes (7): build, appId, asar, directories, files, productName, output
+
+### Community 41 - "mac"
+Cohesion: 0.33
+Nodes (6): mac, NSCameraUsageDescription, NSMicrophoneUsageDescription, category, extendInfo, target
+
+### Community 42 - "devDependencies"
+Cohesion: 0.50
+Nodes (4): devDependencies, concurrently, electron, electron-builder
+
+### Community 43 - "routes/tutor.js"
+Cohesion: 0.29
+Nodes (6): buildTutorSystemPrompt(), router, tutorRequestSchema, tutorResponseSchema, generateGeminiJson(), cleanAndParseJson()
+
+### Community 44 - "routes/results.js"
+Cohesion: 0.31
+Nodes (6): express-rate-limit, aiLimiter, apiLimiter, router, resultsRequestSchema, resultsResponseSchema
+
+### Community 45 - "routes/weather.js"
 Cohesion: 0.33
 Nodes (6): router, forecastQuerySchema, geocodeQuerySchema, cache, geocodeCity(), getForecast()
 
-### Community 41 - "routes/blueprint.js"
-Cohesion: 0.31
-Nodes (6): express-rate-limit, aiLimiter, apiLimiter, router, blueprintRequestSchema, blueprintResponseSchema
+### Community 46 - "routes/blueprint.js"
+Cohesion: 0.36
+Nodes (5): 5. Backend Architecture, validate(), router, blueprintRequestSchema, blueprintResponseSchema
 
-### Community 42 - "routes/curiosity.js"
+### Community 47 - "routes/curiosity.js"
 Cohesion: 0.36
 Nodes (5): zod, buildCuriositySystemPrompt(), router, curiosityRequestSchema, curiosityResponseSchema
 
-### Community 43 - "shared.js"
-Cohesion: 0.43
+### Community 48 - "shared.js"
+Cohesion: 0.47
 Nodes (3): buildBlueprintSystemPrompt(), buildResultsSystemPrompt(), BASE_SAFETY_INSTRUCTIONS
 
-### Community 45 - "1. Time Budget and Priorities"
+### Community 50 - "1. Time Budget and Priorities"
 Cohesion: 0.67
 Nodes (3): 1. Time Budget and Priorities, Checkpoints, Cut line (if behind schedule)
 
 ## Knowledge Gaps
-- **281 isolated node(s):** `AVATARS`, `GRADE_OPTIONS`, `LANGUAGES`, `{ app, BrowserWindow, systemPreferences, session }`, `path` (+276 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 336 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **276 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+271 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 331 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `5. Backend Architecture` connect `routes/results.js` to `.speak`, `app.js`, `CURIOFORGE — Architecture`?**
-  _High betweenness centrality (0.277) - this node is a cross-community bridge._
+- **Why does `5. Backend Architecture` connect `routes/blueprint.js` to `.speak`, `app.js`, `CURIOFORGE — Architecture`?**
+  _High betweenness centrality (0.279) - this node is a cross-community bridge._
 - **Why does `CURIOFORGE — Design System` connect `CURIOFORGE — Design System` to `.speak`, `InteractiveTutorView.jsx`?**
-  _High betweenness centrality (0.212) - this node is a cross-community bridge._
-- **Why does `AppState` connect `AppState` to `.speakCurrentStep`, `SettingsView`, `SimulationState`, `SocraticMessage`, `CloudSyncService`, `SpeechRecognizerService`, `CertificateModalView`, `CoPilotSidebarView`, `LivingCanvasView`, `View`, `SwiftUI`?**
-  _High betweenness centrality (0.187) - this node is a cross-community bridge._
+  _High betweenness centrality (0.219) - this node is a cross-community bridge._
+- **Why does `AppState` connect `AppState` to `CameraScannerView`, `SettingsView`, `SocraticMessage`, `SiriOrbView`, `SpeechRecognizerService`, `SpeechSynthesizerService`, `SwiftUI`, `View`, `LivingCanvasView`, `.sendStudentMessage`, `CinemaStageView`?**
+  _High betweenness centrality (0.185) - this node is a cross-community bridge._
 - **Are the 4 inferred relationships involving `AppState` (e.g. with `MainView` and `.body`) actually correct?**
   _`AppState` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 6 inferred relationships involving `SocraticMessage` (e.g. with `.nextStep()` and `.runSimulation()`) actually correct?**
   _`SocraticMessage` has 6 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `AVATARS`, `GRADE_OPTIONS`, `LANGUAGES` to the rest of the system?**
-  _281 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `name`, `private`, `version` to the rest of the system?**
+  _276 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `client/package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._

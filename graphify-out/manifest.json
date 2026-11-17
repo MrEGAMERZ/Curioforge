@@ -156,9 +156,9 @@
     "semantic_hash": ""
   },
   "client/src/features/tutor/InteractiveTutorView.jsx": {
-    "mtime": 1794925302.3638065,
-    "seen": 1794925735.859166,
-    "ast_hash": "e6c18084fe3d37edafd6bcb80a1db32f",
+    "mtime": 1794926382.1285021,
+    "seen": 1794926533.9784598,
+    "ast_hash": "3c254f51c85dd403362736b42ab59dd8",
     "semantic_hash": ""
   },
   "client/src/hooks/useLocalStorage.js": {
@@ -525,6 +525,24 @@
     "mtime": 1794925164.452832,
     "seen": 1794925735.8591628,
     "ast_hash": "485acd4610b68efa09eb01955d5959f7",
+    "semantic_hash": ""
+  },
+  "CURIOFORGE_RESEARCH_AND_ARCHITECTURE_DOCUMENT.md": {
+    "mtime": 1794926333.714466,
+    "seen": 1794926533.978476,
+    "ast_hash": "ba128a5f1cfb73e223189b4f53ed2891",
+    "semantic_hash": ""
+  },
+  "client/public/voices/linus_preview.mp3": {
+    "mtime": 1794926259.1114671,
+    "seen": 1794926533.9784808,
+    "ast_hash": "5e44c4a3a3023e1e2eadece8ea0d4755",
+    "semantic_hash": ""
+  },
+  "client/public/voices/linus_tech_mentor.mp3": {
+    "mtime": 1794926159.793003,
+    "seen": 1794926533.9784808,
+    "ast_hash": "75c117a4c365ec21a525b0f182e81644",
     "semantic_hash": ""
   }
 }

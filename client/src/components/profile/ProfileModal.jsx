@@ -1,74 +1,75 @@
 import React, { useState } from 'react';
-import { Card } from '../ui/Card';
-import { Button } from '../ui/Button';
 import { useSpeechOutput } from '../../hooks/useSpeechOutput';
 import {
   User,
-  Award,
-  Star,
   X,
-  Sparkles,
   Volume2,
   ShieldCheck,
   Check,
-  Sliders,
   GraduationCap,
+  Trash2,
+  Mic,
 } from 'lucide-react';
 
 const AVATARS = [
-  { id: 'rocket', emoji: '🚀', label: 'Space Explorer' },
-  { id: 'dino', emoji: '🦖', label: 'Dino Scientist' },
-  { id: 'chemistry', emoji: '🧪', label: 'Chemistry Wizard' },
-  { id: 'nature', emoji: '🌱', label: 'Nature Ranger' },
-  { id: 'robot', emoji: '🤖', label: 'Robot Builder' },
-  { id: 'star', emoji: '⭐', label: 'Star Astronomer' },
+  { emoji: '🚀', label: 'Space Explorer' },
+  { emoji: '🦖', label: 'Dino Scientist' },
+  { emoji: '🧪', label: 'Chemistry Wizard' },
+  { emoji: '🌱', label: 'Nature Ranger' },
+  { emoji: '🤖', label: 'Robot Builder' },
+  { emoji: '⭐', label: 'Star Astronomer' },
+  { emoji: '🦋', label: 'Bio Explorer' },
+  { emoji: '🔭', label: 'Astronomer' },
 ];
 
 const GRADE_OPTIONS = [
-  { id: 'kindergarten', label: '🧸 Kindergarten / Early Years (Ages 4–5)', desc: 'Wonder-filled stories, huge ideas, zero big words' },
-  { id: 'primary', label: '🎒 Primary School (Grades 1–5, Ages 6–10)', desc: 'Curious, playful analogies, hands-on kitchen experiments' },
-  { id: '6-8', label: '📚 Middle School (Grades 6–8, Ages 11–13)', desc: 'Real STEM terms, molecules, circuits, and cause & effect' },
-  { id: '9-12', label: '🔬 High School (Grades 9–12, Ages 14–18)', desc: 'Chemical formulas, physical principles, engineering depth' },
+  { id: 'kindergarten', label: '🧸 Kindergarten', desc: 'Ages 4–5 · Big ideas, simple words', numbers: [] },
+  { id: 'primary', label: '🎒 Primary School', desc: 'Ages 6–10 · Curious hands-on experiments', numbers: [1, 2, 3, 4, 5] },
+  { id: '6-8', label: '📚 Middle School', desc: 'Ages 11–13 · Real STEM terms', numbers: [6, 7, 8] },
+  { id: '9-12', label: '🔬 High School', desc: 'Ages 14–18 · Deep science principles', numbers: [9, 10, 11, 12] },
 ];
 
 const LANGUAGES = [
   { code: 'en-US', label: '🇺🇸 English (US)' },
   { code: 'en-IN', label: '🇮🇳 English (India)' },
-  { code: 'hi-IN', label: '🇮🇳 Hindi (हिन्दी)' },
-  { code: 'es-ES', label: '🇪🇸 Spanish (Español)' },
-  { code: 'fr-FR', label: '🇫🇷 French (Français)' },
-  { code: 'de-DE', label: '🇩🇪 German (Deutsch)' },
+  { code: 'hi-IN', label: '🇮🇳 Hindi' },
+  { code: 'es-ES', label: '🇪🇸 Spanish' },
+  { code: 'fr-FR', label: '🇫🇷 French' },
+  { code: 'de-DE', label: '🇩🇪 German' },
+  { code: 'ar-SA', label: '🇸🇦 Arabic' },
+  { code: 'zh-CN', label: '🇨🇳 Chinese' },
 ];
 
 export function ProfileModal({ isOpen, onClose, profile, onSaveProfile, onClearHistory }) {
-  const [nickname, setNickname] = useState(profile?.nickname || 'Aarav');
+  const [nickname, setNickname] = useState(profile?.nickname || 'Leo');
   const [avatar, setAvatar] = useState(profile?.avatar || '🚀');
   const [gradeBand, setGradeBand] = useState(profile?.gradeBand || 'primary');
+  const [gradeNumber, setGradeNumber] = useState(profile?.gradeNumber || 3);
   const [language, setLanguage] = useState(profile?.language || 'en-US');
-  const [speechRate, setSpeechRate] = useState(profile?.speechRate || 1.0);
-  const [speechPitch, setSpeechPitch] = useState(profile?.speechPitch || 1.1);
+  const [speechRate, setSpeechRate] = useState(profile?.speechRate || 0.85);
   const [autoSpeak, setAutoSpeak] = useState(profile?.autoSpeak !== false);
-  const [favoriteTheme, setFavoriteTheme] = useState(profile?.favoriteTheme || 'chemistry');
-  const [activeTab, setActiveTab] = useState('account'); // 'account' | 'voice' | 'safety'
+  const [activeTab, setActiveTab] = useState('account');
 
-  const { speak, stop, isSpeaking } = useSpeechOutput();
+  const { speak, stop } = useSpeechOutput();
 
   if (!isOpen) return null;
+
+  const selectedGrade = GRADE_OPTIONS.find((g) => g.id === gradeBand);
 
   const handleTestVoice = () => {
     stop();
     const testLines = {
-      'en-US': `Hey ${nickname || 'Explorer'}! I am your CurioForge tutor. What science adventure are we starting today?`,
-      'en-IN': `Namaste ${nickname || 'Explorer'}! I am your CurioForge science buddy. Let's make an awesome experiment!`,
-      'hi-IN': `नमस्ते ${nickname || 'दोस्त'}! मैं आपका विज्ञान मित्र हूँ। आज क्या नया सीखें?`,
-      'es-ES': `¡Hola ${nickname || 'amigo'}! Soy tu tutor de ciencias en CurioForge. ¡Vamos a experimentar!`,
-      'fr-FR': `Salut ${nickname || 'ami'}! Je suis ton tuteur CurioForge. Prêt pour une aventure scientifique?`,
-      'de-DE': `Hallo ${nickname || 'Freund'}! Ich bin dein CurioForge Tutor. Bereit für ein Experiment?`,
+      'en-US': `Hey ${nickname || 'Explorer'}! I'm your Curioforge guide. What shall we discover today?`,
+      'en-IN': `Namaste ${nickname || 'Explorer'}! I'm your Curioforge science buddy!`,
+      'hi-IN': `नमस्ते ${nickname || 'दोस्त'}! मैं आपका विज्ञान मित्र हूँ।`,
+      'es-ES': `¡Hola ${nickname || 'amigo'}! ¡Soy tu guía de Curioforge!`,
+      'fr-FR': `Salut ${nickname || 'ami'}! Je suis ton guide Curioforge!`,
+      'de-DE': `Hallo ${nickname || 'Freund'}! Ich bin dein Curioforge-Tutor!`,
     };
     speak(testLines[language] || testLines['en-US'], {
       lang: language,
       rate: speechRate,
-      pitch: speechPitch,
+      pitch: 1.1,
     });
   };
 
@@ -79,365 +80,288 @@ export function ProfileModal({ isOpen, onClose, profile, onSaveProfile, onClearH
       nickname: nickname.trim() || 'Explorer',
       avatar,
       gradeBand,
+      gradeNumber,
       language,
       speechRate,
-      speechPitch,
       autoSpeak,
-      favoriteTheme,
     });
     onClose();
   };
 
-  const badges = profile?.badges || [
-    { title: '🌋 Magma Master', desc: 'Explored volcanic chemical reactions' },
-    { title: '💧 Water Guardian', desc: 'Simulated smart irrigation' },
-    { title: '⚡ Circuit Spark', desc: 'Tested household conductors' },
+  const tabs = [
+    { id: 'account', label: 'Account', icon: User },
+    { id: 'voice', label: 'Voice & Language', icon: Volume2 },
+    { id: 'safety', label: 'Privacy', icon: ShieldCheck },
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-bg-deep/80 backdrop-blur-md animate-fadeIn">
-      <Card className="w-full max-w-lg bg-surface border-primary-500/40 shadow-elevated relative flex flex-col max-h-[90vh] overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 backdrop-blur-sm">
+      <div className="w-full max-w-lg bg-white rounded-3xl border border-curio-border shadow-elevated flex flex-col max-h-[88vh] overflow-hidden">
+
         {/* Header */}
-        <div className="flex items-center justify-between p-5 border-b border-line-subtle bg-surface-raised/40">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-primary-600 to-accent-500 flex items-center justify-center text-xl shadow-md">
-              {avatar}
-            </div>
-            <div>
-              <h3 className="font-bold text-base text-ink-primary font-display flex items-center gap-2">
-                <span>Account & Personalization</span>
-              </h3>
-              <p className="text-xs text-ink-muted">Set student grade, name, and tutor voice</p>
-            </div>
+        <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-curio-border">
+          <div>
+            <h2 className="text-lg font-bold text-curio-text">Settings & Profile</h2>
+            <p className="text-xs text-curio-text-muted">Personalize your learning experience</p>
           </div>
           <button
-            onClick={() => {
-              stop();
-              onClose();
-            }}
-            className="p-1.5 text-ink-muted hover:text-ink-primary rounded-lg hover:bg-surface-raised transition-colors"
+            onClick={onClose}
+            className="w-8 h-8 rounded-full bg-curio-bg-alt flex items-center justify-center hover:bg-red-50 hover:text-curio-red text-curio-text-muted transition-colors"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="flex border-b border-line-subtle px-5 bg-surface-raised/20 text-xs">
-          <button
-            onClick={() => setActiveTab('account')}
-            className={`py-2.5 px-3 font-medium border-b-2 transition-all flex items-center gap-1.5 ${
-              activeTab === 'account'
-                ? 'border-primary-500 text-primary-400'
-                : 'border-transparent text-ink-secondary hover:text-ink-primary'
-            }`}
-          >
-            <User className="w-3.5 h-3.5" />
-            <span>Student & Grade</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('voice')}
-            className={`py-2.5 px-3 font-medium border-b-2 transition-all flex items-center gap-1.5 ${
-              activeTab === 'voice'
-                ? 'border-primary-500 text-primary-400'
-                : 'border-transparent text-ink-secondary hover:text-ink-primary'
-            }`}
-          >
-            <Volume2 className="w-3.5 h-3.5" />
-            <span>Voice & Language</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('safety')}
-            className={`py-2.5 px-3 font-medium border-b-2 transition-all flex items-center gap-1.5 ${
-              activeTab === 'safety'
-                ? 'border-primary-500 text-primary-400'
-                : 'border-transparent text-ink-secondary hover:text-ink-primary'
-            }`}
-          >
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Safety & Themes</span>
-          </button>
+        {/* Tab bar */}
+        <div className="flex border-b border-curio-border px-4">
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center gap-1.5 px-4 py-3 text-sm font-medium border-b-2 transition-all -mb-px ${
+                  activeTab === tab.id
+                    ? 'border-curio-blue text-curio-blue'
+                    : 'border-transparent text-curio-text-muted hover:text-curio-text'
+                }`}
+              >
+                <Icon className="w-3.5 h-3.5" />
+                {tab.label}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Content Body */}
-        <div className="p-5 overflow-y-auto space-y-4 flex-1">
+        {/* Tab content */}
+        <div className="flex-1 overflow-y-auto p-6 space-y-6">
+
+          {/* ── Account Tab ── */}
           {activeTab === 'account' && (
-            <div className="space-y-4 animate-fadeIn">
-              {/* Nickname Input */}
-              <div>
-                <label className="text-xs font-semibold text-ink-secondary block mb-1.5">
-                  Student Name or Nickname
-                </label>
-                <input
-                  type="text"
-                  value={nickname}
-                  onChange={(e) => setNickname(e.target.value)}
-                  placeholder="e.g. Aarav, Maya, Leo..."
-                  className="w-full bg-surface-raised border border-line-subtle rounded-xl px-3.5 py-2.5 text-sm text-ink-primary focus:outline-none focus:border-primary-400 font-medium"
-                />
+            <>
+              {/* Avatar + Name */}
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-2xl bg-curio-blue-light flex items-center justify-center text-3xl border-2 border-curio-blue/20">
+                    {avatar}
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <label className="block text-xs font-semibold text-curio-text-muted uppercase tracking-wider mb-1.5">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    value={nickname}
+                    onChange={(e) => setNickname(e.target.value)}
+                    maxLength={20}
+                    placeholder="What should we call you?"
+                    className="w-full px-3.5 py-2.5 bg-curio-bg-alt border border-curio-border rounded-xl text-sm text-curio-text placeholder-curio-text-muted focus:outline-none focus:border-curio-blue focus:bg-white transition-colors"
+                  />
+                </div>
               </div>
 
-              {/* Avatar Selector */}
+              {/* Avatar picker */}
               <div>
-                <label className="text-xs font-semibold text-ink-secondary block mb-1.5">
-                  Choose Explorer Avatar
+                <label className="block text-xs font-semibold text-curio-text-muted uppercase tracking-wider mb-2">
+                  Choose Your Avatar
                 </label>
-                <div className="grid grid-cols-6 gap-2">
-                  {AVATARS.map((av) => (
+                <div className="grid grid-cols-4 gap-2">
+                  {AVATARS.map((a) => (
                     <button
-                      key={av.id}
-                      type="button"
-                      onClick={() => setAvatar(av.emoji)}
-                      className={`h-11 rounded-xl text-lg flex items-center justify-center border transition-all ${
-                        avatar === av.emoji
-                          ? 'bg-primary-600/30 border-primary-500 scale-105 shadow-glow'
-                          : 'bg-surface-raised border-line-subtle hover:border-line-strong'
+                      key={a.emoji}
+                      onClick={() => setAvatar(a.emoji)}
+                      className={`p-3 rounded-2xl border text-2xl transition-all hover:scale-105 ${
+                        avatar === a.emoji
+                          ? 'border-curio-blue bg-curio-blue-light ring-2 ring-curio-blue ring-offset-1'
+                          : 'border-curio-border bg-curio-bg-alt hover:border-curio-blue/50'
                       }`}
-                      title={av.label}
+                      title={a.label}
                     >
-                      {av.emoji}
+                      {a.emoji}
                     </button>
                   ))}
                 </div>
               </div>
 
-              {/* Grade Band Selector */}
+              {/* Grade level */}
               <div>
-                <label className="text-xs font-semibold text-ink-secondary flex items-center gap-1.5 mb-1.5">
-                  <GraduationCap className="w-4 h-4 text-primary-400" />
-                  <span>Which Grade is the Student in?</span>
+                <label className="block text-xs font-semibold text-curio-text-muted uppercase tracking-wider mb-2">
+                  <GraduationCap className="inline w-3.5 h-3.5 mr-1" />
+                  Grade Level
                 </label>
                 <div className="space-y-2">
-                  {GRADE_OPTIONS.map((opt) => (
-                    <label
-                      key={opt.id}
-                      onClick={() => setGradeBand(opt.id)}
-                      className={`flex items-start gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
-                        gradeBand === opt.id
-                          ? 'bg-primary-600/20 border-primary-500 shadow-glow'
-                          : 'bg-surface-raised border-line-subtle hover:bg-surface'
+                  {GRADE_OPTIONS.map((g) => (
+                    <button
+                      key={g.id}
+                      onClick={() => { setGradeBand(g.id); if (g.numbers[0]) setGradeNumber(g.numbers[0]); }}
+                      className={`w-full text-left p-3.5 rounded-2xl border transition-all ${
+                        gradeBand === g.id
+                          ? 'border-curio-blue bg-curio-blue-light'
+                          : 'border-curio-border bg-curio-bg-alt hover:border-curio-blue/40'
                       }`}
                     >
-                      <input
-                        type="radio"
-                        name="gradeBand"
-                        checked={gradeBand === opt.id}
-                        onChange={() => setGradeBand(opt.id)}
-                        className="mt-0.5 text-primary-500 focus:ring-primary-500"
-                      />
-                      <div className="space-y-0.5">
-                        <span className="text-xs font-semibold text-ink-primary block">{opt.label}</span>
-                        <p className="text-[11px] text-ink-muted leading-relaxed">{opt.desc}</p>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-sm font-semibold text-curio-text">{g.label}</p>
+                          <p className="text-xs text-curio-text-muted mt-0.5">{g.desc}</p>
+                        </div>
+                        {gradeBand === g.id && <Check className="w-4 h-4 text-curio-blue flex-shrink-0" />}
                       </div>
-                    </label>
+                    </button>
                   ))}
                 </div>
-              </div>
-            </div>
-          )}
 
-          {activeTab === 'voice' && (
-            <div className="space-y-4 animate-fadeIn">
-              {/* Language Selection */}
-              <div>
-                <label className="text-xs font-semibold text-ink-secondary block mb-1.5">
-                  Tutor Spoken Language
-                </label>
-                <select
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value)}
-                  className="w-full bg-surface-raised border border-line-subtle rounded-xl px-3.5 py-2.5 text-xs text-ink-primary focus:outline-none focus:border-primary-400"
-                >
-                  {LANGUAGES.map((l) => (
-                    <option key={l.code} value={l.code}>
-                      {l.label}
-                    </option>
-                  ))}
-                </select>
-                <p className="text-[11px] text-ink-muted mt-1">
-                  The AI answers in this language and speaks aloud using native speech synthesis.
-                </p>
+                {/* Grade number picker */}
+                {selectedGrade?.numbers?.length > 0 && (
+                  <div className="mt-3">
+                    <p className="text-xs text-curio-text-muted mb-2">Specific grade:</p>
+                    <div className="flex gap-2 flex-wrap">
+                      {selectedGrade.numbers.map((n) => (
+                        <button
+                          key={n}
+                          onClick={() => setGradeNumber(n)}
+                          className={`w-10 h-10 rounded-xl border text-sm font-semibold transition-all ${
+                            gradeNumber === n
+                              ? 'bg-curio-blue text-white border-curio-blue'
+                              : 'bg-curio-bg-alt border-curio-border text-curio-text hover:border-curio-blue'
+                          }`}
+                        >
+                          {n}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
-              {/* Speech Speed & Pitch */}
-              <div className="grid grid-cols-2 gap-3 pt-1">
-                <div>
-                  <div className="flex justify-between text-xs font-medium text-ink-secondary mb-1">
-                    <span>Voice Speed</span>
-                    <span className="font-mono text-primary-400">{speechRate.toFixed(2)}x</span>
-                  </div>
-                  <input
-                    type="range"
-                    min="0.75"
-                    max="1.25"
-                    step="0.05"
-                    value={speechRate}
-                    onChange={(e) => setSpeechRate(parseFloat(e.target.value))}
-                    className="w-full accent-primary-500"
-                  />
-                  <div className="flex justify-between text-[10px] text-ink-muted mt-0.5">
-                    <span>Gentle</span>
-                    <span>Brisk</span>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between text-xs font-medium text-ink-secondary mb-1">
-                    <span>Voice Pitch</span>
-                    <span className="font-mono text-primary-400">{speechPitch.toFixed(2)}</span>
-                  </div>
-                  <input
-                    type="range"
-                    min="0.8"
-                    max="1.3"
-                    step="0.05"
-                    value={speechPitch}
-                    onChange={(e) => setSpeechPitch(parseFloat(e.target.value))}
-                    className="w-full accent-primary-500"
-                  />
-                  <div className="flex justify-between text-[10px] text-ink-muted mt-0.5">
-                    <span>Deeper</span>
-                    <span>Playful</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Auto Speak Toggle */}
-              <div className="flex items-center justify-between p-3 rounded-xl bg-surface-raised border border-line-subtle">
-                <div>
-                  <span className="text-xs font-semibold text-ink-primary block">
-                    Auto-Speak Tutor Answers
-                  </span>
-                  <p className="text-[11px] text-ink-muted">
-                    Read the explanation aloud automatically when answering
-                  </p>
-                </div>
-                <input
-                  type="checkbox"
-                  checked={autoSpeak}
-                  onChange={(e) => setAutoSpeak(e.target.checked)}
-                  className="w-4 h-4 rounded text-primary-500 focus:ring-primary-500 accent-primary-500 cursor-pointer"
-                />
-              </div>
-
-              {/* Test Voice Button */}
-              <div className="pt-2">
+              {/* Danger zone */}
+              <div className="p-4 bg-red-50 border border-red-100 rounded-2xl">
+                <p className="text-xs font-semibold text-curio-red mb-2">Clear History</p>
+                <p className="text-xs text-curio-text-muted mb-3">This removes all your learning sessions. Can't be undone.</p>
                 <button
-                  type="button"
-                  onClick={handleTestVoice}
-                  className="w-full py-2.5 px-4 rounded-xl border border-primary-500/40 bg-primary-600/15 hover:bg-primary-600/25 text-primary-300 font-semibold text-xs flex items-center justify-center gap-2 transition-all"
+                  onClick={() => { if (confirm('Clear all history?')) { onClearHistory(); onClose(); } }}
+                  className="flex items-center gap-1.5 px-3 py-2 bg-white border border-red-200 rounded-xl text-xs text-curio-red font-medium hover:bg-red-50 transition-colors"
                 >
-                  <Volume2 className={`w-4 h-4 ${isSpeaking ? 'animate-bounce text-primary-400' : ''}`} />
-                  <span>{isSpeaking ? 'Speaking sample...' : '🔊 Test Tutor Voice Out Loud'}</span>
+                  <Trash2 className="w-3.5 h-3.5" />
+                  Clear all sessions
                 </button>
               </div>
-            </div>
+            </>
           )}
 
-          {activeTab === 'safety' && (
-            <div className="space-y-4 animate-fadeIn">
-              {/* Safety Shield */}
-              <div className="p-3.5 bg-success/10 border border-success/30 rounded-xl flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                <div className="space-y-1">
-                  <h4 className="text-xs font-bold text-success">Strict Child Safety Active</h4>
-                  <p className="text-[11px] text-ink-secondary leading-relaxed">
-                    All experiments use 100% safe household items (water, vinegar, baking soda, lemons, paper).
-                    Mains electricity, toxic chemicals, and open flames are strictly forbidden.
-                  </p>
-                </div>
-              </div>
-
-              {/* Favorite Theme */}
+          {/* ── Voice & Language Tab ── */}
+          {activeTab === 'voice' && (
+            <>
+              {/* Language */}
               <div>
-                <label className="text-xs font-semibold text-ink-secondary block mb-1.5">
-                  Favorite STEM Field
+                <label className="block text-xs font-semibold text-curio-text-muted uppercase tracking-wider mb-2">
+                  Language & Region
                 </label>
                 <div className="grid grid-cols-2 gap-2">
-                  {[
-                    { id: 'chemistry', label: '🧪 Chemistry & Fizz' },
-                    { id: 'nature', label: '🌱 Nature & Plants' },
-                    { id: 'physics', label: '⚡ Electricity & Bulbs' },
-                    { id: 'space', label: '🚀 Space & Stars' },
-                    { id: 'robots', label: '🤖 Robots & Gadgets' },
-                    { id: 'dinosaurs', label: '🦕 Dinosaurs & Earth' },
-                  ].map((theme) => (
+                  {LANGUAGES.map((l) => (
                     <button
-                      key={theme.id}
-                      type="button"
-                      onClick={() => setFavoriteTheme(theme.id)}
-                      className={`p-2.5 rounded-xl text-xs font-medium border text-left transition-all ${
-                        favoriteTheme === theme.id
-                          ? 'bg-primary-600/30 border-primary-500 text-ink-primary font-semibold shadow-glow'
-                          : 'bg-surface-raised border-line-subtle text-ink-secondary hover:text-ink-primary'
+                      key={l.code}
+                      onClick={() => setLanguage(l.code)}
+                      className={`p-3 rounded-2xl border text-left text-sm transition-all ${
+                        language === l.code
+                          ? 'border-curio-blue bg-curio-blue-light text-curio-blue font-medium'
+                          : 'border-curio-border bg-curio-bg-alt text-curio-text-secondary hover:border-curio-blue/40'
                       }`}
                     >
-                      {theme.label}
+                      {l.label}
                     </button>
                   ))}
                 </div>
               </div>
 
-              {/* Earned Badges */}
-              <div className="pt-2 border-t border-line-subtle">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-ink-secondary flex items-center gap-1">
-                    <Award className="w-3.5 h-3.5 text-warning" />
-                    <span>Explorer Badges Earned</span>
-                  </span>
-                  <span className="text-xs font-mono text-warning font-bold">★ {profile?.stars || 3} Stars</span>
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {badges.map((b, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-2.5 py-1 bg-surface-raised border border-line-subtle rounded-full text-ink-primary font-medium"
-                      title={b.desc}
-                    >
-                      {b.title}
-                    </span>
-                  ))}
+              {/* Speech rate */}
+              <div>
+                <label className="block text-xs font-semibold text-curio-text-muted uppercase tracking-wider mb-2">
+                  Speaking Speed: <span className="text-curio-blue font-bold">{speechRate}x</span>
+                </label>
+                <input
+                  type="range"
+                  min="0.6"
+                  max="1.4"
+                  step="0.05"
+                  value={speechRate}
+                  onChange={(e) => setSpeechRate(parseFloat(e.target.value))}
+                  className="w-full accent-curio-blue"
+                />
+                <div className="flex justify-between text-[11px] text-curio-text-muted mt-1">
+                  <span>Slow (0.6x)</span>
+                  <span>Normal (1.0x)</span>
+                  <span>Fast (1.4x)</span>
                 </div>
               </div>
 
-              {/* Reset History */}
-              {onClearHistory && (
-                <div className="pt-2">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (confirm('Clear all past session history?')) {
-                        onClearHistory();
-                      }
-                    }}
-                    className="text-xs text-danger/80 hover:text-danger underline transition-colors"
-                  >
-                    Clear all past session history
-                  </button>
+              {/* Auto-speak toggle */}
+              <div className="flex items-center justify-between p-4 bg-curio-bg-alt rounded-2xl border border-curio-border">
+                <div>
+                  <p className="text-sm font-semibold text-curio-text">Auto-speak responses</p>
+                  <p className="text-xs text-curio-text-muted">Read answers aloud automatically</p>
                 </div>
-              )}
+                <button
+                  onClick={() => setAutoSpeak(!autoSpeak)}
+                  className={`w-11 h-6 rounded-full transition-colors relative ${autoSpeak ? 'bg-curio-blue' : 'bg-curio-border'}`}
+                >
+                  <div className={`w-5 h-5 bg-white rounded-full absolute top-0.5 transition-transform shadow-sm ${autoSpeak ? 'translate-x-5' : 'translate-x-0.5'}`} />
+                </button>
+              </div>
+
+              {/* Test voice */}
+              <button
+                onClick={handleTestVoice}
+                className="w-full flex items-center justify-center gap-2 py-3 bg-curio-bg-alt border border-curio-border rounded-2xl text-sm font-medium text-curio-text hover:border-curio-blue hover:bg-curio-blue-light hover:text-curio-blue transition-all"
+              >
+                <Mic className="w-4 h-4" />
+                Test voice settings
+              </button>
+            </>
+          )}
+
+          {/* ── Privacy Tab ── */}
+          {activeTab === 'safety' && (
+            <div className="space-y-4">
+              {[
+                { icon: '🔒', title: 'Kid-Safe Mode', desc: 'Filters out any unsafe content automatically. Always on.', on: true },
+                { icon: '🌐', title: 'No External Links', desc: 'All answers stay within Curioforge. No outside websites.', on: true },
+                { icon: '📵', title: 'No Personal Data Shared', desc: 'Your questions never leave your device (local mode).', on: true },
+                { icon: '🎙️', title: 'Voice stays local', desc: 'Audio is processed locally and never uploaded.', on: true },
+              ].map((item) => (
+                <div key={item.title} className="flex items-start gap-4 p-4 bg-green-50 border border-green-100 rounded-2xl">
+                  <span className="text-xl">{item.icon}</span>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <p className="text-sm font-semibold text-curio-text">{item.title}</p>
+                      <span className="text-[10px] font-bold bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">Active</span>
+                    </div>
+                    <p className="text-xs text-curio-text-muted">{item.desc}</p>
+                  </div>
+                  <Check className="w-5 h-5 text-curio-green flex-shrink-0 mt-0.5" />
+                </div>
+              ))}
             </div>
           )}
         </div>
 
-        {/* Footer Actions */}
-        <div className="flex items-center justify-end gap-2 p-4 border-t border-line-subtle bg-surface-raised/40">
-          <Button
-            variant="secondary"
-            size="sm"
-            onClick={() => {
-              stop();
-              onClose();
-            }}
+        {/* Footer buttons */}
+        <div className="flex gap-3 px-6 py-4 border-t border-curio-border bg-curio-bg-alt/50">
+          <button
+            onClick={onClose}
+            className="flex-1 py-2.5 rounded-xl border border-curio-border bg-white text-sm font-medium text-curio-text hover:bg-curio-bg-alt transition-colors"
           >
             Cancel
-          </Button>
-          <Button size="sm" onClick={handleSave}>
-            Save Preferences
-          </Button>
+          </button>
+          <button
+            onClick={handleSave}
+            className="flex-1 py-2.5 rounded-xl bg-curio-blue text-white text-sm font-semibold hover:bg-curio-blue-hover transition-colors shadow-sm"
+          >
+            Save Profile
+          </button>
         </div>
-      </Card>
+      </div>
     </div>
   );
 }
