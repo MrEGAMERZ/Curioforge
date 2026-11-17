@@ -34,6 +34,10 @@
     ],
     "mac": {
       "category": "public.app-category.education",
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "CurioForge needs microphone access so young students can talk to their AI STEM tutor in real time.",
+        "NSCameraUsageDescription": "CurioForge needs camera access to inspect and identify household experiment materials."
+      },
       "target": [
         {
           "target": "dir",

@@ -20,59 +20,86 @@ import {
   CheckCircle2,
   HelpCircle,
   ArrowRight,
+  Download,
+  WifiOff,
+  Leaf,
+  Layers,
 } from 'lucide-react';
+
+const VOICE_PERSONAS = [
+  { id: 'sparky', name: 'Captain Sparky', role: 'Energetic Explorer', emoji: '⚡', rate: 1.12, pitch: 1.2 },
+  { id: 'maya', name: 'Professor Maya', role: 'Gentle Science Mentor', emoji: '🌱', rate: 0.95, pitch: 1.05 },
+  { id: 'leo', name: 'Dr. Leo', role: 'Tech & Gadgets', emoji: '🤖', rate: 1.0, pitch: 0.95 },
+  { id: 'willow', name: 'Grandma Willow', role: 'Cozy Storyteller', emoji: '📖', rate: 0.9, pitch: 1.0 },
+  { id: 'cosmo', name: 'Cosmo Nova', role: 'Playful Space Buddy', emoji: '🚀', rate: 1.05, pitch: 1.25 },
+  { id: 'custom', name: 'Custom Voice', role: 'User Voice Profile', emoji: '⭐', rate: 1.0, pitch: 1.1 },
+];
 
 export function InteractiveTutorView({ currentSession, onSaveSession, profile, onStartNew }) {
   const [inputText, setInputText] = useState('');
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(currentSession?.response || null);
   const [imagePreview, setImagePreview] = useState(null);
+  const [selectedPersona, setSelectedPersona] = useState('sparky');
   const [statusMessage, setStatusMessage] = useState('Tap the mic and speak your curious question!');
+  const [showRuralSubstitutes, setShowRuralSubstitutes] = useState(false);
+  const [savedOffline, setSavedOffline] = useState(false);
+
   const responseEndRef = useRef(null);
+  const recordedAudioBase64Ref = useRef(null);
 
   const { speak, stop, isSpeaking } = useSpeechOutput();
 
-  const handleVoiceResult = (transcriptText) => {
-    setInputText(transcriptText);
+  const handleAudioReady = ({ audioBase64, transcript: spokenText }) => {
+    recordedAudioBase64Ref.current = audioBase64 ? audioBase64.split(',')[1] : null;
+    const textToSubmit = spokenText || inputText;
+    // Auto-submit immediately once the user stops talking
+    handleSubmit(textToSubmit);
   };
 
-  const { isListening, transcript, audioLevel, error: voiceError, startListening, stopListening } = useVoiceInput({
+  const handleVoiceResult = (spokenTranscript) => {
+    if (spokenTranscript) {
+      setInputText(spokenTranscript);
+    }
+  };
+
+  const { isListening, transcript, audioLevel, startListening, stopListening } = useVoiceInput({
     onResult: handleVoiceResult,
+    onAudioReady: handleAudioReady,
     language: profile?.language || 'en-US',
   });
 
-  // Keep state synced with currentSession
   useEffect(() => {
     if (currentSession) {
       setResponse(currentSession.response);
       setInputText(currentSession.query || '');
-      // If session has greeting and autoSpeak is on, we don't necessarily re-speak unless requested
     } else {
       setResponse(null);
       setInputText('');
       setImagePreview(null);
+      setSavedOffline(false);
     }
   }, [currentSession]);
 
-  // Update status message
   useEffect(() => {
     if (loading) {
-      setStatusMessage('CurioForge is thinking & preparing your interactive lab...');
+      setStatusMessage('CurioForge is thinking & preparing your 3D lab...');
     } else if (isListening) {
-      setStatusMessage('Listening to your voice... Speak now!');
+      setStatusMessage('Listening to your voice... (tap to finish)');
     } else if (isSpeaking) {
       setStatusMessage('Tutor is speaking aloud...');
     } else if (response) {
-      setStatusMessage('Ready for your next follow-up question!');
+      setStatusMessage('Ready for your next question!');
     } else {
       setStatusMessage('Tap the mic and speak your curious question!');
     }
   }, [loading, isListening, isSpeaking, response]);
 
-  // Handle submit to AI tutor
+  // Submit to Tutor
   const handleSubmit = async (overrideText) => {
     const textToSend = (overrideText || inputText || transcript).trim();
-    if (!textToSend && !imagePreview) return;
+    const audioPayload = recordedAudioBase64Ref.current;
+    if (!textToSend && !imagePreview && !audioPayload) return;
 
     if (isListening) {
       stopListening();
@@ -81,20 +108,23 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
     setLoading(true);
 
     try {
+      const activePersonaConfig = VOICE_PERSONAS.find((p) => p.id === selectedPersona) || VOICE_PERSONAS[0];
+
       const payload = {
         gradeBand: profile?.gradeBand || 'primary',
         studentText: textToSend,
         language: profile?.language || 'en-US',
         imageBase64: imagePreview ? imagePreview.split(',')[1] : null,
+        audioBase64: audioPayload || null,
+        audioMimeType: 'audio/webm',
       };
 
       const res = await apiClient.interactWithTutor(payload);
       setResponse(res);
+      recordedAudioBase64Ref.current = null; // Reset
 
-      // Extract a crisp "What we learned" summary
-      const whatWeLearned = res.stemConcepts?.[0]?.simpleWhy || res.explanation?.slice(0, 100) || 'Explored fascinating science concepts!';
+      const whatWeLearned = res.stemConcepts?.[0]?.simpleWhy || res.explanation?.slice(0, 100) || 'Explored science!';
 
-      // Auto-save session
       if (onSaveSession) {
         onSaveSession({
           id: currentSession?.id || Date.now().toString(),
@@ -108,20 +138,19 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
         });
       }
 
-      // Auto-speak tutor answer out loud if enabled
+      // Speak answer aloud with active persona settings
       if (profile?.autoSpeak !== false) {
         const textToSpeak = `${res.speechGreeting} ${res.explanation}`;
         speak(textToSpeak, {
           lang: profile?.language || 'en-US',
-          rate: profile?.speechRate || 1.0,
-          pitch: profile?.speechPitch || 1.1,
+          rate: activePersonaConfig.rate,
+          pitch: activePersonaConfig.pitch,
         });
       }
 
-      // Scroll smoothly to response
       setTimeout(() => {
         responseEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      }, 150);
     } catch (err) {
       console.error('Tutor error:', err);
       alert(`Could not connect to tutor: ${err.message}`);
@@ -133,21 +162,20 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
   const handleMicToggle = () => {
     if (isListening) {
       stopListening();
-      if (inputText.trim()) {
-        handleSubmit(inputText);
-      }
     } else {
       stop();
       startListening();
     }
   };
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => setImagePreview(reader.result);
-    reader.readAsDataURL(file);
+  const handleSpeakStep = (stepText) => {
+    stop();
+    const persona = VOICE_PERSONAS.find((p) => p.id === selectedPersona) || VOICE_PERSONAS[0];
+    speak(stepText, {
+      lang: profile?.language || 'en-US',
+      rate: persona.rate * 0.9,
+      pitch: persona.pitch,
+    });
   };
 
   const quickIdeas = [
@@ -157,49 +185,81 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
     { title: '🚀 Balloon Rocket', query: 'How does a balloon push air backwards to fly forwards?' },
   ];
 
+  const ruralSubstitutes = [
+    { labItem: 'Measuring Beaker / Graduated Cylinder', ruralItem: 'Cut plastic water bottle or glass chai cup with marked lines' },
+    { labItem: 'Chemical Indicator / Food Dye', ruralItem: 'Turmeric powder (haldi) mixed in water or crushed beetroot juice' },
+    { labItem: 'Connecting Wires / Battery Clip', ruralItem: 'Pencil graphite lead, paperclips, or kitchen aluminum foil strips' },
+    { labItem: 'Petri Dish / Specimen Tray', ruralItem: 'Clean flat stone, banana leaf, or recycled plastic lid' },
+  ];
+
   return (
     <div className="space-y-6 max-w-4xl mx-auto pb-10">
-      {/* Welcoming Top Hero */}
-      {!response && (
-        <div className="text-center space-y-2 py-4 animate-fadeIn">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-accent-500/15 text-accent-300 border border-accent-500/30 rounded-full text-xs font-semibold mb-1 shadow-glow">
-            <span className="text-base">{profile?.avatar || '🚀'}</span>
-            <span>Welcome, {profile?.nickname || 'Curious Explorer'}!</span>
-          </div>
-
-          <h1 className="text-3xl sm:text-4xl font-extrabold font-display text-ink-primary tracking-tight">
-            What are you curious about today?
-          </h1>
-          <p className="text-sm text-ink-secondary max-w-md mx-auto leading-relaxed">
-            Tap the big glowing mic and simply talk! The tutor explains in real time with fun interactive labs.
-          </p>
+      {/* 6 Voice Personas Bar */}
+      <div className="p-3 bg-surface/80 border border-line-subtle rounded-2xl backdrop-blur-md">
+        <div className="flex items-center justify-between mb-2 px-1">
+          <span className="text-xs font-bold text-ink-secondary flex items-center gap-1.5">
+            <Volume2 className="w-3.5 h-3.5 text-primary-400" />
+            <span>Choose Tutor Voice Persona:</span>
+          </span>
+          <span className="text-[10px] text-ink-muted">1-Tap Voice Switcher</span>
         </div>
-      )}
 
-      {/* Main Real-Time Voice Stage */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+          {VOICE_PERSONAS.map((p) => (
+            <button
+              key={p.id}
+              onClick={() => {
+                setSelectedPersona(p.id);
+                stop();
+                speak(`Hello! I am ${p.name}. Ready to explore?`, {
+                  lang: profile?.language || 'en-US',
+                  rate: p.rate,
+                  pitch: p.pitch,
+                });
+              }}
+              className={`p-2 rounded-xl border text-left transition-all flex items-center gap-2 ${
+                selectedPersona === p.id
+                  ? 'bg-primary-600/30 border-primary-500 shadow-glow'
+                  : 'bg-surface-raised border-line-subtle hover:bg-surface'
+              }`}
+            >
+              <span className="text-xl">{p.emoji}</span>
+              <div className="truncate">
+                <span className="text-xs font-bold text-ink-primary block leading-tight truncate">
+                  {p.name}
+                </span>
+                <span className="text-[10px] text-ink-muted block leading-tight truncate">
+                  {p.role}
+                </span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Main Microphone Stage */}
       <Card className="p-6 bg-surface/90 border-primary-500/40 shadow-elevated relative overflow-hidden">
-        {/* Pulsing ambient glow when listening */}
         {isListening && (
           <div className="absolute inset-0 bg-primary-500/10 pointer-events-none animate-pulse rounded-2xl" />
         )}
 
         <div className="flex flex-col items-center justify-center space-y-4 py-2">
-          {/* Big Interactive Mic Button */}
+          {/* Reactive Glowing Mic Button */}
           <div className="relative flex items-center justify-center">
             {isListening && (
               <>
                 <div
                   className="absolute rounded-full bg-primary-500/20 animate-ping"
                   style={{
-                    width: `${90 + audioLevel * 0.8}px`,
-                    height: `${90 + audioLevel * 0.8}px`,
+                    width: `${90 + audioLevel * 0.9}px`,
+                    height: `${90 + audioLevel * 0.9}px`,
                   }}
                 />
                 <div
                   className="absolute rounded-full bg-accent-500/30 transition-all duration-75"
                   style={{
-                    width: `${80 + audioLevel * 0.5}px`,
-                    height: `${80 + audioLevel * 0.5}px`,
+                    width: `${80 + audioLevel * 0.6}px`,
+                    height: `${80 + audioLevel * 0.6}px`,
                   }}
                 />
               </>
@@ -220,7 +280,7 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
               ) : isListening ? (
                 <>
                   <MicOff className="w-10 h-10 animate-bounce" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider mt-1">Tap to Send</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider mt-1">Tap to Finish</span>
                 </>
               ) : (
                 <>
@@ -231,11 +291,11 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
             </button>
           </div>
 
-          {/* Real-time reactive audio waveform bars when listening */}
+          {/* Real-time reactive audio soundwave bars */}
           {isListening && (
             <div className="flex items-center gap-1.5 h-8">
-              {[40, 70, 90, 60, 85, 100, 75, 45, 80, 50].map((h, i) => {
-                const heightVal = Math.max(8, Math.min(32, (audioLevel * h) / 80));
+              {[40, 70, 95, 60, 85, 100, 75, 45, 80, 55].map((h, i) => {
+                const heightVal = Math.max(8, Math.min(32, (audioLevel * h) / 75));
                 return (
                   <span
                     key={i}
@@ -250,7 +310,7 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
           {/* Status badge */}
           <div className="text-center">
             <span
-              className={`text-xs font-semibold px-3 py-1 rounded-full border inline-block transition-colors ${
+              className={`text-xs font-semibold px-3.5 py-1 rounded-full border inline-block transition-colors ${
                 isListening
                   ? 'bg-danger/15 text-danger border-danger/30 animate-pulse'
                   : loading
@@ -264,7 +324,7 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
             </span>
           </div>
 
-          {/* Live Transcript Bubble */}
+          {/* Live Transcript / Feedback */}
           {(isListening || transcript) && (
             <div className="w-full max-w-lg p-3 bg-surface-raised border border-primary-500/40 rounded-xl text-center animate-fadeIn">
               <span className="text-[11px] font-bold uppercase tracking-wider text-primary-400 block mb-0.5">
@@ -277,36 +337,12 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
           )}
         </div>
 
-        {/* Input Bar & Fallback Controls */}
+        {/* Input Bar */}
         <div className="mt-4 pt-4 border-t border-line-subtle space-y-3">
-          {imagePreview && (
-            <div className="relative inline-block">
-              <img
-                src={imagePreview}
-                alt="Materials preview"
-                className="w-24 h-24 object-cover rounded-xl border border-primary-400 shadow-md"
-              />
-              <button
-                onClick={() => setImagePreview(null)}
-                className="absolute -top-2 -right-2 bg-danger text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold shadow-md hover:scale-110"
-              >
-                ×
-              </button>
-            </div>
-          )}
-
           <div className="flex gap-2">
-            <label
-              className="p-2.5 bg-surface-raised hover:bg-surface border border-line-strong rounded-xl text-ink-secondary hover:text-ink-primary cursor-pointer transition-all flex items-center justify-center"
-              title="Snap photo of materials"
-            >
-              <Camera className="w-5 h-5" />
-              <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
-            </label>
-
             <input
               type="text"
-              placeholder="Or type what you are curious about..."
+              placeholder="Or type your curious question..."
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
@@ -320,10 +356,10 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
 
           {/* Quick Idea Sparks */}
           {!response && (
-            <div className="space-y-1.5 pt-2">
+            <div className="space-y-1.5 pt-1">
               <span className="text-xs font-semibold text-ink-muted flex items-center gap-1">
                 <Sparkles className="w-3.5 h-3.5 text-accent-400" />
-                <span>Or pick a fun experiment to ask right now:</span>
+                <span>Quick inspiration chips:</span>
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {quickIdeas.map((idea) => (
@@ -353,18 +389,18 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
       {/* Tutor Response Stage */}
       {response && (
         <div className="space-y-6 animate-fadeIn" ref={responseEndRef}>
-          {/* Main Tutor Explanation & Audio Card */}
+          {/* Main Tutor Explanation Card */}
           <Card className="p-6 bg-surface border-primary-500/50 shadow-glow relative space-y-4">
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-3 flex-1">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-primary-600 to-accent-500 flex items-center justify-center text-2xl shadow-md flex-shrink-0">
-                  {profile?.avatar || '🚀'}
+                  {VOICE_PERSONAS.find((p) => p.id === selectedPersona)?.emoji || '⚡'}
                 </div>
 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <h3 className="font-bold text-ink-primary text-base font-display">
-                      Your CurioForge Buddy
+                      {VOICE_PERSONAS.find((p) => p.id === selectedPersona)?.name || 'CurioForge Buddy'}
                     </h3>
                     <Badge tone="purple" className="text-[10px]">
                       {profile?.gradeBand === 'primary' ? 'Primary STEM' : 'Interactive Lab'}
@@ -386,10 +422,11 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
                   if (isSpeaking) {
                     stop();
                   } else {
+                    const p = VOICE_PERSONAS.find((v) => v.id === selectedPersona) || VOICE_PERSONAS[0];
                     speak(`${response.speechGreeting} ${response.explanation}`, {
                       lang: profile?.language || 'en-US',
-                      rate: profile?.speechRate || 1.0,
-                      pitch: profile?.speechPitch || 1.1,
+                      rate: p.rate,
+                      pitch: p.pitch,
                     });
                   }
                 }}
@@ -404,7 +441,7 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
               </button>
             </div>
 
-            {/* "What We Learned" Key Concept Box */}
+            {/* "What We Learned" Highlight Box */}
             <div className="p-4 rounded-xl bg-gradient-to-r from-primary-600/20 via-accent-500/15 to-transparent border border-primary-500/30 flex items-start gap-3">
               <Lightbulb className="w-5 h-5 text-warning flex-shrink-0 mt-0.5" />
               <div>
@@ -416,42 +453,65 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
                 </p>
               </div>
             </div>
-
-            {/* Concept Badges */}
-            {response.stemConcepts?.length > 0 && (
-              <div className="pt-2 border-t border-line-subtle flex flex-wrap gap-2">
-                {response.stemConcepts.map((concept, idx) => (
-                  <Badge key={idx} tone="purple" icon={<Sparkles className="w-3 h-3" />}>
-                    {concept.name}
-                  </Badge>
-                ))}
-              </div>
-            )}
           </Card>
 
-          {/* Interactive Simulation Living Canvas */}
+          {/* Interactive 3D Simulation Living Canvas */}
           <InteractiveCanvas
             type={response.interactiveSimulationType || 'volcano_reaction'}
-            title={response.simulationParameters?.title || 'Interactive Living Lab'}
+            title={response.simulationParameters?.title || 'Interactive 3D Living Lab'}
             promptQuestion={response.simulationParameters?.promptQuestion}
           />
 
-          {/* Household Hands-on Activity */}
+          {/* Household Hands-on Activity Card */}
           {response.householdActivity && (
             <Card className="p-6 border-success/30 bg-surface/90 space-y-4">
-              <div className="flex items-center gap-2.5 border-b border-line-subtle pb-3">
-                <ShieldCheck className="w-6 h-6 text-success" />
-                <div>
-                  <h3 className="font-bold text-base text-ink-primary font-display">
-                    {response.householdActivity.title}
-                  </h3>
-                  <p className="text-xs text-ink-muted">Safe, zero-cost experiment you can make at home!</p>
+              <div className="flex items-center justify-between border-b border-line-subtle pb-3">
+                <div className="flex items-center gap-2.5">
+                  <ShieldCheck className="w-6 h-6 text-success" />
+                  <div>
+                    <h3 className="font-bold text-base text-ink-primary font-display">
+                      {response.householdActivity.title}
+                    </h3>
+                    <p className="text-xs text-ink-muted">Safe, zero-cost experiment you can make at home!</p>
+                  </div>
                 </div>
+
+                {/* Rural Optimizer Toggle */}
+                <button
+                  onClick={() => setShowRuralSubstitutes(!showRuralSubstitutes)}
+                  className={`text-xs px-3 py-1.5 rounded-xl border flex items-center gap-1.5 transition-all ${
+                    showRuralSubstitutes
+                      ? 'bg-success/20 border-success text-success font-bold'
+                      : 'bg-surface-raised border-line-subtle text-ink-secondary hover:text-ink-primary'
+                  }`}
+                  title="Zero-cost materials found in rural areas and farms"
+                >
+                  <Leaf className="w-3.5 h-3.5" />
+                  <span>{showRuralSubstitutes ? 'Hide Rural Substitutes' : '🌾 Zero-Cost Rural Alternatives'}</span>
+                </button>
               </div>
 
+              {/* Rural & Kitchen Substitutes Panel */}
+              {showRuralSubstitutes && (
+                <div className="p-4 bg-success/10 border border-success/30 rounded-xl space-y-2 animate-fadeIn">
+                  <h4 className="text-xs font-bold text-success flex items-center gap-1.5">
+                    <span>🌾 Rural & Village Alternatives (Zero Store-Bought Materials Needed):</span>
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                    {ruralSubstitutes.map((s, idx) => (
+                      <div key={idx} className="p-2 bg-surface rounded-lg border border-line-subtle">
+                        <span className="font-bold text-ink-primary block">{s.labItem}</span>
+                        <span className="text-success text-[11px] block">↳ Replace with: {s.ruralItem}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Materials */}
               <div>
                 <h4 className="text-xs font-bold text-ink-secondary uppercase tracking-wider mb-2">
-                  Materials Needed (Ordinary Household Items):
+                  Materials Needed:
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {response.householdActivity.materials.map((m, idx) => (
@@ -465,17 +525,31 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
                 </div>
               </div>
 
+              {/* Steps with Read-Along Voice */}
               <div>
                 <h4 className="text-xs font-bold text-ink-secondary uppercase tracking-wider mb-2">
-                  Easy Step-by-Step Instructions:
+                  Step-by-Step Instructions (Tap speaker to listen):
                 </h4>
                 <div className="space-y-2.5">
                   {response.householdActivity.steps.map((st, idx) => (
-                    <div key={idx} className="flex items-start gap-3 text-xs text-ink-primary">
-                      <span className="w-6 h-6 rounded-full bg-primary-600/30 text-primary-400 font-bold flex items-center justify-center flex-shrink-0 text-xs shadow-inner">
-                        {idx + 1}
-                      </span>
-                      <p className="pt-0.5 leading-relaxed font-medium">{st}</p>
+                    <div
+                      key={idx}
+                      className="flex items-start justify-between gap-3 p-2.5 rounded-xl bg-surface-raised/40 hover:bg-surface-raised border border-transparent hover:border-line-subtle transition-colors text-xs text-ink-primary group"
+                    >
+                      <div className="flex items-start gap-2.5 flex-1">
+                        <span className="w-6 h-6 rounded-full bg-primary-600/30 text-primary-400 font-bold flex items-center justify-center flex-shrink-0 text-xs shadow-inner">
+                          {idx + 1}
+                        </span>
+                        <p className="pt-0.5 leading-relaxed font-medium">{st}</p>
+                      </div>
+
+                      <button
+                        onClick={() => handleSpeakStep(`Step ${idx + 1}: ${st}`)}
+                        className="p-1.5 rounded-lg text-ink-muted hover:text-primary-400 hover:bg-surface transition-colors"
+                        title="Listen to this step out loud"
+                      >
+                        <Volume2 className="w-4 h-4" />
+                      </button>
                     </div>
                   ))}
                 </div>
@@ -489,31 +563,29 @@ export function InteractiveTutorView({ currentSession, onSaveSession, profile, o
                   </span>
                 </div>
               )}
-            </Card>
-          )}
 
-          {/* Follow-up question & Action to keep talking */}
-          {response.followUpAudioQuestion && (
-            <Card className="p-4 bg-accent-500/10 border-accent-500/30 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3">
-              <div className="flex items-center gap-2.5">
-                <HelpCircle className="w-5 h-5 text-accent-400 flex-shrink-0" />
-                <p className="text-xs font-medium text-ink-primary">
-                  <span className="font-bold text-accent-300">Tutor's Challenge: </span>
-                  {response.followUpAudioQuestion}
-                </p>
+              {/* Offline Pocket Save */}
+              <div className="pt-2 border-t border-line-subtle flex items-center justify-between">
+                <span className="text-[11px] text-ink-muted flex items-center gap-1">
+                  <WifiOff className="w-3.5 h-3.5" />
+                  <span>Works 100% offline once saved to your device</span>
+                </span>
+
+                <button
+                  onClick={() => {
+                    setSavedOffline(true);
+                    setTimeout(() => setSavedOffline(false), 3000);
+                  }}
+                  className={`text-xs px-3 py-1.5 rounded-xl border flex items-center gap-1.5 transition-all ${
+                    savedOffline
+                      ? 'bg-success/20 border-success text-success font-bold'
+                      : 'bg-surface-raised hover:bg-surface border-line-subtle text-ink-secondary hover:text-ink-primary'
+                  }`}
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>{savedOffline ? '✓ Saved to Pocket Lab' : 'Save for Offline Play'}</span>
+                </button>
               </div>
-
-              <Button
-                size="sm"
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                  setTimeout(handleMicToggle, 400);
-                }}
-                className="whitespace-nowrap"
-              >
-                <Mic className="w-4 h-4 mr-1.5" />
-                <span>Answer via Voice</span>
-              </Button>
             </Card>
           )}
 

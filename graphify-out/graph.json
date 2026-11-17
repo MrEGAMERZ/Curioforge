@@ -467,7 +467,19 @@
       "file_type": "code",
       "norm_label": "interactivecanvas()",
       "source_file": "client/src/components/canvas/InteractiveCanvas.jsx",
-      "source_location": "L6"
+      "source_location": "L7"
+    },
+    {
+      "id": "client_src_components_canvas_threedlabcanvas_threedlabcanvas",
+      "label": "ThreeDLabCanvas()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "InteractiveTutorView.jsx",
+      "file_type": "code",
+      "norm_label": "threedlabcanvas()",
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L7"
     },
     {
       "id": "client_src_components_profile_profilemodal_profilemodal",
@@ -611,7 +623,7 @@
       "file_type": "code",
       "norm_label": "interactivetutorview()",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L25"
+      "source_location": "L38"
     },
     {
       "id": "client_src_hooks_uselocalstorage_uselocalstorage",
@@ -647,7 +659,7 @@
       "file_type": "code",
       "norm_label": "usevoiceinput()",
       "source_file": "client/src/hooks/useVoiceInput.js",
-      "source_location": "L3"
+      "source_location": "L10"
     },
     {
       "id": "client_src_lib_apiclient_getapibase",
@@ -1084,40 +1096,64 @@
       "source_location": "L7"
     },
     {
-      "id": "server_src_prompts_tutor_buildtutorsystemprompt",
-      "label": "buildTutorSystemPrompt()",
+      "id": "desktop_main_createwindow",
+      "label": "createWindow()",
       "_callable": true,
       "_origin": "ast",
       "community": 25,
-      "community_name": "routes/tutor.js",
+      "community_name": "main.cjs",
       "file_type": "code",
-      "norm_label": "buildtutorsystemprompt()",
-      "source_file": "server/src/prompts/tutor.js",
-      "source_location": "L3"
+      "norm_label": "createwindow()",
+      "source_file": "desktop/main.cjs",
+      "source_location": "L58"
     },
     {
-      "id": "server_src_services_gemini_generategeminijson",
-      "label": "generateGeminiJson()",
+      "id": "desktop_main_startserver",
+      "label": "startServer()",
       "_callable": true,
       "_origin": "ast",
       "community": 25,
-      "community_name": "routes/tutor.js",
+      "community_name": "main.cjs",
       "file_type": "code",
-      "norm_label": "generategeminijson()",
-      "source_file": "server/src/services/gemini.js",
+      "norm_label": "startserver()",
+      "source_file": "desktop/main.cjs",
       "source_location": "L9"
     },
     {
-      "id": "server_src_utils_parsejson_cleanandparsejson",
-      "label": "cleanAndParseJson()",
+      "id": "desktop_main_waitforserver",
+      "label": "waitForServer()",
       "_callable": true,
       "_origin": "ast",
       "community": 25,
-      "community_name": "routes/tutor.js",
+      "community_name": "main.cjs",
       "file_type": "code",
-      "norm_label": "cleanandparsejson()",
-      "source_file": "server/src/utils/parseJson.js",
-      "source_location": "L1"
+      "norm_label": "waitforserver()",
+      "source_file": "desktop/main.cjs",
+      "source_location": "L30"
+    },
+    {
+      "id": "desktop_main_waitforserver_check",
+      "label": "check()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "main.cjs",
+      "file_type": "code",
+      "norm_label": "check()",
+      "source_file": "desktop/main.cjs",
+      "source_location": "L33"
+    },
+    {
+      "id": "desktop_main_waitforserver_retry",
+      "label": "retry()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "main.cjs",
+      "file_type": "code",
+      "norm_label": "retry()",
+      "source_file": "desktop/main.cjs",
+      "source_location": "L47"
     },
     {
       "id": "apps_macos_sources_curioforge_views_components_certificatemodalview_certificatemodalview_init",
@@ -1578,78 +1614,6 @@
       "source_location": "L75"
     },
     {
-      "id": "server_src_middleware_validate_validate",
-      "label": "validate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "routes/results.js",
-      "file_type": "code",
-      "norm_label": "validate()",
-      "source_file": "server/src/middleware/validate.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_services_openmeteo_geocodecity",
-      "label": "geocodeCity()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "routes/weather.js",
-      "file_type": "code",
-      "norm_label": "geocodecity()",
-      "source_file": "server/src/services/openMeteo.js",
-      "source_location": "L7"
-    },
-    {
-      "id": "server_src_services_openmeteo_getforecast",
-      "label": "getForecast()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "routes/weather.js",
-      "file_type": "code",
-      "norm_label": "getforecast()",
-      "source_file": "server/src/services/openMeteo.js",
-      "source_location": "L40"
-    },
-    {
-      "id": "server_src_prompts_curiosity_buildcuriositysystemprompt",
-      "label": "buildCuriositySystemPrompt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 42,
-      "community_name": "routes/curiosity.js",
-      "file_type": "code",
-      "norm_label": "buildcuriositysystemprompt()",
-      "source_file": "server/src/prompts/curiosity.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_prompts_blueprint_buildblueprintsystemprompt",
-      "label": "buildBlueprintSystemPrompt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "shared.js",
-      "file_type": "code",
-      "norm_label": "buildblueprintsystemprompt()",
-      "source_file": "server/src/prompts/blueprint.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_prompts_results_buildresultssystemprompt",
-      "label": "buildResultsSystemPrompt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "shared.js",
-      "file_type": "code",
-      "norm_label": "buildresultssystemprompt()",
-      "source_file": "server/src/prompts/results.js",
-      "source_location": "L3"
-    },
-    {
       "id": "apps_macos_sources_curioforge_models_simulationstate_simulationstate_init",
       "label": ".init()",
       "_callable": true,
@@ -1686,64 +1650,112 @@
       "source_location": "L17"
     },
     {
-      "id": "desktop_main_createwindow",
-      "label": "createWindow()",
+      "id": "server_src_middleware_validate_validate",
+      "label": "validate()",
       "_callable": true,
       "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
+      "community": 5,
+      "community_name": "app.js",
       "file_type": "code",
-      "norm_label": "createwindow()",
-      "source_file": "desktop/main.cjs",
-      "source_location": "L58"
+      "norm_label": "validate()",
+      "source_file": "server/src/middleware/validate.js",
+      "source_location": "L1"
     },
     {
-      "id": "desktop_main_startserver",
-      "label": "startServer()",
+      "id": "server_src_prompts_blueprint_buildblueprintsystemprompt",
+      "label": "buildBlueprintSystemPrompt()",
       "_callable": true,
       "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
+      "community": 5,
+      "community_name": "app.js",
       "file_type": "code",
-      "norm_label": "startserver()",
-      "source_file": "desktop/main.cjs",
+      "norm_label": "buildblueprintsystemprompt()",
+      "source_file": "server/src/prompts/blueprint.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_prompts_curiosity_buildcuriositysystemprompt",
+      "label": "buildCuriositySystemPrompt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "buildcuriositysystemprompt()",
+      "source_file": "server/src/prompts/curiosity.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_prompts_results_buildresultssystemprompt",
+      "label": "buildResultsSystemPrompt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "buildresultssystemprompt()",
+      "source_file": "server/src/prompts/results.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_prompts_tutor_buildtutorsystemprompt",
+      "label": "buildTutorSystemPrompt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "buildtutorsystemprompt()",
+      "source_file": "server/src/prompts/tutor.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_services_gemini_generategeminijson",
+      "label": "generateGeminiJson()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "generategeminijson()",
+      "source_file": "server/src/services/gemini.js",
       "source_location": "L9"
     },
     {
-      "id": "desktop_main_waitforserver",
-      "label": "waitForServer()",
+      "id": "server_src_services_openmeteo_geocodecity",
+      "label": "geocodeCity()",
       "_callable": true,
       "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
+      "community": 5,
+      "community_name": "app.js",
       "file_type": "code",
-      "norm_label": "waitforserver()",
-      "source_file": "desktop/main.cjs",
-      "source_location": "L30"
+      "norm_label": "geocodecity()",
+      "source_file": "server/src/services/openMeteo.js",
+      "source_location": "L7"
     },
     {
-      "id": "desktop_main_waitforserver_check",
-      "label": "check()",
+      "id": "server_src_services_openmeteo_getforecast",
+      "label": "getForecast()",
       "_callable": true,
       "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
+      "community": 5,
+      "community_name": "app.js",
       "file_type": "code",
-      "norm_label": "check()",
-      "source_file": "desktop/main.cjs",
-      "source_location": "L33"
+      "norm_label": "getforecast()",
+      "source_file": "server/src/services/openMeteo.js",
+      "source_location": "L40"
     },
     {
-      "id": "desktop_main_waitforserver_retry",
-      "label": "retry()",
+      "id": "server_src_utils_parsejson_cleanandparsejson",
+      "label": "cleanAndParseJson()",
       "_callable": true,
       "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
+      "community": 5,
+      "community_name": "app.js",
       "file_type": "code",
-      "norm_label": "retry()",
-      "source_file": "desktop/main.cjs",
-      "source_location": "L47"
+      "norm_label": "cleanandparsejson()",
+      "source_file": "server/src/utils/parseJson.js",
+      "source_location": "L1"
     },
     {
       "id": "client_package",
@@ -1812,6 +1824,17 @@
       "source_location": "L15"
     },
     {
+      "id": "client_package_dependencies_three",
+      "label": "three",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "client/package.json",
+      "file_type": "code",
+      "norm_label": "three",
+      "source_file": "client/package.json",
+      "source_location": "L16"
+    },
+    {
       "id": "client_package_devdependencies",
       "label": "devDependencies",
       "_origin": "ast",
@@ -1820,7 +1843,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "client/package.json",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "client_package_devdependencies_autoprefixer",
@@ -1831,7 +1854,7 @@
       "file_type": "code",
       "norm_label": "autoprefixer",
       "source_file": "client/package.json",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "client_package_devdependencies_postcss",
@@ -1842,7 +1865,7 @@
       "file_type": "code",
       "norm_label": "postcss",
       "source_file": "client/package.json",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "client_package_devdependencies_tailwindcss",
@@ -1853,7 +1876,7 @@
       "file_type": "code",
       "norm_label": "tailwindcss",
       "source_file": "client/package.json",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "client_package_devdependencies_vite",
@@ -1864,7 +1887,7 @@
       "file_type": "code",
       "norm_label": "vite",
       "source_file": "client/package.json",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "client_package_devdependencies_vitejs_plugin_react",
@@ -1875,7 +1898,7 @@
       "file_type": "code",
       "norm_label": "@vitejs/plugin-react",
       "source_file": "client/package.json",
-      "source_location": "L18"
+      "source_location": "L19"
     },
     {
       "id": "client_package_name",
@@ -1985,7 +2008,7 @@
       "file_type": "concept",
       "norm_label": "autoprefixer",
       "source_file": "client/package.json",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "ref_postcss",
@@ -1996,7 +2019,7 @@
       "file_type": "concept",
       "norm_label": "postcss",
       "source_file": "client/package.json",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "ref_react_dom",
@@ -2029,7 +2052,18 @@
       "file_type": "concept",
       "norm_label": "tailwindcss",
       "source_file": "client/package.json",
-      "source_location": "L21"
+      "source_location": "L22"
+    },
+    {
+      "id": "ref_three",
+      "label": "three",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "client/package.json",
+      "file_type": "concept",
+      "norm_label": "three",
+      "source_file": "client/package.json",
+      "source_location": "L16"
     },
     {
       "id": "ref_vite",
@@ -2040,7 +2074,7 @@
       "file_type": "concept",
       "norm_label": "vite",
       "source_file": "client/package.json",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "ref_vitejs_plugin_react",
@@ -2051,7 +2085,7 @@
       "file_type": "concept",
       "norm_label": "@vitejs/plugin-react",
       "source_file": "client/package.json",
-      "source_location": "L18"
+      "source_location": "L19"
     },
     {
       "id": "design",
@@ -2100,6 +2134,30 @@
       "norm_label": "12. activity home cards",
       "source_file": "DESIGN.md",
       "source_location": "L189"
+    },
+    {
+      "id": "design_13_voice_and_camera_interaction",
+      "label": "13. Voice and Camera Interaction",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "CURIOFORGE \u2014 Design System",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "13. voice and camera interaction",
+      "source_file": "DESIGN.md",
+      "source_location": "L200"
+    },
+    {
+      "id": "design_14_activityplan_presentation_activityprogram_interpreter",
+      "label": "14. ActivityPlan Presentation (ActivityProgram interpreter)",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "CURIOFORGE \u2014 Design System",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "14. activityplan presentation (activityprogram interpreter)",
+      "source_file": "DESIGN.md",
+      "source_location": "L215"
     },
     {
       "id": "design_15_living_canvas_interface",
@@ -2640,6 +2698,17 @@
       "source_location": "L1"
     },
     {
+      "id": "client_src_components_canvas_threedlabcanvas",
+      "label": "ThreeDLabCanvas.jsx",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "InteractiveTutorView.jsx",
+      "file_type": "code",
+      "norm_label": "threedlabcanvas.jsx",
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L1"
+    },
+    {
       "id": "client_src_components_profile_profilemodal",
       "label": "ProfileModal.jsx",
       "_origin": "ast",
@@ -2759,6 +2828,17 @@
       "norm_label": "interactivetutorview.jsx",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
       "source_location": "L1"
+    },
+    {
+      "id": "client_src_features_tutor_interactivetutorview_voice_personas",
+      "label": "VOICE_PERSONAS",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "InteractiveTutorView.jsx",
+      "file_type": "code",
+      "norm_label": "voice_personas",
+      "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
+      "source_location": "L29"
     },
     {
       "id": "client_src_hooks_uselocalstorage",
@@ -3838,22 +3918,11 @@
       "source_location": "L1"
     },
     {
-      "id": "server_package",
-      "label": "server/package.json",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "server/package.json",
-      "file_type": "code",
-      "norm_label": "server/package.json",
-      "source_file": "server/package.json",
-      "source_location": "L1"
-    },
-    {
       "id": "server_package_dependencies",
       "label": "dependencies",
       "_origin": "ast",
       "community": 19,
-      "community_name": "server/package.json",
+      "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "dependencies",
       "source_file": "server/package.json",
@@ -3864,7 +3933,7 @@
       "label": "cors",
       "_origin": "ast",
       "community": 19,
-      "community_name": "server/package.json",
+      "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "cors",
       "source_file": "server/package.json",
@@ -3875,7 +3944,7 @@
       "label": "dotenv",
       "_origin": "ast",
       "community": 19,
-      "community_name": "server/package.json",
+      "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "dotenv",
       "source_file": "server/package.json",
@@ -3886,7 +3955,7 @@
       "label": "express",
       "_origin": "ast",
       "community": 19,
-      "community_name": "server/package.json",
+      "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "express",
       "source_file": "server/package.json",
@@ -3897,7 +3966,7 @@
       "label": "express-rate-limit",
       "_origin": "ast",
       "community": 19,
-      "community_name": "server/package.json",
+      "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "express-rate-limit",
       "source_file": "server/package.json",
@@ -3908,132 +3977,11 @@
       "label": "zod",
       "_origin": "ast",
       "community": 19,
-      "community_name": "server/package.json",
+      "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "zod",
       "source_file": "server/package.json",
       "source_location": "L15"
-    },
-    {
-      "id": "server_package_devdependencies",
-      "label": "devDependencies",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "server/package.json",
-      "file_type": "code",
-      "norm_label": "devdependencies",
-      "source_file": "server/package.json",
-      "source_location": "L17"
-    },
-    {
-      "id": "server_package_devdependencies_nodemon",
-      "label": "nodemon",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "server/package.json",
-      "file_type": "code",
-      "norm_label": "nodemon",
-      "source_file": "server/package.json",
-      "source_location": "L18"
-    },
-    {
-      "id": "server_package_name",
-      "label": "name",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "server/package.json",
-      "file_type": "code",
-      "norm_label": "name",
-      "source_file": "server/package.json",
-      "source_location": "L2"
-    },
-    {
-      "id": "server_package_private",
-      "label": "private",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "server/package.json",
-      "file_type": "code",
-      "norm_label": "private",
-      "source_file": "server/package.json",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_package_scripts",
-      "label": "scripts",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "server/package.json",
-      "file_type": "code",
-      "norm_label": "scripts",
-      "source_file": "server/package.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "server_package_scripts_dev",
-      "label": "dev",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "server/package.json",
-      "file_type": "code",
-      "norm_label": "dev",
-      "source_file": "server/package.json",
-      "source_location": "L8"
-    },
-    {
-      "id": "server_package_scripts_start",
-      "label": "start",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "server/package.json",
-      "file_type": "code",
-      "norm_label": "start",
-      "source_file": "server/package.json",
-      "source_location": "L7"
-    },
-    {
-      "id": "server_package_type",
-      "label": "type",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "server/package.json",
-      "file_type": "code",
-      "norm_label": "type",
-      "source_file": "server/package.json",
-      "source_location": "L5"
-    },
-    {
-      "id": "server_package_version",
-      "label": "version",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "server/package.json",
-      "file_type": "code",
-      "norm_label": "version",
-      "source_file": "server/package.json",
-      "source_location": "L4"
-    },
-    {
-      "id": "ref_cors",
-      "label": "cors",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "server/package.json",
-      "file_type": "concept",
-      "norm_label": "cors",
-      "source_file": "server/package.json",
-      "source_location": "L11"
-    },
-    {
-      "id": "ref_nodemon",
-      "label": "nodemon",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "server/package.json",
-      "file_type": "concept",
-      "norm_label": "nodemon",
-      "source_file": "server/package.json",
-      "source_location": "L18"
     },
     {
       "id": "curioforge_complete_idea",
@@ -4420,6 +4368,17 @@
       "source_location": "L3"
     },
     {
+      "id": "tailwindcss",
+      "label": "tailwindcss",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "tailwind.config.js",
+      "confidence": "EXTRACTED",
+      "file_type": "code",
+      "norm_label": "tailwindcss",
+      "source_file": "tailwindcss"
+    },
+    {
       "id": "client_tailwind_config",
       "label": "tailwind.config.js",
       "_origin": "ast",
@@ -4763,81 +4722,59 @@
       "source_location": ""
     },
     {
-      "id": "server_src_routes_tutor",
-      "label": "routes/tutor.js",
+      "id": "desktop_main",
+      "label": "main.cjs",
       "_origin": "ast",
       "community": 25,
-      "community_name": "routes/tutor.js",
+      "community_name": "main.cjs",
       "file_type": "code",
-      "norm_label": "routes/tutor.js",
-      "source_file": "server/src/routes/tutor.js",
+      "norm_label": "main.cjs",
+      "source_file": "desktop/main.cjs",
       "source_location": "L1"
     },
     {
-      "id": "server_src_routes_tutor_router",
-      "label": "router",
+      "id": "desktop_main_app_browserwindow_systempreferences_session",
+      "label": "{ app, BrowserWindow, systemPreferences, session }",
       "_origin": "ast",
       "community": 25,
-      "community_name": "routes/tutor.js",
+      "community_name": "main.cjs",
       "file_type": "code",
-      "norm_label": "router",
-      "source_file": "server/src/routes/tutor.js",
-      "source_location": "L9"
-    },
-    {
-      "id": "server_src_schemas_tutor",
-      "label": "schemas/tutor.js",
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "routes/tutor.js",
-      "file_type": "code",
-      "norm_label": "schemas/tutor.js",
-      "source_file": "server/src/schemas/tutor.js",
+      "norm_label": "{ app, browserwindow, systempreferences, session }",
+      "source_file": "desktop/main.cjs",
       "source_location": "L1"
     },
     {
-      "id": "server_src_schemas_tutor_tutorrequestschema",
-      "label": "tutorRequestSchema",
+      "id": "desktop_main_http",
+      "label": "http",
       "_origin": "ast",
       "community": 25,
-      "community_name": "routes/tutor.js",
+      "community_name": "main.cjs",
       "file_type": "code",
-      "norm_label": "tutorrequestschema",
-      "source_file": "server/src/schemas/tutor.js",
+      "norm_label": "http",
+      "source_file": "desktop/main.cjs",
       "source_location": "L3"
     },
     {
-      "id": "server_src_schemas_tutor_tutorresponseschema",
-      "label": "tutorResponseSchema",
+      "id": "desktop_main_path",
+      "label": "path",
       "_origin": "ast",
       "community": 25,
-      "community_name": "routes/tutor.js",
+      "community_name": "main.cjs",
       "file_type": "code",
-      "norm_label": "tutorresponseschema",
-      "source_file": "server/src/schemas/tutor.js",
-      "source_location": "L15"
+      "norm_label": "path",
+      "source_file": "desktop/main.cjs",
+      "source_location": "L2"
     },
     {
-      "id": "server_src_services_gemini",
-      "label": "gemini.js",
+      "id": "ref_electron",
+      "label": "electron",
       "_origin": "ast",
       "community": 25,
-      "community_name": "routes/tutor.js",
-      "file_type": "code",
-      "norm_label": "gemini.js",
-      "source_file": "server/src/services/gemini.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_utils_parsejson",
-      "label": "parseJson.js",
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "routes/tutor.js",
-      "file_type": "code",
-      "norm_label": "parsejson.js",
-      "source_file": "server/src/utils/parseJson.js",
-      "source_location": "L1"
+      "community_name": "main.cjs",
+      "file_type": "concept",
+      "norm_label": "electron",
+      "source_file": "package.json",
+      "source_location": "L51"
     },
     {
       "id": "app",
@@ -5537,28 +5474,16 @@
       "source_location": ""
     },
     {
-      "id": "design_13_voice_and_camera_interaction",
-      "label": "13. Voice and Camera Interaction",
+      "id": "phases_phase_4_multilingual_prompts_tts_1_0_h_planned",
+      "label": "Phase 4 \u2014 Multilingual Prompts + TTS (\u22481.0 h) \u00b7 Planned",
       "_origin": "ast",
       "community": 36,
       "community_name": ".speak",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "13. voice and camera interaction",
-      "source_file": "DESIGN.md",
-      "source_location": "L200"
-    },
-    {
-      "id": "design_14_activityplan_presentation_activityprogram_interpreter",
-      "label": "14. ActivityPlan Presentation (ActivityProgram interpreter)",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": ".speak",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "14. activityplan presentation (activityprogram interpreter)",
-      "source_file": "DESIGN.md",
-      "source_location": "L215"
+      "norm_label": "phase 4 \u2014 multilingual prompts + tts (\u22481.0 h) \u00b7 planned",
+      "source_file": "PHASES.md",
+      "source_location": "L179"
     },
     {
       "id": "prd_12_accessibility_requirements",
@@ -5775,82 +5700,92 @@
       "source_location": "L110"
     },
     {
-      "id": "server_src_middleware_validate",
-      "label": "validate.js",
+      "id": "package",
+      "label": "package.json",
       "_origin": "ast",
       "community": 39,
-      "community_name": "routes/results.js",
+      "community_name": "package.json",
       "file_type": "code",
-      "norm_label": "validate.js",
-      "source_file": "server/src/middleware/validate.js",
+      "norm_label": "package.json",
+      "source_file": "package.json",
       "source_location": "L1"
     },
     {
-      "id": "server_src_routes_results",
-      "label": "routes/results.js",
+      "id": "package_description",
+      "label": "description",
       "_origin": "ast",
       "community": 39,
-      "community_name": "routes/results.js",
+      "community_name": "package.json",
       "file_type": "code",
-      "norm_label": "routes/results.js",
-      "source_file": "server/src/routes/results.js",
-      "source_location": "L1"
+      "norm_label": "description",
+      "source_file": "package.json",
+      "source_location": "L5"
     },
     {
-      "id": "server_src_routes_results_router",
-      "label": "router",
+      "id": "package_main",
+      "label": "main",
       "_origin": "ast",
       "community": 39,
-      "community_name": "routes/results.js",
+      "community_name": "package.json",
       "file_type": "code",
-      "norm_label": "router",
-      "source_file": "server/src/routes/results.js",
-      "source_location": "L9"
+      "norm_label": "main",
+      "source_file": "package.json",
+      "source_location": "L6"
     },
     {
-      "id": "server_src_schemas_results",
-      "label": "schemas/results.js",
+      "id": "package_name",
+      "label": "name",
       "_origin": "ast",
       "community": 39,
-      "community_name": "routes/results.js",
+      "community_name": "package.json",
       "file_type": "code",
-      "norm_label": "schemas/results.js",
-      "source_file": "server/src/schemas/results.js",
-      "source_location": "L1"
+      "norm_label": "name",
+      "source_file": "package.json",
+      "source_location": "L2"
     },
     {
-      "id": "server_src_schemas_results_resultsrequestschema",
-      "label": "resultsRequestSchema",
+      "id": "package_private",
+      "label": "private",
       "_origin": "ast",
       "community": 39,
-      "community_name": "routes/results.js",
+      "community_name": "package.json",
       "file_type": "code",
-      "norm_label": "resultsrequestschema",
-      "source_file": "server/src/schemas/results.js",
+      "norm_label": "private",
+      "source_file": "package.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "package_version",
+      "label": "version",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "version",
+      "source_file": "package.json",
       "source_location": "L3"
     },
     {
-      "id": "server_src_schemas_results_resultsresponseschema",
-      "label": "resultsResponseSchema",
+      "id": "ref_concurrently",
+      "label": "concurrently",
       "_origin": "ast",
       "community": 39,
-      "community_name": "routes/results.js",
-      "file_type": "code",
-      "norm_label": "resultsresponseschema",
-      "source_file": "server/src/schemas/results.js",
-      "source_location": "L31"
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "concurrently",
+      "source_file": "package.json",
+      "source_location": "L50"
     },
     {
-      "id": "architecture_5_backend_architecture",
-      "label": "5. Backend Architecture",
+      "id": "ref_electron_builder",
+      "label": "electron-builder",
       "_origin": "ast",
       "community": 39,
-      "community_name": "routes/results.js",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "5. backend architecture",
-      "source_file": "ARCHITECTURE.md",
-      "source_location": "L138"
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "electron-builder",
+      "source_file": "package.json",
+      "source_location": "L52"
     },
     {
       "id": "curioforge_complete_idea_5_main_product_modules_and_features",
@@ -6117,312 +6052,191 @@
       "source_location": "L426"
     },
     {
-      "id": "server_src_routes_weather",
-      "label": "routes/weather.js",
+      "id": "package_build",
+      "label": "build",
       "_origin": "ast",
       "community": 40,
-      "community_name": "routes/weather.js",
+      "community_name": "build",
       "file_type": "code",
-      "norm_label": "routes/weather.js",
-      "source_file": "server/src/routes/weather.js",
-      "source_location": "L1"
+      "norm_label": "build",
+      "source_file": "package.json",
+      "source_location": "L21"
     },
     {
-      "id": "server_src_routes_weather_router",
-      "label": "router",
+      "id": "package_build_appid",
+      "label": "appId",
       "_origin": "ast",
       "community": 40,
-      "community_name": "routes/weather.js",
+      "community_name": "build",
       "file_type": "code",
-      "norm_label": "router",
-      "source_file": "server/src/routes/weather.js",
-      "source_location": "L6"
+      "norm_label": "appid",
+      "source_file": "package.json",
+      "source_location": "L22"
     },
     {
-      "id": "server_src_schemas_weather",
-      "label": "schemas/weather.js",
+      "id": "package_build_asar",
+      "label": "asar",
       "_origin": "ast",
       "community": 40,
-      "community_name": "routes/weather.js",
+      "community_name": "build",
       "file_type": "code",
-      "norm_label": "schemas/weather.js",
-      "source_file": "server/src/schemas/weather.js",
-      "source_location": "L1"
+      "norm_label": "asar",
+      "source_file": "package.json",
+      "source_location": "L24"
     },
     {
-      "id": "server_src_schemas_weather_forecastqueryschema",
-      "label": "forecastQuerySchema",
+      "id": "package_build_directories",
+      "label": "directories",
       "_origin": "ast",
       "community": 40,
-      "community_name": "routes/weather.js",
+      "community_name": "build",
       "file_type": "code",
-      "norm_label": "forecastqueryschema",
-      "source_file": "server/src/schemas/weather.js",
-      "source_location": "L9"
+      "norm_label": "directories",
+      "source_file": "package.json",
+      "source_location": "L25"
     },
     {
-      "id": "server_src_schemas_weather_geocodequeryschema",
-      "label": "geocodeQuerySchema",
+      "id": "package_build_files",
+      "label": "files",
       "_origin": "ast",
       "community": 40,
-      "community_name": "routes/weather.js",
+      "community_name": "build",
       "file_type": "code",
-      "norm_label": "geocodequeryschema",
-      "source_file": "server/src/schemas/weather.js",
-      "source_location": "L3"
+      "norm_label": "files",
+      "source_file": "package.json",
+      "source_location": "L28"
     },
     {
-      "id": "server_src_services_openmeteo",
-      "label": "openMeteo.js",
+      "id": "package_build_productname",
+      "label": "productName",
       "_origin": "ast",
       "community": 40,
-      "community_name": "routes/weather.js",
+      "community_name": "build",
       "file_type": "code",
-      "norm_label": "openmeteo.js",
-      "source_file": "server/src/services/openMeteo.js",
-      "source_location": "L1"
+      "norm_label": "productname",
+      "source_file": "package.json",
+      "source_location": "L23"
     },
     {
-      "id": "server_src_services_openmeteo_cache",
-      "label": "cache",
+      "id": "package_directories_output",
+      "label": "output",
       "_origin": "ast",
       "community": 40,
-      "community_name": "routes/weather.js",
+      "community_name": "build",
       "file_type": "code",
-      "norm_label": "cache",
-      "source_file": "server/src/services/openMeteo.js",
-      "source_location": "L1"
+      "norm_label": "output",
+      "source_file": "package.json",
+      "source_location": "L26"
     },
     {
-      "id": "server_src_middleware_ratelimit",
-      "label": "rateLimit.js",
+      "id": "package_build_mac",
+      "label": "mac",
       "_origin": "ast",
       "community": 41,
-      "community_name": "routes/blueprint.js",
+      "community_name": "mac",
       "file_type": "code",
-      "norm_label": "ratelimit.js",
-      "source_file": "server/src/middleware/rateLimit.js",
-      "source_location": "L1"
+      "norm_label": "mac",
+      "source_file": "package.json",
+      "source_location": "L35"
     },
     {
-      "id": "server_src_middleware_ratelimit_ailimiter",
-      "label": "aiLimiter",
+      "id": "package_extendinfo_nscamerausagedescription",
+      "label": "NSCameraUsageDescription",
       "_origin": "ast",
       "community": 41,
-      "community_name": "routes/blueprint.js",
+      "community_name": "mac",
       "file_type": "code",
-      "norm_label": "ailimiter",
-      "source_file": "server/src/middleware/rateLimit.js",
-      "source_location": "L18"
+      "norm_label": "nscamerausagedescription",
+      "source_file": "package.json",
+      "source_location": "L39"
     },
     {
-      "id": "server_src_middleware_ratelimit_apilimiter",
-      "label": "apiLimiter",
+      "id": "package_extendinfo_nsmicrophoneusagedescription",
+      "label": "NSMicrophoneUsageDescription",
       "_origin": "ast",
       "community": 41,
-      "community_name": "routes/blueprint.js",
+      "community_name": "mac",
       "file_type": "code",
-      "norm_label": "apilimiter",
-      "source_file": "server/src/middleware/rateLimit.js",
-      "source_location": "L4"
+      "norm_label": "nsmicrophoneusagedescription",
+      "source_file": "package.json",
+      "source_location": "L38"
     },
     {
-      "id": "server_src_routes_blueprint",
-      "label": "routes/blueprint.js",
+      "id": "package_mac_category",
+      "label": "category",
       "_origin": "ast",
       "community": 41,
-      "community_name": "routes/blueprint.js",
+      "community_name": "mac",
       "file_type": "code",
-      "norm_label": "routes/blueprint.js",
-      "source_file": "server/src/routes/blueprint.js",
-      "source_location": "L1"
+      "norm_label": "category",
+      "source_file": "package.json",
+      "source_location": "L36"
     },
     {
-      "id": "server_src_routes_blueprint_router",
-      "label": "router",
+      "id": "package_mac_extendinfo",
+      "label": "extendInfo",
       "_origin": "ast",
       "community": 41,
-      "community_name": "routes/blueprint.js",
+      "community_name": "mac",
       "file_type": "code",
-      "norm_label": "router",
-      "source_file": "server/src/routes/blueprint.js",
-      "source_location": "L9"
+      "norm_label": "extendinfo",
+      "source_file": "package.json",
+      "source_location": "L37"
     },
     {
-      "id": "server_src_schemas_blueprint",
-      "label": "schemas/blueprint.js",
+      "id": "package_mac_target",
+      "label": "target",
       "_origin": "ast",
       "community": 41,
-      "community_name": "routes/blueprint.js",
+      "community_name": "mac",
       "file_type": "code",
-      "norm_label": "schemas/blueprint.js",
-      "source_file": "server/src/schemas/blueprint.js",
-      "source_location": "L1"
+      "norm_label": "target",
+      "source_file": "package.json",
+      "source_location": "L41"
     },
     {
-      "id": "server_src_schemas_blueprint_blueprintrequestschema",
-      "label": "blueprintRequestSchema",
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "routes/blueprint.js",
-      "file_type": "code",
-      "norm_label": "blueprintrequestschema",
-      "source_file": "server/src/schemas/blueprint.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_schemas_blueprint_blueprintresponseschema",
-      "label": "blueprintResponseSchema",
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "routes/blueprint.js",
-      "file_type": "code",
-      "norm_label": "blueprintresponseschema",
-      "source_file": "server/src/schemas/blueprint.js",
-      "source_location": "L18"
-    },
-    {
-      "id": "ref_express_rate_limit",
-      "label": "express-rate-limit",
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "routes/blueprint.js",
-      "file_type": "concept",
-      "norm_label": "express-rate-limit",
-      "source_file": "server/package.json",
-      "source_location": "L14"
-    },
-    {
-      "id": "server_src_prompts_curiosity",
-      "label": "prompts/curiosity.js",
+      "id": "package_devdependencies",
+      "label": "devDependencies",
       "_origin": "ast",
       "community": 42,
-      "community_name": "routes/curiosity.js",
+      "community_name": "devDependencies",
       "file_type": "code",
-      "norm_label": "prompts/curiosity.js",
-      "source_file": "server/src/prompts/curiosity.js",
-      "source_location": "L1"
+      "norm_label": "devdependencies",
+      "source_file": "package.json",
+      "source_location": "L49"
     },
     {
-      "id": "server_src_routes_curiosity",
-      "label": "routes/curiosity.js",
+      "id": "package_devdependencies_concurrently",
+      "label": "concurrently",
       "_origin": "ast",
       "community": 42,
-      "community_name": "routes/curiosity.js",
+      "community_name": "devDependencies",
       "file_type": "code",
-      "norm_label": "routes/curiosity.js",
-      "source_file": "server/src/routes/curiosity.js",
-      "source_location": "L1"
+      "norm_label": "concurrently",
+      "source_file": "package.json",
+      "source_location": "L50"
     },
     {
-      "id": "server_src_routes_curiosity_router",
-      "label": "router",
+      "id": "package_devdependencies_electron",
+      "label": "electron",
       "_origin": "ast",
       "community": 42,
-      "community_name": "routes/curiosity.js",
+      "community_name": "devDependencies",
       "file_type": "code",
-      "norm_label": "router",
-      "source_file": "server/src/routes/curiosity.js",
-      "source_location": "L9"
+      "norm_label": "electron",
+      "source_file": "package.json",
+      "source_location": "L51"
     },
     {
-      "id": "server_src_schemas_curiosity",
-      "label": "schemas/curiosity.js",
+      "id": "package_devdependencies_electron_builder",
+      "label": "electron-builder",
       "_origin": "ast",
       "community": 42,
-      "community_name": "routes/curiosity.js",
+      "community_name": "devDependencies",
       "file_type": "code",
-      "norm_label": "schemas/curiosity.js",
-      "source_file": "server/src/schemas/curiosity.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_schemas_curiosity_curiosityrequestschema",
-      "label": "curiosityRequestSchema",
-      "_origin": "ast",
-      "community": 42,
-      "community_name": "routes/curiosity.js",
-      "file_type": "code",
-      "norm_label": "curiosityrequestschema",
-      "source_file": "server/src/schemas/curiosity.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_schemas_curiosity_curiosityresponseschema",
-      "label": "curiosityResponseSchema",
-      "_origin": "ast",
-      "community": 42,
-      "community_name": "routes/curiosity.js",
-      "file_type": "code",
-      "norm_label": "curiosityresponseschema",
-      "source_file": "server/src/schemas/curiosity.js",
-      "source_location": "L15"
-    },
-    {
-      "id": "ref_zod",
-      "label": "zod",
-      "_origin": "ast",
-      "community": 42,
-      "community_name": "routes/curiosity.js",
-      "file_type": "concept",
-      "norm_label": "zod",
-      "source_file": "server/package.json",
-      "source_location": "L15"
-    },
-    {
-      "id": "server_src_prompts_blueprint",
-      "label": "prompts/blueprint.js",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "shared.js",
-      "file_type": "code",
-      "norm_label": "prompts/blueprint.js",
-      "source_file": "server/src/prompts/blueprint.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_prompts_results",
-      "label": "prompts/results.js",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "shared.js",
-      "file_type": "code",
-      "norm_label": "prompts/results.js",
-      "source_file": "server/src/prompts/results.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_prompts_shared",
-      "label": "shared.js",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "shared.js",
-      "file_type": "code",
-      "norm_label": "shared.js",
-      "source_file": "server/src/prompts/shared.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_prompts_shared_base_safety_instructions",
-      "label": "BASE_SAFETY_INSTRUCTIONS",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "shared.js",
-      "file_type": "code",
-      "norm_label": "base_safety_instructions",
-      "source_file": "server/src/prompts/shared.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_prompts_tutor",
-      "label": "prompts/tutor.js",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "shared.js",
-      "file_type": "code",
-      "norm_label": "prompts/tutor.js",
-      "source_file": "server/src/prompts/tutor.js",
-      "source_location": "L1"
+      "norm_label": "electron-builder",
+      "source_file": "package.json",
+      "source_location": "L52"
     },
     {
       "id": "apps_macos_sources_curioforge_models_simulationstate",
@@ -6469,40 +6283,114 @@
       "source_location": ""
     },
     {
-      "id": "phases_1_time_budget_and_priorities",
-      "label": "1. Time Budget and Priorities",
+      "id": "server_package",
+      "label": "server/package.json",
       "_origin": "ast",
-      "community": 45,
-      "community_name": "1. Time Budget and Priorities",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. time budget and priorities",
-      "source_file": "PHASES.md",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "server/package.json",
+      "source_file": "server/package.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_package_devdependencies",
+      "label": "devDependencies",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "devdependencies",
+      "source_file": "server/package.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "server_package_devdependencies_nodemon",
+      "label": "nodemon",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "nodemon",
+      "source_file": "server/package.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "server_package_name",
+      "label": "name",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "name",
+      "source_file": "server/package.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "server_package_private",
+      "label": "private",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "private",
+      "source_file": "server/package.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_package_scripts",
+      "label": "scripts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "scripts",
+      "source_file": "server/package.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "server_package_scripts_dev",
+      "label": "dev",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "dev",
+      "source_file": "server/package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "server_package_scripts_start",
+      "label": "start",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "start",
+      "source_file": "server/package.json",
       "source_location": "L7"
     },
     {
-      "id": "phases_checkpoints",
-      "label": "Checkpoints",
+      "id": "server_package_type",
+      "label": "type",
       "_origin": "ast",
-      "community": 45,
-      "community_name": "1. Time Budget and Priorities",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "checkpoints",
-      "source_file": "PHASES.md",
-      "source_location": "L44"
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "type",
+      "source_file": "server/package.json",
+      "source_location": "L5"
     },
     {
-      "id": "phases_cut_line_if_behind_schedule",
-      "label": "Cut line (if behind schedule)",
+      "id": "server_package_version",
+      "label": "version",
       "_origin": "ast",
-      "community": 45,
-      "community_name": "1. Time Budget and Priorities",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "cut line (if behind schedule)",
-      "source_file": "PHASES.md",
-      "source_location": "L39"
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "version",
+      "source_file": "server/package.json",
+      "source_location": "L4"
     },
     {
       "id": "server_src_app",
@@ -6626,6 +6514,160 @@
       "source_location": "L1"
     },
     {
+      "id": "server_src_middleware_ratelimit",
+      "label": "rateLimit.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "ratelimit.js",
+      "source_file": "server/src/middleware/rateLimit.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_middleware_ratelimit_ailimiter",
+      "label": "aiLimiter",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "ailimiter",
+      "source_file": "server/src/middleware/rateLimit.js",
+      "source_location": "L18"
+    },
+    {
+      "id": "server_src_middleware_ratelimit_apilimiter",
+      "label": "apiLimiter",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "apilimiter",
+      "source_file": "server/src/middleware/rateLimit.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "server_src_middleware_validate",
+      "label": "validate.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "validate.js",
+      "source_file": "server/src/middleware/validate.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_prompts_blueprint",
+      "label": "prompts/blueprint.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "prompts/blueprint.js",
+      "source_file": "server/src/prompts/blueprint.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_prompts_curiosity",
+      "label": "prompts/curiosity.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "prompts/curiosity.js",
+      "source_file": "server/src/prompts/curiosity.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_prompts_results",
+      "label": "prompts/results.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "prompts/results.js",
+      "source_file": "server/src/prompts/results.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_prompts_shared",
+      "label": "shared.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "shared.js",
+      "source_file": "server/src/prompts/shared.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_prompts_shared_base_safety_instructions",
+      "label": "BASE_SAFETY_INSTRUCTIONS",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "base_safety_instructions",
+      "source_file": "server/src/prompts/shared.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_prompts_tutor",
+      "label": "prompts/tutor.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "prompts/tutor.js",
+      "source_file": "server/src/prompts/tutor.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_routes_blueprint",
+      "label": "routes/blueprint.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "routes/blueprint.js",
+      "source_file": "server/src/routes/blueprint.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_routes_blueprint_router",
+      "label": "router",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "router",
+      "source_file": "server/src/routes/blueprint.js",
+      "source_location": "L9"
+    },
+    {
+      "id": "server_src_routes_curiosity",
+      "label": "routes/curiosity.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "routes/curiosity.js",
+      "source_file": "server/src/routes/curiosity.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_routes_curiosity_router",
+      "label": "router",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "router",
+      "source_file": "server/src/routes/curiosity.js",
+      "source_location": "L9"
+    },
+    {
       "id": "server_src_routes_health",
       "label": "health.js",
       "_origin": "ast",
@@ -6648,6 +6690,292 @@
       "source_location": "L4"
     },
     {
+      "id": "server_src_routes_results",
+      "label": "routes/results.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "routes/results.js",
+      "source_file": "server/src/routes/results.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_routes_results_router",
+      "label": "router",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "router",
+      "source_file": "server/src/routes/results.js",
+      "source_location": "L9"
+    },
+    {
+      "id": "server_src_routes_tutor",
+      "label": "routes/tutor.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "routes/tutor.js",
+      "source_file": "server/src/routes/tutor.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_routes_tutor_router",
+      "label": "router",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "router",
+      "source_file": "server/src/routes/tutor.js",
+      "source_location": "L9"
+    },
+    {
+      "id": "server_src_routes_weather",
+      "label": "routes/weather.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "routes/weather.js",
+      "source_file": "server/src/routes/weather.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_routes_weather_router",
+      "label": "router",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "router",
+      "source_file": "server/src/routes/weather.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "server_src_schemas_blueprint",
+      "label": "schemas/blueprint.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "schemas/blueprint.js",
+      "source_file": "server/src/schemas/blueprint.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_schemas_blueprint_blueprintrequestschema",
+      "label": "blueprintRequestSchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "blueprintrequestschema",
+      "source_file": "server/src/schemas/blueprint.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_schemas_blueprint_blueprintresponseschema",
+      "label": "blueprintResponseSchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "blueprintresponseschema",
+      "source_file": "server/src/schemas/blueprint.js",
+      "source_location": "L18"
+    },
+    {
+      "id": "server_src_schemas_curiosity",
+      "label": "schemas/curiosity.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "schemas/curiosity.js",
+      "source_file": "server/src/schemas/curiosity.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_schemas_curiosity_curiosityrequestschema",
+      "label": "curiosityRequestSchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "curiosityrequestschema",
+      "source_file": "server/src/schemas/curiosity.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_schemas_curiosity_curiosityresponseschema",
+      "label": "curiosityResponseSchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "curiosityresponseschema",
+      "source_file": "server/src/schemas/curiosity.js",
+      "source_location": "L15"
+    },
+    {
+      "id": "server_src_schemas_results",
+      "label": "schemas/results.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "schemas/results.js",
+      "source_file": "server/src/schemas/results.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_schemas_results_resultsrequestschema",
+      "label": "resultsRequestSchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "resultsrequestschema",
+      "source_file": "server/src/schemas/results.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_schemas_results_resultsresponseschema",
+      "label": "resultsResponseSchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "resultsresponseschema",
+      "source_file": "server/src/schemas/results.js",
+      "source_location": "L31"
+    },
+    {
+      "id": "server_src_schemas_tutor",
+      "label": "schemas/tutor.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "schemas/tutor.js",
+      "source_file": "server/src/schemas/tutor.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_schemas_tutor_tutorrequestschema",
+      "label": "tutorRequestSchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "tutorrequestschema",
+      "source_file": "server/src/schemas/tutor.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_schemas_tutor_tutorresponseschema",
+      "label": "tutorResponseSchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "tutorresponseschema",
+      "source_file": "server/src/schemas/tutor.js",
+      "source_location": "L15"
+    },
+    {
+      "id": "server_src_schemas_weather",
+      "label": "schemas/weather.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "schemas/weather.js",
+      "source_file": "server/src/schemas/weather.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_schemas_weather_forecastqueryschema",
+      "label": "forecastQuerySchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "forecastqueryschema",
+      "source_file": "server/src/schemas/weather.js",
+      "source_location": "L9"
+    },
+    {
+      "id": "server_src_schemas_weather_geocodequeryschema",
+      "label": "geocodeQuerySchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "geocodequeryschema",
+      "source_file": "server/src/schemas/weather.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_services_gemini",
+      "label": "gemini.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "gemini.js",
+      "source_file": "server/src/services/gemini.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_services_openmeteo",
+      "label": "openMeteo.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "openmeteo.js",
+      "source_file": "server/src/services/openMeteo.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_services_openmeteo_cache",
+      "label": "cache",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "cache",
+      "source_file": "server/src/services/openMeteo.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_utils_parsejson",
+      "label": "parseJson.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "parsejson.js",
+      "source_file": "server/src/utils/parseJson.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "ref_cors",
+      "label": "cors",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "concept",
+      "norm_label": "cors",
+      "source_file": "server/package.json",
+      "source_location": "L11"
+    },
+    {
       "id": "ref_dotenv",
       "label": "dotenv",
       "_origin": "ast",
@@ -6668,6 +6996,51 @@
       "norm_label": "express",
       "source_file": "server/package.json",
       "source_location": "L13"
+    },
+    {
+      "id": "ref_express_rate_limit",
+      "label": "express-rate-limit",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "concept",
+      "norm_label": "express-rate-limit",
+      "source_file": "server/package.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "ref_nodemon",
+      "label": "nodemon",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "concept",
+      "norm_label": "nodemon",
+      "source_file": "server/package.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "ref_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "concept",
+      "norm_label": "zod",
+      "source_file": "server/package.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "architecture_5_backend_architecture",
+      "label": "5. Backend Architecture",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "app.js",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5. backend architecture",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": "L138"
     },
     {
       "id": "architecture",
@@ -7162,6 +7535,30 @@
       "source_location": "L1"
     },
     {
+      "id": "phases_1_time_budget_and_priorities",
+      "label": "1. Time Budget and Priorities",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "CURIOFORGE \u2014 Implementation Roadmap (demo-slice-first plan)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. time budget and priorities",
+      "source_file": "PHASES.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "phases_checkpoints",
+      "label": "Checkpoints",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "CURIOFORGE \u2014 Implementation Roadmap (demo-slice-first plan)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "checkpoints",
+      "source_file": "PHASES.md",
+      "source_location": "L44"
+    },
+    {
       "id": "phases_curioforge_implementation_roadmap_demo_slice_first_plan",
       "label": "CURIOFORGE \u2014 Implementation Roadmap (demo-slice-first plan)",
       "_origin": "ast",
@@ -7172,6 +7569,18 @@
       "norm_label": "curioforge \u2014 implementation roadmap (demo-slice-first plan)",
       "source_file": "PHASES.md",
       "source_location": "L1"
+    },
+    {
+      "id": "phases_cut_line_if_behind_schedule",
+      "label": "Cut line (if behind schedule)",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "CURIOFORGE \u2014 Implementation Roadmap (demo-slice-first plan)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "cut line (if behind schedule)",
+      "source_file": "PHASES.md",
+      "source_location": "L39"
     },
     {
       "id": "phases_phase_0_docs_contracts_and_core_foundation_2_0_h_mandatory",
@@ -7220,18 +7629,6 @@
       "norm_label": "phase 3 \u2014 full interaction set (\u22482.5 h) \u00b7 planned",
       "source_file": "PHASES.md",
       "source_location": "L157"
-    },
-    {
-      "id": "phases_phase_4_multilingual_prompts_tts_1_0_h_planned",
-      "label": "Phase 4 \u2014 Multilingual Prompts + TTS (\u22481.0 h) \u00b7 Planned",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "CURIOFORGE \u2014 Implementation Roadmap (demo-slice-first plan)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "phase 4 \u2014 multilingual prompts + tts (\u22481.0 h) \u00b7 planned",
-      "source_file": "PHASES.md",
-      "source_location": "L179"
     },
     {
       "id": "phases_phase_5_full_parent_teacher_dashboard_1_0_h_planned",
@@ -7292,259 +7689,6 @@
       "norm_label": "progress tracker",
       "source_file": "PHASES.md",
       "source_location": "L289"
-    },
-    {
-      "id": "desktop_main",
-      "label": "main.cjs",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "main.cjs",
-      "source_file": "desktop/main.cjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "desktop_main_app_browserwindow_systempreferences_session",
-      "label": "{ app, BrowserWindow, systemPreferences, session }",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "{ app, browserwindow, systempreferences, session }",
-      "source_file": "desktop/main.cjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "desktop_main_http",
-      "label": "http",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "http",
-      "source_file": "desktop/main.cjs",
-      "source_location": "L3"
-    },
-    {
-      "id": "desktop_main_path",
-      "label": "path",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "path",
-      "source_file": "desktop/main.cjs",
-      "source_location": "L2"
-    },
-    {
-      "id": "package",
-      "label": "package.json",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "package.json",
-      "source_file": "package.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "package_build",
-      "label": "build",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "build",
-      "source_file": "package.json",
-      "source_location": "L21"
-    },
-    {
-      "id": "package_build_appid",
-      "label": "appId",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "appid",
-      "source_file": "package.json",
-      "source_location": "L22"
-    },
-    {
-      "id": "package_build_asar",
-      "label": "asar",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "asar",
-      "source_file": "package.json",
-      "source_location": "L24"
-    },
-    {
-      "id": "package_build_directories",
-      "label": "directories",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "directories",
-      "source_file": "package.json",
-      "source_location": "L25"
-    },
-    {
-      "id": "package_build_files",
-      "label": "files",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "files",
-      "source_file": "package.json",
-      "source_location": "L28"
-    },
-    {
-      "id": "package_build_mac",
-      "label": "mac",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "mac",
-      "source_file": "package.json",
-      "source_location": "L35"
-    },
-    {
-      "id": "package_build_productname",
-      "label": "productName",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "productname",
-      "source_file": "package.json",
-      "source_location": "L23"
-    },
-    {
-      "id": "package_description",
-      "label": "description",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "description",
-      "source_file": "package.json",
-      "source_location": "L5"
-    },
-    {
-      "id": "package_devdependencies",
-      "label": "devDependencies",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "devdependencies",
-      "source_file": "package.json",
-      "source_location": "L45"
-    },
-    {
-      "id": "package_devdependencies_concurrently",
-      "label": "concurrently",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "concurrently",
-      "source_file": "package.json",
-      "source_location": "L46"
-    },
-    {
-      "id": "package_devdependencies_electron",
-      "label": "electron",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "electron",
-      "source_file": "package.json",
-      "source_location": "L47"
-    },
-    {
-      "id": "package_devdependencies_electron_builder",
-      "label": "electron-builder",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "electron-builder",
-      "source_file": "package.json",
-      "source_location": "L48"
-    },
-    {
-      "id": "package_directories_output",
-      "label": "output",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "output",
-      "source_file": "package.json",
-      "source_location": "L26"
-    },
-    {
-      "id": "package_mac_category",
-      "label": "category",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "category",
-      "source_file": "package.json",
-      "source_location": "L36"
-    },
-    {
-      "id": "package_mac_target",
-      "label": "target",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "target",
-      "source_file": "package.json",
-      "source_location": "L37"
-    },
-    {
-      "id": "package_main",
-      "label": "main",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "main",
-      "source_file": "package.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "package_name",
-      "label": "name",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "name",
-      "source_file": "package.json",
-      "source_location": "L2"
-    },
-    {
-      "id": "package_private",
-      "label": "private",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "private",
-      "source_file": "package.json",
-      "source_location": "L4"
     },
     {
       "id": "package_scripts",
@@ -7690,50 +7834,6 @@
       "source_location": "L17"
     },
     {
-      "id": "package_version",
-      "label": "version",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "version",
-      "source_file": "package.json",
-      "source_location": "L3"
-    },
-    {
-      "id": "ref_concurrently",
-      "label": "concurrently",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "concept",
-      "norm_label": "concurrently",
-      "source_file": "package.json",
-      "source_location": "L46"
-    },
-    {
-      "id": "ref_electron",
-      "label": "electron",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "concept",
-      "norm_label": "electron",
-      "source_file": "package.json",
-      "source_location": "L47"
-    },
-    {
-      "id": "ref_electron_builder",
-      "label": "electron-builder",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "scripts",
-      "file_type": "concept",
-      "norm_label": "electron-builder",
-      "source_file": "package.json",
-      "source_location": "L48"
-    },
-    {
       "id": "client_src_index",
       "label": "client_src_index",
       "_origin": "semantic",
@@ -7742,6 +7842,30 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "client_src_index",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_http",
+      "label": "ref_http",
+      "_origin": "semantic",
+      "community": 25,
+      "community_name": "main.cjs",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_http",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_path",
+      "label": "ref_path",
+      "_origin": "semantic",
+      "community": 25,
+      "community_name": "main.cjs",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_path",
       "source_file": "",
       "type": "external"
     },
@@ -7766,30 +7890,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_url",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_http",
-      "label": "ref_http",
-      "_origin": "semantic",
-      "community": 9,
-      "community_name": "scripts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_http",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_path",
-      "label": "ref_path",
-      "_origin": "semantic",
-      "community": 9,
-      "community_name": "scripts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_path",
       "source_file": "",
       "type": "external"
     }
@@ -8277,6 +8377,18 @@
     },
     {
       "source": "client_src_components_canvas_interactivecanvas_interactivecanvas",
+      "target": "client_src_components_canvas_threedlabcanvas_threedlabcanvas",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/components/canvas/InteractiveCanvas.jsx",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_interactivecanvas_interactivecanvas",
       "target": "client_src_components_ui_card_card",
       "relation": "calls",
       "_origin": "ast",
@@ -8284,7 +8396,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/components/canvas/InteractiveCanvas.jsx",
-      "source_location": "L197",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -8296,7 +8408,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/components/canvas/InteractiveCanvas.jsx",
-      "source_location": "L200",
+      "source_location": "L182",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_threedlabcanvas_threedlabcanvas",
+      "target": "client_src_components_ui_card_card",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L282",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_threedlabcanvas_threedlabcanvas",
+      "target": "client_src_components_ui_misc_badge",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L286",
       "weight": 1.0
     },
     {
@@ -8440,7 +8576,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L180",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -8452,7 +8588,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L219",
+      "source_location": "L279",
       "weight": 1.0
     },
     {
@@ -8464,19 +8600,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L316",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_features_tutor_interactivetutorview_interactivetutorview",
-      "target": "client_src_hooks_usespeechoutput_usespeechoutput",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L33",
+      "source_location": "L352",
       "weight": 1.0
     },
     {
@@ -8488,19 +8612,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L369",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_features_tutor_interactivetutorview_interactivetutorview",
-      "target": "client_src_hooks_usevoiceinput_usevoiceinput",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L39",
+      "source_location": "L405",
       "weight": 1.0
     },
     {
@@ -8512,7 +8624,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L433",
+      "source_location": "L459",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_features_tutor_interactivetutorview_interactivetutorview",
+      "target": "client_src_hooks_usespeechoutput_usespeechoutput",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_features_tutor_interactivetutorview_interactivetutorview",
+      "target": "client_src_hooks_usevoiceinput_usevoiceinput",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -8597,6 +8733,66 @@
       "context": "call",
       "source_file": "desktop/main.cjs",
       "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_threedlabcanvas_threedlabcanvas",
+      "target": "client_package_dependencies_three",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_profile_profilemodal_profilemodal",
+      "target": "client_src_components_profile_profilemodal_avatars",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_profile_profilemodal_profilemodal",
+      "target": "client_src_components_profile_profilemodal_grade_options",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_profile_profilemodal_profilemodal",
+      "target": "client_src_components_profile_profilemodal_languages",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L252",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_features_tutor_interactivetutorview_interactivetutorview",
+      "target": "client_src_features_tutor_interactivetutorview_voice_personas",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -9849,19 +10045,19 @@
     },
     {
       "source": "client_package",
-      "target": "ref_vitejs_plugin_react",
+      "target": "ref_three",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "client/package.json",
-      "source_location": "L18",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
       "source": "client_package",
-      "target": "ref_autoprefixer",
+      "target": "ref_vitejs_plugin_react",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9873,7 +10069,7 @@
     },
     {
       "source": "client_package",
-      "target": "ref_postcss",
+      "target": "ref_autoprefixer",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9885,7 +10081,7 @@
     },
     {
       "source": "client_package",
-      "target": "ref_tailwindcss",
+      "target": "ref_postcss",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9897,7 +10093,7 @@
     },
     {
       "source": "client_package",
-      "target": "ref_vite",
+      "target": "ref_tailwindcss",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9905,6 +10101,18 @@
       "context": "import",
       "source_file": "client/package.json",
       "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "client_package",
+      "target": "ref_vite",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "client/package.json",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -9989,6 +10197,42 @@
       "context": "import",
       "source_file": "client/src/components/canvas/InteractiveCanvas.jsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_interactivecanvas",
+      "target": "client_src_components_canvas_threedlabcanvas_threedlabcanvas",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "client/src/components/canvas/InteractiveCanvas.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_threedlabcanvas",
+      "target": "client_src_components_ui_card_card",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_threedlabcanvas",
+      "target": "client_src_components_ui_misc_badge",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -10288,7 +10532,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -10300,7 +10544,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -10312,7 +10556,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -10389,6 +10633,66 @@
     },
     {
       "source": "server_src_app",
+      "target": "server_src_routes_tutor_router",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "server/src/app.js",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_app",
+      "target": "server_src_routes_curiosity_router",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "server/src/app.js",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_app",
+      "target": "server_src_routes_blueprint_router",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "server/src/app.js",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_app",
+      "target": "server_src_routes_results_router",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "server/src/app.js",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_app",
+      "target": "server_src_routes_weather_router",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "server/src/app.js",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_app",
       "target": "server_src_config_env_env",
       "relation": "imports",
       "_origin": "ast",
@@ -10409,6 +10713,18 @@
       "context": "import",
       "source_file": "server/src/app.js",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_app",
+      "target": "server_src_routes_health_router",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "server/src/app.js",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -11037,7 +11353,7 @@
     },
     {
       "source": "client_src_components_canvas_interactivecanvas",
-      "target": "ref_lucide_react",
+      "target": "client_src_components_canvas_threedlabcanvas",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11045,6 +11361,78 @@
       "context": "import",
       "source_file": "client/src/components/canvas/InteractiveCanvas.jsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_interactivecanvas",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "client/src/components/canvas/InteractiveCanvas.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_threedlabcanvas",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_threedlabcanvas",
+      "target": "ref_three",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_threedlabcanvas",
+      "target": "client_src_components_ui_card",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_threedlabcanvas",
+      "target": "client_src_components_ui_misc",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_threedlabcanvas",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -14131,7 +14519,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -14234,19 +14622,19 @@
       "weight": 1.0
     },
     {
-      "source": "client_package_devdependencies",
-      "target": "client_package_devdependencies_vitejs_plugin_react",
+      "source": "client_package_dependencies",
+      "target": "client_package_dependencies_three",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/package.json",
-      "source_location": "L18",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
       "source": "client_package_devdependencies",
-      "target": "client_package_devdependencies_autoprefixer",
+      "target": "client_package_devdependencies_vitejs_plugin_react",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14257,7 +14645,7 @@
     },
     {
       "source": "client_package_devdependencies",
-      "target": "client_package_devdependencies_postcss",
+      "target": "client_package_devdependencies_autoprefixer",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14268,7 +14656,7 @@
     },
     {
       "source": "client_package_devdependencies",
-      "target": "client_package_devdependencies_tailwindcss",
+      "target": "client_package_devdependencies_postcss",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14279,13 +14667,24 @@
     },
     {
       "source": "client_package_devdependencies",
-      "target": "client_package_devdependencies_vite",
+      "target": "client_package_devdependencies_tailwindcss",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/package.json",
       "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "client_package_devdependencies",
+      "target": "client_package_devdependencies_vite",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/package.json",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -14340,7 +14739,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/src/components/canvas/InteractiveCanvas.jsx",
-      "source_location": "L6",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_canvas_threedlabcanvas",
+      "target": "client_src_components_canvas_threedlabcanvas_threedlabcanvas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/canvas/ThreeDLabCanvas.jsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -14499,13 +14909,24 @@
     },
     {
       "source": "client_src_features_tutor_interactivetutorview",
+      "target": "client_src_features_tutor_interactivetutorview_voice_personas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_features_tutor_interactivetutorview",
       "target": "client_src_features_tutor_interactivetutorview_interactivetutorview",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L25",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -14538,7 +14959,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/src/hooks/useVoiceInput.js",
-      "source_location": "L3",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -16045,7 +16466,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -16171,13 +16592,24 @@
     },
     {
       "source": "package_build_mac",
-      "target": "package_mac_target",
+      "target": "package_mac_extendinfo",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "package_build_mac",
+      "target": "package_mac_target",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -16188,7 +16620,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -16199,7 +16631,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -16210,7 +16642,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "package_mac_extendinfo",
+      "target": "package_extendinfo_nsmicrophoneusagedescription",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "package_mac_extendinfo",
+      "target": "package_extendinfo_nscamerausagedescription",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -17620,6 +18074,15 @@
       "source_file": "server/src/utils/parseJson.js",
       "source_location": "L1",
       "weight": 1.0
+    },
+    {
+      "source": "client_tailwind_config",
+      "target": "tailwindcss",
+      "relation": "dynamic_import",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/tailwind.config.js"
     },
     {
       "source": "apps_macos_sources_curioforge_curioforgeapp_curioforgeapp",
@@ -20146,5 +20609,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "349433d7b073daa15321ce93e537e3c195d25fcf"
+  "built_at_commit": "8289825f433a27a58daab8056821e142105647a4"
 }

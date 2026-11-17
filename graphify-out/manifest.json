@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "client/package.json": {
-    "mtime": 1794901740.6307263,
-    "seen": 1794911514.669704,
-    "ast_hash": "55655dd5979dbaca07a9fb5d011769c7",
+    "mtime": 1794924944.1555972,
+    "seen": 1794925735.8591611,
+    "ast_hash": "6cb5335a7c425a624ef49568fc96db3c",
     "semantic_hash": ""
   },
   "client/vite.config.js": {
@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1794921453.237539,
-    "seen": 1794921536.329704,
-    "ast_hash": "f26e8b86dc99b1622c8373f46b5c937e",
+    "mtime": 1794924965.2495553,
+    "seen": 1794925735.85917,
+    "ast_hash": "ada9f492c20a0a939abc09e246a76f74",
     "semantic_hash": ""
   },
   "server/package.json": {
@@ -120,9 +120,9 @@
     "semantic_hash": ""
   },
   "client/src/components/canvas/InteractiveCanvas.jsx": {
-    "mtime": 1794918062.4966335,
-    "seen": 1794918331.98138,
-    "ast_hash": "d032a2511d3cb45855537227ff1f231e",
+    "mtime": 1794925209.2451942,
+    "seen": 1794925735.859162,
+    "ast_hash": "090fbba0ebf4edcaf37628d0fabf8af4",
     "semantic_hash": ""
   },
   "client/src/components/ui/Button.jsx": {
@@ -156,9 +156,9 @@
     "semantic_hash": ""
   },
   "client/src/features/tutor/InteractiveTutorView.jsx": {
-    "mtime": 1794921387.5078197,
-    "seen": 1794921536.3297012,
-    "ast_hash": "fa3e681ee3bb39d666988c3e8aacdfd6",
+    "mtime": 1794925302.3638065,
+    "seen": 1794925735.859166,
+    "ast_hash": "e6c18084fe3d37edafd6bcb80a1db32f",
     "semantic_hash": ""
   },
   "client/src/hooks/useLocalStorage.js": {
@@ -174,9 +174,9 @@
     "semantic_hash": ""
   },
   "client/src/hooks/useVoiceInput.js": {
-    "mtime": 1794921215.1422932,
-    "seen": 1794921536.329702,
-    "ast_hash": "fc766f7ebe48f47f0559d1a29998fe71",
+    "mtime": 1794925006.176361,
+    "seen": 1794925735.859168,
+    "ast_hash": "6f90e9a6aabf669e2e0129cc6505028f",
     "semantic_hash": ""
   },
   "client/src/lib/apiClient.js": {
@@ -519,6 +519,12 @@
     "mtime": 1794920436.789896,
     "seen": 1794920585.0778,
     "ast_hash": "f8fe637c57a63b779a585ec4fc9bdcb8",
+    "semantic_hash": ""
+  },
+  "client/src/components/canvas/ThreeDLabCanvas.jsx": {
+    "mtime": 1794925164.452832,
+    "seen": 1794925735.8591628,
+    "ast_hash": "485acd4610b68efa09eb01955d5959f7",
     "semantic_hash": ""
   }
 }
