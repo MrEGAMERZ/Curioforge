@@ -1,0 +1,1202 @@
+{
+  "nodes": [
+    {
+      "id": "client_package",
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_private",
+      "label": "private",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_type",
+      "label": "type",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_scripts",
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_scripts_dev",
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_scripts_build",
+      "label": "build",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_scripts_preview",
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_dependencies_lucide_react",
+      "label": "lucide-react",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_lucide_react",
+      "label": "lucide-react",
+      "file_type": "concept",
+      "source_file": "client/package.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_dependencies_react",
+      "label": "react",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "file_type": "concept",
+      "source_file": "client/package.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_dependencies_react_dom",
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_react_dom",
+      "label": "react-dom",
+      "file_type": "concept",
+      "source_file": "client/package.json",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_dependencies_react_router_dom",
+      "label": "react-router-dom",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_react_router_dom",
+      "label": "react-router-dom",
+      "file_type": "concept",
+      "source_file": "client/package.json",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_devdependencies",
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_devdependencies_vitejs_plugin_react",
+      "label": "@vitejs/plugin-react",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_vitejs_plugin_react",
+      "label": "@vitejs/plugin-react",
+      "file_type": "concept",
+      "source_file": "client/package.json",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_devdependencies_autoprefixer",
+      "label": "autoprefixer",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_autoprefixer",
+      "label": "autoprefixer",
+      "file_type": "concept",
+      "source_file": "client/package.json",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_devdependencies_postcss",
+      "label": "postcss",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_postcss",
+      "label": "postcss",
+      "file_type": "concept",
+      "source_file": "client/package.json",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_devdependencies_tailwindcss",
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_tailwindcss",
+      "label": "tailwindcss",
+      "file_type": "concept",
+      "source_file": "client/package.json",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_package_devdependencies_vite",
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_vite",
+      "label": "vite",
+      "file_type": "concept",
+      "source_file": "client/package.json",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "client_vite_config",
+      "label": "vite.config.js",
+      "file_type": "code",
+      "source_file": "client/vite.config.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "package",
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_private",
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_dev",
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_dev_server",
+      "label": "dev:server",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_dev_client",
+      "label": "dev:client",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_install_all",
+      "label": "install:all",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_build",
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies",
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_concurrently",
+      "label": "concurrently",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_concurrently",
+      "label": "concurrently",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package",
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_private",
+      "label": "private",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_type",
+      "label": "type",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_scripts",
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_scripts_start",
+      "label": "start",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_scripts_dev",
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_dependencies_cors",
+      "label": "cors",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_cors",
+      "label": "cors",
+      "file_type": "concept",
+      "source_file": "server/package.json",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_dependencies_dotenv",
+      "label": "dotenv",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_dotenv",
+      "label": "dotenv",
+      "file_type": "concept",
+      "source_file": "server/package.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_dependencies_express",
+      "label": "express",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_express",
+      "label": "express",
+      "file_type": "concept",
+      "source_file": "server/package.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_dependencies_express_rate_limit",
+      "label": "express-rate-limit",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_express_rate_limit",
+      "label": "express-rate-limit",
+      "file_type": "concept",
+      "source_file": "server/package.json",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_dependencies_zod",
+      "label": "zod",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_zod",
+      "label": "zod",
+      "file_type": "concept",
+      "source_file": "server/package.json",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_devdependencies",
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "server_package_devdependencies_nodemon",
+      "label": "nodemon",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_nodemon",
+      "label": "nodemon",
+      "file_type": "concept",
+      "source_file": "server/package.json",
+      "source_location": "L18",
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "client_package",
+      "target": "client_package_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "client_package_private",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "client_package_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "client_package_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "client_package_scripts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package_scripts",
+      "target": "client_package_scripts_dev",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package_scripts",
+      "target": "client_package_scripts_build",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package_scripts",
+      "target": "client_package_scripts_preview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "client_package_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package_dependencies",
+      "target": "client_package_dependencies_lucide_react",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "ref_lucide_react",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package_dependencies",
+      "target": "client_package_dependencies_react",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "ref_react",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package_dependencies",
+      "target": "client_package_dependencies_react_dom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "ref_react_dom",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package_dependencies",
+      "target": "client_package_dependencies_react_router_dom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "ref_react_router_dom",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "client_package_devdependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package_devdependencies",
+      "target": "client_package_devdependencies_vitejs_plugin_react",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "ref_vitejs_plugin_react",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package_devdependencies",
+      "target": "client_package_devdependencies_autoprefixer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "ref_autoprefixer",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package_devdependencies",
+      "target": "client_package_devdependencies_postcss",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "ref_postcss",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package_devdependencies",
+      "target": "client_package_devdependencies_tailwindcss",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "ref_tailwindcss",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package_devdependencies",
+      "target": "client_package_devdependencies_vite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_package",
+      "target": "ref_vite",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "client_vite_config",
+      "target": "ref_vite",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/vite.config.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "client_vite_config",
+      "target": "ref_vitejs_plugin_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/vite.config.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_private",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_scripts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_dev",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_dev_server",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_dev_client",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_install_all",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_build",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_devdependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_concurrently",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_concurrently",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "server_package_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "server_package_private",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "server_package_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "server_package_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "server_package_scripts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package_scripts",
+      "target": "server_package_scripts_start",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package_scripts",
+      "target": "server_package_scripts_dev",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "server_package_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_cors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "ref_cors",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_dotenv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "ref_dotenv",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_express",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "ref_express",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_express_rate_limit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "ref_express_rate_limit",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_zod",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "ref_zod",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "server_package_devdependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package_devdependencies",
+      "target": "server_package_devdependencies_nodemon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "server_package",
+      "target": "ref_nodemon",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "failed_sources": [],
+  "extracted_sources": [
+    "/Users/rehan/Developer/STEM2/.claude/settings.json",
+    "/Users/rehan/Developer/STEM2/client/package.json",
+    "/Users/rehan/Developer/STEM2/client/vite.config.js",
+    "/Users/rehan/Developer/STEM2/package.json",
+    "/Users/rehan/Developer/STEM2/server/package.json"
+  ]
+}
