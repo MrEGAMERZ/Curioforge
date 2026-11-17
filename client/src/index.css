@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #080C16;
+  color: #EAEEF9;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0D1322;
+}
+::-webkit-scrollbar-thumb {
+  background: #232D4A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #34416A;
+}
+
+/* Pulse animation for voice wave */
+@keyframes voice-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.animate-voice-pulse {
+  animation: voice-pulse 1.8s ease-in-out infinite;
+}

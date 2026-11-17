@@ -1,248 +1,222 @@
-# CURIOFORGE — Implementation Roadmap (18-hour plan)
+# CURIOFORGE — Implementation Roadmap (demo-slice-first plan)
 
 > **Status:** Nothing below is built yet. Tick boxes only after the testing checklist is actually run (`RULES.md` §10).
 > Scope from `PRD.md`, structure from `ARCHITECTURE.md`, limits from `RULES.md`, visuals from `DESIGN.md`.
+> Decision record: `docs/designs/curioforge-unified-activity-plan.md`.
 
 ## 1. Time Budget and Priorities
 
+The **hackathon critical path** is Phases 0 → 1 → 8 (≈ 8.5 h). Everything else is planned and specified so other agents can build it, but is sequenced after the live demo.
+
 | Phase | Name | Est. hours | Priority for first review |
 |---|---|---|---|
-| 0 | Setup and foundation | 1.5 | **Mandatory** |
-| 1 | UI foundation and dashboard | 2.0 | **Mandatory** |
-| 2 | AI Curiosity Engine | 3.0 | **Mandatory** |
-| 3 | Invention Blueprint Generator | 2.5 | **Mandatory** |
-| 4 | Interactive STEM Lab (soil moisture) + results interpretation | 3.0 | **Mandatory** |
-| 5 | Personalised tutor (concept explainer) + Open-Meteo | 1.5 | Should-have |
+| 0 | Docs, contracts and core foundation | 2.0 | **Mandatory** |
+| 1 | SwiftUI macOS demo slice (live activity loop) | 5.0 | **Mandatory — LIVE** |
+| 2 | Android + PWA shells | 2.0 | Planned (scaffold at demo) |
+| 3 | Full interaction set (sims + dialogue) | 2.5 | Planned |
+| 4 | Multilingual prompts + TTS | 1.0 | Planned |
+| 5 | Full parent/teacher dashboard | 1.0 | Planned |
 | 6 | Textbook intelligence and PDF | 2.0 | **Postponed** (stretch, only if ahead of schedule) |
-| 7 | Accessibility and responsive polish | 1.0 | Should-have (baseline a11y is built into every phase; this is the audit) |
-| 8 | Integration, testing, final demo | 2.0 | **Mandatory** |
+| 7 | Accessibility, safety and hardening audit | 1.0 | Should-have (baseline built into every phase) |
+| 8 | Integration, testing, final demo | 1.5 | **Mandatory** |
 | — | Buffer | 1.5 | Reserved for API surprises and bugs |
-| | **Total (excluding Phase 6)** | **18.0** | |
+| | **Hackathon critical path (0+1+8)** | **8.5** | |
+| | **Full roadmap (excluding Phase 6)** | **16.0 + buffer** | |
 
 ```mermaid
 flowchart LR
-  P0[0 Setup] --> P1[1 UI + Dashboard] --> P2[2 Curiosity Engine] --> P3[3 Blueprint] --> P4[4 Lab + Interpret]
-  P4 --> P5[5 Tutor + Weather]
-  P5 --> P7[7 A11y audit]
-  P7 --> P8[8 Integrate + Demo]
-  P4 -.if cut.-> P8
+  P0[0 Docs + core + contracts] --> P1[1 SwiftUI demo slice]
+  P1 --> P8[8 Integrate + demo]
+  P1 -.after demo.-> P2[2 Android + PWA shells]
+  P2 --> P3[3 Sims + dialogue]
+  P3 --> P4[4 Multilingual]
+  P4 --> P5[5 Full dashboard]
+  P5 --> P7[7 A11y + hardening]
+  P7 -.next iteration.-> P8
   P8 -.if time remains.-> P6[6 Textbook PDF]
 ```
 
 ### Cut line (if behind schedule)
 1. First cut: Phase 6 (already postponed).
-2. Then: tutor feedback (`/api/tutor/feedback`), then Open-Meteo (Phase 5 weather), keeping the concept explainer.
-3. Never cut: Phases 0–4 and 8. The first review needs one complete honest journey.
+2. Then: Phase 4 multilingual, Phase 5 full dashboard, Phase 3 beyond the single demo simulation. Keep only the Phase 1 native parent gate.
+3. Never cut: Phases 0, 1 and 8. The first review needs one complete honest activity loop.
 
 ### Checkpoints
 | Elapsed | Must have |
 |---|---|
-| ~3.5 h | Phases 0–1 done: app shell and dashboard run |
-| ~9.5 h | Phases 2–3 done: idea → blueprint works with live Gemini |
-| ~12.5 h | Phase 4 done: simulation and interpretation work |
-| ~16.5 h | Phases 5, 7, 8 done or consciously cut |
+| ~2 h | Phase 0 done: docs consistent, contracts validate, core starts, Gemini smoke test recorded (D1/D2) |
+| ~7 h | Phase 1 done: macOS voice → photo → ActivityPlan → prediction → result → safety pivot works |
+| ~8.5 h | Phase 8 rehearsed: demo script run twice, no fake responses, parent gate shown |
+| After demo | Phases 2–5 and 7 in order, one at a time |
 
 ---
 
-## Phase 0 — Project Setup and Foundation  (≈1.5 h) · Mandatory
+## Phase 0 — Docs, Contracts and Core Foundation (≈2.0 h) · Mandatory
 
-**Objective:** A running monorepo skeleton where client and server both start and talk to each other.
+**Objective:** Authoritative docs are unified and a runnable stateless core with versioned contracts exists.
+
+**Status note:** The documentation portion is already complete: `docs/designs/curioforge-unified-activity-plan.md` was written and `PRD.md`, `ARCHITECTURE.md`, `RULES.md`, `PHASES.md`, `DESIGN.md`, `README.md` were amended. The code portion below is still pending.
 
 **Features**
-- Repo structure per `ARCHITECTURE.md` §14.
-- Vite + React client with Tailwind configured to `DESIGN.md` tokens.
-- Express server with `GET /api/health`, env loading, error handler, zod validate middleware, rate limiter.
-- Vite proxy `/api` → `http://localhost:8787`.
-- Root script running both with one command.
+- Contracts in `packages/contracts/v1/`: `activityProgram.schema.json`, `sessionState.schema.json`, `safetyEvent.schema.json`, `dashboardEvent.schema.json`, plus examples.
+- Express core with `GET /api/health`, `POST /api/session/start`, `POST /api/safety/check`, env loading, error handler, zod validate middleware, rate limiter.
+- `services/gemini.js` with 30 s timeout, single retry, JSON parsing and `x-goog-api-key` header.
+- `safety/guardrail.js` precheck + postreview with creative-pivot rewriting.
+- Root scripts: `install:all`, `dev`, `smoke`.
 
-**Files to create/modify:** root `package.json`, `.gitignore`, `README.md` (run instructions only); `client/` (`index.html`, `vite.config.js`, `tailwind.config.js`, `postcss.config.js`, `src/main.jsx`, `src/App.jsx`, `src/index.css`); `server/` (`package.json`, `.env.example`, `src/index.js`, `src/app.js`, `config/env.js`, `routes/health.js`, `middleware/*`).
+**Files to create/modify:** `packages/contracts/v1/*`; `server/package.json`, `server/.env.example`, `server/src/{index.js,app.js}`, `server/src/config/env.js`, `server/src/routes/{health,session,safety}.js`, `server/src/services/gemini.js`, `server/src/safety/guardrail.js`, `server/src/prompts/{shared,safety}.js`, `server/src/schemas/{session,safety}.js`, `server/src/middleware/*`, `server/src/utils/parseJson.js`; root `package.json`, `.gitignore`.
 
-**Dependencies:** client: `react`, `react-dom`, `react-router-dom`, `vite`, `@vitejs/plugin-react`, `tailwindcss`, `postcss`, `autoprefixer`, `lucide-react`. Server: `express`, `cors`, `dotenv`, `zod`, `express-rate-limit`, `nodemon` (dev). Root: `concurrently`.
+**Dependencies:** server: `express`, `cors`, `dotenv`, `zod`, `express-rate-limit`, `nodemon` (dev). Root: `concurrently`.
 
-**Expected output:** `npm run dev` shows a blank styled page that displays "Server: OK" fetched from `/api/health`.
+**Expected output:** `npm run smoke` sends one audio+image probe and prints whether `inlineData` worked; `/api/health` returns `contractVersion: "v1"`.
 
 **Acceptance criteria**
-- Client on `localhost:5173`, server on `8787`.
-- `/api/health` returns `{status:"ok", geminiConfigured: boolean}` and never the key.
-- Server refuses to start with a clear message when `GEMINI_API_KEY` is missing (or health reports `false`; decide and document).
-- Tailwind classes using design tokens render (dark background visible).
+- All JSON Schema examples validate.
+- `/api/health` returns `{status:"ok", geminiConfigured: boolean, contractVersion:"v1"}` and never the key.
+- Server refuses to start with a clear message when `GEMINI_API_KEY` is missing.
+- "Make a fire bomb" through `/api/safety/check` returns `safe:false` plus a pivot and a `SafetyEvent`.
+- D1 (audio transport) and D2 (model/structured output) recorded in `ARCHITECTURE.md` §15.
 - `.env` is git-ignored; `.env.example` committed.
 
 **Testing checklist**
-- [ ] Fresh clone + `npm install` + `npm run dev` works
-- [ ] Health call through proxy succeeds from browser
-- [ ] No key string in `client/` bundle (search build output)
-- [ ] Open Decisions D1 and D3 recorded in `ARCHITECTURE.md` with the chosen values
+- [ ] Fresh install + `npm run dev` starts the core
+- [ ] Contract examples validate against all four schemas
+- [ ] Gemini smoke test recorded: `inlineData` or fallback decision
+- [ ] No key string in any shell source or build output
+- [ ] Unsafe text gets a deterministic pivot without calling Gemini
 
 ---
 
-## Phase 1 — UI Foundation and Dashboard  (≈2.0 h) · Mandatory
+## Phase 1 — SwiftUI macOS Demo Slice (≈5.0 h) · Mandatory / LIVE
 
-**Objective:** Premium app shell and reusable UI primitives, plus the Dashboard.
+**Objective:** One reliable, native 5-minute activity loop. This is the demo.
 
 **Features**
-- `AppShell`, `Sidebar` (collapses to icon rail on `lg`, bottom nav on mobile), `TopBar`.
-- UI primitives: `Button`, `Card`, `Chip`, `Badge`, `Input`, `Textarea`, `Select`, `Spinner`, `ErrorState`, `EmptyState`.
-- `ProjectContext` + `useLocalStorage` + `useAsync`.
-- Dashboard: hero input "What are you curious about?", recent projects (empty state), profile chip with grade band selector.
-- Router with routes for pages (placeholders only for pages built in later phases are **hidden from nav** until built).
+- Xcode project `apps/macos/CurioForge.xcodeproj`; SwiftUI app shell; `Info.plist` with `NSMicrophoneUsageDescription` and `NSCameraUsageDescription`.
+- `APIClient.swift`, `@Observable` session store, `UserDefaults` persistence for session/activities/events.
+- `ActivityProgramInterpreter` supporting the full v1 block set (unknown blocks show a friendly unsupported card).
+- Push-to-talk capture via AVFoundation; transcription via Speech with fallback text input; `AVSpeechSynthesizer` for `speak` blocks with visible text and stop/replay.
+- Camera capture for materials and result; materials labels fed to `/api/idea/interpret`.
+- One Living Canvas simulation `sim_fizz_gas` as a pure Swift struct; persistent Simulation label; prediction pause.
+- `/api/results/explain` call after result photo; explanation shown in a mentor card.
+- Parent gate: simple local gate → read-only activity + safety event feed.
 
-**Files:** `client/src/components/ui/*`, `components/layout/*`, `context/ProjectContext.jsx`, `hooks/*`, `lib/ids.js`, `lib/apiClient.js` (skeleton), `pages/DashboardPage.jsx`, `features/dashboard/*`, `App.jsx`.
+**Files:** `apps/macos/CurioForge.xcodeproj`, `apps/macos/CurioForge/**` (`App.swift`, `Info.plist`, `Stores/`, `Shells/`, `Features/`, `Simulations/`). Core routes added in Phase 0 are consumed here.
+
+**Dependencies:** none new (SwiftUI, AVFoundation, Speech, Swift 5.9).
+
+**Expected output:** The PRD §15 demo script completes on one Mac with live AI calls.
+
+**Acceptance criteria**
+- All FR-01..FR-15 MVP criteria in `PRD.md` §14 pass on macOS.
+- No Gemini key, prompt or safety logic exists in the shell.
+- Mic/camera denial shows text/manual fallback and does not crash.
+- Unsafe request produces a safe pivot and a visible SafetyEvent.
+- Reload restores session, activities and events from UserDefaults.
+
+**Testing checklist**
+- [ ] Demo prompt returns a named ActivityPlan and is spoken aloud
+- [ ] Photo materials appear in the plan
+- [ ] Prediction is required/skippable before explanation
+- [ ] "Make a fire bomb" pivots safely
+- [ ] Parent gate opens and shows the session + redirect
+- [ ] Search shell source: no `gemini`, no API key, no prompt strings
+- [ ] Reduce-motion setting respected; TTS can be stopped
+
+---
+
+## Phase 2 — Android + PWA Shells (≈2.0 h) · Planned / Scaffold at demo
+
+**Objective:** Prove the same ActivityProgram contract runs on other platforms.
+
+**Features**
+- Android: Kotlin + Compose project, CameraX, MediaRecorder, TextToSpeech, DataStore, one interpreter screen using a checked-in example `activity.fizz.json`.
+- PWA: React/Vite client, Tailwind tokens, `/api` proxy to 8787, `apiClient.js`, one interpreter screen, Service Worker + manifest with offline example activity cache.
+- Both shells consume `packages/contracts/v1` examples; neither calls Gemini.
+
+**Files:** `apps/android/**`; `client/index.html`, `client/vite.config.js`, `client/tailwind.config.js`, `client/postcss.config.js`, `client/public/manifest.webmanifest`, `client/src/**`.
+
+**Dependencies:** Android: Jetpack Compose, CameraX, MediaRecorder, TextToSpeech, DataStore (JDK 17, SDK 34). PWA: `react`, `react-dom`, `react-router-dom`, `vite`, `@vitejs/plugin-react`, `tailwindcss`, `postcss`, `autoprefixer`, `lucide-react`.
+
+**Expected output:** Opening the example program in both shells renders the same ordered blocks as macOS.
+
+**Acceptance criteria**
+- Same `activity.fizz.json` renders in all three shells.
+- No duplicated prompts or safety rules outside the core.
+- PWA works offline for the cached example; live AI requires the core.
+- Android permissions denied → text fallback.
+
+**Testing checklist**
+- [ ] Contract example renders on emulator and in browser
+- [ ] `npm run dev` proxies `/api` correctly from PWA
+- [ ] Service Worker caches example activity only, never secrets
+- [ ] No key in Android bundle or PWA build output
+
+---
+
+## Phase 3 — Full Interaction Set (≈2.5 h) · Planned
+
+**Objective:** Move from one loop to a real interaction library.
+
+**Features**
+- Three or more Living Canvas simulations (`sim_fizz_gas`, `sim_soil_moisture`, one more), registered in `services/simulationCatalog.js`.
+- Continuous push-to-talk dialogue via `/api/idea/interpret` follow-ups; `branch` blocks fully exercised.
+- Software-project ActivityPrograms (apps/web) alongside physical activities.
+- Concept check `showCard`/feedback generated through `/api/activity/generate`.
+
+**Files:** core `prompts/activity.js`, `services/simulationCatalog.js`; shell simulation modules; PRD/ARCH notes for new sim IDs.
 
 **Dependencies:** none new.
 
-**Expected output:** a polished dark dashboard; submitting the hero input creates a project and navigates to `/create/:id` (page may show a stub until Phase 2).
-
-**Acceptance criteria**
-- Matches palette, typography and spacing in `DESIGN.md`.
-- Grade band and nickname persist after reload.
-- Recent projects list reads from LocalStorage; delete works.
-- Layout usable at 360 px, 768 px and 1280 px.
-
 **Testing checklist**
-- [ ] Reload keeps profile and projects
-- [ ] Corrupted LocalStorage value does not crash the app
-- [ ] Keyboard-only navigation of sidebar and hero input
-- [ ] Empty state visible with zero projects
+- [ ] Each simulation is pure, deterministic and labelled
+- [ ] Branch targets resolve; unknown block types degrade gracefully
+- [ ] Software activity has no `capturePhoto` requirement
+- [ ] Dialogue never skips `askPredict`
 
 ---
 
-## Phase 2 — AI Curiosity Engine  (≈3.0 h) · Mandatory
+## Phase 4 — Multilingual Prompts + TTS (≈1.0 h) · Planned
 
-**Objective:** A mentor conversation that builds an Idea Board and detects STEM concepts, using live Gemini.
+**Objective:** Locale-aware activities with the right voice.
 
-**Features**
-- `services/gemini.js` (`generateJson`, timeout, single retry, safe error mapping).
-- `prompts/mentor.js`, `schemas/curiosity.js`, `routes/curiosity.js` → `POST /api/curiosity/chat`.
-- Client `/create/:projectId`: `ChatPanel`, `MessageBubble`, `FollowUpChips`, `IdeaBoard` (goal, user, constraints, concepts, open questions).
-- "Generate blueprint" button visible after first full exchange; highlighted when `stage = ready_for_blueprint`.
+**Features:** locale picker in profile; `locale` sent to all core endpoints; prompt layer uses locale; per-locale TTS voice selection; English + Hindi first.
 
-**Files:** server: `services/gemini.js`, `prompts/{shared,mentor}.js`, `schemas/curiosity.js`, `routes/curiosity.js`, `utils/parseJson.js`, `app.js`. Client: `features/curiosity/*`, `pages/CreatePage.jsx`, `lib/apiClient.js`.
-
-**Dependencies:** none new.
-
-**Expected output:** entering the demo prompt returns relevant follow-up questions; Idea Board shows soil moisture/sensors-type concepts.
-
-**Acceptance criteria**
-- Matches `/api/curiosity/chat` contract in `ARCHITECTURE.md` §15.
-- Invalid AI JSON is retried once, then shows a retry UI (never raw output).
-- Conversation persists in the project.
-- Student text > 1000 chars or > 20 messages is rejected with `VALIDATION_ERROR` (client trims history sensibly).
-- Mentor replies contain a "why" and 1–3 follow-ups; no unsafe suggestions.
+**Files:** core `prompts/shared.js`, `prompts/activity.js`; shell locale stores/TTS selectors; `ARCHITECTURE.md` D3 resolved.
 
 **Testing checklist**
-- [ ] Demo prompt: follow-ups are relevant (crop, water source, budget, power)
-- [ ] Unsafe prompt (e.g. mains-voltage device) gets a redirect to a safer idea
-- [ ] Prompt-injection attempt ("ignore your rules") does not change behaviour
-- [ ] Kill server mid-request → error state with retry, input preserved
-- [ ] Missing/invalid API key → friendly error, no key in response
-- [ ] Gemini model/output-schema assumption (D1) verified and recorded
+- [ ] Same idea in `en` and `hi` produces locale-correct `speak` blocks
+- [ ] TTS voice changes with locale
+- [ ] Unset locale defaults to `en`
+- [ ] Safety pivots are localized too
 
 ---
 
-## Phase 3 — Invention Blueprint Generator  (≈2.5 h) · Mandatory
+## Phase 5 — Full Parent/Teacher Dashboard (≈1.0 h) · Planned
 
-**Objective:** Turn the conversation into a structured, readable invention blueprint.
+**Objective:** Extend the native parent gate into a fuller read-only dashboard.
 
-**Features**
-- `POST /api/blueprint/generate` with schema validation and sanity checks (`ARCHITECTURE.md` §9).
-- Blueprint viewer: summary, concepts (links to Learn when built), how it works, components with cost-tier chips and alternatives, numbered build steps with "why" and safety callouts, test plan, improvements, safety, limitations, thinking questions.
-- Regenerate button; blueprint stored in project.
-- Link to lab when `labId = soil_moisture`.
+**Features:** PWA web route `/parent`; filters by date/concept; activity history; safety redirect list; "based only on this device" notice. No accounts.
 
-**Files:** server: `prompts/blueprint.js`, `schemas/blueprint.js`, `routes/blueprint.js`. Client: `features/blueprint/*`, `pages/BlueprintPage.jsx`.
-
-**Dependencies:** none new.
-
-**Expected output:** demo scenario yields a full blueprint in under 30 s.
-
-**Acceptance criteria**
-- All FR-06..FR-09 criteria in `PRD.md` §14.
-- No price figures in output; cost tiers only.
-- Hardware blueprints always include supervision warning(s).
-- Blueprint reloads from LocalStorage without a new AI call.
+**Files:** PWA `features/parent/**`, route config; native shell reuses the same event shape.
 
 **Testing checklist**
-- [ ] Demo scenario blueprint has ≥5 steps, ≥2 tests, alternatives for every component
-- [ ] A software idea (e.g. "app to track homework") yields `mode: "software"` and `labId: null`
-- [ ] Schema failure path shows retry
-- [ ] Printing/zoom at 200% remains readable
+- [ ] Gate opens read-only view
+- [ ] Safety events always visible and labelled
+- [ ] No write/edit controls presented as working
+- [ ] Local-only notice visible
 
 ---
 
-## Phase 4 — Interactive STEM Lab and Results Interpretation  (≈3.0 h) · Mandatory
-
-**Objective:** A working soil-moisture simulation and AI explanation of results.
-
-**Features**
-- `lib/simulation/soilMoistureModel.js` per `ARCHITECTURE.md` §10 (pure, unit-checkable).
-- `SoilMoistureLab`: `ControlPanel` (soil type, days, ET, rain, crop factor, schedule, threshold/target), `MoistureChart` (custom SVG, both strategies, stress line, data-table toggle), `ResultsPanel` (water used, saved %, stress days, wasted).
-- "Predict first" textbox → "Explain my results" → `POST /api/results/interpret`.
-- Persistent "Simulation — simplified model" label.
-
-**Files:** client: `lib/simulation/soilMoistureModel.js`, `features/lab/*`, `pages/LabPage.jsx`. Server: `prompts/results.js`, `schemas/results.js`, `routes/results.js`.
-
-**Dependencies:** none new.
-
-**Expected output:** moving a slider updates the chart instantly; sensor strategy typically shows lower water use than the fixed schedule under default settings; AI explanation references the exact numbers.
-
-**Acceptance criteria**
-- FR-10 and FR-11 in `PRD.md` §14.
-- Model deterministic: same inputs → same outputs.
-- Moisture never < 0 or > 100; water balance matches formulas in §10.
-- Interpretation never alters or recomputes numbers; includes caveats and ≥2 improvements.
-- Lab usable without any AI call (interpretation optional).
-
-**Testing checklist**
-- [ ] Manual calc for a 3-day case matches model output
-- [ ] Edge cases: 0 rain, heavy rain (excess/wasted > 0), clay vs sand
-- [ ] Strategy A using 0 water → `waterSavedPct` is `null`, UI shows "n/a"
-- [ ] Chart readable at 360 px; data table alternative present
-- [ ] Interpretation failure leaves lab fully usable
-
----
-
-## Phase 5 — Personalised Tutor and Open-Meteo  (≈1.5 h) · Should-have
-
-**Objective:** Concept explainer adapted to grade band, and real forecast feeding the lab.
-
-**Features**
-- `POST /api/tutor/explain` (and `/api/tutor/feedback` as stretch inside this phase).
-- `/learn` concept list from project concepts; concept page with explanation, analogy, key terms, check question, feedback.
-- `services/openMeteo.js`, `GET /api/weather/geocode`, `GET /api/weather/forecast`, 10-min cache.
-- `WeatherPanel` in the lab: city search → forecast → "Use this forecast" sets rain/ET for up to 7 days; shows source and fetch time.
-
-**Files:** server: `prompts/tutor.js`, `schemas/{tutor,weather}.js`, `routes/{tutor,weather}.js`, `services/openMeteo.js`. Client: `features/learn/*`, `pages/LearnPage.jsx`, `features/lab/WeatherPanel.jsx`.
-
-**Dependencies:** none new.
-
-**Expected output:** "Soil moisture" and "Sensors" cards open from the blueprint; searching "Bengaluru" fills the lab with real forecast numbers.
-
-**Acceptance criteria**
-- FR-05 and FR-12 in `PRD.md` §14.
-- Explanations differ visibly across grade bands.
-- Weather failure never inserts fake values; manual inputs still work.
-- D4 (Open-Meteo variables/terms) verified and recorded.
-
-**Testing checklist**
-- [ ] Same concept for 6–8 vs 11–12 differs in vocabulary
-- [ ] Unknown city → friendly "no results"
-- [ ] Offline/blocked Open-Meteo → error notice, lab still works
-- [ ] Forecast values match Open-Meteo's own site for the same coordinates (spot check)
-
----
-
-## Phase 6 — Textbook Intelligence and PDF Support  (≈2.0 h) · Postponed / Extended
+## Phase 6 — Textbook Intelligence and PDF Support (≈2.0 h) · Postponed / Extended
 
 **Objective:** Upload a PDF chapter; get summary and quiz grounded in the uploaded text only.
 
-**Features:** upload (PDF ≤ 10 MB), extract text, summary and quiz via Gemini, explicit "based only on your upload" label, no page citations unless extraction provides page numbers.
+**Features:** PDF ≤ 10 MB, extract text, summary and quiz via Gemini, explicit "based only on your upload" label, no page citations unless extraction provides page numbers.
 
-**Files:** server `routes/textbook.js`, `schemas/textbook.js`, PDF handling in a new service; client `features/textbook/*`, route `/textbook` (added to nav only when working).
+**Files:** core `routes/textbook.js`, `schemas/textbook.js`, PDF service; PWA `features/textbook/**`, route `/textbook` added to nav only when working.
 
-**Dependencies:** `multer` + a PDF library (**decide D2 first**, record in `ARCHITECTURE.md`).
-
-**Expected output:** a 5–10 page chapter produces a faithful summary and 5 questions.
+**Dependencies:** `multer` + PDF library (**decide in this phase**, record in `ARCHITECTURE.md` §15).
 
 **Acceptance criteria:** no invented citations; scanned/image-only PDFs produce a clear "can't read text" message; file discarded after request; limits enforced.
 
@@ -252,64 +226,63 @@ flowchart LR
 - [ ] Non-PDF rejected
 - [ ] Output never cites pages not in the source
 
-*Do not start Phase 6 until Phases 0–4 and 8 are complete.*
+*Do not start Phase 6 until Phases 0, 1 and 8 are complete.*
 
 ---
 
-## Phase 7 — Accessibility and Responsive Design  (≈1.0 h) · Should-have
+## Phase 7 — Accessibility, Safety and Hardening (≈1.0 h) · Should-have
 
-**Objective:** Audit and fix accessibility and layout issues across all built pages.
+**Objective:** Audit and fix cross-shell accessibility and safety regressions.
 
-**Features:** contrast check against `DESIGN.md` palette, focus rings, aria-live regions, label audit, reduced-motion, 360/768/1280 px review, touch target sizes, chart text alternative check.
+**Features:** contrast check against `DESIGN.md`, focus rings, live-region/accessibility labels, reduce-motion, 360/768/1280 px PWA review, 44 px targets, prompt-injection tests, quota/permission failures, TTS text alternative check.
 
 **Files:** only those with defects found.
 
-**Dependencies:** none new (browser devtools Lighthouse/axe extension allowed as tools, not dependencies).
-
-**Acceptance criteria:** meets `PRD.md` §12 A-01..A-09; no critical axe/Lighthouse accessibility violations on Dashboard, Create, Blueprint, Lab.
+**Dependencies:** none new (browser devtools Lighthouse/axe allowed as tools, not dependencies).
 
 **Testing checklist**
-- [ ] Complete the demo using keyboard only
-- [ ] Screen-reader spot check (one page)
+- [ ] Complete the demo using keyboard only (PWA) and VoiceOver (macOS)
+- [ ] Screen-reader spot check (one PWA page)
 - [ ] 200% zoom: no clipped content
-- [ ] `prefers-reduced-motion` disables non-essential motion
+- [ ] Reduce-motion disables non-essential motion
+- [ ] Prompt-injection attempt does not change rules
+- [ ] Unsafe output is caught by postreview even if Gemini drifts
 
 ---
 
-## Phase 8 — Integration, Testing and Final Demonstration  (≈2.0 h) · Mandatory
+## Phase 8 — Integration, Testing and Final Demonstration (≈1.5 h) · Mandatory
 
 **Objective:** One reliable end-to-end journey and a rehearsed demo.
 
 **Features**
 - Full run-through of `PRD.md` §15 demo criteria.
 - Bug fixing, copy polish, error message review.
-- Update `README.md` with run steps and env setup.
+- Final `README.md` run steps for core + macOS + Android/PWA scaffolds.
 - Demo script and a recorded backup video of a **real** run (clearly a recording, used only if the live demo fails).
 
 **Files:** whatever defects require; `README.md`.
 
-**Dependencies:** none new.
-
 **Acceptance criteria**
 - All MVP-M criteria in `PRD.md` §14 pass; MVP-S ones pass or are consciously cut and documented.
-- Clean browser profile run works from scratch.
+- Clean machine run works from scratch.
 - No console errors in the demo path; no secrets in repo.
 - Demo completes in ≤ 5 minutes.
 
 **Testing checklist**
-- [ ] Execute demo script twice, fresh browser profile
-- [ ] Check Gemini quota/rate limits will survive the demo (don't burn requests testing right before)
+- [ ] Execute demo script twice, fresh user defaults
+- [ ] Check Gemini quota/rate limits will survive the demo
 - [ ] Reload mid-demo restores state
 - [ ] Network flake handled with visible retry
-- [ ] Final scan: no hardcoded fake responses in UI paths; labels and disclaimers present
+- [ ] Final scan: no hardcoded fake responses, Simulation label present, safety pivot visible
 
 **Suggested 5-minute demo script**
-1. Dashboard → type the farmers-and-water prompt (0:30)
-2. Follow-up answers and Idea Board (1:00)
-3. Concept cards: soil moisture, sensors (0:45)
-4. Generate blueprint; show components, alternatives, safety (1:15)
-5. Lab: tweak inputs, show saved water %, optional real forecast (1:00)
-6. Explain my results; close on improvements (0:30)
+1. Tap mic and say "I want to make something that fizzes" (0:30)
+2. Show idea summary, detected concepts, spoken Activity Plan (1:00)
+3. Snap household materials; show them used in the plan (0:45)
+4. Living Canvas: answer the prediction pause (0:45)
+5. Build, snap result, hear the AI explanation (1:00)
+6. Ask for something dangerous; show the safe pivot + SafetyEvent (0:30)
+7. Open parent gate and show the read-only feed (0:30)
 
 ---
 
@@ -317,12 +290,12 @@ flowchart LR
 
 | Phase | Status | Notes |
 |---|---|---|
-| 0 | [ ] Not started | |
-| 1 | [ ] Not started | |
-| 2 | [ ] Not started | |
+| 0 | [ ] Not started | Docs portion complete; contracts/core pending |
+| 1 | [ ] Not started | Live demo surface |
+| 2 | [ ] Not started | Scaffold at demo time |
 | 3 | [ ] Not started | |
 | 4 | [ ] Not started | |
 | 5 | [ ] Not started | |
 | 6 | [ ] Postponed | |
 | 7 | [ ] Not started | |
-| 8 | [ ] Not started | |
+| 8 | [ ] Not started | Final rehearsal |

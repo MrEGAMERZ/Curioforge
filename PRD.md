@@ -2,6 +2,7 @@
 
 > **Tagline:** Turning Curiosity into Invention
 > **Document status:** Planning. **Nothing described here is implemented yet.** Every feature is `[PLANNED]` until its phase in `PHASES.md` is ticked off.
+> **Decision record:** `docs/designs/curioforge-unified-activity-plan.md` (approved 2026-11-17) supersedes the two older drafts and explains the re-scope.
 > **Companion docs:** `ARCHITECTURE.md` (how), `RULES.md` (boundaries), `PHASES.md` (order of work), `DESIGN.md` (look and feel).
 > **Source of truth for:** product scope, user needs, acceptance criteria. If another document conflicts on *scope*, this one wins.
 
@@ -11,6 +12,9 @@
 |---|---|
 | `[MVP-M]` | **Must** work in the hackathon demo |
 | `[MVP-S]` | **Should** work; first to be cut if time runs short |
+| `[PHASE 2]` | Planned after the live demo; scaffold/interpreter work |
+| `[PHASE 3]` | Planned after platform shells exist |
+| `[PHASE 4]` | Planned after the core interaction set |
 | `[EXT]` | Extended version, after the MVP |
 | `[LONG]` | Long-term vision, significant development |
 | `[PLANNED]` | Designed, not yet built (applies to everything today) |
@@ -19,146 +23,172 @@
 
 ## 1. Project Overview
 
-CURIOFORGE is an inclusive, AI-guided STEM invention platform for school students (target grades 6–12). It turns a student's curiosity, observation or half-formed idea into a practical hardware or software invention, without requiring prior coding, electronics or advanced science.
+CURIOFORGE is an inclusive, AI-guided STEM invention platform for **primary students, ages 7–8 (Grades 2–3)**. It turns a spoken, half-formed idea plus a photo of household materials into a practical activity the child can actually do — then explains the science from the result they made.
 
-Journey: **Curiosity → Conversation → Discovery → Learning → Design → Build → Test → Improve → Invention.**
+Journey: **Curiosity → Speak → Snap materials → Activity Plan → Predict → Build → Snap result → Explain → Share with an adult.**
 
-The AI acts as a **mentor, not a generator**: it asks questions, explains the *why*, and makes the student decide.
+The AI acts as a **mentor, not an answer machine**: it asks questions, prompts a prediction, explains the *why*, and makes the student decide. The product is the **closed build loop**, not a chat companion.
 
-Two connected journeys:
+The architecture thesis is a shared core that emits a versioned, declarative **ActivityProgram v1** ("bytecode" for interactions), interpreted by thin platform shells. This is what lets the same activity run on SwiftUI macOS, Android, and a PWA.
 
 | Journey | Purpose | Hackathon coverage |
 |---|---|---|
-| **Create STEM** | Idea → blueprint → build → test → improve | Core of the MVP |
-| **Learn STEM** | Concept explanations, tutor, virtual lab, textbook intelligence | Concept explainer, tutor feedback and one simulation in MVP. Textbook PDF is `[EXT]` |
+| **Create STEM (Activity Loop)** | Idea → materials → Activity Plan → build → result → explanation | Core of the MVP, live on macOS |
+| **Learn STEM** | Concept explanations, tutor feedback, Living Canvas | Concept cards + one simulation in MVP |
+| **Supervise** | Parent/teacher sees activity history and safety redirects | Read-only parent gate in MVP |
 
 ## 2. Problem Statement
 
-- Students have ideas and questions but no structured path from "I wonder…" to a working prototype.
-- Existing resources assume prior knowledge (code, circuits) or give finished projects to copy, which teaches little.
-- Components and tools can be expensive, and many learners have limited access to labs.
-- Generic AI chatbots give long, unverified answers and rarely build understanding or flag safety issues.
+- Children aged 7–8 have ideas but cannot yet type them fluently; a text box is a barrier.
+- Voice-first kids' AI products are crowded, but most stop at "warm answer". The build step is missing.
+- Existing household-activity resources give finished projects to copy, which teaches little.
+- Camera object-ID apps name things; they do not turn what is on the table into a personalized experiment.
+- Generic AI chatbots are unsafe for this age, give long unverified answers, and rarely flag hazards.
+- Parents and teachers want visibility without surveillance.
 
 ## 3. Target Users and Personas
 
 | Persona | Description | Needs |
 |---|---|---|
-| **Aarav, 13 (primary)** | Grade 8, curious, no coding experience, shared family laptop | Simple language, small steps, cheap parts, encouragement |
-| **Meera, 16** | Grade 11, has built a science-fair project, wants to go deeper | Real concepts, test plans, improvement ideas |
-| **Ms. Rao (secondary)** | Science teacher mentoring a club | Safe, explainable output she can supervise `[EXT]` for teacher tools |
-| **Hackathon judges** | Evaluate in minutes | One clear, working, honest end-to-end journey |
+| **Riya, 7 (primary)** | Grade 2, pre-fluent reader, shared family Mac, limited adult supervision | Big mic button, voice and read-aloud, short steps, cheap household materials, encouragement |
+| **Parent / Ms. Rao (secondary)** | Parent or science teacher mentoring one child or a small club | Safe, explainable output; activity history; safety redirects she can supervise |
+| **Hackathon judges** | Evaluate in minutes | One clear, working, honest end-to-end loop plus a credible multi-platform architecture |
 
-MVP is designed for **Aarav and Meera**. Teacher features are `[LONG]`.
+MVP is designed for **Riya** and the supervising adult. Older grade bands and classroom mode are `[LONG]`.
 
 ## 4. Proposed Solution
 
-A web app with:
-
-1. **Curiosity Engine** — conversational idea exploration with a live "Idea Board".
-2. **Concept explanations** — beginner-friendly cards, adjusted to the student's grade band.
-3. **Invention Blueprint** — structured, editable-by-regeneration plan with components, affordable alternatives, build steps, test plan and safety notes.
-4. **Interactive STEM Lab** — a clearly-labelled soil-moisture simulation.
-5. **Results interpretation** — AI helps the student read the simulation and plan improvements.
-6. **Real-world context** — Open-Meteo weather/evapotranspiration data to ground the simulation `[MVP-S]`.
+1. **Voice-first activity shell** — a big mic, a camera button, and an Activity Plan card; text is a fallback, not the primary input.
+2. **Idea interpretation** — the core turns the spoken idea into a summary, detected concepts, and a pre-activity safety check.
+3. **ActivityProgram v1** — a schema-valid, ordered set of blocks the shell interprets: `speak`, `listen`, `showCard`, `askPredict`, `simulate`, `capturePhoto`, `supervisionNote`, `explainResult`, `branch`.
+4. **Living Canvas** — a clearly labelled, client-side simulation the child can touch or talk to, with a prediction pause before results.
+5. **Result explanation** — the child snaps what they built; the core explains the observed science using their own result.
+6. **Deterministic safety guardrail** — hazard detection and creative-pivot rewriting before and after every AI call; never prompt-only.
+7. **Parent gate** — a read-only feed of what was asked, built, and redirected.
+8. **Thin shells** — SwiftUI macOS is the live demo; Android and PWA interpreters are scaffolded and phased.
+9. **Multilingual prompts and TTS** — planned in Phase 4, English first, then a configurable second locale.
 
 ## 5. Product Goals
 
 | # | Goal | Measure (demo-level) |
 |---|---|---|
-| G1 | Deliver one complete, honest student journey | Demo scenario runs end to end with live AI calls |
-| G2 | Build understanding, not just output | Every AI response includes a "why" and at least one thinking prompt |
-| G3 | Beginner-friendly and affordable | Every component has a low-cost alternative |
-| G4 | Safe by default | Safety notes in every hardware blueprint; simulations always labelled |
-| G5 | Inclusive | Keyboard navigable, readable contrast, plain language |
+| G1 | Deliver one complete, honest child journey | Demo loop runs end to end with live AI calls |
+| G2 | Build understanding, not just output | Every activity includes a prediction prompt and a "why" explanation |
+| G3 | Work with what is actually on the table | Photo-derived materials are used by the ActivityPlan |
+| G4 | Safe by default | Deterministic redirect on unsafe requests; supervision notes where relevant |
+| G5 | Inclusive for pre-fluent readers | Voice input + read-aloud + 44 px+ targets + plain age-7 language |
+| G6 | Prove the architecture | One ActivityProgram renders in the macOS shell; contract documented for other shells |
+| G7 | Give adults visibility without surveillance | Parent-gated, read-only event feed |
 
 ## 6. Core User Journeys
 
-### J1 — Farmers and water (primary demo) `[MVP-M]`
+### J1 — "Make something that fizzes" (primary demo) `[MVP-M]`
 
 ```mermaid
 flowchart LR
-  A[Student types idea] --> B[Mentor asks 2-3 follow-ups]
-  B --> C[Idea Board fills: goal, user, constraints, concepts]
-  C --> D[Concept cards: soil moisture, sensors]
-  D --> E[Generate Invention Blueprint]
-  E --> F[Components + cheap alternatives]
-  F --> G[Beginner build steps + safety]
-  G --> H[Soil-moisture simulation]
-  H --> I[AI helps interpret results]
-  I --> J[Improvement ideas, saved project]
+  A[Child taps mic and speaks idea] --> B[Core: idea summary + concepts + safety precheck]
+  B --> C{Unsafe?}
+  C -- yes --> D[Creative pivot: safe fizz variant]
+  C -- no --> E[ActivityProgram v1 generated]
+  D --> E
+  E --> F[macOS shell speaks plan and shows cards]
+  F --> G[Child predicts in Living Canvas]
+  G --> H[Child builds with photographed materials]
+  H --> I[Child snaps result]
+  I --> J[Core explains observed science]
+  J --> K[Parent gate shows session + safety events]
 ```
 
 ### J2 — Learn a concept `[MVP-S]`
-Student opens a concept card (for example "Evapotranspiration"), reads a grade-appropriate explanation, answers a check-your-understanding question and gets feedback.
+Child opens a concept card (for example "fizz / gas"), hears a short explanation, answers a check question by voice or tap, and gets encouraging feedback.
 
 ### J3 — Learn from a textbook `[EXT]`
-Student uploads a textbook chapter PDF; the app summarises and quizzes from the *uploaded text only*.
+Adult uploads a textbook chapter PDF; the app summarises and quizzes from the *uploaded text only*.
 
-### J4 — Return to a project `[MVP-M]`
-Student reopens a saved project from the dashboard (LocalStorage).
+### J4 — Return to an activity `[MVP-M]`
+Child or parent reopens a saved activity from local storage on the same device.
+
+### J5 — Adult review `[MVP-M]`
+Parent passes a simple gate and sees a read-only list of activities, concepts, and safety redirects.
 
 ## 7. Functional Requirements
 
 | ID | Requirement | Priority |
 |---|---|---|
-| FR-01 | Dashboard with "Start a new idea", recent projects and quick links | MVP-M |
-| FR-02 | Optional student profile: nickname and grade band (6–8, 9–10, 11–12) stored locally | MVP-M |
-| FR-03 | Curiosity chat: student message → mentor reply with 1–3 follow-up questions | MVP-M |
-| FR-04 | Idea Board: live summary of goal, users, constraints and detected concepts | MVP-M |
-| FR-05 | Concept explainer: simple explanation, analogy, key terms, check question | MVP-M (explain), MVP-S (feedback on answer) |
-| FR-06 | Blueprint generator returning schema-valid structured JSON | MVP-M |
-| FR-07 | Components list with purpose, cost tier and ≥1 affordable alternative each | MVP-M |
-| FR-08 | Beginner build steps, each with "why this step" and safety note where relevant | MVP-M |
-| FR-09 | Test plan: what to measure, expected observation, how to read it | MVP-M |
-| FR-10 | Soil-moisture simulation with adjustable inputs and comparison of two watering strategies | MVP-M |
-| FR-11 | Results interpretation by AI, using computed simulation numbers | MVP-M |
-| FR-12 | Open-Meteo: city lookup and 7-day forecast feeding simulation rain and ET | MVP-S |
-| FR-13 | Save, load and delete projects in LocalStorage | MVP-M |
-| FR-14 | Clear loading, empty and error states on every AI/network feature | MVP-M |
-| FR-15 | Textbook PDF upload, summary and quiz | EXT |
-| FR-16 | Software-project blueprints (apps/web) beyond hardware | MVP-S (schema supports it; demo is hardware) |
-| FR-17 | Additional labs (circuits, plant growth, etc.) | EXT |
+| FR-01 | First-use profile: nickname optional, `ageBand` includes `7-8`, stored locally | MVP-M |
+| FR-02 | Activity shell with big mic, camera, read-aloud, recent activities | MVP-M |
+| FR-03 | Voice idea capture via AVFoundation on macOS (push-to-talk); text fallback | MVP-M |
+| FR-04 | Camera capture of materials and result; permission-denied path is non-breaking | MVP-M |
+| FR-05 | `/api/idea/interpret` returns idea summary, detected concepts, and a pre-safety verdict | MVP-M |
+| FR-06 | `/api/activity/generate` returns schema-valid `ActivityProgram` v1 | MVP-M |
+| FR-07 | macOS interpreter supports the v1 block set listed in §4 | MVP-M |
+| FR-08 | `speak` blocks are read aloud via `AVSpeechSynthesizer`, with on-screen text | MVP-M |
+| FR-09 | One Living Canvas simulation, client-side, labelled "Simulation — simplified model" | MVP-M |
+| FR-10 | `askPredict` pauses for a prediction before `explainResult` | MVP-M |
+| FR-11 | `/api/results/explain` uses the captured result and the child's prediction | MVP-M |
+| FR-12 | Deterministic hazard guardrail + creative-pivot rewriter before and after AI; emits `SafetyEvent` | MVP-M |
+| FR-13 | Parent gate and read-only activity/safety feed | MVP-M |
+| FR-14 | Local persistence per platform: UserDefaults / DataStore / LocalStorage | MVP-M |
+| FR-15 | Loading, empty, error, permission-denied and retry states on every async feature | MVP-M |
+| FR-16 | Locale-aware prompts and per-locale TTS voices | PHASE 4 |
+| FR-17 | Android shell: Kotlin + Compose, CameraX, MediaRecorder, TextToSpeech, DataStore | PHASE 2 |
+| FR-18 | PWA shell: React/Vite, Service Worker, offline activity cache, install prompt | PHASE 2 |
+| FR-19 | Continuous push-to-talk dialogue and 3+ Living Canvas simulations | PHASE 3 |
+| FR-20 | Textbook PDF upload, summary and quiz | EXT |
+| FR-21 | More simulations (circuits, plant growth, etc.) | EXT |
+| FR-22 | Real-world data grounding (e.g. Open-Meteo) | MVP-S / EXT |
+| FR-23 | Software-activity programs (apps/web) beyond physical builds | PHASE 3 |
+
+**Honesty rule for the demo:** all AI content is live from Gemini; the Living Canvas is a simplified model and is labelled as such. No hardcoded responses are presented as live.
 
 ## 8. Non-Functional Requirements
 
 | ID | Requirement |
 |---|---|
 | NFR-01 | AI responses show a loading state within 200 ms; typical AI wait target ≤ 15 s; hard timeout 30 s with retry |
-| NFR-02 | Simulation runs fully client-side and responds to slider changes in < 100 ms |
-| NFR-03 | Works on current Chrome, Edge, Firefox and Safari; usable from 360 px width |
-| NFR-04 | No API keys or secrets in frontend bundle |
-| NFR-05 | All AI JSON validated against schemas before reaching the UI |
-| NFR-06 | WCAG 2.1 AA target for text contrast and keyboard access (see §12) |
-| NFR-07 | Cold start: `npm install && npm run dev` brings up client and server (documented in README at Phase 0) |
+| NFR-02 | Living Canvas runs fully client-side and responds to input in < 100 ms |
+| NFR-03 | Demo on macOS 13+ with Xcode 15+/Swift 5.9; PWA supports current Chrome, Edge, Firefox, Safari; Android scaffold targets SDK 34 |
+| NFR-04 | No API keys or secrets in any client shell, `VITE_*` variable, bundle, log or repo |
+| NFR-05 | All AI JSON validated against zod schemas before reaching any shell |
+| NFR-06 | WCAG 2.1 AA target plus age-7 usability: ≥ 44 px targets, read-aloud, text alternative for voice |
+| NFR-07 | `npm run install:all` + documented native setup brings up core and PWA; macOS instructions are copy-pasteable |
 | NFR-08 | Free-tier friendly: no paid infrastructure required for the demo |
+| NFR-09 | `ActivityProgram` schema is versioned (`v1`) and unchanged by shell-specific rendering |
+| NFR-10 | Missing/denied microphone or camera permission shows a clear fallback, never a crash |
 
-## 9. MVP Scope (18-hour build)
+## 9. MVP Scope (hackathon build)
 
-**In scope:** FR-01 to FR-14 (FR-05 feedback and FR-12 are Should-have). One fully working scenario (water-saving for farmers). The Curiosity Engine itself accepts *any* idea, but the simulation lab covers soil moisture only; for other ideas the blueprint still works and the lab shows "No simulation for this topic yet".
+**Live in the demo:** Phases 0, 1, 8 — core endpoints, guardrail, contracts, SwiftUI macOS shell, one ActivityProgram loop, one Living Canvas, parent gate.
 
-**Honesty rule for the demo:** all AI content is live from Gemini; weather is live from Open-Meteo; the simulation is a simplified model and is labelled as such. No hardcoded responses presented as live.
+**Planned but not live at demo:** Android and PWA interpreters (Phase 2), broader interaction set (Phase 3), multilingual (Phase 4), full dashboard (Phase 5), textbook PDF (Phase 6/EXT).
+
+The core accepts any age-appropriate idea, but only one Living Canvas simulation ships in the demo; other ideas still get a complete Activity Plan with a "no simulation for this topic yet" state.
 
 ## 10. Features Excluded from MVP
 
 | Feature | Tag | Reason |
 |---|---|---|
 | Textbook PDF intelligence | EXT (Phase 6, stretch) | Needs parsing, chunking, grounding |
-| Multiple labs (circuits, motion, plants) | EXT | Each lab is its own model + UI |
-| User accounts, cloud sync, database | LONG | Out of 18 h; LocalStorage suffices |
-| Teacher dashboard, classroom mode | LONG | Needs accounts |
-| Real hardware code generation and flashing (Arduino/ESP32) | EXT | Safety and verification burden; MVP gives conceptual wiring and logic only |
-| Voice input, multilingual UI | EXT | MVP is English only |
+| Multiple Living Canvas simulations | PHASE 3 / EXT | Each is its own model + UI |
+| Continuous push-to-talk dialogue | PHASE 3 | Push-to-talk is enough for demo |
+| Non-English locales | PHASE 4 | English first, then one configurable locale |
+| Full Android and PWA builds | PHASE 2 | Scaffold + one screen at demo time |
+| Accounts, cloud sync, database | LONG | Local storage suffices |
+| Classroom mode, multi-child roster | LONG | Needs accounts |
+| Real hardware code generation and flashing | EXT | Safety and verification burden |
 | Streaming AI responses | EXT | Not needed for demo |
 | AR/3D model viewer | LONG | |
 | Community sharing and gallery | LONG | Moderation burden |
 
 ## 11. Future Enhancements
 
+- `[PHASE 2]` Android + PWA ActivityProgram interpreters.
+- `[PHASE 3]` Living Canvas library, continuous dialogue, software activities.
+- `[PHASE 4]` Multilingual prompts and TTS: English + one more locale, then expand.
+- `[PHASE 5]` Full parent/teacher dashboard with filters and activity history.
 - `[EXT]` Textbook intelligence with page-referenced answers, quizzes and flashcards.
-- `[EXT]` Additional simulations; student-entered real sensor readings and charts.
-- `[EXT]` Pseudocode and starter code for microcontrollers, with student-run tests only.
-- `[EXT]` Offline-friendly mode; Hindi/Kannada and other languages.
-- `[LONG]` Accounts, teacher tools, project portfolios, parent/teacher supervision flows.
+- `[EXT]` Additional simulations and child-entered real sensor readings.
+- `[LONG]` Accounts, teacher tools, portfolios, supervised classroom flows.
 - `[LONG]` Component price lookup via a real data source (never AI-guessed prices).
 
 ## 12. Accessibility Requirements
@@ -166,68 +196,73 @@ Student reopens a saved project from the dashboard (LocalStorage).
 | ID | Requirement |
 |---|---|
 | A-01 | Body text contrast ≥ 4.5:1, large text and UI components ≥ 3:1 (palette in `DESIGN.md`) |
-| A-02 | Full keyboard operation with visible focus rings; logical tab order |
-| A-03 | Semantic HTML landmarks, labelled inputs, `aria-live="polite"` for AI responses and loading status |
-| A-04 | Respect `prefers-reduced-motion` |
-| A-05 | Minimum 44×44 px touch targets for primary controls |
-| A-06 | Plain-language writing: short sentences, jargon defined on first use, grade-band adjustment |
+| A-02 | Full keyboard operation with visible focus rings; logical tab order; voice is never the only input |
+| A-03 | Semantic controls, labelled inputs, `aria-live`-equivalent announcements for AI responses and loading status |
+| A-04 | Respect `prefers-reduced-motion` / platform reduce-motion setting |
+| A-05 | Minimum 44×44 px touch/click targets for primary controls |
+| A-06 | Plain-language writing: short sentences, jargon defined on first use, age-band adjustment (`7-8` default) |
 | A-07 | Never convey meaning by colour alone (icons/text accompany status colours) |
-| A-08 | Simulation charts have text summaries and a data table alternative |
-| A-09 | Affordability: every component suggests a low-cost or household alternative where safe |
+| A-08 | Simulations have text summaries and a data-table alternative |
+| A-09 | Every spoken `speak` block is also visible as on-screen text; every voice prompt has a tap fallback |
+| A-10 | Microphone/camera denial, quiet audio and failed transcription show a readable text alternative |
 
 ## 13. Safety and Responsible AI Requirements
 
 | ID | Requirement |
 |---|---|
-| S-01 | Simulations carry a persistent "Simulation — simplified model" label |
-| S-02 | Physical-electronics steps include supervision warnings ("Do this with a teacher or adult") |
-| S-03 | AI never suggests mains voltage, lithium battery abuse, open flames, chemicals or hazardous experiments; it redirects to safer options |
-| S-04 | AI output is framed as guidance, never as guaranteed scientific fact; uncertainty and limits are stated |
-| S-05 | No invented citations or textbook references; blueprint says "not sourced from a textbook" unless textbook mode is used |
-| S-06 | Cost information is a **tier** (low/medium/high), not a fabricated price |
-| S-07 | No collection of sensitive personal data; nickname only; no real names required |
-| S-08 | AI-generated code is never executed by the app |
-| S-09 | Mentor prompts the student to predict, decide and justify before revealing answers where practical |
+| S-01 | Living Canvas views show a persistent "Simulation — simplified model" label |
+| S-02 | Physical steps include supervision warnings ("Do this with a teacher or adult") where tools are involved |
+| S-03 | Deterministic guardrail runs **before and after** the AI; hazardous requests become a safe creative pivot, never a refusal wall |
+| S-04 | AI never suggests mains voltage, lithium battery abuse, open flames, hazardous chemicals or dangerous experiments |
+| S-05 | AI output is framed as guidance, never guaranteed fact; uncertainty and limits are stated |
+| S-06 | No invented citations or textbook references |
+| S-07 | Cost information is a **tier** (low/medium/high), not a fabricated price |
+| S-08 | No collection of sensitive personal data; nickname optional; no real names required |
+| S-09 | AI-generated code is never executed by the app |
+| S-10 | Mentor prompts the child to predict, decide and justify before revealing results |
+| S-11 | Camera guidance asks for materials/objects only — never people or identifying documents |
+| S-12 | Every safety redirect is recorded as a `SafetyEvent` and is visible in the parent gate |
 
 ## 14. Acceptance Criteria for MVP Features
 
 | Feature | Acceptance criteria |
 |---|---|
-| **FR-01 Dashboard** | Shows start-idea input, recent projects (or empty state), profile chip. Works with no stored data. |
-| **FR-02 Profile** | Grade band can be set and persists after reload; skipping is allowed (default 9–10). |
-| **FR-03 Curiosity chat** | Entering the demo prompt returns a mentor reply with 1–3 relevant follow-up questions (water use, crop, budget, etc.). Student can answer and conversation continues. Error shows retry button. |
-| **FR-04 Idea Board** | After ≥1 exchange, board shows goal, intended user, constraints and ≥2 detected concepts. Updates after each reply. |
-| **FR-05 Concept explainer** | "Soil moisture" and "Sensors" cards open with explanation, analogy, ≥3 key terms, one check question. Language differs by grade band. |
-| **FR-06 Blueprint** | "Generate blueprint" returns and renders all sections (summary, concepts, how it works, components, steps, test plan, improvements, safety, limitations) within 30 s or shows a retry. Invalid AI JSON is never rendered. |
-| **FR-07 Components** | Each component has purpose, cost tier chip and ≥1 alternative. |
-| **FR-08 Build steps** | ≥5 ordered steps; each has instructions and a "why". Hardware steps include a safety/supervision note. |
-| **FR-09 Test plan** | ≥2 tests, each with how-to and expected observation. |
-| **FR-10 Simulation** | Changing soil type, ET, rain, threshold or schedule updates the chart immediately. Shows both strategies, total water used, stress days and water saved %. Labelled "Simulation". |
-| **FR-11 Interpretation** | "Explain my results" sends computed numbers, returns explanation, ≥1 caveat and ≥2 improvement ideas, asks student to predict first. |
-| **FR-12 Weather** | Entering a city resolves to coordinates, fetches forecast and fills rain/ET for 7 days; shows source "Open-Meteo" and fetch time. Failure leaves manual inputs usable. |
-| **FR-13 Persistence** | Reload keeps project, conversation, blueprint and simulation settings. Delete works. |
-| **FR-14 States** | Every AI/network view has distinct loading, empty and error UI. |
+| **FR-01 Profile** | First use lets a child pick age 7–8 and optional nickname; persists after reload; skipping uses the 7–8 default. |
+| **FR-02 Shell** | Big mic and camera controls are visible with labels; recent activities show empty state when none. |
+| **FR-03/04 Capture** | Speech and a photo can be captured on the demo Mac; denial of either permission shows a usable text/manual fallback. |
+| **FR-05 Idea interpretation** | Spoken idea returns a named summary, ≥1 detected concept and a `safetyVerdict` in under 30 s or a retry appears. |
+| **FR-06/07 ActivityProgram** | Response validates against `ActivityProgram.v1` and renders as ordered blocks; invalid JSON is never shown. |
+| **FR-08 Read-aloud** | Every `speak` block is spoken and shown as text; speaking can be stopped/replayed. |
+| **FR-09 Living Canvas** | One simulation responds to touch/voice input immediately; carries the persistent Simulation label. |
+| **FR-10/11 Predict + explain** | `askPredict` blocks the explanation until a prediction is entered/skipped; result explanation references the snapped result and prediction. |
+| **FR-12 Safety** | "Make a fire bomb" and similar requests produce an immediate safe pivot and a `SafetyEvent`; no dangerous steps appear. |
+| **FR-13 Parent gate** | A simple gate opens a read-only feed with activity titles, concepts and safety events. |
+| **FR-14 Persistence** | Reload restores the active activity and history locally on the same device. |
+| **FR-15 States** | Every async/permission feature has distinct loading, empty, error and retry states. |
 
 ## 15. Demo Success Criteria
 
 The first review is successful if, in **≤ 5 minutes**, presenter can:
 
-1. Enter "I want to build something that helps farmers save water."
-2. Show mentor follow-ups and the Idea Board filling in.
-3. Open concept cards for soil moisture and sensors.
-4. Generate a blueprint with components, cheap alternatives, steps and safety notes.
-5. Open the simulation, change inputs, and show the water-saving comparison.
-6. Run "Explain my results" and get an AI explanation.
-7. (If built) fetch a real forecast for a city and show it affecting the simulation.
-8. Reload the browser and show the project persisted.
+1. Tap the mic and say an idea ("I want to make something that fizzes").
+2. Show the idea summary, detected concepts, and a spoken Activity Plan.
+3. Snap a photo of household materials and show them used in the plan.
+4. Reach a prediction pause in the Living Canvas and answer it.
+5. Build the activity and snap the result; hear/see the AI explanation.
+6. Ask for something dangerous and show the instant safe creative pivot.
+7. Open the parent gate and show the read-only session + safety feed.
+8. Show that the same ActivityProgram contract is documented for Android and PWA.
 
-Failure conditions: any fake or hardcoded response presented as live, API key visible in browser, or unhandled crash during the scenario.
+Failure conditions: any fake or hardcoded response presented as live, API key visible in a shell, unsafe step shown, or unhandled crash during the scenario.
 
 ## 16. Assumptions and Open Questions (flagged, not decided)
 
 | # | Item | Assumed for now |
 |---|---|---|
-| Q1 | Gemini model and free-tier limits | Configurable via `GEMINI_MODEL`; verify availability on build day |
-| Q2 | Open-Meteo variables/terms of use for the hackathon | Free non-commercial endpoint; verify parameters and terms at Phase 5 |
-| Q3 | Grade band default | 9–10 |
-| Q4 | Demo region for weather | Bengaluru (editable) |
+| Q1 | Gemini model / multimodal audio `inlineData` availability | Configurable via `GEMINI_MODEL`; verify at Phase 0; client transcription + Gemini Vision fallback |
+| Q2 | Second language | Hindi; configurable via locale list in Phase 4 |
+| Q3 | Parent dashboard at demo | Native view in the macOS app; web route in PWA later |
+| Q4 | Android/PWA at demo | Scaffold + one interpreter screen only |
+| Q5 | Demo camera | Built-in FaceTime HD; Continuity Camera fallback |
+| Q6 | Age detection | First-use picker, default `7-8`, stored locally |
+| Q7 | Real-world data (weather) | Optional `[MVP-S]` after the loop is reliable |

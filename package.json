@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "description": "CURIOFORGE — Turning Curiosity into Invention",
+  "main": "desktop/main.cjs",
   "scripts": {
     "dev": "concurrently -n \"server,client\" -c \"yellow,cyan\" \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
     "dev:server": "npm run dev --prefix server",
     "dev:client": "npm run dev --prefix client",
+    "macos": "electron .",
+    "macos:dev": "concurrently -n \"backend,frontend,electron\" -c \"yellow,cyan,magenta\" \"npm run dev --prefix server\" \"npm run dev --prefix client\" \"sleep 2 && electron .\"",
     "install:all": "npm install && npm install --prefix client && npm install --prefix server",
     "build": "npm run build --prefix client"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "electron": "^45.3.3"
   }
 }

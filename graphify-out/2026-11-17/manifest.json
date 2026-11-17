@@ -1,0 +1,110 @@
+{
+  ".claude/settings.json": {
+    "mtime": 1794911485.2822125,
+    "seen": 1794911514.6697018,
+    "ast_hash": "f61ddf60ca84f6b4267aa461249f5a70",
+    "semantic_hash": ""
+  },
+  "client/package.json": {
+    "mtime": 1794901740.6307263,
+    "seen": 1794911514.669704,
+    "ast_hash": "55655dd5979dbaca07a9fb5d011769c7",
+    "semantic_hash": ""
+  },
+  "client/vite.config.js": {
+    "mtime": 1794901755.3495185,
+    "seen": 1794911514.669705,
+    "ast_hash": "a15fd23d0b7ad7dc589f904b38ee236f",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1794901728.6037402,
+    "seen": 1794911514.669705,
+    "ast_hash": "ccbc712e0859ec771518eedc968b4d6b",
+    "semantic_hash": ""
+  },
+  "server/package.json": {
+    "mtime": 1794901746.1984298,
+    "seen": 1794911514.6697059,
+    "ast_hash": "4038abceec475ff4da88dee0b157f9af",
+    "semantic_hash": ""
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1794910317.30968,
+    "seen": 1794911514.6697059,
+    "ast_hash": "f1e53ecc9194573d3c28fc116c743a2e",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1794910317.309811,
+    "seen": 1794911514.6697059,
+    "ast_hash": "6d73634a678cf1e1c71930adf80bd1f0",
+    "semantic_hash": ""
+  },
+  "ARCHITECTURE.md": {
+    "mtime": 1794915063.6966605,
+    "seen": 1794915081.129591,
+    "ast_hash": "4a3250d320183bbf42120a63b50b1b67",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1794910335.3446646,
+    "seen": 1794911514.669707,
+    "ast_hash": "2bd1b3f25f256d1cf9b7166df57cb595",
+    "semantic_hash": ""
+  },
+  "DESIGN.md": {
+    "mtime": 1794914973.5564158,
+    "seen": 1794915081.1295922,
+    "ast_hash": "05ab416cf8f65314bc3d3c18e342a9ec",
+    "semantic_hash": ""
+  },
+  "PHASES.md": {
+    "mtime": 1794914928.2003515,
+    "seen": 1794915081.1295922,
+    "ast_hash": "ebb876d6343468c68e04c421f1ef7b28",
+    "semantic_hash": ""
+  },
+  "PRD.md": {
+    "mtime": 1794914788.416959,
+    "seen": 1794915081.1295922,
+    "ast_hash": "44c2753b50d83e99e9c4459851cc582b",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1794915063.998551,
+    "seen": 1794915081.1295931,
+    "ast_hash": "595493648d727fe603ca6b5bae8c2e57",
+    "semantic_hash": ""
+  },
+  "RULES.md": {
+    "mtime": 1794915063.688161,
+    "seen": 1794915081.1295931,
+    "ast_hash": "188f2e54f6fc0a44afb0fb7ef87e3761",
+    "semantic_hash": ""
+  },
+  "curioforge_complete_idea.md": {
+    "mtime": 1794901700.848691,
+    "seen": 1794911514.669709,
+    "ast_hash": "1f08f3e4778d8cac3e5d6343c0bc52de",
+    "semantic_hash": ""
+  },
+  "docs/designs/curioforge-voice-companion.md": {
+    "mtime": 1794904921.9504788,
+    "seen": 1794911514.6697102,
+    "ast_hash": "0c360c6a7ad7f21140a3415f518eb436",
+    "semantic_hash": ""
+  },
+  "docs/designs/interactive-multilingual-tutor-plan.md": {
+    "mtime": 1794909643.1473143,
+    "seen": 1794911514.6697102,
+    "ast_hash": "c4d961a53ef605cb9cbcbda1f8bd8fef",
+    "semantic_hash": ""
+  },
+  "docs/designs/curioforge-unified-activity-plan.md": {
+    "mtime": 1794914711.021327,
+    "seen": 1794915081.129594,
+    "ast_hash": "a4c447cd8b110bfe7af636b8dfd14a3a",
+    "semantic_hash": ""
+  }
+}
