@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1794919688.3796272,
-    "seen": 1794919756.478602,
-    "ast_hash": "c3bd051751acae52f4e2400657a8ae97",
+    "mtime": 1794921453.237539,
+    "seen": 1794921536.329704,
+    "ast_hash": "f26e8b86dc99b1622c8373f46b5c937e",
     "semantic_hash": ""
   },
   "server/package.json": {
@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "client/src/App.jsx": {
-    "mtime": 1794920496.3820088,
-    "seen": 1794920585.0777972,
-    "ast_hash": "9b3b30d4f4784b4c9e001e226eebd344",
+    "mtime": 1794921425.345655,
+    "seen": 1794921536.3296971,
+    "ast_hash": "b7ddc6ce244bc3c7f4f1b5dab30c35d9",
     "semantic_hash": ""
   },
   "client/src/components/canvas/InteractiveCanvas.jsx": {
@@ -156,9 +156,9 @@
     "semantic_hash": ""
   },
   "client/src/features/tutor/InteractiveTutorView.jsx": {
-    "mtime": 1794920470.018459,
-    "seen": 1794920585.077803,
-    "ast_hash": "5587abdccdf7ffd1f734a85fb9979086",
+    "mtime": 1794921387.5078197,
+    "seen": 1794921536.3297012,
+    "ast_hash": "fa3e681ee3bb39d666988c3e8aacdfd6",
     "semantic_hash": ""
   },
   "client/src/hooks/useLocalStorage.js": {
@@ -168,21 +168,21 @@
     "semantic_hash": ""
   },
   "client/src/hooks/useSpeechOutput.js": {
-    "mtime": 1794917989.3469877,
-    "seen": 1794918331.9813828,
-    "ast_hash": "8feff8569a60173006969133d280d7cb",
+    "mtime": 1794921230.9803083,
+    "seen": 1794921536.3297012,
+    "ast_hash": "f015b02845f0eb2604e8483040ab1643",
     "semantic_hash": ""
   },
   "client/src/hooks/useVoiceInput.js": {
-    "mtime": 1794917974.39433,
-    "seen": 1794918331.9813828,
-    "ast_hash": "1ac361b403bc5e08a722017ee6f3b1cd",
+    "mtime": 1794921215.1422932,
+    "seen": 1794921536.329702,
+    "ast_hash": "fc766f7ebe48f47f0559d1a29998fe71",
     "semantic_hash": ""
   },
   "client/src/lib/apiClient.js": {
-    "mtime": 1794917931.164506,
-    "seen": 1794918331.9813828,
-    "ast_hash": "bb429cbfdcb74c39e4251b269aa3de77",
+    "mtime": 1794921238.4546802,
+    "seen": 1794921536.329702,
+    "ast_hash": "0d47ea669272715cbcca67f3dfad873b",
     "semantic_hash": ""
   },
   "client/src/lib/simulation/soilMoistureModel.js": {
@@ -204,9 +204,9 @@
     "semantic_hash": ""
   },
   "desktop/main.cjs": {
-    "mtime": 1794920403.7504086,
-    "seen": 1794920585.077806,
-    "ast_hash": "161c7e06dc6e33d789ad43fa35a90e68",
+    "mtime": 1794921444.9306529,
+    "seen": 1794921536.329704,
+    "ast_hash": "06b4713df7efa5f3841fdf36a152a0d7",
     "semantic_hash": ""
   },
   "server/src/app.js": {
@@ -510,9 +510,9 @@
     "semantic_hash": ""
   },
   "client/src/components/profile/ProfileModal.jsx": {
-    "mtime": 1794920422.2357798,
-    "seen": 1794920585.0777988,
-    "ast_hash": "ac27902c76a30e410f6e10e41d5a54f0",
+    "mtime": 1794921328.722734,
+    "seen": 1794921536.329698,
+    "ast_hash": "7d6aa6b148c541e2abfc9c88deb82c15",
     "semantic_hash": ""
   },
   "client/src/components/sessions/SessionDrawer.jsx": {

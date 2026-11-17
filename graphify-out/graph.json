@@ -147,19 +147,6 @@
       "source_location": "L9"
     },
     {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient",
-      "label": "APIClient",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "SocraticMessage",
-      "file_type": "code",
-      "norm_label": "apiclient",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L3"
-    },
-    {
       "id": "apps_macos_sources_curioforge_views_sidebar_copilotsidebarview_sidebartab",
       "label": "SidebarTab",
       "_callable": true,
@@ -179,7 +166,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community_name": "CloudSyncService",
       "file_type": "code",
       "norm_label": "cloudsyncservice",
       "source_file": "apps/macos/Sources/Curioforge/Services/CloudSyncService.swift",
@@ -192,7 +179,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community_name": "CloudSyncService",
       "file_type": "code",
       "norm_label": "studentprofile",
       "source_file": "apps/macos/Sources/Curioforge/Services/CloudSyncService.swift",
@@ -204,25 +191,12 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 23,
       "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "speechrecognizerservice",
       "source_file": "apps/macos/Sources/Curioforge/Services/SpeechRecognizer.swift",
       "source_location": "L5"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_models_simulationstate_simulationstate",
-      "label": "SimulationState",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "SpeechSynthesizerService",
-      "file_type": "code",
-      "norm_label": "simulationstate",
-      "source_file": "apps/macos/Sources/Curioforge/Models/SimulationState.swift",
-      "source_location": "L3"
     },
     {
       "id": "apps_macos_sources_curioforge_services_speechsynthesizer_speechsynthesizerservice",
@@ -231,7 +205,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "speechsynthesizerservice",
       "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
@@ -251,16 +225,16 @@
       "source_location": "L22"
     },
     {
-      "id": "apps_macos_sources_curioforge_views_stage_stepbystepplayerview_stepbystepplayerview",
-      "label": "StepByStepPlayerView",
+      "id": "apps_macos_sources_curioforge_views_stage_camerascannerview_camerascannerview",
+      "label": "CameraScannerView",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 24,
       "community_name": "AppState",
       "file_type": "code",
-      "norm_label": "stepbystepplayerview",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/StepByStepPlayerView.swift",
+      "norm_label": "camerascannerview",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CameraScannerView.swift",
       "source_location": "L3"
     },
     {
@@ -270,7 +244,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": "curioforgeapp",
       "source_file": "apps/macos/Sources/Curioforge/CurioforgeApp.swift",
@@ -283,7 +257,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": "certificatemodalview",
       "source_file": "apps/macos/Sources/Curioforge/Views/Components/CertificateModalView.swift",
@@ -296,7 +270,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": "mainview",
       "source_file": "apps/macos/Sources/Curioforge/Views/MainView.swift",
@@ -309,24 +283,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "View",
+      "community_name": "CoPilotSidebarView",
       "file_type": "code",
       "norm_label": "copilotsidebarview",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CoPilotSidebarView.swift",
       "source_location": "L18"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_views_sidebar_curiosityfeedview_curiosityfeedview",
-      "label": "CuriosityFeedView",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": "curiosityfeedview",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CuriosityFeedView.swift",
-      "source_location": "L3"
     },
     {
       "id": "apps_macos_sources_curioforge_views_sidebar_safetybadgeview_safetybadgeview",
@@ -335,10 +296,23 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "View",
+      "community_name": "CoPilotSidebarView",
       "file_type": "code",
       "norm_label": "safetybadgeview",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SafetyBadgeView.swift",
+      "source_location": "L3"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_views_sidebar_siriorbview_siriorbview",
+      "label": "SiriOrbView",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "CoPilotSidebarView",
+      "file_type": "code",
+      "norm_label": "siriorbview",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SiriOrbView.swift",
       "source_location": "L3"
     },
     {
@@ -355,13 +329,26 @@
       "source_location": "L3"
     },
     {
+      "id": "apps_macos_sources_curioforge_views_sidebar_curiosityfeedview_curiosityfeedview",
+      "label": "CuriosityFeedView",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "View",
+      "file_type": "code",
+      "norm_label": "curiosityfeedview",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CuriosityFeedView.swift",
+      "source_location": "L3"
+    },
+    {
       "id": "apps_macos_sources_curioforge_views_sidebar_socraticchatview_socraticchatview",
       "label": "SocraticChatView",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": ".sendStudentMessage",
+      "community_name": "View",
       "file_type": "code",
       "norm_label": "socraticchatview",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SocraticChatView.swift",
@@ -387,7 +374,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "CinemaStageView",
+      "community_name": "SwiftUI",
       "file_type": "code",
       "norm_label": "chapterscrubberview",
       "source_file": "apps/macos/Sources/Curioforge/Views/Stage/ChapterScrubberView.swift",
@@ -400,23 +387,23 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "CinemaStageView",
+      "community_name": "SwiftUI",
       "file_type": "code",
       "norm_label": "cinemastageview",
       "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CinemaStageView.swift",
       "source_location": "L3"
     },
     {
-      "id": "apps_macos_sources_curioforge_views_stage_camerascannerview_camerascannerview",
-      "label": "CameraScannerView",
+      "id": "apps_macos_sources_curioforge_views_stage_stepbystepplayerview_stepbystepplayerview",
+      "label": "StepByStepPlayerView",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 32,
-      "community_name": "CameraScannerView",
+      "community": 31,
+      "community_name": "SwiftUI",
       "file_type": "code",
-      "norm_label": "camerascannerview",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CameraScannerView.swift",
+      "norm_label": "stepbystepplayerview",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/StepByStepPlayerView.swift",
       "source_location": "L3"
     },
     {
@@ -433,16 +420,29 @@
       "source_location": "L3"
     },
     {
-      "id": "apps_macos_sources_curioforge_views_sidebar_siriorbview_siriorbview",
-      "label": "SiriOrbView",
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient",
+      "label": "APIClient",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 38,
-      "community_name": "SiriOrbView",
+      "community_name": "APIClient",
       "file_type": "code",
-      "norm_label": "siriorbview",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SiriOrbView.swift",
+      "norm_label": "apiclient",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L3"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_models_simulationstate_simulationstate",
+      "label": "SimulationState",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "SimulationState",
+      "file_type": "code",
+      "norm_label": "simulationstate",
+      "source_file": "apps/macos/Sources/Curioforge/Models/SimulationState.swift",
       "source_location": "L3"
     },
     {
@@ -794,132 +794,12 @@
       "source_location": "L43"
     },
     {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_checkhealth",
-      "label": ".checkHealth()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "SocraticMessage",
-      "file_type": "code",
-      "norm_label": ".checkhealth()",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L11"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_fallbackchatreply",
-      "label": ".fallbackChatReply()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "SocraticMessage",
-      "file_type": "code",
-      "norm_label": ".fallbackchatreply()",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L83"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_init",
-      "label": ".init()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "SocraticMessage",
-      "file_type": "code",
-      "norm_label": ".init()",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L9"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_scanscrapmaterials",
-      "label": ".scanScrapMaterials()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "SocraticMessage",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "sleep",
-            "receiver_type": "Task",
-            "lang": "swift",
-            "line": "L65"
-          }
-        ]
-      },
-      "norm_label": ".scanscrapmaterials()",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L63"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_sendchatmessage",
-      "label": ".sendChatMessage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "SocraticMessage",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "data",
-            "receiver_type": "JSONSerialization",
-            "lang": "swift",
-            "line": "L46"
-          },
-          {
-            "callee": "jsonObject",
-            "receiver_type": "JSONSerialization",
-            "lang": "swift",
-            "line": "L50"
-          }
-        ]
-      },
-      "norm_label": ".sendchatmessage()",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L24"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_verifyresult",
-      "label": ".verifyResult()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "SocraticMessage",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "sleep",
-            "receiver_type": "Task",
-            "lang": "swift",
-            "line": "L76"
-          }
-        ]
-      },
-      "norm_label": ".verifyresult()",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L75"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_models_appstate_appstate_togglevoicerecording",
-      "label": ".toggleVoiceRecording()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": ".togglevoicerecording()",
-      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
-      "source_location": "L106"
-    },
-    {
       "id": "apps_macos_sources_curioforge_models_appstate_appstate_verifyresult",
       "label": ".verifyResult()",
       "_callable": true,
       "_origin": "ast",
       "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community_name": "CloudSyncService",
       "file_type": "code",
       "norm_label": ".verifyresult()",
       "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
@@ -931,7 +811,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community_name": "CloudSyncService",
       "file_type": "code",
       "norm_label": ".init()",
       "source_file": "apps/macos/Sources/Curioforge/Services/CloudSyncService.swift",
@@ -943,7 +823,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community_name": "CloudSyncService",
       "file_type": "code",
       "norm_label": ".loadlocalprofile()",
       "source_file": "apps/macos/Sources/Curioforge/Services/CloudSyncService.swift",
@@ -955,7 +835,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community_name": "CloudSyncService",
       "file_type": "code",
       "norm_label": ".recordcompletedinvention()",
       "source_file": "apps/macos/Sources/Curioforge/Services/CloudSyncService.swift",
@@ -967,7 +847,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community_name": "CloudSyncService",
       "file_type": "code",
       "norm_label": ".savelocalprofile()",
       "source_file": "apps/macos/Sources/Curioforge/Services/CloudSyncService.swift",
@@ -979,18 +859,30 @@
       "_callable": true,
       "_origin": "ast",
       "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community_name": "CloudSyncService",
       "file_type": "code",
       "norm_label": ".synctocloud()",
       "source_file": "apps/macos/Sources/Curioforge/Services/CloudSyncService.swift",
       "source_location": "L57"
     },
     {
+      "id": "apps_macos_sources_curioforge_models_appstate_appstate_togglevoicerecording",
+      "label": ".toggleVoiceRecording()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechRecognizerService",
+      "file_type": "code",
+      "norm_label": ".togglevoicerecording()",
+      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
+      "source_location": "L106"
+    },
+    {
       "id": "apps_macos_sources_curioforge_services_speechrecognizer_speechrecognizerservice_init",
       "label": ".init()",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 23,
       "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": ".init()",
@@ -1002,7 +894,7 @@
       "label": ".startRecording()",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 23,
       "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "metadata": {
@@ -1048,7 +940,7 @@
       "label": ".stopRecording()",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 23,
       "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "metadata": {
@@ -1084,24 +976,12 @@
       "source_location": "L81"
     },
     {
-      "id": "apps_macos_sources_curioforge_models_simulationstate_simulationstate_init",
-      "label": ".init()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "SpeechSynthesizerService",
-      "file_type": "code",
-      "norm_label": ".init()",
-      "source_file": "apps/macos/Sources/Curioforge/Models/SimulationState.swift",
-      "source_location": "L13"
-    },
-    {
       "id": "apps_macos_sources_curioforge_services_speechsynthesizer_speechsynthesizerservice_init",
       "label": ".init()",
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": ".init()",
       "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
@@ -1113,7 +993,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": ".speechsynthesizer()",
       "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
@@ -1144,56 +1024,16 @@
       "source_location": "L54"
     },
     {
-      "id": "apps_macos_sources_curioforge_models_appstate_appstate_nextstep",
-      "label": ".nextStep()",
+      "id": "apps_macos_sources_curioforge_models_appstate_appstate_selectchapter",
+      "label": ".selectChapter()",
       "_callable": true,
       "_origin": "ast",
       "community": 24,
       "community_name": "AppState",
       "file_type": "code",
-      "norm_label": ".nextstep()",
+      "norm_label": ".selectchapter()",
       "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
-      "source_location": "L264"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_models_appstate_appstate_prevstep",
-      "label": ".prevStep()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "AppState",
-      "file_type": "code",
-      "norm_label": ".prevstep()",
-      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
-      "source_location": "L287"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_models_appstate_appstate_runsimulation",
-      "label": ".runSimulation()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "AppState",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "invalidate",
-            "receiver_type": "Timer",
-            "lang": "swift",
-            "line": "L228"
-          },
-          {
-            "callee": "scheduledTimer",
-            "receiver_type": "Timer",
-            "lang": "swift",
-            "line": "L233"
-          }
-        ]
-      },
-      "norm_label": ".runsimulation()",
-      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
-      "source_location": "L221"
+      "source_location": "L327"
     },
     {
       "id": "apps_macos_sources_curioforge_models_appstate_appstate_setupinitialmessages",
@@ -1208,16 +1048,16 @@
       "source_location": "L61"
     },
     {
-      "id": "apps_macos_sources_curioforge_models_appstate_appstate_speakcurrentstep",
-      "label": ".speakCurrentStep()",
+      "id": "apps_macos_sources_curioforge_models_appstate_appstate_triggerscrapscan",
+      "label": ".triggerScrapScan()",
       "_callable": true,
       "_origin": "ast",
       "community": 24,
       "community_name": "AppState",
       "file_type": "code",
-      "norm_label": ".speakcurrentstep()",
+      "norm_label": ".triggerscrapscan()",
       "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
-      "source_location": "L294"
+      "source_location": "L166"
     },
     {
       "id": "apps_macos_sources_curioforge_models_simulationstate_simulationstate_computephysics",
@@ -1232,7 +1072,7 @@
       "source_location": "L33"
     },
     {
-      "id": "apps_macos_sources_curioforge_views_stage_stepbystepplayerview_stepbystepplayerview_init",
+      "id": "apps_macos_sources_curioforge_views_stage_camerascannerview_camerascannerview_init",
       "label": ".init()",
       "_callable": true,
       "_origin": "ast",
@@ -1240,8 +1080,8 @@
       "community_name": "AppState",
       "file_type": "code",
       "norm_label": ".init()",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/StepByStepPlayerView.swift",
-      "source_location": "L6"
+      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CameraScannerView.swift",
+      "source_location": "L7"
     },
     {
       "id": "server_src_prompts_tutor_buildtutorsystemprompt",
@@ -1285,7 +1125,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": ".init()",
       "source_file": "apps/macos/Sources/Curioforge/Views/Components/CertificateModalView.swift",
@@ -1297,7 +1137,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": ".init()",
       "source_file": "apps/macos/Sources/Curioforge/Views/MainView.swift",
@@ -1309,35 +1149,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "View",
+      "community_name": "CoPilotSidebarView",
       "file_type": "code",
       "norm_label": ".init()",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CoPilotSidebarView.swift",
       "source_location": "L22"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_views_sidebar_curiosityfeedview_curiosityfeedview_feedcard",
-      "label": ".feedCard()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": ".feedcard()",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CuriosityFeedView.swift",
-      "source_location": "L39"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_views_sidebar_curiosityfeedview_curiosityfeedview_init",
-      "label": ".init()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": ".init()",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CuriosityFeedView.swift",
-      "source_location": "L6"
     },
     {
       "id": "apps_macos_sources_curioforge_views_sidebar_safetybadgeview_safetybadgeview_init",
@@ -1345,11 +1161,51 @@
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "View",
+      "community_name": "CoPilotSidebarView",
       "file_type": "code",
       "norm_label": ".init()",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SafetyBadgeView.swift",
       "source_location": "L6"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_views_sidebar_siriorbview_siriorbview_init",
+      "label": ".init()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "CoPilotSidebarView",
+      "file_type": "code",
+      "norm_label": ".init()",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SiriOrbView.swift",
+      "source_location": "L7"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_models_appstate_appstate_runsimulation",
+      "label": ".runSimulation()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "LivingCanvasView",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "invalidate",
+            "receiver_type": "Timer",
+            "lang": "swift",
+            "line": "L228"
+          },
+          {
+            "callee": "scheduledTimer",
+            "receiver_type": "Timer",
+            "lang": "swift",
+            "line": "L233"
+          }
+        ]
+      },
+      "norm_label": ".runsimulation()",
+      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
+      "source_location": "L221"
     },
     {
       "id": "apps_macos_sources_curioforge_views_stage_livingcanvasview_livingcanvasview_init",
@@ -1393,7 +1249,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": ".sendStudentMessage",
+      "community_name": "View",
       "file_type": "code",
       "norm_label": ".selectprediction()",
       "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
@@ -1405,11 +1261,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": ".sendStudentMessage",
+      "community_name": "View",
       "file_type": "code",
       "norm_label": ".sendstudentmessage()",
       "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
       "source_location": "L123"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_views_sidebar_curiosityfeedview_curiosityfeedview_feedcard",
+      "label": ".feedCard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "View",
+      "file_type": "code",
+      "norm_label": ".feedcard()",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CuriosityFeedView.swift",
+      "source_location": "L39"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_views_sidebar_curiosityfeedview_curiosityfeedview_init",
+      "label": ".init()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "View",
+      "file_type": "code",
+      "norm_label": ".init()",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CuriosityFeedView.swift",
+      "source_location": "L6"
     },
     {
       "id": "apps_macos_sources_curioforge_views_sidebar_socraticchatview_socraticchatview_init",
@@ -1417,7 +1297,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": ".sendStudentMessage",
+      "community_name": "View",
       "file_type": "code",
       "norm_label": ".init()",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SocraticChatView.swift",
@@ -1429,7 +1309,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": ".sendStudentMessage",
+      "community_name": "View",
       "file_type": "code",
       "norm_label": ".messagebubble()",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SocraticChatView.swift",
@@ -1441,7 +1321,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": ".sendStudentMessage",
+      "community_name": "View",
       "file_type": "code",
       "norm_label": ".submittext()",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SocraticChatView.swift",
@@ -1465,7 +1345,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "CinemaStageView",
+      "community_name": "SwiftUI",
       "file_type": "code",
       "norm_label": ".init()",
       "source_file": "apps/macos/Sources/Curioforge/Views/Stage/ChapterScrubberView.swift",
@@ -1477,35 +1357,59 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "CinemaStageView",
+      "community_name": "SwiftUI",
       "file_type": "code",
       "norm_label": ".init()",
       "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CinemaStageView.swift",
       "source_location": "L6"
     },
     {
-      "id": "apps_macos_sources_curioforge_models_appstate_appstate_selectchapter",
-      "label": ".selectChapter()",
+      "id": "apps_macos_sources_curioforge_views_stage_stepbystepplayerview_stepbystepplayerview_init",
+      "label": ".init()",
       "_callable": true,
       "_origin": "ast",
-      "community": 32,
-      "community_name": "CameraScannerView",
+      "community": 31,
+      "community_name": "SwiftUI",
       "file_type": "code",
-      "norm_label": ".selectchapter()",
-      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
-      "source_location": "L327"
+      "norm_label": ".init()",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/StepByStepPlayerView.swift",
+      "source_location": "L6"
     },
     {
-      "id": "apps_macos_sources_curioforge_models_appstate_appstate_triggerscrapscan",
-      "label": ".triggerScrapScan()",
+      "id": "apps_macos_sources_curioforge_models_appstate_appstate_nextstep",
+      "label": ".nextStep()",
       "_callable": true,
       "_origin": "ast",
       "community": 32,
-      "community_name": "CameraScannerView",
+      "community_name": ".speakCurrentStep",
       "file_type": "code",
-      "norm_label": ".triggerscrapscan()",
+      "norm_label": ".nextstep()",
       "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
-      "source_location": "L166"
+      "source_location": "L264"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_models_appstate_appstate_prevstep",
+      "label": ".prevStep()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": ".speakCurrentStep",
+      "file_type": "code",
+      "norm_label": ".prevstep()",
+      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
+      "source_location": "L287"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_models_appstate_appstate_speakcurrentstep",
+      "label": ".speakCurrentStep()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": ".speakCurrentStep",
+      "file_type": "code",
+      "norm_label": ".speakcurrentstep()",
+      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
+      "source_location": "L294"
     },
     {
       "id": "apps_macos_sources_curioforge_services_speechsynthesizer_speechsynthesizerservice_stop",
@@ -1513,7 +1417,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 32,
-      "community_name": "CameraScannerView",
+      "community_name": ".speakCurrentStep",
       "file_type": "code",
       "metadata": {
         "unresolved_calls": [
@@ -1528,18 +1432,6 @@
       "norm_label": ".stop()",
       "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
       "source_location": "L40"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_views_stage_camerascannerview_camerascannerview_init",
-      "label": ".init()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "CameraScannerView",
-      "file_type": "code",
-      "norm_label": ".init()",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CameraScannerView.swift",
-      "source_location": "L7"
     },
     {
       "id": "apps_macos_sources_curioforge_views_settings_settingsview_settingsview_init",
@@ -1578,16 +1470,124 @@
       "source_location": "L15"
     },
     {
-      "id": "apps_macos_sources_curioforge_views_sidebar_siriorbview_siriorbview_init",
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_checkhealth",
+      "label": ".checkHealth()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "APIClient",
+      "file_type": "code",
+      "norm_label": ".checkhealth()",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L11"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_fallbackchatreply",
+      "label": ".fallbackChatReply()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "APIClient",
+      "file_type": "code",
+      "norm_label": ".fallbackchatreply()",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L83"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_init",
       "label": ".init()",
       "_callable": true,
       "_origin": "ast",
       "community": 38,
-      "community_name": "SiriOrbView",
+      "community_name": "APIClient",
       "file_type": "code",
       "norm_label": ".init()",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SiriOrbView.swift",
-      "source_location": "L7"
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L9"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_scanscrapmaterials",
+      "label": ".scanScrapMaterials()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "APIClient",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "sleep",
+            "receiver_type": "Task",
+            "lang": "swift",
+            "line": "L65"
+          }
+        ]
+      },
+      "norm_label": ".scanscrapmaterials()",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L63"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_sendchatmessage",
+      "label": ".sendChatMessage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "APIClient",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "data",
+            "receiver_type": "JSONSerialization",
+            "lang": "swift",
+            "line": "L46"
+          },
+          {
+            "callee": "jsonObject",
+            "receiver_type": "JSONSerialization",
+            "lang": "swift",
+            "line": "L50"
+          }
+        ]
+      },
+      "norm_label": ".sendchatmessage()",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L24"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_verifyresult",
+      "label": ".verifyResult()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "APIClient",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "sleep",
+            "receiver_type": "Task",
+            "lang": "swift",
+            "line": "L76"
+          }
+        ]
+      },
+      "norm_label": ".verifyresult()",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L75"
+    },
+    {
+      "id": "server_src_middleware_validate_validate",
+      "label": "validate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "routes/results.js",
+      "file_type": "code",
+      "norm_label": "validate()",
+      "source_file": "server/src/middleware/validate.js",
+      "source_location": "L1"
     },
     {
       "id": "server_src_services_openmeteo_geocodecity",
@@ -1612,18 +1612,6 @@
       "norm_label": "getforecast()",
       "source_file": "server/src/services/openMeteo.js",
       "source_location": "L40"
-    },
-    {
-      "id": "server_src_middleware_validate_validate",
-      "label": "validate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "routes/blueprint.js",
-      "file_type": "code",
-      "norm_label": "validate()",
-      "source_file": "server/src/middleware/validate.js",
-      "source_location": "L1"
     },
     {
       "id": "server_src_prompts_curiosity_buildcuriositysystemprompt",
@@ -1660,6 +1648,18 @@
       "norm_label": "buildresultssystemprompt()",
       "source_file": "server/src/prompts/results.js",
       "source_location": "L3"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_models_simulationstate_simulationstate_init",
+      "label": ".init()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "SimulationState",
+      "file_type": "code",
+      "norm_label": ".init()",
+      "source_file": "apps/macos/Sources/Curioforge/Models/SimulationState.swift",
+      "source_location": "L13"
     },
     {
       "id": "server_src_middleware_errorhandler_errorhandler",
@@ -2090,28 +2090,16 @@
       "source_location": "L177"
     },
     {
-      "id": "design_13_voice_and_camera_interaction",
-      "label": "13. Voice and Camera Interaction",
+      "id": "design_12_activity_home_cards",
+      "label": "12. Activity Home Cards",
       "_origin": "ast",
       "community": 1,
       "community_name": "CURIOFORGE \u2014 Design System",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "13. voice and camera interaction",
+      "norm_label": "12. activity home cards",
       "source_file": "DESIGN.md",
-      "source_location": "L200"
-    },
-    {
-      "id": "design_14_activityplan_presentation_activityprogram_interpreter",
-      "label": "14. ActivityPlan Presentation (ActivityProgram interpreter)",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "CURIOFORGE \u2014 Design System",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "14. activityplan presentation (activityprogram interpreter)",
-      "source_file": "DESIGN.md",
-      "source_location": "L215"
+      "source_location": "L189"
     },
     {
       "id": "design_15_living_canvas_interface",
@@ -2883,18 +2871,6 @@
       "source_location": "L13"
     },
     {
-      "id": "design_12_activity_home_cards",
-      "label": "12. Activity Home Cards",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "InteractiveTutorView.jsx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "12. activity home cards",
-      "source_file": "DESIGN.md",
-      "source_location": "L189"
-    },
-    {
       "id": "design_19_reusable_component_guidelines",
       "label": "19. Reusable Component Guidelines",
       "_origin": "ast",
@@ -2983,6 +2959,17 @@
       "norm_label": "string",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "apps_macos_sources_curioforge_models_appstate",
+      "label": "AppState.swift",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "SocraticMessage",
+      "file_type": "code",
+      "norm_label": "appstate.swift",
+      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
+      "source_location": "L1"
     },
     {
       "id": "apps_macos_sources_curioforge_models_appstate_stagemode_id",
@@ -3172,26 +3159,15 @@
       "source_location": ""
     },
     {
-      "id": "apps_macos_sources_curioforge_services_apiclient_swift_bool",
-      "label": "Bool",
+      "id": "apps_macos_sources_curioforge_services_apiclient",
+      "label": "APIClient.swift",
       "_origin": "ast",
       "community": 13,
       "community_name": "SocraticMessage",
       "file_type": "code",
-      "norm_label": "bool",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_apiclient_swift_string",
-      "label": "String",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "SocraticMessage",
-      "file_type": "code",
-      "norm_label": "string",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "apiclient.swift",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L1"
     },
     {
       "id": "apps_macos_sources_curioforge_views_sidebar_copilotsidebarview_sidebartab_feed",
@@ -3282,6 +3258,18 @@
       "source_location": ""
     },
     {
+      "id": "combine",
+      "label": "Combine",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "SocraticMessage",
+      "file_type": "code",
+      "norm_label": "combine",
+      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
+      "source_location": "L3",
+      "type": "module"
+    },
+    {
       "id": "coregraphics",
       "label": "CoreGraphics",
       "_origin": "ast",
@@ -3303,6 +3291,18 @@
       "norm_label": "date",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "foundation",
+      "label": "Foundation",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "SocraticMessage",
+      "file_type": "code",
+      "norm_label": "foundation",
+      "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
+      "source_location": "L1",
+      "type": "module"
     },
     {
       "id": "hashable",
@@ -4420,17 +4420,6 @@
       "source_location": "L3"
     },
     {
-      "id": "tailwindcss",
-      "label": "tailwindcss",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "tailwind.config.js",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "tailwindcss",
-      "source_file": "tailwindcss"
-    },
-    {
       "id": "client_tailwind_config",
       "label": "tailwind.config.js",
       "_origin": "ast",
@@ -4457,7 +4446,7 @@
       "label": "CloudSyncService.swift",
       "_origin": "ast",
       "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community_name": "CloudSyncService",
       "file_type": "code",
       "norm_label": "cloudsyncservice.swift",
       "source_file": "apps/macos/Sources/Curioforge/Services/CloudSyncService.swift",
@@ -4468,7 +4457,7 @@
       "label": "Bool",
       "_origin": "ast",
       "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community_name": "CloudSyncService",
       "file_type": "code",
       "norm_label": "bool",
       "source_file": "",
@@ -4479,7 +4468,7 @@
       "label": "Int",
       "_origin": "ast",
       "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community_name": "CloudSyncService",
       "file_type": "code",
       "norm_label": "int",
       "source_file": "",
@@ -4490,17 +4479,39 @@
       "label": "String",
       "_origin": "ast",
       "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community_name": "CloudSyncService",
       "file_type": "code",
       "norm_label": "string",
       "source_file": "",
       "source_location": ""
     },
     {
+      "id": "apps_macos_sources_curioforge_views_stage_cinemastageview_cinemastageview_verificationview",
+      "label": ".verificationView",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "CloudSyncService",
+      "file_type": "code",
+      "norm_label": ".verificationview",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CinemaStageView.swift",
+      "source_location": "L88"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_speechrecognizer",
+      "label": "SpeechRecognizer.swift",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechRecognizerService",
+      "file_type": "code",
+      "norm_label": "speechrecognizer.swift",
+      "source_file": "apps/macos/Sources/Curioforge/Services/SpeechRecognizer.swift",
+      "source_location": "L1"
+    },
+    {
       "id": "apps_macos_sources_curioforge_services_speechrecognizer_swift_bool",
       "label": "Bool",
       "_origin": "ast",
-      "community": 22,
+      "community": 23,
       "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "bool",
@@ -4511,7 +4522,7 @@
       "id": "apps_macos_sources_curioforge_services_speechrecognizer_swift_string",
       "label": "String",
       "_origin": "ast",
-      "community": 22,
+      "community": 23,
       "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "string",
@@ -4522,7 +4533,7 @@
       "id": "apps_macos_sources_curioforge_services_speechrecognizer_swift_void",
       "label": "Void",
       "_origin": "ast",
-      "community": 22,
+      "community": 23,
       "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "void",
@@ -4530,121 +4541,11 @@
       "source_location": ""
     },
     {
-      "id": "apps_macos_sources_curioforge_views_stage_cinemastageview_cinemastageview_verificationview",
-      "label": ".verificationView",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": ".verificationview",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CinemaStageView.swift",
-      "source_location": "L88"
-    },
-    {
-      "id": "float",
-      "label": "Float",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "float",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "observableobject",
-      "label": "ObservableObject",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "observableobject",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "sfspeechaudiobufferrecognitionrequest",
-      "label": "SFSpeechAudioBufferRecognitionRequest",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "sfspeechaudiobufferrecognitionrequest",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "sfspeechrecognitiontask",
-      "label": "SFSpeechRecognitionTask",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "sfspeechrecognitiontask",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "apps_macos_sources_curioforge_models_simulationstate",
-      "label": "SimulationState.swift",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "SpeechSynthesizerService",
-      "file_type": "code",
-      "norm_label": "simulationstate.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Models/SimulationState.swift",
-      "source_location": "L1"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_models_simulationstate_swift_bool",
-      "label": "Bool",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "SpeechSynthesizerService",
-      "file_type": "code",
-      "norm_label": "bool",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "apps_macos_sources_curioforge_models_simulationstate_swift_double",
-      "label": "Double",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "SpeechSynthesizerService",
-      "file_type": "code",
-      "norm_label": "double",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_apiclient",
-      "label": "APIClient.swift",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "SpeechSynthesizerService",
-      "file_type": "code",
-      "norm_label": "apiclient.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L1"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_speechrecognizer",
-      "label": "SpeechRecognizer.swift",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "SpeechSynthesizerService",
-      "file_type": "code",
-      "norm_label": "speechrecognizer.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Services/SpeechRecognizer.swift",
-      "source_location": "L1"
-    },
-    {
       "id": "apps_macos_sources_curioforge_services_speechsynthesizer",
       "label": "SpeechSynthesizer.swift",
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "speechsynthesizer.swift",
       "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
@@ -4655,7 +4556,7 @@
       "label": "Bool",
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "bool",
       "source_file": "",
@@ -4666,7 +4567,7 @@
       "label": "Void",
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "void",
       "source_file": "",
@@ -4677,7 +4578,7 @@
       "label": "AVFoundation",
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "avfoundation",
       "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
@@ -4689,7 +4590,7 @@
       "label": "AVSpeechSynthesizer",
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "avspeechsynthesizer",
       "source_file": "",
@@ -4700,7 +4601,7 @@
       "label": "AVSpeechSynthesizerDelegate",
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "avspeechsynthesizerdelegate",
       "source_file": "",
@@ -4711,43 +4612,64 @@
       "label": "AVSpeechUtterance",
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "avspeechutterance",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "equatable",
-      "label": "Equatable",
+      "id": "float",
+      "label": "Float",
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
-      "norm_label": "equatable",
+      "norm_label": "float",
       "source_file": "",
       "source_location": ""
-    },
-    {
-      "id": "foundation",
-      "label": "Foundation",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "SpeechSynthesizerService",
-      "file_type": "code",
-      "norm_label": "foundation",
-      "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
-      "source_location": "L1",
-      "type": "module"
     },
     {
       "id": "nsobject",
       "label": "NSObject",
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "nsobject",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "observableobject",
+      "label": "ObservableObject",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechRecognizerService",
+      "file_type": "code",
+      "norm_label": "observableobject",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "sfspeechaudiobufferrecognitionrequest",
+      "label": "SFSpeechAudioBufferRecognitionRequest",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechRecognizerService",
+      "file_type": "code",
+      "norm_label": "sfspeechaudiobufferrecognitionrequest",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "sfspeechrecognitiontask",
+      "label": "SFSpeechRecognitionTask",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechRecognizerService",
+      "file_type": "code",
+      "norm_label": "sfspeechrecognitiontask",
       "source_file": "",
       "source_location": ""
     },
@@ -4756,23 +4678,12 @@
       "label": "Speech",
       "_origin": "ast",
       "community": 23,
-      "community_name": "SpeechSynthesizerService",
+      "community_name": "SpeechRecognizerService",
       "file_type": "code",
       "norm_label": "speech",
       "source_file": "apps/macos/Sources/Curioforge/Services/SpeechRecognizer.swift",
       "source_location": "L2",
       "type": "module"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_models_appstate_stagemode_steps",
-      "label": "steps",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "AppState",
-      "file_type": "code",
-      "norm_label": "steps",
-      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
-      "source_location": "L8"
     },
     {
       "id": "apps_macos_sources_curioforge_models_appstate_swift_bool",
@@ -4797,26 +4708,48 @@
       "source_location": ""
     },
     {
-      "id": "apps_macos_sources_curioforge_views_stage_stepbystepplayerview",
-      "label": "StepByStepPlayerView.swift",
+      "id": "apps_macos_sources_curioforge_models_appstate_swift_int",
+      "label": "Int",
       "_origin": "ast",
       "community": 24,
       "community_name": "AppState",
       "file_type": "code",
-      "norm_label": "stepbystepplayerview.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/StepByStepPlayerView.swift",
+      "norm_label": "int",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "apps_macos_sources_curioforge_views_stage_camerascannerview",
+      "label": "CameraScannerView.swift",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "AppState",
+      "file_type": "code",
+      "norm_label": "camerascannerview.swift",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CameraScannerView.swift",
       "source_location": "L1"
     },
     {
-      "id": "apps_macos_sources_curioforge_views_stage_stepbystepplayerview_stepbystepplayerview_body",
+      "id": "apps_macos_sources_curioforge_views_stage_camerascannerview_camerascannerview_body",
       "label": ".body",
       "_origin": "ast",
       "community": 24,
       "community_name": "AppState",
       "file_type": "code",
       "norm_label": ".body",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/StepByStepPlayerView.swift",
-      "source_location": "L10"
+      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CameraScannerView.swift",
+      "source_location": "L11"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_views_stage_camerascannerview_swift_cgfloat",
+      "label": "CGFloat",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "AppState",
+      "file_type": "code",
+      "norm_label": "cgfloat",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "timer",
@@ -4828,17 +4761,6 @@
       "norm_label": "timer",
       "source_file": "",
       "source_location": ""
-    },
-    {
-      "id": "server_src_prompts_tutor",
-      "label": "prompts/tutor.js",
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "routes/tutor.js",
-      "file_type": "code",
-      "norm_label": "prompts/tutor.js",
-      "source_file": "server/src/prompts/tutor.js",
-      "source_location": "L1"
     },
     {
       "id": "server_src_routes_tutor",
@@ -4922,7 +4844,7 @@
       "label": "App",
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": "app",
       "source_file": "",
@@ -4933,7 +4855,7 @@
       "label": "CurioforgeApp.swift",
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": "curioforgeapp.swift",
       "source_file": "apps/macos/Sources/Curioforge/CurioforgeApp.swift",
@@ -4944,29 +4866,18 @@
       "label": ".body",
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": ".body",
       "source_file": "apps/macos/Sources/Curioforge/CurioforgeApp.swift",
       "source_location": "L5"
     },
     {
-      "id": "apps_macos_sources_curioforge_models_appstate",
-      "label": "AppState.swift",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "SwiftUI",
-      "file_type": "code",
-      "norm_label": "appstate.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
-      "source_location": "L1"
-    },
-    {
       "id": "apps_macos_sources_curioforge_views_components_certificatemodalview",
       "label": "CertificateModalView.swift",
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": "certificatemodalview.swift",
       "source_file": "apps/macos/Sources/Curioforge/Views/Components/CertificateModalView.swift",
@@ -4977,7 +4888,7 @@
       "label": ".body",
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": ".body",
       "source_file": "apps/macos/Sources/Curioforge/Views/Components/CertificateModalView.swift",
@@ -4988,7 +4899,7 @@
       "label": "Bool",
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": "bool",
       "source_file": "",
@@ -4999,7 +4910,7 @@
       "label": "MainView.swift",
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": "mainview.swift",
       "source_file": "apps/macos/Sources/Curioforge/Views/MainView.swift",
@@ -5010,64 +4921,29 @@
       "label": ".body",
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": ".body",
       "source_file": "apps/macos/Sources/Curioforge/Views/MainView.swift",
       "source_location": "L9"
     },
     {
-      "id": "apps_macos_sources_curioforge_views_sidebar_curiosityfeedview",
-      "label": "CuriosityFeedView.swift",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "SwiftUI",
-      "file_type": "code",
-      "norm_label": "curiosityfeedview.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CuriosityFeedView.swift",
-      "source_location": "L1"
-    },
-    {
-      "id": "combine",
-      "label": "Combine",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "SwiftUI",
-      "file_type": "code",
-      "norm_label": "combine",
-      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
-      "source_location": "L3",
-      "type": "module"
-    },
-    {
       "id": "scene",
       "label": "Scene",
       "_origin": "ast",
       "community": 26,
-      "community_name": "SwiftUI",
+      "community_name": "CertificateModalView",
       "file_type": "code",
       "norm_label": "scene",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "swiftui",
-      "label": "SwiftUI",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "SwiftUI",
-      "file_type": "code",
-      "norm_label": "swiftui",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/StepByStepPlayerView.swift",
-      "source_location": "L1",
-      "type": "module"
-    },
-    {
       "id": "apps_macos_sources_curioforge_views_sidebar_copilotsidebarview",
       "label": "CoPilotSidebarView.swift",
       "_origin": "ast",
       "community": 27,
-      "community_name": "View",
+      "community_name": "CoPilotSidebarView",
       "file_type": "code",
       "norm_label": "copilotsidebarview.swift",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CoPilotSidebarView.swift",
@@ -5078,29 +4954,18 @@
       "label": ".body",
       "_origin": "ast",
       "community": 27,
-      "community_name": "View",
+      "community_name": "CoPilotSidebarView",
       "file_type": "code",
       "norm_label": ".body",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CoPilotSidebarView.swift",
       "source_location": "L26"
     },
     {
-      "id": "apps_macos_sources_curioforge_views_sidebar_curiosityfeedview_curiosityfeedview_body",
-      "label": ".body",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": ".body",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CuriosityFeedView.swift",
-      "source_location": "L10"
-    },
-    {
       "id": "apps_macos_sources_curioforge_views_sidebar_safetybadgeview",
       "label": "SafetyBadgeView.swift",
       "_origin": "ast",
       "community": 27,
-      "community_name": "View",
+      "community_name": "CoPilotSidebarView",
       "file_type": "code",
       "norm_label": "safetybadgeview.swift",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SafetyBadgeView.swift",
@@ -5111,20 +4976,42 @@
       "label": ".body",
       "_origin": "ast",
       "community": 27,
-      "community_name": "View",
+      "community_name": "CoPilotSidebarView",
       "file_type": "code",
       "norm_label": ".body",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SafetyBadgeView.swift",
       "source_location": "L10"
     },
     {
-      "id": "view",
-      "label": "View",
+      "id": "apps_macos_sources_curioforge_views_sidebar_siriorbview",
+      "label": "SiriOrbView.swift",
       "_origin": "ast",
       "community": 27,
-      "community_name": "View",
+      "community_name": "CoPilotSidebarView",
       "file_type": "code",
-      "norm_label": "view",
+      "norm_label": "siriorbview.swift",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SiriOrbView.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_views_sidebar_siriorbview_siriorbview_body",
+      "label": ".body",
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "CoPilotSidebarView",
+      "file_type": "code",
+      "norm_label": ".body",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SiriOrbView.swift",
+      "source_location": "L11"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_views_sidebar_siriorbview_swift_double",
+      "label": "Double",
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "CoPilotSidebarView",
+      "file_type": "code",
+      "norm_label": "double",
       "source_file": "",
       "source_location": ""
     },
@@ -5206,22 +5093,33 @@
       "source_location": ""
     },
     {
-      "id": "apps_macos_sources_curioforge_views_sidebar_socraticchatview",
-      "label": "SocraticChatView.swift",
+      "id": "apps_macos_sources_curioforge_views_sidebar_curiosityfeedview",
+      "label": "CuriosityFeedView.swift",
       "_origin": "ast",
       "community": 29,
-      "community_name": ".sendStudentMessage",
+      "community_name": "View",
       "file_type": "code",
-      "norm_label": "socraticchatview.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SocraticChatView.swift",
+      "norm_label": "curiosityfeedview.swift",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CuriosityFeedView.swift",
       "source_location": "L1"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_views_sidebar_curiosityfeedview_curiosityfeedview_body",
+      "label": ".body",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "View",
+      "file_type": "code",
+      "norm_label": ".body",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CuriosityFeedView.swift",
+      "source_location": "L10"
     },
     {
       "id": "apps_macos_sources_curioforge_views_sidebar_socraticchatview_socraticchatview_body",
       "label": ".body",
       "_origin": "ast",
       "community": 29,
-      "community_name": ".sendStudentMessage",
+      "community_name": "View",
       "file_type": "code",
       "norm_label": ".body",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SocraticChatView.swift",
@@ -5232,9 +5130,20 @@
       "label": "String",
       "_origin": "ast",
       "community": 29,
-      "community_name": ".sendStudentMessage",
+      "community_name": "View",
       "file_type": "code",
       "norm_label": "string",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "view",
+      "label": "View",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "View",
+      "file_type": "code",
+      "norm_label": "view",
       "source_file": "",
       "source_location": ""
     },
@@ -5461,11 +5370,22 @@
       "source_location": ""
     },
     {
+      "id": "apps_macos_sources_curioforge_views_sidebar_socraticchatview",
+      "label": "SocraticChatView.swift",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "SwiftUI",
+      "file_type": "code",
+      "norm_label": "socraticchatview.swift",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SocraticChatView.swift",
+      "source_location": "L1"
+    },
+    {
       "id": "apps_macos_sources_curioforge_views_stage_chapterscrubberview",
       "label": "ChapterScrubberView.swift",
       "_origin": "ast",
       "community": 31,
-      "community_name": "CinemaStageView",
+      "community_name": "SwiftUI",
       "file_type": "code",
       "norm_label": "chapterscrubberview.swift",
       "source_file": "apps/macos/Sources/Curioforge/Views/Stage/ChapterScrubberView.swift",
@@ -5476,7 +5396,7 @@
       "label": "CinemaStageView.swift",
       "_origin": "ast",
       "community": 31,
-      "community_name": "CinemaStageView",
+      "community_name": "SwiftUI",
       "file_type": "code",
       "norm_label": "cinemastageview.swift",
       "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CinemaStageView.swift",
@@ -5487,66 +5407,67 @@
       "label": ".body",
       "_origin": "ast",
       "community": 31,
-      "community_name": "CinemaStageView",
+      "community_name": "SwiftUI",
       "file_type": "code",
       "norm_label": ".body",
       "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CinemaStageView.swift",
       "source_location": "L10"
     },
     {
-      "id": "apps_macos_sources_curioforge_models_appstate_swift_int",
-      "label": "Int",
+      "id": "apps_macos_sources_curioforge_views_stage_stepbystepplayerview",
+      "label": "StepByStepPlayerView.swift",
       "_origin": "ast",
-      "community": 32,
-      "community_name": "CameraScannerView",
+      "community": 31,
+      "community_name": "SwiftUI",
       "file_type": "code",
-      "norm_label": "int",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "apps_macos_sources_curioforge_views_stage_camerascannerview",
-      "label": "CameraScannerView.swift",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "CameraScannerView",
-      "file_type": "code",
-      "norm_label": "camerascannerview.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CameraScannerView.swift",
+      "norm_label": "stepbystepplayerview.swift",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/StepByStepPlayerView.swift",
       "source_location": "L1"
     },
     {
-      "id": "apps_macos_sources_curioforge_views_stage_camerascannerview_camerascannerview_body",
-      "label": ".body",
+      "id": "swiftui",
+      "label": "SwiftUI",
       "_origin": "ast",
-      "community": 32,
-      "community_name": "CameraScannerView",
+      "community": 31,
+      "community_name": "SwiftUI",
       "file_type": "code",
-      "norm_label": ".body",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/CameraScannerView.swift",
-      "source_location": "L11"
+      "norm_label": "swiftui",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/StepByStepPlayerView.swift",
+      "source_location": "L1",
+      "type": "module"
     },
     {
-      "id": "apps_macos_sources_curioforge_views_stage_camerascannerview_swift_cgfloat",
-      "label": "CGFloat",
+      "id": "apps_macos_sources_curioforge_models_appstate_stagemode_steps",
+      "label": "steps",
       "_origin": "ast",
       "community": 32,
-      "community_name": "CameraScannerView",
+      "community_name": ".speakCurrentStep",
       "file_type": "code",
-      "norm_label": "cgfloat",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "steps",
+      "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
+      "source_location": "L8"
     },
     {
       "id": "apps_macos_sources_curioforge_views_stage_chapterscrubberview_chapterscrubberview_body",
       "label": ".body",
       "_origin": "ast",
       "community": 32,
-      "community_name": "CameraScannerView",
+      "community_name": ".speakCurrentStep",
       "file_type": "code",
       "norm_label": ".body",
       "source_file": "apps/macos/Sources/Curioforge/Views/Stage/ChapterScrubberView.swift",
       "source_location": "L18"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_views_stage_stepbystepplayerview_stepbystepplayerview_body",
+      "label": ".body",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": ".speakCurrentStep",
+      "file_type": "code",
+      "norm_label": ".body",
+      "source_file": "apps/macos/Sources/Curioforge/Views/Stage/StepByStepPlayerView.swift",
+      "source_location": "L10"
     },
     {
       "id": "apps_macos_sources_curioforge_views_settings_settingsview",
@@ -5616,16 +5537,28 @@
       "source_location": ""
     },
     {
-      "id": "phases_phase_4_multilingual_prompts_tts_1_0_h_planned",
-      "label": "Phase 4 \u2014 Multilingual Prompts + TTS (\u22481.0 h) \u00b7 Planned",
+      "id": "design_13_voice_and_camera_interaction",
+      "label": "13. Voice and Camera Interaction",
       "_origin": "ast",
       "community": 36,
       "community_name": ".speak",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "phase 4 \u2014 multilingual prompts + tts (\u22481.0 h) \u00b7 planned",
-      "source_file": "PHASES.md",
-      "source_location": "L179"
+      "norm_label": "13. voice and camera interaction",
+      "source_file": "DESIGN.md",
+      "source_location": "L200"
+    },
+    {
+      "id": "design_14_activityplan_presentation_activityprogram_interpreter",
+      "label": "14. ActivityPlan Presentation (ActivityProgram interpreter)",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": ".speak",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "14. activityplan presentation (activityprogram interpreter)",
+      "source_file": "DESIGN.md",
+      "source_location": "L215"
     },
     {
       "id": "prd_12_accessibility_requirements",
@@ -5760,70 +5693,97 @@
       "source_location": "L111"
     },
     {
-      "id": "apps_macos_sources_curioforge_views_sidebar_siriorbview",
-      "label": "SiriOrbView.swift",
+      "id": "apps_macos_sources_curioforge_services_apiclient_swift_bool",
+      "label": "Bool",
       "_origin": "ast",
       "community": 38,
-      "community_name": "SiriOrbView",
+      "community_name": "APIClient",
       "file_type": "code",
-      "norm_label": "siriorbview.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SiriOrbView.swift",
-      "source_location": "L1"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_views_sidebar_siriorbview_siriorbview_body",
-      "label": ".body",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "SiriOrbView",
-      "file_type": "code",
-      "norm_label": ".body",
-      "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/SiriOrbView.swift",
-      "source_location": "L11"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_views_sidebar_siriorbview_swift_double",
-      "label": "Double",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "SiriOrbView",
-      "file_type": "code",
-      "norm_label": "double",
+      "norm_label": "bool",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "server_src_middleware_ratelimit",
-      "label": "rateLimit.js",
+      "id": "apps_macos_sources_curioforge_services_apiclient_swift_string",
+      "label": "String",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "APIClient",
+      "file_type": "code",
+      "norm_label": "string",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "architecture_4_1_macos_shell_live_demo",
+      "label": "4.1 macOS shell (live demo)",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "APIClient",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4.1 macos shell (live demo)",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": "L112"
+    },
+    {
+      "id": "architecture_4_2_android_shell_phase_2_scaffold",
+      "label": "4.2 Android shell (`[PHASE 2]` scaffold)",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "APIClient",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4.2 android shell (`[phase 2]` scaffold)",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": "L126"
+    },
+    {
+      "id": "architecture_4_3_pwa_shell_phase_2_scaffold",
+      "label": "4.3 PWA shell (`[PHASE 2]` scaffold)",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "APIClient",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4.3 pwa shell (`[phase 2]` scaffold)",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": "L130"
+    },
+    {
+      "id": "architecture_4_4_parent_teacher_view",
+      "label": "4.4 Parent/teacher view",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "APIClient",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4.4 parent/teacher view",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": "L134"
+    },
+    {
+      "id": "architecture_4_platform_shell_architecture",
+      "label": "4. Platform Shell Architecture",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "APIClient",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4. platform shell architecture",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": "L110"
+    },
+    {
+      "id": "server_src_middleware_validate",
+      "label": "validate.js",
       "_origin": "ast",
       "community": 39,
       "community_name": "routes/results.js",
       "file_type": "code",
-      "norm_label": "ratelimit.js",
-      "source_file": "server/src/middleware/rateLimit.js",
+      "norm_label": "validate.js",
+      "source_file": "server/src/middleware/validate.js",
       "source_location": "L1"
-    },
-    {
-      "id": "server_src_middleware_ratelimit_ailimiter",
-      "label": "aiLimiter",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "routes/results.js",
-      "file_type": "code",
-      "norm_label": "ailimiter",
-      "source_file": "server/src/middleware/rateLimit.js",
-      "source_location": "L18"
-    },
-    {
-      "id": "server_src_middleware_ratelimit_apilimiter",
-      "label": "apiLimiter",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "routes/results.js",
-      "file_type": "code",
-      "norm_label": "apilimiter",
-      "source_file": "server/src/middleware/rateLimit.js",
-      "source_location": "L4"
     },
     {
       "id": "server_src_routes_results",
@@ -5881,15 +5841,16 @@
       "source_location": "L31"
     },
     {
-      "id": "ref_express_rate_limit",
-      "label": "express-rate-limit",
+      "id": "architecture_5_backend_architecture",
+      "label": "5. Backend Architecture",
       "_origin": "ast",
       "community": 39,
       "community_name": "routes/results.js",
-      "file_type": "concept",
-      "norm_label": "express-rate-limit",
-      "source_file": "server/package.json",
-      "source_location": "L14"
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5. backend architecture",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": "L138"
     },
     {
       "id": "curioforge_complete_idea_5_main_product_modules_and_features",
@@ -6233,15 +6194,37 @@
       "source_location": "L1"
     },
     {
-      "id": "server_src_middleware_validate",
-      "label": "validate.js",
+      "id": "server_src_middleware_ratelimit",
+      "label": "rateLimit.js",
       "_origin": "ast",
       "community": 41,
       "community_name": "routes/blueprint.js",
       "file_type": "code",
-      "norm_label": "validate.js",
-      "source_file": "server/src/middleware/validate.js",
+      "norm_label": "ratelimit.js",
+      "source_file": "server/src/middleware/rateLimit.js",
       "source_location": "L1"
+    },
+    {
+      "id": "server_src_middleware_ratelimit_ailimiter",
+      "label": "aiLimiter",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "routes/blueprint.js",
+      "file_type": "code",
+      "norm_label": "ailimiter",
+      "source_file": "server/src/middleware/rateLimit.js",
+      "source_location": "L18"
+    },
+    {
+      "id": "server_src_middleware_ratelimit_apilimiter",
+      "label": "apiLimiter",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "routes/blueprint.js",
+      "file_type": "code",
+      "norm_label": "apilimiter",
+      "source_file": "server/src/middleware/rateLimit.js",
+      "source_location": "L4"
     },
     {
       "id": "server_src_routes_blueprint",
@@ -6299,16 +6282,15 @@
       "source_location": "L18"
     },
     {
-      "id": "architecture_5_backend_architecture",
-      "label": "5. Backend Architecture",
+      "id": "ref_express_rate_limit",
+      "label": "express-rate-limit",
       "_origin": "ast",
       "community": 41,
       "community_name": "routes/blueprint.js",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "5. backend architecture",
-      "source_file": "ARCHITECTURE.md",
-      "source_location": "L138"
+      "file_type": "concept",
+      "norm_label": "express-rate-limit",
+      "source_file": "server/package.json",
+      "source_location": "L14"
     },
     {
       "id": "server_src_prompts_curiosity",
@@ -6430,6 +6412,97 @@
       "norm_label": "base_safety_instructions",
       "source_file": "server/src/prompts/shared.js",
       "source_location": "L1"
+    },
+    {
+      "id": "server_src_prompts_tutor",
+      "label": "prompts/tutor.js",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "shared.js",
+      "file_type": "code",
+      "norm_label": "prompts/tutor.js",
+      "source_file": "server/src/prompts/tutor.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_models_simulationstate",
+      "label": "SimulationState.swift",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "SimulationState",
+      "file_type": "code",
+      "norm_label": "simulationstate.swift",
+      "source_file": "apps/macos/Sources/Curioforge/Models/SimulationState.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_models_simulationstate_swift_bool",
+      "label": "Bool",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "SimulationState",
+      "file_type": "code",
+      "norm_label": "bool",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "apps_macos_sources_curioforge_models_simulationstate_swift_double",
+      "label": "Double",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "SimulationState",
+      "file_type": "code",
+      "norm_label": "double",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "equatable",
+      "label": "Equatable",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "SimulationState",
+      "file_type": "code",
+      "norm_label": "equatable",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "phases_1_time_budget_and_priorities",
+      "label": "1. Time Budget and Priorities",
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "1. Time Budget and Priorities",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. time budget and priorities",
+      "source_file": "PHASES.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "phases_checkpoints",
+      "label": "Checkpoints",
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "1. Time Budget and Priorities",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "checkpoints",
+      "source_file": "PHASES.md",
+      "source_location": "L44"
+    },
+    {
+      "id": "phases_cut_line_if_behind_schedule",
+      "label": "Cut line (if behind schedule)",
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "1. Time Budget and Priorities",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "cut line (if behind schedule)",
+      "source_file": "PHASES.md",
+      "source_location": "L39"
     },
     {
       "id": "server_src_app",
@@ -6715,66 +6788,6 @@
       "norm_label": "3. activityprogram contract (authoritative)",
       "source_file": "ARCHITECTURE.md",
       "source_location": "L63"
-    },
-    {
-      "id": "architecture_4_1_macos_shell_live_demo",
-      "label": "4.1 macOS shell (live demo)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "CURIOFORGE \u2014 Architecture",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4.1 macos shell (live demo)",
-      "source_file": "ARCHITECTURE.md",
-      "source_location": "L112"
-    },
-    {
-      "id": "architecture_4_2_android_shell_phase_2_scaffold",
-      "label": "4.2 Android shell (`[PHASE 2]` scaffold)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "CURIOFORGE \u2014 Architecture",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4.2 android shell (`[phase 2]` scaffold)",
-      "source_file": "ARCHITECTURE.md",
-      "source_location": "L126"
-    },
-    {
-      "id": "architecture_4_3_pwa_shell_phase_2_scaffold",
-      "label": "4.3 PWA shell (`[PHASE 2]` scaffold)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "CURIOFORGE \u2014 Architecture",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4.3 pwa shell (`[phase 2]` scaffold)",
-      "source_file": "ARCHITECTURE.md",
-      "source_location": "L130"
-    },
-    {
-      "id": "architecture_4_4_parent_teacher_view",
-      "label": "4.4 Parent/teacher view",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "CURIOFORGE \u2014 Architecture",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4.4 parent/teacher view",
-      "source_file": "ARCHITECTURE.md",
-      "source_location": "L134"
-    },
-    {
-      "id": "architecture_4_platform_shell_architecture",
-      "label": "4. Platform Shell Architecture",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "CURIOFORGE \u2014 Architecture",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4. platform shell architecture",
-      "source_file": "ARCHITECTURE.md",
-      "source_location": "L110"
     },
     {
       "id": "architecture_6_ai_integration_architecture",
@@ -7149,30 +7162,6 @@
       "source_location": "L1"
     },
     {
-      "id": "phases_1_time_budget_and_priorities",
-      "label": "1. Time Budget and Priorities",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "CURIOFORGE \u2014 Implementation Roadmap (demo-slice-first plan)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. time budget and priorities",
-      "source_file": "PHASES.md",
-      "source_location": "L7"
-    },
-    {
-      "id": "phases_checkpoints",
-      "label": "Checkpoints",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "CURIOFORGE \u2014 Implementation Roadmap (demo-slice-first plan)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "checkpoints",
-      "source_file": "PHASES.md",
-      "source_location": "L44"
-    },
-    {
       "id": "phases_curioforge_implementation_roadmap_demo_slice_first_plan",
       "label": "CURIOFORGE \u2014 Implementation Roadmap (demo-slice-first plan)",
       "_origin": "ast",
@@ -7183,18 +7172,6 @@
       "norm_label": "curioforge \u2014 implementation roadmap (demo-slice-first plan)",
       "source_file": "PHASES.md",
       "source_location": "L1"
-    },
-    {
-      "id": "phases_cut_line_if_behind_schedule",
-      "label": "Cut line (if behind schedule)",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "CURIOFORGE \u2014 Implementation Roadmap (demo-slice-first plan)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "cut line (if behind schedule)",
-      "source_file": "PHASES.md",
-      "source_location": "L39"
     },
     {
       "id": "phases_phase_0_docs_contracts_and_core_foundation_2_0_h_mandatory",
@@ -7243,6 +7220,18 @@
       "norm_label": "phase 3 \u2014 full interaction set (\u22482.5 h) \u00b7 planned",
       "source_file": "PHASES.md",
       "source_location": "L157"
+    },
+    {
+      "id": "phases_phase_4_multilingual_prompts_tts_1_0_h_planned",
+      "label": "Phase 4 \u2014 Multilingual Prompts + TTS (\u22481.0 h) \u00b7 Planned",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "CURIOFORGE \u2014 Implementation Roadmap (demo-slice-first plan)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 4 \u2014 multilingual prompts + tts (\u22481.0 h) \u00b7 planned",
+      "source_file": "PHASES.md",
+      "source_location": "L179"
     },
     {
       "id": "phases_phase_5_full_parent_teacher_dashboard_1_0_h_planned",
@@ -8608,42 +8597,6 @@
       "context": "call",
       "source_file": "desktop/main.cjs",
       "source_location": "L33",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_components_profile_profilemodal_profilemodal",
-      "target": "client_src_components_profile_profilemodal_avatars",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "client/src/components/profile/ProfileModal.jsx",
-      "source_location": "L187",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_components_profile_profilemodal_profilemodal",
-      "target": "client_src_components_profile_profilemodal_grade_options",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "client/src/components/profile/ProfileModal.jsx",
-      "source_location": "L212",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_components_profile_profilemodal_profilemodal",
-      "target": "client_src_components_profile_profilemodal_languages",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "client/src/components/profile/ProfileModal.jsx",
-      "source_location": "L252",
       "weight": 1.0
     },
     {
@@ -10436,66 +10389,6 @@
     },
     {
       "source": "server_src_app",
-      "target": "server_src_routes_tutor_router",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "server/src/app.js",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "server_src_app",
-      "target": "server_src_routes_curiosity_router",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "server/src/app.js",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "server_src_app",
-      "target": "server_src_routes_blueprint_router",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "server/src/app.js",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "server_src_app",
-      "target": "server_src_routes_results_router",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "server/src/app.js",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "server_src_app",
-      "target": "server_src_routes_weather_router",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "server/src/app.js",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "server_src_app",
       "target": "server_src_config_env_env",
       "relation": "imports",
       "_origin": "ast",
@@ -10516,18 +10409,6 @@
       "context": "import",
       "source_file": "server/src/app.js",
       "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "server_src_app",
-      "target": "server_src_routes_health_router",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "server/src/app.js",
-      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -17741,15 +17622,6 @@
       "weight": 1.0
     },
     {
-      "source": "client_tailwind_config",
-      "target": "tailwindcss",
-      "relation": "dynamic_import",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "client/tailwind.config.js"
-    },
-    {
       "source": "apps_macos_sources_curioforge_curioforgeapp_curioforgeapp",
       "target": "app",
       "relation": "implements",
@@ -20274,5 +20146,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5d221e147f6699d9a0e7064a77ca4b65298f4392"
+  "built_at_commit": "349433d7b073daa15321ce93e537e3c195d25fcf"
 }

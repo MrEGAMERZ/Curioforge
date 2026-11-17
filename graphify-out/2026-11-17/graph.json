@@ -147,6 +147,19 @@
       "source_location": "L9"
     },
     {
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient",
+      "label": "APIClient",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "SocraticMessage",
+      "file_type": "code",
+      "norm_label": "apiclient",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L3"
+    },
+    {
       "id": "apps_macos_sources_curioforge_views_sidebar_copilotsidebarview_sidebartab",
       "label": "SidebarTab",
       "_callable": true,
@@ -157,19 +170,6 @@
       "file_type": "code",
       "norm_label": "sidebartab",
       "source_file": "apps/macos/Sources/Curioforge/Views/Sidebar/CoPilotSidebarView.swift",
-      "source_location": "L3"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_models_simulationstate_simulationstate",
-      "label": "SimulationState",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "simulationstate",
-      "source_file": "apps/macos/Sources/Curioforge/Models/SimulationState.swift",
       "source_location": "L3"
     },
     {
@@ -212,6 +212,19 @@
       "source_location": "L5"
     },
     {
+      "id": "apps_macos_sources_curioforge_models_simulationstate_simulationstate",
+      "label": "SimulationState",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechSynthesizerService",
+      "file_type": "code",
+      "norm_label": "simulationstate",
+      "source_file": "apps/macos/Sources/Curioforge/Models/SimulationState.swift",
+      "source_location": "L3"
+    },
+    {
       "id": "apps_macos_sources_curioforge_services_speechsynthesizer_speechsynthesizerservice",
       "label": "SpeechSynthesizerService",
       "_callable": true,
@@ -248,19 +261,6 @@
       "file_type": "code",
       "norm_label": "stepbystepplayerview",
       "source_file": "apps/macos/Sources/Curioforge/Views/Stage/StepByStepPlayerView.swift",
-      "source_location": "L3"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient",
-      "label": "APIClient",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "APIClient",
-      "file_type": "code",
-      "norm_label": "apiclient",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
       "source_location": "L3"
     },
     {
@@ -451,11 +451,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "app()",
       "source_file": "client/src/App.jsx",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "client_src_components_canvas_interactivecanvas_interactivecanvas",
@@ -463,7 +463,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "interactivecanvas()",
       "source_file": "client/src/components/canvas/InteractiveCanvas.jsx",
@@ -475,11 +475,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "profilemodal()",
       "source_file": "client/src/components/profile/ProfileModal.jsx",
-      "source_location": "L7"
+      "source_location": "L43"
     },
     {
       "id": "client_src_components_sessions_sessiondrawer_sessiondrawer",
@@ -487,7 +487,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "sessiondrawer()",
       "source_file": "client/src/components/sessions/SessionDrawer.jsx",
@@ -499,7 +499,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "button()",
       "source_file": "client/src/components/ui/Button.jsx",
@@ -511,7 +511,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "card()",
       "source_file": "client/src/components/ui/Card.jsx",
@@ -523,7 +523,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "badge()",
       "source_file": "client/src/components/ui/Misc.jsx",
@@ -535,7 +535,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "chip()",
       "source_file": "client/src/components/ui/Misc.jsx",
@@ -547,7 +547,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "emptystate()",
       "source_file": "client/src/components/ui/Misc.jsx",
@@ -559,7 +559,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "errorstate()",
       "source_file": "client/src/components/ui/Misc.jsx",
@@ -571,7 +571,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "spinner()",
       "source_file": "client/src/components/ui/Misc.jsx",
@@ -583,7 +583,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "blueprintviewer()",
       "source_file": "client/src/features/blueprint/BlueprintViewer.jsx",
@@ -595,7 +595,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "soilmoisturelab()",
       "source_file": "client/src/features/lab/SoilMoistureLab.jsx",
@@ -607,11 +607,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "interactivetutorview()",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L21"
+      "source_location": "L25"
     },
     {
       "id": "client_src_hooks_uselocalstorage_uselocalstorage",
@@ -619,7 +619,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "uselocalstorage()",
       "source_file": "client/src/hooks/useLocalStorage.js",
@@ -631,7 +631,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "usespeechoutput()",
       "source_file": "client/src/hooks/useSpeechOutput.js",
@@ -643,11 +643,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "usevoiceinput()",
       "source_file": "client/src/hooks/useVoiceInput.js",
       "source_location": "L3"
+    },
+    {
+      "id": "client_src_lib_apiclient_getapibase",
+      "label": "getApiBase()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "InteractiveTutorView.jsx",
+      "file_type": "code",
+      "norm_label": "getapibase()",
+      "source_file": "client/src/lib/apiClient.js",
+      "source_location": "L6"
     },
     {
       "id": "client_src_lib_apiclient_request",
@@ -655,11 +667,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "request()",
       "source_file": "client/src/lib/apiClient.js",
-      "source_location": "L6"
+      "source_location": "L14"
     },
     {
       "id": "client_src_lib_simulation_soilmoisturemodel_runsoilmoisturesimulation",
@@ -667,7 +679,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "runsoilmoisturesimulation()",
       "source_file": "client/src/lib/simulation/soilMoistureModel.js",
@@ -679,7 +691,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "simulatestrategy()",
       "source_file": "client/src/lib/simulation/soilMoistureModel.js",
@@ -782,6 +794,114 @@
       "source_location": "L43"
     },
     {
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_checkhealth",
+      "label": ".checkHealth()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "SocraticMessage",
+      "file_type": "code",
+      "norm_label": ".checkhealth()",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L11"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_fallbackchatreply",
+      "label": ".fallbackChatReply()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "SocraticMessage",
+      "file_type": "code",
+      "norm_label": ".fallbackchatreply()",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L83"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_init",
+      "label": ".init()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "SocraticMessage",
+      "file_type": "code",
+      "norm_label": ".init()",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L9"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_scanscrapmaterials",
+      "label": ".scanScrapMaterials()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "SocraticMessage",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "sleep",
+            "receiver_type": "Task",
+            "lang": "swift",
+            "line": "L65"
+          }
+        ]
+      },
+      "norm_label": ".scanscrapmaterials()",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L63"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_sendchatmessage",
+      "label": ".sendChatMessage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "SocraticMessage",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "data",
+            "receiver_type": "JSONSerialization",
+            "lang": "swift",
+            "line": "L46"
+          },
+          {
+            "callee": "jsonObject",
+            "receiver_type": "JSONSerialization",
+            "lang": "swift",
+            "line": "L50"
+          }
+        ]
+      },
+      "norm_label": ".sendchatmessage()",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L24"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_verifyresult",
+      "label": ".verifyResult()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "SocraticMessage",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "sleep",
+            "receiver_type": "Task",
+            "lang": "swift",
+            "line": "L76"
+          }
+        ]
+      },
+      "norm_label": ".verifyresult()",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L75"
+    },
+    {
       "id": "apps_macos_sources_curioforge_models_appstate_appstate_togglevoicerecording",
       "label": ".toggleVoiceRecording()",
       "_callable": true,
@@ -804,18 +924,6 @@
       "norm_label": ".verifyresult()",
       "source_file": "apps/macos/Sources/Curioforge/Models/AppState.swift",
       "source_location": "L300"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_models_simulationstate_simulationstate_init",
-      "label": ".init()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": ".init()",
-      "source_file": "apps/macos/Sources/Curioforge/Models/SimulationState.swift",
-      "source_location": "L13"
     },
     {
       "id": "apps_macos_sources_curioforge_services_cloudsyncservice_cloudsyncservice_init",
@@ -976,6 +1084,18 @@
       "source_location": "L81"
     },
     {
+      "id": "apps_macos_sources_curioforge_models_simulationstate_simulationstate_init",
+      "label": ".init()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechSynthesizerService",
+      "file_type": "code",
+      "norm_label": ".init()",
+      "source_file": "apps/macos/Sources/Curioforge/Models/SimulationState.swift",
+      "source_location": "L13"
+    },
+    {
       "id": "apps_macos_sources_curioforge_services_speechsynthesizer_speechsynthesizerservice_init",
       "label": ".init()",
       "_callable": true,
@@ -1124,112 +1244,40 @@
       "source_location": "L6"
     },
     {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_checkhealth",
-      "label": ".checkHealth()",
+      "id": "server_src_prompts_tutor_buildtutorsystemprompt",
+      "label": "buildTutorSystemPrompt()",
       "_callable": true,
       "_origin": "ast",
       "community": 25,
-      "community_name": "APIClient",
+      "community_name": "routes/tutor.js",
       "file_type": "code",
-      "norm_label": ".checkhealth()",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L11"
+      "norm_label": "buildtutorsystemprompt()",
+      "source_file": "server/src/prompts/tutor.js",
+      "source_location": "L3"
     },
     {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_fallbackchatreply",
-      "label": ".fallbackChatReply()",
+      "id": "server_src_services_gemini_generategeminijson",
+      "label": "generateGeminiJson()",
       "_callable": true,
       "_origin": "ast",
       "community": 25,
-      "community_name": "APIClient",
+      "community_name": "routes/tutor.js",
       "file_type": "code",
-      "norm_label": ".fallbackchatreply()",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L83"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_init",
-      "label": ".init()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "APIClient",
-      "file_type": "code",
-      "norm_label": ".init()",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "norm_label": "generategeminijson()",
+      "source_file": "server/src/services/gemini.js",
       "source_location": "L9"
     },
     {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_scanscrapmaterials",
-      "label": ".scanScrapMaterials()",
+      "id": "server_src_utils_parsejson_cleanandparsejson",
+      "label": "cleanAndParseJson()",
       "_callable": true,
       "_origin": "ast",
       "community": 25,
-      "community_name": "APIClient",
+      "community_name": "routes/tutor.js",
       "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "sleep",
-            "receiver_type": "Task",
-            "lang": "swift",
-            "line": "L65"
-          }
-        ]
-      },
-      "norm_label": ".scanscrapmaterials()",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L63"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_sendchatmessage",
-      "label": ".sendChatMessage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "APIClient",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "data",
-            "receiver_type": "JSONSerialization",
-            "lang": "swift",
-            "line": "L46"
-          },
-          {
-            "callee": "jsonObject",
-            "receiver_type": "JSONSerialization",
-            "lang": "swift",
-            "line": "L50"
-          }
-        ]
-      },
-      "norm_label": ".sendchatmessage()",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L24"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_apiclient_apiclient_verifyresult",
-      "label": ".verifyResult()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "APIClient",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "sleep",
-            "receiver_type": "Task",
-            "lang": "swift",
-            "line": "L76"
-          }
-        ]
-      },
-      "norm_label": ".verifyresult()",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L75"
+      "norm_label": "cleanandparsejson()",
+      "source_file": "server/src/utils/parseJson.js",
+      "source_location": "L1"
     },
     {
       "id": "apps_macos_sources_curioforge_views_components_certificatemodalview_certificatemodalview_init",
@@ -1542,6 +1590,78 @@
       "source_location": "L7"
     },
     {
+      "id": "server_src_services_openmeteo_geocodecity",
+      "label": "geocodeCity()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 40,
+      "community_name": "routes/weather.js",
+      "file_type": "code",
+      "norm_label": "geocodecity()",
+      "source_file": "server/src/services/openMeteo.js",
+      "source_location": "L7"
+    },
+    {
+      "id": "server_src_services_openmeteo_getforecast",
+      "label": "getForecast()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 40,
+      "community_name": "routes/weather.js",
+      "file_type": "code",
+      "norm_label": "getforecast()",
+      "source_file": "server/src/services/openMeteo.js",
+      "source_location": "L40"
+    },
+    {
+      "id": "server_src_middleware_validate_validate",
+      "label": "validate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "routes/blueprint.js",
+      "file_type": "code",
+      "norm_label": "validate()",
+      "source_file": "server/src/middleware/validate.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_prompts_curiosity_buildcuriositysystemprompt",
+      "label": "buildCuriositySystemPrompt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "routes/curiosity.js",
+      "file_type": "code",
+      "norm_label": "buildcuriositysystemprompt()",
+      "source_file": "server/src/prompts/curiosity.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_prompts_blueprint_buildblueprintsystemprompt",
+      "label": "buildBlueprintSystemPrompt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "shared.js",
+      "file_type": "code",
+      "norm_label": "buildblueprintsystemprompt()",
+      "source_file": "server/src/prompts/blueprint.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_prompts_results_buildresultssystemprompt",
+      "label": "buildResultsSystemPrompt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "shared.js",
+      "file_type": "code",
+      "norm_label": "buildresultssystemprompt()",
+      "source_file": "server/src/prompts/results.js",
+      "source_location": "L3"
+    },
+    {
       "id": "server_src_middleware_errorhandler_errorhandler",
       "label": "errorHandler()",
       "_callable": true,
@@ -1566,114 +1686,6 @@
       "source_location": "L17"
     },
     {
-      "id": "server_src_middleware_validate_validate",
-      "label": "validate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "validate()",
-      "source_file": "server/src/middleware/validate.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_prompts_blueprint_buildblueprintsystemprompt",
-      "label": "buildBlueprintSystemPrompt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "buildblueprintsystemprompt()",
-      "source_file": "server/src/prompts/blueprint.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_prompts_curiosity_buildcuriositysystemprompt",
-      "label": "buildCuriositySystemPrompt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "buildcuriositysystemprompt()",
-      "source_file": "server/src/prompts/curiosity.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_prompts_results_buildresultssystemprompt",
-      "label": "buildResultsSystemPrompt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "buildresultssystemprompt()",
-      "source_file": "server/src/prompts/results.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_prompts_tutor_buildtutorsystemprompt",
-      "label": "buildTutorSystemPrompt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "buildtutorsystemprompt()",
-      "source_file": "server/src/prompts/tutor.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_services_gemini_generategeminijson",
-      "label": "generateGeminiJson()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "generategeminijson()",
-      "source_file": "server/src/services/gemini.js",
-      "source_location": "L9"
-    },
-    {
-      "id": "server_src_services_openmeteo_geocodecity",
-      "label": "geocodeCity()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "geocodecity()",
-      "source_file": "server/src/services/openMeteo.js",
-      "source_location": "L7"
-    },
-    {
-      "id": "server_src_services_openmeteo_getforecast",
-      "label": "getForecast()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "getforecast()",
-      "source_file": "server/src/services/openMeteo.js",
-      "source_location": "L40"
-    },
-    {
-      "id": "server_src_utils_parsejson_cleanandparsejson",
-      "label": "cleanAndParseJson()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "cleanandparsejson()",
-      "source_file": "server/src/utils/parseJson.js",
-      "source_location": "L1"
-    },
-    {
       "id": "desktop_main_createwindow",
       "label": "createWindow()",
       "_callable": true,
@@ -1683,7 +1695,7 @@
       "file_type": "code",
       "norm_label": "createwindow()",
       "source_file": "desktop/main.cjs",
-      "source_location": "L52"
+      "source_location": "L58"
     },
     {
       "id": "desktop_main_startserver",
@@ -1707,7 +1719,7 @@
       "file_type": "code",
       "norm_label": "waitforserver()",
       "source_file": "desktop/main.cjs",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "desktop_main_waitforserver_check",
@@ -1719,7 +1731,7 @@
       "file_type": "code",
       "norm_label": "check()",
       "source_file": "desktop/main.cjs",
-      "source_location": "L32"
+      "source_location": "L33"
     },
     {
       "id": "desktop_main_waitforserver_retry",
@@ -1731,7 +1743,7 @@
       "file_type": "code",
       "norm_label": "retry()",
       "source_file": "desktop/main.cjs",
-      "source_location": "L41"
+      "source_location": "L47"
     },
     {
       "id": "client_package",
@@ -2076,18 +2088,6 @@
       "norm_label": "11. shell chrome and navigation",
       "source_file": "DESIGN.md",
       "source_location": "L177"
-    },
-    {
-      "id": "design_12_activity_home_cards",
-      "label": "12. Activity Home Cards",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "CURIOFORGE \u2014 Design System",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "12. activity home cards",
-      "source_file": "DESIGN.md",
-      "source_location": "L189"
     },
     {
       "id": "design_13_voice_and_camera_interaction",
@@ -2634,7 +2634,7 @@
       "label": "App.jsx",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "app.jsx",
       "source_file": "client/src/App.jsx",
@@ -2645,7 +2645,7 @@
       "label": "InteractiveCanvas.jsx",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "interactivecanvas.jsx",
       "source_file": "client/src/components/canvas/InteractiveCanvas.jsx",
@@ -2656,18 +2656,51 @@
       "label": "ProfileModal.jsx",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "profilemodal.jsx",
       "source_file": "client/src/components/profile/ProfileModal.jsx",
       "source_location": "L1"
     },
     {
+      "id": "client_src_components_profile_profilemodal_avatars",
+      "label": "AVATARS",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "InteractiveTutorView.jsx",
+      "file_type": "code",
+      "norm_label": "avatars",
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L18"
+    },
+    {
+      "id": "client_src_components_profile_profilemodal_grade_options",
+      "label": "GRADE_OPTIONS",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "InteractiveTutorView.jsx",
+      "file_type": "code",
+      "norm_label": "grade_options",
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L27"
+    },
+    {
+      "id": "client_src_components_profile_profilemodal_languages",
+      "label": "LANGUAGES",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "InteractiveTutorView.jsx",
+      "file_type": "code",
+      "norm_label": "languages",
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L34"
+    },
+    {
       "id": "client_src_components_sessions_sessiondrawer",
       "label": "SessionDrawer.jsx",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "sessiondrawer.jsx",
       "source_file": "client/src/components/sessions/SessionDrawer.jsx",
@@ -2678,7 +2711,7 @@
       "label": "Button.jsx",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "button.jsx",
       "source_file": "client/src/components/ui/Button.jsx",
@@ -2689,7 +2722,7 @@
       "label": "Card.jsx",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "card.jsx",
       "source_file": "client/src/components/ui/Card.jsx",
@@ -2700,7 +2733,7 @@
       "label": "Misc.jsx",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "misc.jsx",
       "source_file": "client/src/components/ui/Misc.jsx",
@@ -2711,7 +2744,7 @@
       "label": "BlueprintViewer.jsx",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "blueprintviewer.jsx",
       "source_file": "client/src/features/blueprint/BlueprintViewer.jsx",
@@ -2722,7 +2755,7 @@
       "label": "SoilMoistureLab.jsx",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "soilmoisturelab.jsx",
       "source_file": "client/src/features/lab/SoilMoistureLab.jsx",
@@ -2733,7 +2766,7 @@
       "label": "InteractiveTutorView.jsx",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "interactivetutorview.jsx",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
@@ -2744,7 +2777,7 @@
       "label": "useLocalStorage.js",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "uselocalstorage.js",
       "source_file": "client/src/hooks/useLocalStorage.js",
@@ -2755,7 +2788,7 @@
       "label": "useSpeechOutput.js",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "usespeechoutput.js",
       "source_file": "client/src/hooks/useSpeechOutput.js",
@@ -2766,7 +2799,7 @@
       "label": "useVoiceInput.js",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "usevoiceinput.js",
       "source_file": "client/src/hooks/useVoiceInput.js",
@@ -2777,7 +2810,7 @@
       "label": "apiClient.js",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "apiclient.js",
       "source_file": "client/src/lib/apiClient.js",
@@ -2788,18 +2821,18 @@
       "label": "apiClient",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "apiclient",
       "source_file": "client/src/lib/apiClient.js",
-      "source_location": "L44"
+      "source_location": "L54"
     },
     {
       "id": "client_src_lib_simulation_soilmoisturemodel",
       "label": "soilMoistureModel.js",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "soilmoisturemodel.js",
       "source_file": "client/src/lib/simulation/soilMoistureModel.js",
@@ -2810,7 +2843,7 @@
       "label": "SOIL_CAPACITIES",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "soil_capacities",
       "source_file": "client/src/lib/simulation/soilMoistureModel.js",
@@ -2821,7 +2854,7 @@
       "label": "main.jsx",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "code",
       "norm_label": "main.jsx",
       "source_file": "client/src/main.jsx",
@@ -2832,7 +2865,7 @@
       "label": "lucide-react",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "concept",
       "norm_label": "lucide-react",
       "source_file": "client/package.json",
@@ -2843,18 +2876,30 @@
       "label": "react",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "concept",
       "norm_label": "react",
       "source_file": "client/package.json",
       "source_location": "L13"
     },
     {
+      "id": "design_12_activity_home_cards",
+      "label": "12. Activity Home Cards",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "InteractiveTutorView.jsx",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "12. activity home cards",
+      "source_file": "DESIGN.md",
+      "source_location": "L189"
+    },
+    {
       "id": "design_19_reusable_component_guidelines",
       "label": "19. Reusable Component Guidelines",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "19. reusable component guidelines",
@@ -2866,7 +2911,7 @@
       "label": "Motion catalogue (the only animations allowed)",
       "_origin": "ast",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "motion catalogue (the only animations allowed)",
@@ -3123,6 +3168,28 @@
       "community_name": "SocraticMessage",
       "file_type": "code",
       "norm_label": "int",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient_swift_bool",
+      "label": "Bool",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "SocraticMessage",
+      "file_type": "code",
+      "norm_label": "bool",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient_swift_string",
+      "label": "String",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "SocraticMessage",
+      "file_type": "code",
+      "norm_label": "string",
       "source_file": "",
       "source_location": ""
     },
@@ -3771,11 +3838,22 @@
       "source_location": "L1"
     },
     {
+      "id": "server_package",
+      "label": "server/package.json",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "server/package.json",
+      "file_type": "code",
+      "norm_label": "server/package.json",
+      "source_file": "server/package.json",
+      "source_location": "L1"
+    },
+    {
       "id": "server_package_dependencies",
       "label": "dependencies",
       "_origin": "ast",
       "community": 19,
-      "community_name": "dependencies",
+      "community_name": "server/package.json",
       "file_type": "code",
       "norm_label": "dependencies",
       "source_file": "server/package.json",
@@ -3786,7 +3864,7 @@
       "label": "cors",
       "_origin": "ast",
       "community": 19,
-      "community_name": "dependencies",
+      "community_name": "server/package.json",
       "file_type": "code",
       "norm_label": "cors",
       "source_file": "server/package.json",
@@ -3797,7 +3875,7 @@
       "label": "dotenv",
       "_origin": "ast",
       "community": 19,
-      "community_name": "dependencies",
+      "community_name": "server/package.json",
       "file_type": "code",
       "norm_label": "dotenv",
       "source_file": "server/package.json",
@@ -3808,7 +3886,7 @@
       "label": "express",
       "_origin": "ast",
       "community": 19,
-      "community_name": "dependencies",
+      "community_name": "server/package.json",
       "file_type": "code",
       "norm_label": "express",
       "source_file": "server/package.json",
@@ -3819,7 +3897,7 @@
       "label": "express-rate-limit",
       "_origin": "ast",
       "community": 19,
-      "community_name": "dependencies",
+      "community_name": "server/package.json",
       "file_type": "code",
       "norm_label": "express-rate-limit",
       "source_file": "server/package.json",
@@ -3830,11 +3908,132 @@
       "label": "zod",
       "_origin": "ast",
       "community": 19,
-      "community_name": "dependencies",
+      "community_name": "server/package.json",
       "file_type": "code",
       "norm_label": "zod",
       "source_file": "server/package.json",
       "source_location": "L15"
+    },
+    {
+      "id": "server_package_devdependencies",
+      "label": "devDependencies",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "server/package.json",
+      "file_type": "code",
+      "norm_label": "devdependencies",
+      "source_file": "server/package.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "server_package_devdependencies_nodemon",
+      "label": "nodemon",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "server/package.json",
+      "file_type": "code",
+      "norm_label": "nodemon",
+      "source_file": "server/package.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "server_package_name",
+      "label": "name",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "server/package.json",
+      "file_type": "code",
+      "norm_label": "name",
+      "source_file": "server/package.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "server_package_private",
+      "label": "private",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "server/package.json",
+      "file_type": "code",
+      "norm_label": "private",
+      "source_file": "server/package.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_package_scripts",
+      "label": "scripts",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "server/package.json",
+      "file_type": "code",
+      "norm_label": "scripts",
+      "source_file": "server/package.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "server_package_scripts_dev",
+      "label": "dev",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "server/package.json",
+      "file_type": "code",
+      "norm_label": "dev",
+      "source_file": "server/package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "server_package_scripts_start",
+      "label": "start",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "server/package.json",
+      "file_type": "code",
+      "norm_label": "start",
+      "source_file": "server/package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "server_package_type",
+      "label": "type",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "server/package.json",
+      "file_type": "code",
+      "norm_label": "type",
+      "source_file": "server/package.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "server_package_version",
+      "label": "version",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "server/package.json",
+      "file_type": "code",
+      "norm_label": "version",
+      "source_file": "server/package.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "ref_cors",
+      "label": "cors",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "server/package.json",
+      "file_type": "concept",
+      "norm_label": "cors",
+      "source_file": "server/package.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "ref_nodemon",
+      "label": "nodemon",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "server/package.json",
+      "file_type": "concept",
+      "norm_label": "nodemon",
+      "source_file": "server/package.json",
+      "source_location": "L18"
     },
     {
       "id": "curioforge_complete_idea",
@@ -4254,50 +4453,6 @@
       "source_location": "L1"
     },
     {
-      "id": "apps_macos_sources_curioforge_models_simulationstate",
-      "label": "SimulationState.swift",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "simulationstate.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Models/SimulationState.swift",
-      "source_location": "L1"
-    },
-    {
-      "id": "apps_macos_sources_curioforge_models_simulationstate_swift_bool",
-      "label": "Bool",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "bool",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "apps_macos_sources_curioforge_models_simulationstate_swift_double",
-      "label": "Double",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "double",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "apps_macos_sources_curioforge_services_apiclient",
-      "label": "APIClient.swift",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "apiclient.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
-      "source_location": "L1"
-    },
-    {
       "id": "apps_macos_sources_curioforge_services_cloudsyncservice",
       "label": "CloudSyncService.swift",
       "_origin": "ast",
@@ -4342,17 +4497,6 @@
       "source_location": ""
     },
     {
-      "id": "apps_macos_sources_curioforge_services_speechrecognizer",
-      "label": "SpeechRecognizer.swift",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "speechrecognizer.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Services/SpeechRecognizer.swift",
-      "source_location": "L1"
-    },
-    {
       "id": "apps_macos_sources_curioforge_services_speechrecognizer_swift_bool",
       "label": "Bool",
       "_origin": "ast",
@@ -4386,17 +4530,6 @@
       "source_location": ""
     },
     {
-      "id": "apps_macos_sources_curioforge_services_speechsynthesizer",
-      "label": "SpeechSynthesizer.swift",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "speechsynthesizer.swift",
-      "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
-      "source_location": "L1"
-    },
-    {
       "id": "apps_macos_sources_curioforge_views_stage_cinemastageview_cinemastageview_verificationview",
       "label": ".verificationView",
       "_origin": "ast",
@@ -4408,29 +4541,6 @@
       "source_location": "L88"
     },
     {
-      "id": "avfoundation",
-      "label": "AVFoundation",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "avfoundation",
-      "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
-      "source_location": "L2",
-      "type": "module"
-    },
-    {
-      "id": "equatable",
-      "label": "Equatable",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "equatable",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "float",
       "label": "Float",
       "_origin": "ast",
@@ -4440,18 +4550,6 @@
       "norm_label": "float",
       "source_file": "",
       "source_location": ""
-    },
-    {
-      "id": "foundation",
-      "label": "Foundation",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
-      "file_type": "code",
-      "norm_label": "foundation",
-      "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
-      "source_location": "L1",
-      "type": "module"
     },
     {
       "id": "observableobject",
@@ -4487,16 +4585,70 @@
       "source_location": ""
     },
     {
-      "id": "speech",
-      "label": "Speech",
+      "id": "apps_macos_sources_curioforge_models_simulationstate",
+      "label": "SimulationState.swift",
       "_origin": "ast",
-      "community": 22,
-      "community_name": "SpeechRecognizerService",
+      "community": 23,
+      "community_name": "SpeechSynthesizerService",
       "file_type": "code",
-      "norm_label": "speech",
+      "norm_label": "simulationstate.swift",
+      "source_file": "apps/macos/Sources/Curioforge/Models/SimulationState.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_models_simulationstate_swift_bool",
+      "label": "Bool",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechSynthesizerService",
+      "file_type": "code",
+      "norm_label": "bool",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "apps_macos_sources_curioforge_models_simulationstate_swift_double",
+      "label": "Double",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechSynthesizerService",
+      "file_type": "code",
+      "norm_label": "double",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_apiclient",
+      "label": "APIClient.swift",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechSynthesizerService",
+      "file_type": "code",
+      "norm_label": "apiclient.swift",
+      "source_file": "apps/macos/Sources/Curioforge/Services/APIClient.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_speechrecognizer",
+      "label": "SpeechRecognizer.swift",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechSynthesizerService",
+      "file_type": "code",
+      "norm_label": "speechrecognizer.swift",
       "source_file": "apps/macos/Sources/Curioforge/Services/SpeechRecognizer.swift",
-      "source_location": "L2",
-      "type": "module"
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_macos_sources_curioforge_services_speechsynthesizer",
+      "label": "SpeechSynthesizer.swift",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechSynthesizerService",
+      "file_type": "code",
+      "norm_label": "speechsynthesizer.swift",
+      "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
+      "source_location": "L1"
     },
     {
       "id": "apps_macos_sources_curioforge_services_speechsynthesizer_swift_bool",
@@ -4519,6 +4671,18 @@
       "norm_label": "void",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "avfoundation",
+      "label": "AVFoundation",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechSynthesizerService",
+      "file_type": "code",
+      "norm_label": "avfoundation",
+      "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
+      "source_location": "L2",
+      "type": "module"
     },
     {
       "id": "avspeechsynthesizer",
@@ -4554,6 +4718,29 @@
       "source_location": ""
     },
     {
+      "id": "equatable",
+      "label": "Equatable",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechSynthesizerService",
+      "file_type": "code",
+      "norm_label": "equatable",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "foundation",
+      "label": "Foundation",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechSynthesizerService",
+      "file_type": "code",
+      "norm_label": "foundation",
+      "source_file": "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift",
+      "source_location": "L1",
+      "type": "module"
+    },
+    {
       "id": "nsobject",
       "label": "NSObject",
       "_origin": "ast",
@@ -4563,6 +4750,18 @@
       "norm_label": "nsobject",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "speech",
+      "label": "Speech",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SpeechSynthesizerService",
+      "file_type": "code",
+      "norm_label": "speech",
+      "source_file": "apps/macos/Sources/Curioforge/Services/SpeechRecognizer.swift",
+      "source_location": "L2",
+      "type": "module"
     },
     {
       "id": "apps_macos_sources_curioforge_models_appstate_stagemode_steps",
@@ -4631,86 +4830,92 @@
       "source_location": ""
     },
     {
-      "id": "apps_macos_sources_curioforge_services_apiclient_swift_bool",
-      "label": "Bool",
+      "id": "server_src_prompts_tutor",
+      "label": "prompts/tutor.js",
       "_origin": "ast",
       "community": 25,
-      "community_name": "APIClient",
+      "community_name": "routes/tutor.js",
       "file_type": "code",
-      "norm_label": "bool",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "prompts/tutor.js",
+      "source_file": "server/src/prompts/tutor.js",
+      "source_location": "L1"
     },
     {
-      "id": "apps_macos_sources_curioforge_services_apiclient_swift_string",
-      "label": "String",
+      "id": "server_src_routes_tutor",
+      "label": "routes/tutor.js",
       "_origin": "ast",
       "community": 25,
-      "community_name": "APIClient",
+      "community_name": "routes/tutor.js",
       "file_type": "code",
-      "norm_label": "string",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "routes/tutor.js",
+      "source_file": "server/src/routes/tutor.js",
+      "source_location": "L1"
     },
     {
-      "id": "architecture_4_1_macos_shell_live_demo",
-      "label": "4.1 macOS shell (live demo)",
+      "id": "server_src_routes_tutor_router",
+      "label": "router",
       "_origin": "ast",
       "community": 25,
-      "community_name": "APIClient",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4.1 macos shell (live demo)",
-      "source_file": "ARCHITECTURE.md",
-      "source_location": "L112"
+      "community_name": "routes/tutor.js",
+      "file_type": "code",
+      "norm_label": "router",
+      "source_file": "server/src/routes/tutor.js",
+      "source_location": "L9"
     },
     {
-      "id": "architecture_4_2_android_shell_phase_2_scaffold",
-      "label": "4.2 Android shell (`[PHASE 2]` scaffold)",
+      "id": "server_src_schemas_tutor",
+      "label": "schemas/tutor.js",
       "_origin": "ast",
       "community": 25,
-      "community_name": "APIClient",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4.2 android shell (`[phase 2]` scaffold)",
-      "source_file": "ARCHITECTURE.md",
-      "source_location": "L126"
+      "community_name": "routes/tutor.js",
+      "file_type": "code",
+      "norm_label": "schemas/tutor.js",
+      "source_file": "server/src/schemas/tutor.js",
+      "source_location": "L1"
     },
     {
-      "id": "architecture_4_3_pwa_shell_phase_2_scaffold",
-      "label": "4.3 PWA shell (`[PHASE 2]` scaffold)",
+      "id": "server_src_schemas_tutor_tutorrequestschema",
+      "label": "tutorRequestSchema",
       "_origin": "ast",
       "community": 25,
-      "community_name": "APIClient",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4.3 pwa shell (`[phase 2]` scaffold)",
-      "source_file": "ARCHITECTURE.md",
-      "source_location": "L130"
+      "community_name": "routes/tutor.js",
+      "file_type": "code",
+      "norm_label": "tutorrequestschema",
+      "source_file": "server/src/schemas/tutor.js",
+      "source_location": "L3"
     },
     {
-      "id": "architecture_4_4_parent_teacher_view",
-      "label": "4.4 Parent/teacher view",
+      "id": "server_src_schemas_tutor_tutorresponseschema",
+      "label": "tutorResponseSchema",
       "_origin": "ast",
       "community": 25,
-      "community_name": "APIClient",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4.4 parent/teacher view",
-      "source_file": "ARCHITECTURE.md",
-      "source_location": "L134"
+      "community_name": "routes/tutor.js",
+      "file_type": "code",
+      "norm_label": "tutorresponseschema",
+      "source_file": "server/src/schemas/tutor.js",
+      "source_location": "L15"
     },
     {
-      "id": "architecture_4_platform_shell_architecture",
-      "label": "4. Platform Shell Architecture",
+      "id": "server_src_services_gemini",
+      "label": "gemini.js",
       "_origin": "ast",
       "community": 25,
-      "community_name": "APIClient",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4. platform shell architecture",
-      "source_file": "ARCHITECTURE.md",
-      "source_location": "L110"
+      "community_name": "routes/tutor.js",
+      "file_type": "code",
+      "norm_label": "gemini.js",
+      "source_file": "server/src/services/gemini.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_utils_parsejson",
+      "label": "parseJson.js",
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "routes/tutor.js",
+      "file_type": "code",
+      "norm_label": "parsejson.js",
+      "source_file": "server/src/utils/parseJson.js",
+      "source_location": "L1"
     },
     {
       "id": "app",
@@ -5588,6 +5793,105 @@
       "source_location": ""
     },
     {
+      "id": "server_src_middleware_ratelimit",
+      "label": "rateLimit.js",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "routes/results.js",
+      "file_type": "code",
+      "norm_label": "ratelimit.js",
+      "source_file": "server/src/middleware/rateLimit.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_middleware_ratelimit_ailimiter",
+      "label": "aiLimiter",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "routes/results.js",
+      "file_type": "code",
+      "norm_label": "ailimiter",
+      "source_file": "server/src/middleware/rateLimit.js",
+      "source_location": "L18"
+    },
+    {
+      "id": "server_src_middleware_ratelimit_apilimiter",
+      "label": "apiLimiter",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "routes/results.js",
+      "file_type": "code",
+      "norm_label": "apilimiter",
+      "source_file": "server/src/middleware/rateLimit.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "server_src_routes_results",
+      "label": "routes/results.js",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "routes/results.js",
+      "file_type": "code",
+      "norm_label": "routes/results.js",
+      "source_file": "server/src/routes/results.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_routes_results_router",
+      "label": "router",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "routes/results.js",
+      "file_type": "code",
+      "norm_label": "router",
+      "source_file": "server/src/routes/results.js",
+      "source_location": "L9"
+    },
+    {
+      "id": "server_src_schemas_results",
+      "label": "schemas/results.js",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "routes/results.js",
+      "file_type": "code",
+      "norm_label": "schemas/results.js",
+      "source_file": "server/src/schemas/results.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_schemas_results_resultsrequestschema",
+      "label": "resultsRequestSchema",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "routes/results.js",
+      "file_type": "code",
+      "norm_label": "resultsrequestschema",
+      "source_file": "server/src/schemas/results.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_schemas_results_resultsresponseschema",
+      "label": "resultsResponseSchema",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "routes/results.js",
+      "file_type": "code",
+      "norm_label": "resultsresponseschema",
+      "source_file": "server/src/schemas/results.js",
+      "source_location": "L31"
+    },
+    {
+      "id": "ref_express_rate_limit",
+      "label": "express-rate-limit",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "routes/results.js",
+      "file_type": "concept",
+      "norm_label": "express-rate-limit",
+      "source_file": "server/package.json",
+      "source_location": "L14"
+    },
+    {
       "id": "curioforge_complete_idea_5_main_product_modules_and_features",
       "label": "5. Main Product Modules and Features",
       "_origin": "ast",
@@ -5852,114 +6156,280 @@
       "source_location": "L426"
     },
     {
-      "id": "server_package",
-      "label": "server/package.json",
+      "id": "server_src_routes_weather",
+      "label": "routes/weather.js",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
+      "community": 40,
+      "community_name": "routes/weather.js",
       "file_type": "code",
-      "norm_label": "server/package.json",
-      "source_file": "server/package.json",
+      "norm_label": "routes/weather.js",
+      "source_file": "server/src/routes/weather.js",
       "source_location": "L1"
     },
     {
-      "id": "server_package_devdependencies",
-      "label": "devDependencies",
+      "id": "server_src_routes_weather_router",
+      "label": "router",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
+      "community": 40,
+      "community_name": "routes/weather.js",
       "file_type": "code",
-      "norm_label": "devdependencies",
-      "source_file": "server/package.json",
-      "source_location": "L17"
-    },
-    {
-      "id": "server_package_devdependencies_nodemon",
-      "label": "nodemon",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "nodemon",
-      "source_file": "server/package.json",
-      "source_location": "L18"
-    },
-    {
-      "id": "server_package_name",
-      "label": "name",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "name",
-      "source_file": "server/package.json",
-      "source_location": "L2"
-    },
-    {
-      "id": "server_package_private",
-      "label": "private",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "private",
-      "source_file": "server/package.json",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_package_scripts",
-      "label": "scripts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "scripts",
-      "source_file": "server/package.json",
+      "norm_label": "router",
+      "source_file": "server/src/routes/weather.js",
       "source_location": "L6"
     },
     {
-      "id": "server_package_scripts_dev",
-      "label": "dev",
+      "id": "server_src_schemas_weather",
+      "label": "schemas/weather.js",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
+      "community": 40,
+      "community_name": "routes/weather.js",
       "file_type": "code",
-      "norm_label": "dev",
-      "source_file": "server/package.json",
-      "source_location": "L8"
+      "norm_label": "schemas/weather.js",
+      "source_file": "server/src/schemas/weather.js",
+      "source_location": "L1"
     },
     {
-      "id": "server_package_scripts_start",
-      "label": "start",
+      "id": "server_src_schemas_weather_forecastqueryschema",
+      "label": "forecastQuerySchema",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
+      "community": 40,
+      "community_name": "routes/weather.js",
       "file_type": "code",
-      "norm_label": "start",
-      "source_file": "server/package.json",
-      "source_location": "L7"
+      "norm_label": "forecastqueryschema",
+      "source_file": "server/src/schemas/weather.js",
+      "source_location": "L9"
     },
     {
-      "id": "server_package_type",
-      "label": "type",
+      "id": "server_src_schemas_weather_geocodequeryschema",
+      "label": "geocodeQuerySchema",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
+      "community": 40,
+      "community_name": "routes/weather.js",
       "file_type": "code",
-      "norm_label": "type",
-      "source_file": "server/package.json",
-      "source_location": "L5"
+      "norm_label": "geocodequeryschema",
+      "source_file": "server/src/schemas/weather.js",
+      "source_location": "L3"
     },
     {
-      "id": "server_package_version",
-      "label": "version",
+      "id": "server_src_services_openmeteo",
+      "label": "openMeteo.js",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
+      "community": 40,
+      "community_name": "routes/weather.js",
       "file_type": "code",
-      "norm_label": "version",
+      "norm_label": "openmeteo.js",
+      "source_file": "server/src/services/openMeteo.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_services_openmeteo_cache",
+      "label": "cache",
+      "_origin": "ast",
+      "community": 40,
+      "community_name": "routes/weather.js",
+      "file_type": "code",
+      "norm_label": "cache",
+      "source_file": "server/src/services/openMeteo.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_middleware_validate",
+      "label": "validate.js",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "routes/blueprint.js",
+      "file_type": "code",
+      "norm_label": "validate.js",
+      "source_file": "server/src/middleware/validate.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_routes_blueprint",
+      "label": "routes/blueprint.js",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "routes/blueprint.js",
+      "file_type": "code",
+      "norm_label": "routes/blueprint.js",
+      "source_file": "server/src/routes/blueprint.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_routes_blueprint_router",
+      "label": "router",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "routes/blueprint.js",
+      "file_type": "code",
+      "norm_label": "router",
+      "source_file": "server/src/routes/blueprint.js",
+      "source_location": "L9"
+    },
+    {
+      "id": "server_src_schemas_blueprint",
+      "label": "schemas/blueprint.js",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "routes/blueprint.js",
+      "file_type": "code",
+      "norm_label": "schemas/blueprint.js",
+      "source_file": "server/src/schemas/blueprint.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_schemas_blueprint_blueprintrequestschema",
+      "label": "blueprintRequestSchema",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "routes/blueprint.js",
+      "file_type": "code",
+      "norm_label": "blueprintrequestschema",
+      "source_file": "server/src/schemas/blueprint.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_schemas_blueprint_blueprintresponseschema",
+      "label": "blueprintResponseSchema",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "routes/blueprint.js",
+      "file_type": "code",
+      "norm_label": "blueprintresponseschema",
+      "source_file": "server/src/schemas/blueprint.js",
+      "source_location": "L18"
+    },
+    {
+      "id": "architecture_5_backend_architecture",
+      "label": "5. Backend Architecture",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "routes/blueprint.js",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5. backend architecture",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": "L138"
+    },
+    {
+      "id": "server_src_prompts_curiosity",
+      "label": "prompts/curiosity.js",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "routes/curiosity.js",
+      "file_type": "code",
+      "norm_label": "prompts/curiosity.js",
+      "source_file": "server/src/prompts/curiosity.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_routes_curiosity",
+      "label": "routes/curiosity.js",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "routes/curiosity.js",
+      "file_type": "code",
+      "norm_label": "routes/curiosity.js",
+      "source_file": "server/src/routes/curiosity.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_routes_curiosity_router",
+      "label": "router",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "routes/curiosity.js",
+      "file_type": "code",
+      "norm_label": "router",
+      "source_file": "server/src/routes/curiosity.js",
+      "source_location": "L9"
+    },
+    {
+      "id": "server_src_schemas_curiosity",
+      "label": "schemas/curiosity.js",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "routes/curiosity.js",
+      "file_type": "code",
+      "norm_label": "schemas/curiosity.js",
+      "source_file": "server/src/schemas/curiosity.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_schemas_curiosity_curiosityrequestschema",
+      "label": "curiosityRequestSchema",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "routes/curiosity.js",
+      "file_type": "code",
+      "norm_label": "curiosityrequestschema",
+      "source_file": "server/src/schemas/curiosity.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_src_schemas_curiosity_curiosityresponseschema",
+      "label": "curiosityResponseSchema",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "routes/curiosity.js",
+      "file_type": "code",
+      "norm_label": "curiosityresponseschema",
+      "source_file": "server/src/schemas/curiosity.js",
+      "source_location": "L15"
+    },
+    {
+      "id": "ref_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "routes/curiosity.js",
+      "file_type": "concept",
+      "norm_label": "zod",
       "source_file": "server/package.json",
-      "source_location": "L4"
+      "source_location": "L15"
+    },
+    {
+      "id": "server_src_prompts_blueprint",
+      "label": "prompts/blueprint.js",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "shared.js",
+      "file_type": "code",
+      "norm_label": "prompts/blueprint.js",
+      "source_file": "server/src/prompts/blueprint.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_prompts_results",
+      "label": "prompts/results.js",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "shared.js",
+      "file_type": "code",
+      "norm_label": "prompts/results.js",
+      "source_file": "server/src/prompts/results.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_prompts_shared",
+      "label": "shared.js",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "shared.js",
+      "file_type": "code",
+      "norm_label": "shared.js",
+      "source_file": "server/src/prompts/shared.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_prompts_shared_base_safety_instructions",
+      "label": "BASE_SAFETY_INSTRUCTIONS",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "shared.js",
+      "file_type": "code",
+      "norm_label": "base_safety_instructions",
+      "source_file": "server/src/prompts/shared.js",
+      "source_location": "L1"
     },
     {
       "id": "server_src_app",
@@ -6083,160 +6553,6 @@
       "source_location": "L1"
     },
     {
-      "id": "server_src_middleware_ratelimit",
-      "label": "rateLimit.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "ratelimit.js",
-      "source_file": "server/src/middleware/rateLimit.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_middleware_ratelimit_ailimiter",
-      "label": "aiLimiter",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "ailimiter",
-      "source_file": "server/src/middleware/rateLimit.js",
-      "source_location": "L18"
-    },
-    {
-      "id": "server_src_middleware_ratelimit_apilimiter",
-      "label": "apiLimiter",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "apilimiter",
-      "source_file": "server/src/middleware/rateLimit.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "server_src_middleware_validate",
-      "label": "validate.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "validate.js",
-      "source_file": "server/src/middleware/validate.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_prompts_blueprint",
-      "label": "prompts/blueprint.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "prompts/blueprint.js",
-      "source_file": "server/src/prompts/blueprint.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_prompts_curiosity",
-      "label": "prompts/curiosity.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "prompts/curiosity.js",
-      "source_file": "server/src/prompts/curiosity.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_prompts_results",
-      "label": "prompts/results.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "prompts/results.js",
-      "source_file": "server/src/prompts/results.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_prompts_shared",
-      "label": "shared.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "shared.js",
-      "source_file": "server/src/prompts/shared.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_prompts_shared_base_safety_instructions",
-      "label": "BASE_SAFETY_INSTRUCTIONS",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "base_safety_instructions",
-      "source_file": "server/src/prompts/shared.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_prompts_tutor",
-      "label": "prompts/tutor.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "prompts/tutor.js",
-      "source_file": "server/src/prompts/tutor.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_routes_blueprint",
-      "label": "routes/blueprint.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "routes/blueprint.js",
-      "source_file": "server/src/routes/blueprint.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_routes_blueprint_router",
-      "label": "router",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "router",
-      "source_file": "server/src/routes/blueprint.js",
-      "source_location": "L9"
-    },
-    {
-      "id": "server_src_routes_curiosity",
-      "label": "routes/curiosity.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "routes/curiosity.js",
-      "source_file": "server/src/routes/curiosity.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_routes_curiosity_router",
-      "label": "router",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "router",
-      "source_file": "server/src/routes/curiosity.js",
-      "source_location": "L9"
-    },
-    {
       "id": "server_src_routes_health",
       "label": "health.js",
       "_origin": "ast",
@@ -6259,292 +6575,6 @@
       "source_location": "L4"
     },
     {
-      "id": "server_src_routes_results",
-      "label": "routes/results.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "routes/results.js",
-      "source_file": "server/src/routes/results.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_routes_results_router",
-      "label": "router",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "router",
-      "source_file": "server/src/routes/results.js",
-      "source_location": "L9"
-    },
-    {
-      "id": "server_src_routes_tutor",
-      "label": "routes/tutor.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "routes/tutor.js",
-      "source_file": "server/src/routes/tutor.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_routes_tutor_router",
-      "label": "router",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "router",
-      "source_file": "server/src/routes/tutor.js",
-      "source_location": "L9"
-    },
-    {
-      "id": "server_src_routes_weather",
-      "label": "routes/weather.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "routes/weather.js",
-      "source_file": "server/src/routes/weather.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_routes_weather_router",
-      "label": "router",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "router",
-      "source_file": "server/src/routes/weather.js",
-      "source_location": "L6"
-    },
-    {
-      "id": "server_src_schemas_blueprint",
-      "label": "schemas/blueprint.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "schemas/blueprint.js",
-      "source_file": "server/src/schemas/blueprint.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_schemas_blueprint_blueprintrequestschema",
-      "label": "blueprintRequestSchema",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "blueprintrequestschema",
-      "source_file": "server/src/schemas/blueprint.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_schemas_blueprint_blueprintresponseschema",
-      "label": "blueprintResponseSchema",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "blueprintresponseschema",
-      "source_file": "server/src/schemas/blueprint.js",
-      "source_location": "L18"
-    },
-    {
-      "id": "server_src_schemas_curiosity",
-      "label": "schemas/curiosity.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "schemas/curiosity.js",
-      "source_file": "server/src/schemas/curiosity.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_schemas_curiosity_curiosityrequestschema",
-      "label": "curiosityRequestSchema",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "curiosityrequestschema",
-      "source_file": "server/src/schemas/curiosity.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_schemas_curiosity_curiosityresponseschema",
-      "label": "curiosityResponseSchema",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "curiosityresponseschema",
-      "source_file": "server/src/schemas/curiosity.js",
-      "source_location": "L15"
-    },
-    {
-      "id": "server_src_schemas_results",
-      "label": "schemas/results.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "schemas/results.js",
-      "source_file": "server/src/schemas/results.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_schemas_results_resultsrequestschema",
-      "label": "resultsRequestSchema",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "resultsrequestschema",
-      "source_file": "server/src/schemas/results.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_schemas_results_resultsresponseschema",
-      "label": "resultsResponseSchema",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "resultsresponseschema",
-      "source_file": "server/src/schemas/results.js",
-      "source_location": "L31"
-    },
-    {
-      "id": "server_src_schemas_tutor",
-      "label": "schemas/tutor.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "schemas/tutor.js",
-      "source_file": "server/src/schemas/tutor.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_schemas_tutor_tutorrequestschema",
-      "label": "tutorRequestSchema",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "tutorrequestschema",
-      "source_file": "server/src/schemas/tutor.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_schemas_tutor_tutorresponseschema",
-      "label": "tutorResponseSchema",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "tutorresponseschema",
-      "source_file": "server/src/schemas/tutor.js",
-      "source_location": "L15"
-    },
-    {
-      "id": "server_src_schemas_weather",
-      "label": "schemas/weather.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "schemas/weather.js",
-      "source_file": "server/src/schemas/weather.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_schemas_weather_forecastqueryschema",
-      "label": "forecastQuerySchema",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "forecastqueryschema",
-      "source_file": "server/src/schemas/weather.js",
-      "source_location": "L9"
-    },
-    {
-      "id": "server_src_schemas_weather_geocodequeryschema",
-      "label": "geocodeQuerySchema",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "geocodequeryschema",
-      "source_file": "server/src/schemas/weather.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "server_src_services_gemini",
-      "label": "gemini.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "gemini.js",
-      "source_file": "server/src/services/gemini.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_services_openmeteo",
-      "label": "openMeteo.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "openmeteo.js",
-      "source_file": "server/src/services/openMeteo.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_services_openmeteo_cache",
-      "label": "cache",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "cache",
-      "source_file": "server/src/services/openMeteo.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_utils_parsejson",
-      "label": "parseJson.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "parsejson.js",
-      "source_file": "server/src/utils/parseJson.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_cors",
-      "label": "cors",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "concept",
-      "norm_label": "cors",
-      "source_file": "server/package.json",
-      "source_location": "L11"
-    },
-    {
       "id": "ref_dotenv",
       "label": "dotenv",
       "_origin": "ast",
@@ -6565,39 +6595,6 @@
       "norm_label": "express",
       "source_file": "server/package.json",
       "source_location": "L13"
-    },
-    {
-      "id": "ref_express_rate_limit",
-      "label": "express-rate-limit",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "concept",
-      "norm_label": "express-rate-limit",
-      "source_file": "server/package.json",
-      "source_location": "L14"
-    },
-    {
-      "id": "ref_nodemon",
-      "label": "nodemon",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "concept",
-      "norm_label": "nodemon",
-      "source_file": "server/package.json",
-      "source_location": "L18"
-    },
-    {
-      "id": "ref_zod",
-      "label": "zod",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "app.js",
-      "file_type": "concept",
-      "norm_label": "zod",
-      "source_file": "server/package.json",
-      "source_location": "L15"
     },
     {
       "id": "architecture",
@@ -6720,16 +6717,64 @@
       "source_location": "L63"
     },
     {
-      "id": "architecture_5_backend_architecture",
-      "label": "5. Backend Architecture",
+      "id": "architecture_4_1_macos_shell_live_demo",
+      "label": "4.1 macOS shell (live demo)",
       "_origin": "ast",
       "community": 6,
       "community_name": "CURIOFORGE \u2014 Architecture",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "5. backend architecture",
+      "norm_label": "4.1 macos shell (live demo)",
       "source_file": "ARCHITECTURE.md",
-      "source_location": "L138"
+      "source_location": "L112"
+    },
+    {
+      "id": "architecture_4_2_android_shell_phase_2_scaffold",
+      "label": "4.2 Android shell (`[PHASE 2]` scaffold)",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "CURIOFORGE \u2014 Architecture",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4.2 android shell (`[phase 2]` scaffold)",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": "L126"
+    },
+    {
+      "id": "architecture_4_3_pwa_shell_phase_2_scaffold",
+      "label": "4.3 PWA shell (`[PHASE 2]` scaffold)",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "CURIOFORGE \u2014 Architecture",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4.3 pwa shell (`[phase 2]` scaffold)",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": "L130"
+    },
+    {
+      "id": "architecture_4_4_parent_teacher_view",
+      "label": "4.4 Parent/teacher view",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "CURIOFORGE \u2014 Architecture",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4.4 parent/teacher view",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": "L134"
+    },
+    {
+      "id": "architecture_4_platform_shell_architecture",
+      "label": "4. Platform Shell Architecture",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "CURIOFORGE \u2014 Architecture",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4. platform shell architecture",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": "L110"
     },
     {
       "id": "architecture_6_ai_integration_architecture",
@@ -7271,13 +7316,13 @@
       "source_location": "L1"
     },
     {
-      "id": "desktop_main_app_browserwindow_systempreferences",
-      "label": "{ app, BrowserWindow, systemPreferences }",
+      "id": "desktop_main_app_browserwindow_systempreferences_session",
+      "label": "{ app, BrowserWindow, systemPreferences, session }",
       "_origin": "ast",
       "community": 9,
       "community_name": "scripts",
       "file_type": "code",
-      "norm_label": "{ app, browserwindow, systempreferences }",
+      "norm_label": "{ app, browserwindow, systempreferences, session }",
       "source_file": "desktop/main.cjs",
       "source_location": "L1"
     },
@@ -7337,6 +7382,17 @@
       "source_location": "L22"
     },
     {
+      "id": "package_build_asar",
+      "label": "asar",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "scripts",
+      "file_type": "code",
+      "norm_label": "asar",
+      "source_file": "package.json",
+      "source_location": "L24"
+    },
+    {
       "id": "package_build_directories",
       "label": "directories",
       "_origin": "ast",
@@ -7345,7 +7401,7 @@
       "file_type": "code",
       "norm_label": "directories",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "package_build_files",
@@ -7356,7 +7412,7 @@
       "file_type": "code",
       "norm_label": "files",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L28"
     },
     {
       "id": "package_build_mac",
@@ -7367,7 +7423,7 @@
       "file_type": "code",
       "norm_label": "mac",
       "source_file": "package.json",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
       "id": "package_build_productname",
@@ -7400,7 +7456,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L44"
+      "source_location": "L45"
     },
     {
       "id": "package_devdependencies_concurrently",
@@ -7411,7 +7467,7 @@
       "file_type": "code",
       "norm_label": "concurrently",
       "source_file": "package.json",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "package_devdependencies_electron",
@@ -7422,7 +7478,7 @@
       "file_type": "code",
       "norm_label": "electron",
       "source_file": "package.json",
-      "source_location": "L46"
+      "source_location": "L47"
     },
     {
       "id": "package_devdependencies_electron_builder",
@@ -7433,7 +7489,7 @@
       "file_type": "code",
       "norm_label": "electron-builder",
       "source_file": "package.json",
-      "source_location": "L47"
+      "source_location": "L48"
     },
     {
       "id": "package_directories_output",
@@ -7444,7 +7500,7 @@
       "file_type": "code",
       "norm_label": "output",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "package_mac_category",
@@ -7455,7 +7511,7 @@
       "file_type": "code",
       "norm_label": "category",
       "source_file": "package.json",
-      "source_location": "L35"
+      "source_location": "L36"
     },
     {
       "id": "package_mac_target",
@@ -7466,7 +7522,7 @@
       "file_type": "code",
       "norm_label": "target",
       "source_file": "package.json",
-      "source_location": "L36"
+      "source_location": "L37"
     },
     {
       "id": "package_main",
@@ -7664,7 +7720,7 @@
       "file_type": "concept",
       "norm_label": "concurrently",
       "source_file": "package.json",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "ref_electron",
@@ -7675,7 +7731,7 @@
       "file_type": "concept",
       "norm_label": "electron",
       "source_file": "package.json",
-      "source_location": "L46"
+      "source_location": "L47"
     },
     {
       "id": "ref_electron_builder",
@@ -7686,14 +7742,14 @@
       "file_type": "concept",
       "norm_label": "electron-builder",
       "source_file": "package.json",
-      "source_location": "L47"
+      "source_location": "L48"
     },
     {
       "id": "client_src_index",
       "label": "client_src_index",
       "_origin": "semantic",
       "community": 12,
-      "community_name": "App.jsx",
+      "community_name": "InteractiveTutorView.jsx",
       "external": true,
       "file_type": "concept",
       "norm_label": "client_src_index",
@@ -7725,6 +7781,18 @@
       "type": "external"
     },
     {
+      "id": "ref_http",
+      "label": "ref_http",
+      "_origin": "semantic",
+      "community": 9,
+      "community_name": "scripts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_http",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "ref_path",
       "label": "ref_path",
       "_origin": "semantic",
@@ -7733,17 +7801,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_path",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_http",
-      "label": "ref_http",
-      "community": 9,
-      "community_name": "scripts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_http",
       "source_file": "",
       "type": "external"
     }
@@ -8183,62 +8240,14 @@
     },
     {
       "source": "client_src_app_app",
-      "target": "client_src_features_tutor_interactivetutorview_interactivetutorview",
+      "target": "client_src_components_ui_misc_badge",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/App.jsx",
-      "source_location": "L188",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_app_app",
-      "target": "client_src_features_lab_soilmoisturelab_soilmoisturelab",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "client/src/App.jsx",
-      "source_location": "L194",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_app_app",
-      "target": "client_src_features_blueprint_blueprintviewer_blueprintviewer",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "client/src/App.jsx",
-      "source_location": "L196",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_app_app",
-      "target": "client_src_components_profile_profilemodal_profilemodal",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "client/src/App.jsx",
-      "source_location": "L201",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_app_app",
-      "target": "client_src_components_sessions_sessiondrawer_sessiondrawer",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "client/src/App.jsx",
-      "source_location": "L209",
+      "source_location": "L154",
       "weight": 1.0
     },
     {
@@ -8255,14 +8264,26 @@
     },
     {
       "source": "client_src_app_app",
-      "target": "client_src_components_ui_misc_badge",
+      "target": "client_src_features_tutor_interactivetutorview_interactivetutorview",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/App.jsx",
-      "source_location": "L90",
+      "source_location": "L313",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_app_app",
+      "target": "client_src_components_profile_profilemodal_profilemodal",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/App.jsx",
+      "source_location": "L323",
       "weight": 1.0
     },
     {
@@ -8298,7 +8319,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/components/profile/ProfileModal.jsx",
-      "source_location": "L130",
+      "source_location": "L426",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_profile_profilemodal_profilemodal",
+      "target": "client_src_hooks_usespeechoutput_usespeechoutput",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -8310,7 +8343,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/components/profile/ProfileModal.jsx",
-      "source_location": "L32",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -8418,7 +8451,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L124",
+      "source_location": "L180",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_features_tutor_interactivetutorview_interactivetutorview",
+      "target": "client_src_components_ui_misc_spinner",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
+      "source_location": "L219",
       "weight": 1.0
     },
     {
@@ -8430,31 +8475,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L212",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_features_tutor_interactivetutorview_interactivetutorview",
-      "target": "client_src_components_ui_misc_badge",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L277",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_features_tutor_interactivetutorview_interactivetutorview",
-      "target": "client_src_components_canvas_interactivecanvas_interactivecanvas",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L285",
+      "source_location": "L316",
       "weight": 1.0
     },
     {
@@ -8466,7 +8487,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L29",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_features_tutor_interactivetutorview_interactivetutorview",
+      "target": "client_src_components_ui_misc_badge",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
+      "source_location": "L369",
       "weight": 1.0
     },
     {
@@ -8478,7 +8511,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L48",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_features_tutor_interactivetutorview_interactivetutorview",
+      "target": "client_src_components_canvas_interactivecanvas_interactivecanvas",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
+      "source_location": "L433",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_lib_apiclient_request",
+      "target": "client_src_lib_apiclient_getapibase",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/lib/apiClient.js",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -8490,7 +8547,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "desktop/main.cjs",
-      "source_location": "L74",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -8526,7 +8583,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "desktop/main.cjs",
-      "source_location": "L52",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -8550,7 +8607,43 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "desktop/main.cjs",
-      "source_location": "L32",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_profile_profilemodal_profilemodal",
+      "target": "client_src_components_profile_profilemodal_avatars",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_profile_profilemodal_profilemodal",
+      "target": "client_src_components_profile_profilemodal_grade_options",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_profile_profilemodal_profilemodal",
+      "target": "client_src_components_profile_profilemodal_languages",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L252",
       "weight": 1.0
     },
     {
@@ -9875,7 +9968,7 @@
     },
     {
       "source": "client_src_app",
-      "target": "client_src_features_lab_soilmoisturelab_soilmoisturelab",
+      "target": "client_src_components_profile_profilemodal_profilemodal",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9887,7 +9980,7 @@
     },
     {
       "source": "client_src_app",
-      "target": "client_src_features_blueprint_blueprintviewer_blueprintviewer",
+      "target": "client_src_components_ui_misc_badge",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9899,7 +9992,7 @@
     },
     {
       "source": "client_src_app",
-      "target": "client_src_components_profile_profilemodal_profilemodal",
+      "target": "client_src_hooks_uselocalstorage_uselocalstorage",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9911,7 +10004,7 @@
     },
     {
       "source": "client_src_app",
-      "target": "client_src_components_sessions_sessiondrawer_sessiondrawer",
+      "target": "client_src_lib_apiclient_apiclient",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9922,42 +10015,6 @@
       "weight": 1.0
     },
     {
-      "source": "client_src_app",
-      "target": "client_src_components_ui_misc_badge",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "client/src/App.jsx",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_app",
-      "target": "client_src_hooks_uselocalstorage_uselocalstorage",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "client/src/App.jsx",
-      "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_app",
-      "target": "client_src_lib_apiclient_apiclient",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "client/src/App.jsx",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
       "source": "client_src_components_canvas_interactivecanvas",
       "target": "client_src_components_ui_card_card",
       "relation": "imports",
@@ -9991,23 +10048,23 @@
       "context": "import",
       "source_file": "client/src/components/profile/ProfileModal.jsx",
       "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_components_profile_profilemodal",
-      "target": "client_src_components_ui_misc_badge",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "client/src/components/profile/ProfileModal.jsx",
-      "source_location": "L3",
       "weight": 1.0
     },
     {
       "source": "client_src_components_profile_profilemodal",
       "target": "client_src_components_ui_button_button",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_profile_profilemodal",
+      "target": "client_src_hooks_usespeechoutput_usespeechoutput",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10278,7 +10335,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -10290,7 +10347,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -10302,7 +10359,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -10991,18 +11048,6 @@
     },
     {
       "source": "client_src_app",
-      "target": "ref_lucide_react",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "client/src/App.jsx",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_app",
       "target": "client_src_features_tutor_interactivetutorview",
       "relation": "imports_from",
       "_origin": "ast",
@@ -11015,7 +11060,7 @@
     },
     {
       "source": "client_src_app",
-      "target": "client_src_features_lab_soilmoisturelab",
+      "target": "client_src_components_profile_profilemodal",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11027,7 +11072,7 @@
     },
     {
       "source": "client_src_app",
-      "target": "client_src_features_blueprint_blueprintviewer",
+      "target": "client_src_components_ui_misc",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11039,7 +11084,7 @@
     },
     {
       "source": "client_src_app",
-      "target": "client_src_components_profile_profilemodal",
+      "target": "client_src_hooks_uselocalstorage",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11051,7 +11096,7 @@
     },
     {
       "source": "client_src_app",
-      "target": "client_src_components_sessions_sessiondrawer",
+      "target": "client_src_lib_apiclient",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11063,7 +11108,7 @@
     },
     {
       "source": "client_src_app",
-      "target": "client_src_components_ui_misc",
+      "target": "ref_lucide_react",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11071,30 +11116,6 @@
       "context": "import",
       "source_file": "client/src/App.jsx",
       "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_app",
-      "target": "client_src_hooks_uselocalstorage",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "client/src/App.jsx",
-      "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "client_src_app",
-      "target": "client_src_lib_apiclient",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "client/src/App.jsx",
-      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -11171,7 +11192,7 @@
     },
     {
       "source": "client_src_components_profile_profilemodal",
-      "target": "client_src_components_ui_misc",
+      "target": "client_src_components_ui_button",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11183,7 +11204,7 @@
     },
     {
       "source": "client_src_components_profile_profilemodal",
-      "target": "client_src_components_ui_button",
+      "target": "client_src_hooks_usespeechoutput",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14427,7 +14448,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/src/App.jsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -14443,13 +14464,46 @@
     },
     {
       "source": "client_src_components_profile_profilemodal",
+      "target": "client_src_components_profile_profilemodal_avatars",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_profile_profilemodal",
+      "target": "client_src_components_profile_profilemodal_grade_options",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_profile_profilemodal",
+      "target": "client_src_components_profile_profilemodal_languages",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/profile/ProfileModal.jsx",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_components_profile_profilemodal",
       "target": "client_src_components_profile_profilemodal_profilemodal",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/src/components/profile/ProfileModal.jsx",
-      "source_location": "L7",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -14570,7 +14624,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/src/features/tutor/InteractiveTutorView.jsx",
-      "source_location": "L21",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -14608,18 +14662,29 @@
     },
     {
       "source": "client_src_lib_apiclient",
+      "target": "client_src_lib_apiclient_request",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/apiClient.js",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "client_src_lib_apiclient",
       "target": "client_src_lib_apiclient_apiclient",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/src/lib/apiClient.js",
-      "source_location": "L44",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
       "source": "client_src_lib_apiclient",
-      "target": "client_src_lib_apiclient_request",
+      "target": "client_src_lib_apiclient_getapibase",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -15521,7 +15586,7 @@
     },
     {
       "source": "desktop_main",
-      "target": "desktop_main_app_browserwindow_systempreferences",
+      "target": "desktop_main_app_browserwindow_systempreferences_session",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -15543,17 +15608,6 @@
     },
     {
       "source": "desktop_main",
-      "target": "desktop_main_waitforserver",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "desktop/main.cjs",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "desktop_main",
       "target": "desktop_main_http",
       "relation": "contains",
       "_origin": "ast",
@@ -15564,6 +15618,17 @@
       "weight": 1.0
     },
     {
+      "source": "desktop_main",
+      "target": "desktop_main_waitforserver",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "desktop/main.cjs",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
       "source": "desktop_main_waitforserver",
       "target": "desktop_main_waitforserver_retry",
       "relation": "contains",
@@ -15571,7 +15636,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "desktop/main.cjs",
-      "source_location": "L41",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -16099,7 +16164,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L44",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -16159,7 +16224,7 @@
     },
     {
       "source": "package_build",
-      "target": "package_build_directories",
+      "target": "package_build_asar",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16170,13 +16235,24 @@
     },
     {
       "source": "package_build",
+      "target": "package_build_directories",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "package_build",
       "target": "package_build_files",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -16187,7 +16263,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -16198,7 +16274,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -16209,7 +16285,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -16220,7 +16296,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -16231,7 +16307,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -16242,7 +16318,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -16253,7 +16329,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -19681,15 +19757,15 @@
       "weight": 1.0
     },
     {
-      "source": "desktop_main_waitforserver_check",
-      "target": "desktop_main_waitforserver_retry",
+      "source": "desktop_main_waitforserver_retry",
+      "target": "desktop_main_waitforserver_check",
       "relation": "indirect_call",
       "_origin": "ast",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "desktop/main.cjs",
-      "source_location": "L39",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
