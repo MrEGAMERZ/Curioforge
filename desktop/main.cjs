@@ -1,5 +1,6 @@
-const { app, BrowserWindow, systemPreferences } = require('electron');
+const { app, BrowserWindow, systemPreferences, session } = require('electron');
 const path = require('path');
+const http = require('http');
 
 let mainWindow;
 let serverInstance = null;
@@ -8,14 +9,15 @@ let serverInstance = null;
 async function startServer() {
   try {
     const serverPath = path.join(__dirname, '../server/src/app.js');
+    console.log('[CurioForge Desktop] Starting embedded backend from:', serverPath);
     const { app: expressApp } = await import(`file://${serverPath}`);
-    serverInstance = expressApp.listen(8787, () => {
-      console.log('[CurioForge Desktop] Embedded Express backend running on http://localhost:8787');
+    serverInstance = expressApp.listen(8787, '127.0.0.1', () => {
+      console.log('[CurioForge Desktop] Embedded Express backend running on http://127.0.0.1:8787');
     });
 
     serverInstance.on('error', (err) => {
       if (err.code === 'EADDRINUSE') {
-        console.log('[CurioForge Desktop] Port 8787 is already in use (external server running). Connecting to it.');
+        console.log('[CurioForge Desktop] Port 8787 is already active. Reusing server.');
       } else {
         console.error('[CurioForge Desktop] Server error:', err);
       }
@@ -25,37 +27,85 @@ async function startServer() {
   }
 }
 
-function createWindow() {
+function waitForServer(url, timeoutMs = 8000) {
+  const start = Date.now();
+  return new Promise((resolve) => {
+    function check() {
+      const req = http.get(url, (res) => {
+        if (res.statusCode < 500) {
+          resolve(true);
+        } else {
+          retry();
+        }
+      });
+      req.on('error', retry);
+      req.setTimeout(800, () => {
+        req.destroy();
+        retry();
+      });
+    }
+    function retry() {
+      if (Date.now() - start > timeoutMs) {
+        resolve(false);
+      } else {
+        setTimeout(check, 150);
+      }
+    }
+    check();
+  });
+}
+
+async function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1240,
-    height: 840,
-    minWidth: 860,
-    minHeight: 620,
+    width: 1280,
+    height: 860,
+    minWidth: 900,
+    minHeight: 640,
     backgroundColor: '#080C16',
     titleBarStyle: 'hiddenInset', // Native macOS traffic lights
     title: 'CURIOFORGE — Turning Curiosity into Invention',
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
+      webSecurity: false, // Ensures audio streams & local API fetch work reliably
+      allowRunningInsecureContent: true,
     },
   });
 
-  // Prompt macOS microphone permissions if needed
+  // Automatically approve microphone access for live speech recognition
+  session.defaultSession.setPermissionRequestHandler((webContents, permission, callback) => {
+    if (permission === 'media') {
+      return callback(true);
+    }
+    callback(true);
+  });
+
+  session.defaultSession.setPermissionCheckHandler((webContents, permission) => {
+    if (permission === 'media') {
+      return true;
+    }
+    return true;
+  });
+
+  // Prompt macOS microphone permissions
   if (process.platform === 'darwin' && systemPreferences.askForMediaAccess) {
-    systemPreferences.askForMediaAccess('microphone').then((granted) => {
-      console.log('[macOS Audio] Microphone access:', granted ? 'Granted' : 'Denied');
-    });
+    systemPreferences.askForMediaAccess('microphone').catch(() => {});
   }
 
-  // In production (or if packaged), load built client/dist/index.html
-  const isDev = !app.isPackaged && process.env.NODE_ENV === 'development';
+  // Handle load errors
+  mainWindow.webContents.on('did-fail-load', (event, errorCode, errorDescription) => {
+    console.error('[CurioForge Desktop] Load failure:', errorCode, errorDescription);
+  });
+
+  // Wait for local backend on port 8787 to be ready
+  const serverReady = await waitForServer('http://127.0.0.1:8787/api/health', 7000);
   const prodPath = path.join(__dirname, '../client/dist/index.html');
 
-  if (isDev) {
-    mainWindow.loadURL('http://localhost:5173').catch(() => {
-      mainWindow.loadFile(prodPath);
-    });
+  if (serverReady) {
+    console.log('[CurioForge Desktop] Server verified ready. Loading http://127.0.0.1:8787');
+    mainWindow.loadURL('http://127.0.0.1:8787');
   } else {
+    console.log('[CurioForge Desktop] Loading local bundle fallback:', prodPath);
     mainWindow.loadFile(prodPath);
   }
 
@@ -66,7 +116,7 @@ function createWindow() {
 
 app.whenReady().then(async () => {
   await startServer();
-  createWindow();
+  await createWindow();
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {

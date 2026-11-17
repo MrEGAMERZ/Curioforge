@@ -1,10 +1,20 @@
 /**
  * Centralized API client for CurioForge
- * Uses relative paths so Vite proxy routes to http://localhost:8787
+ * Always routes to http://localhost:8787 if running in Electron (file:// or standalone) or relative if proxy exists
  */
 
+const getApiBase = () => {
+  if (typeof window === 'undefined') return 'http://localhost:8787';
+  if (window.location.origin.includes(':8787')) {
+    return '';
+  }
+  return 'http://localhost:8787';
+};
+
 async function request(endpoint, options = {}) {
-  const url = endpoint.startsWith('/') ? endpoint : `/api/${endpoint}`;
+  const base = getApiBase();
+  const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/api/${endpoint}`;
+  const url = `${base}${cleanEndpoint}`;
 
   const defaultHeaders = {
     'Content-Type': 'application/json',

@@ -12,15 +12,15 @@
     "semantic_hash": ""
   },
   "client/vite.config.js": {
-    "mtime": 1794901755.3495185,
-    "seen": 1794911514.669705,
-    "ast_hash": "a15fd23d0b7ad7dc589f904b38ee236f",
+    "mtime": 1794920380.5421135,
+    "seen": 1794920585.077806,
+    "ast_hash": "7844470cbcab38dd1e5b87e6de6aacca",
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1794901728.6037402,
-    "seen": 1794911514.669705,
-    "ast_hash": "ccbc712e0859ec771518eedc968b4d6b",
+    "mtime": 1794919688.3796272,
+    "seen": 1794919756.478602,
+    "ast_hash": "c3bd051751acae52f4e2400657a8ae97",
     "semantic_hash": ""
   },
   "server/package.json": {
@@ -105,6 +105,420 @@
     "mtime": 1794914711.021327,
     "seen": 1794915081.129594,
     "ast_hash": "a4c447cd8b110bfe7af636b8dfd14a3a",
+    "semantic_hash": ""
+  },
+  "client/postcss.config.js": {
+    "mtime": 1794915213.5263126,
+    "seen": 1794918331.981379,
+    "ast_hash": "ef3ba2a81ba19f8ea5ddf625521e96f0",
+    "semantic_hash": ""
+  },
+  "client/src/App.jsx": {
+    "mtime": 1794920496.3820088,
+    "seen": 1794920585.0777972,
+    "ast_hash": "9b3b30d4f4784b4c9e001e226eebd344",
+    "semantic_hash": ""
+  },
+  "client/src/components/canvas/InteractiveCanvas.jsx": {
+    "mtime": 1794918062.4966335,
+    "seen": 1794918331.98138,
+    "ast_hash": "d032a2511d3cb45855537227ff1f231e",
+    "semantic_hash": ""
+  },
+  "client/src/components/ui/Button.jsx": {
+    "mtime": 1794918011.785065,
+    "seen": 1794918331.98138,
+    "ast_hash": "7d4a3fa1d9d9a4ae4ac27de93d0f5e0d",
+    "semantic_hash": ""
+  },
+  "client/src/components/ui/Card.jsx": {
+    "mtime": 1794918017.8014324,
+    "seen": 1794918331.9813812,
+    "ast_hash": "e302e8da6c9c3cad0380e4081618bd54",
+    "semantic_hash": ""
+  },
+  "client/src/components/ui/Misc.jsx": {
+    "mtime": 1794918032.0974903,
+    "seen": 1794918331.9813812,
+    "ast_hash": "7377025511707a7150df76da1b5cf436",
+    "semantic_hash": ""
+  },
+  "client/src/features/blueprint/BlueprintViewer.jsx": {
+    "mtime": 1794918171.378997,
+    "seen": 1794918331.9813812,
+    "ast_hash": "8b04dae3921314ba94201ffd597bfcae",
+    "semantic_hash": ""
+  },
+  "client/src/features/lab/SoilMoistureLab.jsx": {
+    "mtime": 1794918117.1407766,
+    "seen": 1794918331.981382,
+    "ast_hash": "2e94e6301482e0939e0cb70802d49e4c",
+    "semantic_hash": ""
+  },
+  "client/src/features/tutor/InteractiveTutorView.jsx": {
+    "mtime": 1794920470.018459,
+    "seen": 1794920585.077803,
+    "ast_hash": "5587abdccdf7ffd1f734a85fb9979086",
+    "semantic_hash": ""
+  },
+  "client/src/hooks/useLocalStorage.js": {
+    "mtime": 1794917959.7179096,
+    "seen": 1794918331.981382,
+    "ast_hash": "7514ff633bf907b95c6b29f4cbbe9c9f",
+    "semantic_hash": ""
+  },
+  "client/src/hooks/useSpeechOutput.js": {
+    "mtime": 1794917989.3469877,
+    "seen": 1794918331.9813828,
+    "ast_hash": "8feff8569a60173006969133d280d7cb",
+    "semantic_hash": ""
+  },
+  "client/src/hooks/useVoiceInput.js": {
+    "mtime": 1794917974.39433,
+    "seen": 1794918331.9813828,
+    "ast_hash": "1ac361b403bc5e08a722017ee6f3b1cd",
+    "semantic_hash": ""
+  },
+  "client/src/lib/apiClient.js": {
+    "mtime": 1794917931.164506,
+    "seen": 1794918331.9813828,
+    "ast_hash": "bb429cbfdcb74c39e4251b269aa3de77",
+    "semantic_hash": ""
+  },
+  "client/src/lib/simulation/soilMoistureModel.js": {
+    "mtime": 1794917945.3650196,
+    "seen": 1794918331.981384,
+    "ast_hash": "7e553124cedb8de1a3170a33f634d95d",
+    "semantic_hash": ""
+  },
+  "client/src/main.jsx": {
+    "mtime": 1794918199.606137,
+    "seen": 1794918331.981384,
+    "ast_hash": "ec05c83d9bfed70d888b2da13f269eef",
+    "semantic_hash": ""
+  },
+  "client/tailwind.config.js": {
+    "mtime": 1794915208.4981372,
+    "seen": 1794918331.981384,
+    "ast_hash": "3eccd6e5048a8c0bdb11786ec64fef71",
+    "semantic_hash": ""
+  },
+  "desktop/main.cjs": {
+    "mtime": 1794920403.7504086,
+    "seen": 1794920585.077806,
+    "ast_hash": "161c7e06dc6e33d789ad43fa35a90e68",
+    "semantic_hash": ""
+  },
+  "server/src/app.js": {
+    "mtime": 1794920390.5134356,
+    "seen": 1794920585.0778081,
+    "ast_hash": "9410c2caae9d778741d4a0624e9c3873",
+    "semantic_hash": ""
+  },
+  "server/src/config/env.js": {
+    "mtime": 1794915261.6753387,
+    "seen": 1794918331.981387,
+    "ast_hash": "b5e870caa94c0f510d5108ea16cd7ff2",
+    "semantic_hash": ""
+  },
+  "server/src/index.js": {
+    "mtime": 1794917018.4928308,
+    "seen": 1794918331.981388,
+    "ast_hash": "e5bf9afe916d44b68681732e2f530504",
+    "semantic_hash": ""
+  },
+  "server/src/middleware/errorHandler.js": {
+    "mtime": 1794915291.1452143,
+    "seen": 1794918331.981388,
+    "ast_hash": "41f81140cfd2b65faa80e50ea0754e42",
+    "semantic_hash": ""
+  },
+  "server/src/middleware/rateLimit.js": {
+    "mtime": 1794915270.1324277,
+    "seen": 1794918331.981388,
+    "ast_hash": "d65ae856fe8197eee671ea7dc6cbc002",
+    "semantic_hash": ""
+  },
+  "server/src/middleware/validate.js": {
+    "mtime": 1794915281.6444783,
+    "seen": 1794918331.981389,
+    "ast_hash": "5f323e7a74c5edb942d623cf8fb8a745",
+    "semantic_hash": ""
+  },
+  "server/src/prompts/blueprint.js": {
+    "mtime": 1794915396.7383702,
+    "seen": 1794918331.981389,
+    "ast_hash": "6875a8bb8e09935446f18dc4b69431e2",
+    "semantic_hash": ""
+  },
+  "server/src/prompts/curiosity.js": {
+    "mtime": 1794915385.3941975,
+    "seen": 1794918331.981389,
+    "ast_hash": "0f832b4af0c76d46363ebc929b84f862",
+    "semantic_hash": ""
+  },
+  "server/src/prompts/results.js": {
+    "mtime": 1794915408.6714396,
+    "seen": 1794918331.98139,
+    "ast_hash": "c6a2c6fa98aba51fbfe4579873bd7557",
+    "semantic_hash": ""
+  },
+  "server/src/prompts/shared.js": {
+    "mtime": 1794915358.6744325,
+    "seen": 1794918331.98139,
+    "ast_hash": "1b994691cee9f3984f4d02fff000d981",
+    "semantic_hash": ""
+  },
+  "server/src/prompts/tutor.js": {
+    "mtime": 1794915371.9340286,
+    "seen": 1794918331.98139,
+    "ast_hash": "a0695973491d3568585737ec3dd52b75",
+    "semantic_hash": ""
+  },
+  "server/src/routes/blueprint.js": {
+    "mtime": 1794916963.464094,
+    "seen": 1794918331.9813912,
+    "ast_hash": "e2e988e8925e06c83e11e5b3dc55ffee",
+    "semantic_hash": ""
+  },
+  "server/src/routes/curiosity.js": {
+    "mtime": 1794916936.6913073,
+    "seen": 1794918331.9813912,
+    "ast_hash": "6137c6e10e60bfc50c0e18c892709b8a",
+    "semantic_hash": ""
+  },
+  "server/src/routes/health.js": {
+    "mtime": 1794915490.393792,
+    "seen": 1794918331.9813912,
+    "ast_hash": "1dad17405589d6cfff425145fed9a831",
+    "semantic_hash": ""
+  },
+  "server/src/routes/results.js": {
+    "mtime": 1794916975.3103333,
+    "seen": 1794918331.981392,
+    "ast_hash": "57350acc4011fd6f910e2e70947a7881",
+    "semantic_hash": ""
+  },
+  "server/src/routes/tutor.js": {
+    "mtime": 1794915513.3874614,
+    "seen": 1794918331.981392,
+    "ast_hash": "4b8083234db5bf37cf22e75a23bbe184",
+    "semantic_hash": ""
+  },
+  "server/src/routes/weather.js": {
+    "mtime": 1794916982.3382854,
+    "seen": 1794918331.981392,
+    "ast_hash": "85fc9911c9f72831e2e0818c6cf84945",
+    "semantic_hash": ""
+  },
+  "server/src/schemas/blueprint.js": {
+    "mtime": 1794915446.39538,
+    "seen": 1794918331.9813929,
+    "ast_hash": "94eb205f0ed6f057362b4e434837fc90",
+    "semantic_hash": ""
+  },
+  "server/src/schemas/curiosity.js": {
+    "mtime": 1794915435.4516883,
+    "seen": 1794918331.9813929,
+    "ast_hash": "49b8a09965d3c7c57ea79b006dad6591",
+    "semantic_hash": ""
+  },
+  "server/src/schemas/results.js": {
+    "mtime": 1794915455.6576562,
+    "seen": 1794918331.9813929,
+    "ast_hash": "49064d297742930e1b6a5b457cde953b",
+    "semantic_hash": ""
+  },
+  "server/src/schemas/tutor.js": {
+    "mtime": 1794915423.0118303,
+    "seen": 1794918331.9813938,
+    "ast_hash": "e99a29f222d1b3140257cb01f2b05a16",
+    "semantic_hash": ""
+  },
+  "server/src/schemas/weather.js": {
+    "mtime": 1794915465.972912,
+    "seen": 1794918331.9813938,
+    "ast_hash": "9ee596bb797730803080537e71cb3320",
+    "semantic_hash": ""
+  },
+  "server/src/services/gemini.js": {
+    "mtime": 1794915333.1849408,
+    "seen": 1794918331.9813938,
+    "ast_hash": "86ab15aac4030c261a55995cd22b99ea",
+    "semantic_hash": ""
+  },
+  "server/src/services/openMeteo.js": {
+    "mtime": 1794915346.621492,
+    "seen": 1794918331.981395,
+    "ast_hash": "4466e0b21d6cd636ceaeaec45eb54bae",
+    "semantic_hash": ""
+  },
+  "server/src/utils/parseJson.js": {
+    "mtime": 1794915302.372078,
+    "seen": 1794918331.981395,
+    "ast_hash": "2bd7e4014a47e5bec72a9c635ae2bb8d",
+    "semantic_hash": ""
+  },
+  "client/index.html": {
+    "mtime": 1794915224.9676313,
+    "seen": 1794918331.981399,
+    "ast_hash": "4302e5d3cf0762201dee5c7264c64829",
+    "semantic_hash": ""
+  },
+  "apps/macos/Package.swift": {
+    "mtime": 1794918475.7198284,
+    "seen": 1794919254.565398,
+    "ast_hash": "c6a628050fad0f7dd1399d048d5f00d0",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/CurioforgeApp.swift": {
+    "mtime": 1794919047.503157,
+    "seen": 1794919254.565398,
+    "ast_hash": "d7e2a1ef4f889a4f2e79bc2863ad74e6",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Models/ActivityProgram.swift": {
+    "mtime": 1794918579.7560396,
+    "seen": 1794919254.565399,
+    "ast_hash": "3744b71008b6aa3996ad5008a4ca8656",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Models/AppState.swift": {
+    "mtime": 1794919113.6150289,
+    "seen": 1794919254.565399,
+    "ast_hash": "3700d7ad87c5f0e887e04ddd47ec6d3e",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Models/SimulationState.swift": {
+    "mtime": 1794918645.5227911,
+    "seen": 1794919254.5654001,
+    "ast_hash": "551c625112983f82e2e2d7d206ac0956",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Models/SocraticMessage.swift": {
+    "mtime": 1794918627.425947,
+    "seen": 1794919254.5654001,
+    "ast_hash": "8b42e6c2364ef80a10f2d72066203a3e",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Services/APIClient.swift": {
+    "mtime": 1794918706.2422295,
+    "seen": 1794919254.5654001,
+    "ast_hash": "e554295b3fcbf18a060b48367c07c4ab",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Services/CloudSyncService.swift": {
+    "mtime": 1794918722.9084787,
+    "seen": 1794919254.565401,
+    "ast_hash": "d3b8c19e89492401fe671ca9141546cc",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Services/SpeechRecognizer.swift": {
+    "mtime": 1794919098.2486653,
+    "seen": 1794919254.565401,
+    "ast_hash": "5e4bfd988a0243ee151f867a8974e66b",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Services/SpeechSynthesizer.swift": {
+    "mtime": 1794918667.45746,
+    "seen": 1794919254.565401,
+    "ast_hash": "73ca9cb665ff5f0dcf7a10649b3ab621",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Components/CertificateModalView.swift": {
+    "mtime": 1794918998.8351867,
+    "seen": 1794919254.565402,
+    "ast_hash": "50ef7d384ccdacde3be36bf27198eeec",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Components/GlassCard.swift": {
+    "mtime": 1794918770.288232,
+    "seen": 1794919254.565402,
+    "ast_hash": "c5143dc4bacadb2439fc6f71626cedb5",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/MainView.swift": {
+    "mtime": 1794919040.4773633,
+    "seen": 1794919254.565402,
+    "ast_hash": "56d907c8e76f7e4b739cea3eaa42a976",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Settings/SettingsView.swift": {
+    "mtime": 1794919024.495756,
+    "seen": 1794919254.565403,
+    "ast_hash": "b0858cd08a33e7752c7ab465a6af7d3b",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Sidebar/CoPilotSidebarView.swift": {
+    "mtime": 1794918851.6386073,
+    "seen": 1794919254.565403,
+    "ast_hash": "56fa6277f0caa20d1441f93503b8619a",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Sidebar/CuriosityFeedView.swift": {
+    "mtime": 1794918824.5635965,
+    "seen": 1794919254.565403,
+    "ast_hash": "de0a86e814adef844ba7297175476da8",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Sidebar/SafetyBadgeView.swift": {
+    "mtime": 1794918836.6927118,
+    "seen": 1794919254.565404,
+    "ast_hash": "7667eba6cbb854834d4f0bd914b11f51",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Sidebar/SiriOrbView.swift": {
+    "mtime": 1794918787.9883962,
+    "seen": 1794919254.565404,
+    "ast_hash": "f3f2485286e62240c80ea0af692db706",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Sidebar/SocraticChatView.swift": {
+    "mtime": 1794918813.574065,
+    "seen": 1794919254.565405,
+    "ast_hash": "1abb93554904456df2ff12500509ab01",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Stage/CameraScannerView.swift": {
+    "mtime": 1794918896.1427507,
+    "seen": 1794919254.565405,
+    "ast_hash": "63d761ec0cd7a51e91dfebed72cc5b39",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Stage/ChapterScrubberView.swift": {
+    "mtime": 1794918878.2275395,
+    "seen": 1794919254.565405,
+    "ast_hash": "0a6eeec4b381bef6b287ac3d489071fe",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Stage/CinemaStageView.swift": {
+    "mtime": 1794918972.4275124,
+    "seen": 1794919254.565405,
+    "ast_hash": "04e20b6790cf007a549c70ae90dae049",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Stage/LivingCanvasView.swift": {
+    "mtime": 1794918932.3359504,
+    "seen": 1794919254.5654058,
+    "ast_hash": "edb890bd52d1bd211b74531af27f4e1a",
+    "semantic_hash": ""
+  },
+  "apps/macos/Sources/Curioforge/Views/Stage/StepByStepPlayerView.swift": {
+    "mtime": 1794918952.3293939,
+    "seen": 1794919254.5654058,
+    "ast_hash": "70963c8feb55c3932af5a987b18c6444",
+    "semantic_hash": ""
+  },
+  "client/src/components/profile/ProfileModal.jsx": {
+    "mtime": 1794920422.2357798,
+    "seen": 1794920585.0777988,
+    "ast_hash": "ac27902c76a30e410f6e10e41d5a54f0",
+    "semantic_hash": ""
+  },
+  "client/src/components/sessions/SessionDrawer.jsx": {
+    "mtime": 1794920436.789896,
+    "seen": 1794920585.0778,
+    "ast_hash": "f8fe637c57a63b779a585ec4fc9bdcb8",
     "semantic_hash": ""
   }
 }

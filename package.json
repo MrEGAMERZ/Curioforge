@@ -21,6 +21,7 @@
   "build": {
     "appId": "com.curioforge.app",
     "productName": "CurioForge",
+    "asar": false,
     "directories": {
       "output": "release"
     },

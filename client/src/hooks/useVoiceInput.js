@@ -3,11 +3,17 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 export function useVoiceInput({ onResult, language = 'en-US' } = {}) {
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
+  const [audioLevel, setAudioLevel] = useState(0); // 0 to 100 for visualizer
   const [error, setError] = useState(null);
-  const recognitionRef = useRef(null);
-  const mediaRecorderRef = useRef(null);
-  const audioChunksRef = useRef([]);
 
+  const recognitionRef = useRef(null);
+  const audioContextRef = useRef(null);
+  const analyserRef = useRef(null);
+  const animFrameRef = useRef(null);
+  const mediaStreamRef = useRef(null);
+  const silenceTimerRef = useRef(null);
+
+  // Initialize SpeechRecognition
   useEffect(() => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (SpeechRecognition) {
@@ -22,13 +28,18 @@ export function useVoiceInput({ onResult, language = 'en-US' } = {}) {
       };
 
       recognition.onresult = (event) => {
-        let currentTranscript = '';
-        for (let i = event.resultIndex; i < event.results.length; i++) {
-          currentTranscript += event.results[i][0].transcript;
+        let fullTranscript = '';
+        for (let i = 0; i < event.results.length; i++) {
+          fullTranscript += event.results[i][0].transcript;
         }
-        setTranscript(currentTranscript);
+        setTranscript(fullTranscript);
         if (onResult) {
-          onResult(currentTranscript);
+          onResult(fullTranscript);
+        }
+
+        // Reset silence detection timer
+        if (silenceTimerRef.current) {
+          clearTimeout(silenceTimerRef.current);
         }
       };
 
@@ -41,11 +52,12 @@ export function useVoiceInput({ onResult, language = 'en-US' } = {}) {
 
       recognition.onend = () => {
         setIsListening(false);
+        stopAudioAnalysis();
       };
 
       recognitionRef.current = recognition;
     } else {
-      console.warn('SpeechRecognition API is not supported in this browser environment.');
+      console.warn('SpeechRecognition API not available directly in this browser.');
     }
 
     return () => {
@@ -54,44 +66,94 @@ export function useVoiceInput({ onResult, language = 'en-US' } = {}) {
           recognitionRef.current.stop();
         } catch (_) {}
       }
+      stopAudioAnalysis();
     };
   }, [language, onResult]);
+
+  // Audio level analyzer for reactive waveform animation
+  const startAudioAnalysis = async () => {
+    try {
+      if (!navigator.mediaDevices?.getUserMedia) return;
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaStreamRef.current = stream;
+
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+
+      const audioCtx = new AudioCtx();
+      audioContextRef.current = audioCtx;
+
+      const analyser = audioCtx.createAnalyser();
+      analyser.fftSize = 64;
+      analyserRef.current = analyser;
+
+      const source = audioCtx.createMediaStreamSource(stream);
+      source.connect(analyser);
+
+      const dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+      const updateLevel = () => {
+        if (!analyserRef.current) return;
+        analyserRef.current.getByteFrequencyData(dataArray);
+        let sum = 0;
+        for (let i = 0; i < dataArray.length; i++) {
+          sum += dataArray[i];
+        }
+        const avg = sum / dataArray.length;
+        // Scale to 0-100
+        setAudioLevel(Math.min(100, Math.round((avg / 128) * 100)));
+        animFrameRef.current = requestAnimationFrame(updateLevel);
+      };
+
+      updateLevel();
+    } catch (err) {
+      console.warn('Microphone access or audio visualizer error:', err);
+    }
+  };
+
+  const stopAudioAnalysis = () => {
+    if (animFrameRef.current) {
+      cancelAnimationFrame(animFrameRef.current);
+      animFrameRef.current = null;
+    }
+    if (analyserRef.current) {
+      analyserRef.current = null;
+    }
+    if (audioContextRef.current) {
+      try {
+        audioContextRef.current.close();
+      } catch (_) {}
+      audioContextRef.current = null;
+    }
+    if (mediaStreamRef.current) {
+      mediaStreamRef.current.getTracks().forEach((track) => track.stop());
+      mediaStreamRef.current = null;
+    }
+    if (silenceTimerRef.current) {
+      clearTimeout(silenceTimerRef.current);
+      silenceTimerRef.current = null;
+    }
+    setAudioLevel(0);
+  };
 
   const startListening = useCallback(async () => {
     setTranscript('');
     setError(null);
+    setIsListening(true);
 
-    // 1. Try starting Web Speech recognition
+    // Start reactive audio level analysis
+    await startAudioAnalysis();
+
+    // Start speech recognition
     if (recognitionRef.current) {
       try {
         recognitionRef.current.lang = language;
         recognitionRef.current.start();
       } catch (err) {
-        console.warn('Recognition start err:', err);
+        // Recognition might already be running
+        console.warn('Recognition start caught:', err);
       }
     }
-
-    // 2. Also start MediaRecorder for audio recording backup
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        const mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
-        audioChunksRef.current = [];
-
-        mediaRecorder.ondataavailable = (e) => {
-          if (e.data.size > 0) {
-            audioChunksRef.current.push(e.data);
-          }
-        };
-
-        mediaRecorder.start(250);
-        mediaRecorderRef.current = mediaRecorder;
-      } catch (mediaErr) {
-        console.warn('[Microphone permission error]:', mediaErr);
-      }
-    }
-
-    setIsListening(true);
   }, [language]);
 
   const stopListening = useCallback(() => {
@@ -100,20 +162,14 @@ export function useVoiceInput({ onResult, language = 'en-US' } = {}) {
         recognitionRef.current.stop();
       } catch (_) {}
     }
-
-    if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
-      try {
-        mediaRecorderRef.current.stop();
-        mediaRecorderRef.current.stream.getTracks().forEach((track) => track.stop());
-      } catch (_) {}
-    }
-
+    stopAudioAnalysis();
     setIsListening(false);
   }, []);
 
   return {
     isListening,
     transcript,
+    audioLevel,
     error,
     startListening,
     stopListening,
