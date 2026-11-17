@@ -1,21 +1,28 @@
 const { app, BrowserWindow, systemPreferences } = require('electron');
 const path = require('path');
-const { spawn } = require('child_process');
 
 let mainWindow;
-let serverProcess = null;
+let serverInstance = null;
 
-// Start the Express backend server
-function startServer() {
-  const serverPath = path.join(__dirname, '../server/src/index.js');
-  serverProcess = spawn(process.execPath, [serverPath], {
-    env: { ...process.env, PORT: '8787' },
-    stdio: 'inherit',
-  });
+// Start embedded Express backend server
+async function startServer() {
+  try {
+    const serverPath = path.join(__dirname, '../server/src/app.js');
+    const { app: expressApp } = await import(`file://${serverPath}`);
+    serverInstance = expressApp.listen(8787, () => {
+      console.log('[CurioForge Desktop] Embedded Express backend running on http://localhost:8787');
+    });
 
-  serverProcess.on('error', (err) => {
-    console.error('[Electron] Failed to start server:', err);
-  });
+    serverInstance.on('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        console.log('[CurioForge Desktop] Port 8787 is already in use (external server running). Connecting to it.');
+      } else {
+        console.error('[CurioForge Desktop] Server error:', err);
+      }
+    });
+  } catch (err) {
+    console.error('[CurioForge Desktop] Failed to start embedded backend:', err);
+  }
 }
 
 function createWindow() {
@@ -40,13 +47,12 @@ function createWindow() {
     });
   }
 
-  // Load dev server or built production file
-  const devUrl = 'http://localhost:5173';
+  // In production (or if packaged), load built client/dist/index.html
+  const isDev = !app.isPackaged && process.env.NODE_ENV === 'development';
   const prodPath = path.join(__dirname, '../client/dist/index.html');
 
-  if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
-    mainWindow.loadURL(devUrl).catch(() => {
-      // If dev server not running yet, load production dist
+  if (isDev) {
+    mainWindow.loadURL('http://localhost:5173').catch(() => {
       mainWindow.loadFile(prodPath);
     });
   } else {
@@ -58,8 +64,8 @@ function createWindow() {
   });
 }
 
-app.whenReady().then(() => {
-  startServer();
+app.whenReady().then(async () => {
+  await startServer();
   createWindow();
 
   app.on('activate', () => {
@@ -70,8 +76,10 @@ app.whenReady().then(() => {
 });
 
 app.on('window-all-closed', () => {
-  if (serverProcess) {
-    serverProcess.kill();
+  if (serverInstance) {
+    try {
+      serverInstance.close();
+    } catch (_) {}
   }
   if (process.platform !== 'darwin') {
     app.quit();
@@ -79,7 +87,9 @@ app.on('window-all-closed', () => {
 });
 
 app.on('will-quit', () => {
-  if (serverProcess) {
-    serverProcess.kill();
+  if (serverInstance) {
+    try {
+      serverInstance.close();
+    } catch (_) {}
   }
 });

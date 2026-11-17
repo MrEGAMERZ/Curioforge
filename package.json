@@ -10,6 +10,7 @@
     "dev:client": "npm run dev --prefix client",
     "macos": "electron .",
     "macos:dev": "concurrently -n \"backend,frontend,electron\" -c \"yellow,cyan,magenta\" \"npm run dev --prefix server\" \"npm run dev --prefix client\" \"sleep 2 && electron .\"",
+    "package:macos": "npm run build && electron-builder --mac dir",
     "swift:build": "cd apps/macos && swift build && mkdir -p Curioforge.app/Contents/MacOS && cp .build/debug/Curioforge Curioforge.app/Contents/MacOS/Curioforge",
     "swift:run": "cd apps/macos && swift run",
     "swift:open": "open apps/macos/Curioforge.app",
@@ -17,8 +18,32 @@
     "install:all": "npm install && npm install --prefix client && npm install --prefix server",
     "build": "npm run build --prefix client"
   },
+  "build": {
+    "appId": "com.curioforge.app",
+    "productName": "CurioForge",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "desktop/**/*",
+      "client/dist/**/*",
+      "server/src/**/*",
+      "server/node_modules/**/*",
+      "server/package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.education",
+      "target": [
+        {
+          "target": "dir",
+          "arch": ["arm64"]
+        }
+      ]
+    }
+  },
   "devDependencies": {
     "concurrently": "^9.1.2",
-    "electron": "^45.3.3"
+    "electron": "^45.3.3",
+    "electron-builder": "^26.18.0"
   }
 }

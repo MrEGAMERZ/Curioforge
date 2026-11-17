@@ -12,6 +12,7 @@ node_modules/
 # Build outputs
 dist/
 build/
+release/
 .build/
 **/.build/
 *.xcodeproj/
